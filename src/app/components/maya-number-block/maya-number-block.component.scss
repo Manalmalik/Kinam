@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  margin: 0.75rem 1.5rem;
+}
+
+.maya-number-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 0 auto;
+
+  width: 7.5rem;
+  height: 7rem;
+
+  border: 1px solid #ddd;
+}
+
+.inline-numbers {
+  display: flex;
+  flex-direction: row;
+}
+
+.number-row {
+  text-align: center;
+}

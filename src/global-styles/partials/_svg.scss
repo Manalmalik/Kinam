@@ -1,0 +1,21 @@
+@mixin scale-svg-mixin($factor) {
+  svg {
+    transform: scale($factor);
+  }
+}
+
+.svg-icon {
+  &.sm {
+    @include scale-svg-mixin(0.75);
+  }
+  &.md {
+    @include scale-svg-mixin(1);
+  }
+  &.lg {
+    @include scale-svg-mixin(1.5);
+  }
+}
+
+path.current-color {
+  stroke: currentColor;
+}

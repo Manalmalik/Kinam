@@ -27,8 +27,16 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/global-styles/partials/all.scss",
+              "src/global-styles/vendor/bulma.scss",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/global-styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -83,6 +91,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -127,6 +136,76 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "mayan-number": {
+      "root": "projects/mayan-number",
+      "sourceRoot": "projects/mayan-number/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mayan-number/tsconfig.lib.json",
+            "project": "projects/mayan-number/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mayan-number/src/test.ts",
+            "tsConfig": "projects/mayan-number/tsconfig.spec.json",
+            "karmaConfig": "projects/mayan-number/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mayan-number/tsconfig.lib.json",
+              "projects/mayan-number/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "nahual-date": {
+      "root": "projects/nahual-date",
+      "sourceRoot": "projects/nahual-date/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/nahual-date/tsconfig.lib.json",
+            "project": "projects/nahual-date/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nahual-date/src/test.ts",
+            "tsConfig": "projects/nahual-date/tsconfig.spec.json",
+            "karmaConfig": "projects/nahual-date/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/nahual-date/tsconfig.lib.json",
+              "projects/nahual-date/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

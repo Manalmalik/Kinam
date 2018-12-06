@@ -1,0 +1,24 @@
+@import "css-icons";
+
+:host {
+  display: contents;
+}
+
+.svg-icon.lg {
+  margin: 0.5rem 0.75rem;
+}
+
+.svg-icon.sm {
+  margin: -0.5rem -0.75rem;
+}
+
+.icon {
+  transform: scale(1);
+  transition: 0.25s transform ease-in-out;
+}
+
+// Animate number
+.animate {
+  transform: scale(0.9);
+  transition: 0.25s transform ease-in-out;
+}

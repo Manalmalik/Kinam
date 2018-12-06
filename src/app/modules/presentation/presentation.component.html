@@ -1,0 +1,29 @@
+<h1 class="title has-text-white">Kinam Mayan Numbers</h1>
+
+<img
+  class="logo"
+  src="assets/logo.png"
+  alt="Kinam Logo"
+>
+
+<mat-card class="presentation-card">
+  <h2 class="subtitle has-text-weight-bold">Birthday Number Generator</h2>
+  <hr>
+  <kinam-birthday></kinam-birthday>
+</mat-card>
+
+<mat-card class="presentation-card">
+  <h2 class="subtitle has-text-weight-bold">Simple Number</h2>
+  <hr>
+  <div class="columns">
+    <div class="calc column">
+      <kinam-calculator [initValue]="42"></kinam-calculator>
+    </div>
+    <div class="calc column">
+      <kinam-calculator [initValue]="444"></kinam-calculator>
+    </div>
+    <div class="calc column">
+      <kinam-calculator [initValue]="3600"></kinam-calculator>
+    </div>
+  </div>
+</mat-card>

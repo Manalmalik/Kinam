@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  text-align: center;
+}
+
+.logo {
+  max-width: 20rem;
+  height: auto;
+}
+
+.card {
+  max-width: 35rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logo {
+  max-width: 20rem;
+  height: auto;
+}
+
+.presentation-card {
+  height: 100%;
+  margin: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.calc.column {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+h2.subtitle {
+  margin-bottom: 0;
+}

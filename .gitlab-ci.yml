@@ -1,0 +1,48 @@
+image: mg92/trion-rsync:latest
+
+# Folder is cached between builds
+# Watch when adding dependencies
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - test-app
+  - publish-lib
+  - deploy
+
+Build Lib: 
+  stage: build-lib
+  script: 
+    - npm run -- ng lint mayan-number
+    - npm run -- ng test mayan-number --watch=false --progress=false
+    - npm run -- ng build mayan-number
+  only:
+    - lib
+
+Lint and Test App:
+  stage: test-app
+  script:
+    - npm run -- ng lint kinam
+    - npm run -- ng test kinam --watch=false --progress=false
+  environment:
+    name: test
+  only:
+    - develop
+
+# Deploy variables need to be set in
+# https://gitlab.com/{user}/{project}/settings/repository
+Deploy:
+  stage: deploy
+  script:
+    - mkdir -p ~/.ssh
+    - echo -e "$DEPLOY_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - npm run -- ng build --progress=false --prod
+    - rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress ./dist/kinam/* root@173.212.231.161:/var/www/html/kinam
+  environment:
+    name: staging
+  only:
+    - master
+
