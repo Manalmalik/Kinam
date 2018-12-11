@@ -11,15 +11,6 @@ stages:
   - publish-lib
   - deploy
 
-Build Lib: 
-  stage: build-lib
-  script: 
-    - npm run -- ng lint mayan-number
-    - npm run -- ng test mayan-number --watch=false --progress=false
-    - npm run -- ng build mayan-number
-  only:
-    - lib
-
 Lint and Test App:
   stage: test-app
   script:
