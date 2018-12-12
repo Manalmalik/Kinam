@@ -6,6 +6,12 @@ cache:
   paths:
     - node_modules/
 
+before_script:
+  - mkdir -p ~/.ssh
+  - echo -e "$DEPLOY_KEY" > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  
 stages:
   - test-app
   - publish-lib
@@ -26,10 +32,6 @@ Lint and Test App:
 Deploy:
   stage: deploy
   script:
-    - mkdir -p ~/.ssh
-    - echo -e "$DEPLOY_KEY" > ~/.ssh/id_rsa
-    - chmod 600 ~/.ssh/id_rsa
-    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - npm run -- ng build --progress=false --prod
     - rsync -avz -e "ssh -o StrictHostKeyChecking=no" --progress ./dist/kinam/* root@173.212.231.161:/var/www/html/kinam
   environment:
