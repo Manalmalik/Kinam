@@ -1,7 +1,4 @@
-$maya-margin: 0.25rem;
-
-$mayan-five-width: calc(5rem + 2 * #{$maya-margin});
-$mayan-five-width-sm: calc(3.75rem + 2 * #{$maya-margin});
+@import "modules/all";
 
 .icon-maya {
   &-one,
@@ -11,6 +8,8 @@ $mayan-five-width-sm: calc(3.75rem + 2 * #{$maya-margin});
     background-color: currentColor;
     border-radius: 1rem;
     margin: $maya-margin;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   }
 
   &-five {
