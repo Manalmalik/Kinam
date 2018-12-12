@@ -1,6 +1,9 @@
+@import "modules/all";
+
 :host {
   display: block;
   margin: 0.75rem 1.5rem;
+  color: $color-bg;
 }
 
 .maya-number-block {
@@ -13,8 +16,6 @@
 
   width: 7.5rem;
   height: 7rem;
-
-  border: 1px solid #ddd;
 }
 
 .inline-numbers {

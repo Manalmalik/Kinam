@@ -1,5 +1,7 @@
 # Kinam
 
+[Live Demo](https://kinam.lern-angular.jetzt)
+
 ## Components:
 
  - Simple Mayan number component
@@ -18,4 +20,4 @@ There are two libraries being built from source and published to npm:
 ## Development server
 
 
-This project was generated using (Angular CLI)[https://github.com/angular/angular-cli/blob/master/README.md] version 7.1
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli/blob/master/README.md) version 7.1
