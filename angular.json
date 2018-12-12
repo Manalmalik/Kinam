@@ -29,8 +29,8 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/global-styles/partials/all.scss",
               "src/global-styles/vendor/bulma.scss",
+              "src/global-styles/partials/all.scss",
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
