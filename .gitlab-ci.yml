@@ -31,7 +31,7 @@ Deploy:
     - chmod 600 ~/.ssh/id_rsa
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - npm run -- ng build --progress=false --prod
-    - rsync -avz -e "ssh -o StrictHostKeyChecking=no -o" --progress ./dist/kinam/* root@173.212.231.161:/var/www/html/kinam
+    - rsync -avz -e "ssh -o StrictHostKeyChecking=no" --progress ./dist/kinam/* root@173.212.231.161:/var/www/html/kinam
   environment:
     name: staging
   only:
