@@ -12,6 +12,8 @@ import { MayaNumberBlockModule } from './components/maya-number-block/maya-numbe
 import { BirthdayModule } from './components/birthday/birthday.module';
 import { StorybookModule } from './routes/storybook/storybook.module';
 import { PresentationModule } from './modules/presentation/presentation.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +28,7 @@ import { PresentationModule } from './modules/presentation/presentation.module';
     MayaNumberBlockModule,
     StorybookModule,
     PresentationModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
