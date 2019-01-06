@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 
+import { CoreModule } from 'core';
 
-import { CoreModule } from '@app/core';
 import { CalculatorComponent } from './calculator.component';
 import { MayaNumberBlockModule } from '../maya-number-block/maya-number-block.module';
 

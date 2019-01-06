@@ -41,6 +41,12 @@
       ],
       "core/*": [
         "dist/core/*"
+      ],
+      "shared": [
+        "dist/shared"
+      ],
+      "shared/*": [
+        "dist/shared/*"
       ]
     },
     "lib": [

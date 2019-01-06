@@ -9,24 +9,21 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-
-const MATERIAL_IMPORTS = [
-  MatCardModule,
-  MatInputModule,
-  MatFormFieldModule,
-];
 /**
  * Implementation for the icon logic.
  */
 @NgModule({
   imports: [
     ReactiveFormsModule,
-    ...MATERIAL_IMPORTS,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
-  declarations: [],
   exports: [
     ReactiveFormsModule,
-    ...MATERIAL_IMPORTS,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
 })
 export class SharedModule { }

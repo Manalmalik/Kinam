@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
-import { SharedModule } from '@app/shared';
+import { SharedModule } from 'shared';
 import { BirthdayComponent } from './birthday.component';
 import { MayaNumberBlockModule } from '../maya-number-block/maya-number-block.module';
 
