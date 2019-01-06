@@ -11,11 +11,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   margin: 0 auto;
-
   width: 7.5rem;
-  height: 7rem;
+  max-height: 7rem;
+  min-height: 4rem;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
 }
 
 .inline-numbers {

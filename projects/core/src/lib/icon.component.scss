@@ -1,0 +1,94 @@
+$color-bg: #34495e;
+
+$maya-margin: 0.25rem;
+
+$mayan-five-width: calc(5rem + 2 * #{$maya-margin});
+$mayan-five-width-sm: calc(3.75rem + 2 * #{$maya-margin});
+
+.icon-maya {
+  &-one,
+  &-five {
+    height: 1rem;
+    width: 1rem;
+    background-color: currentColor;
+    border-radius: 1rem;
+    margin: $maya-margin;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &-five {
+    width: $mayan-five-width;
+    min-width: $mayan-five-width-sm;
+    display: block;
+  }
+
+  &-one {
+    width: 1rem;
+    min-width: 0.5rem;
+    display: inline-block;
+  }
+
+  &-zero {
+    display: contents;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .icon-maya {
+    &-one,
+    &-five {
+      margin: calc(#{$maya-margin} / 2);
+    }
+
+    &-five {
+      width: $mayan-five-width-sm;
+    }
+
+    &-one {
+      height: 0.75rem;
+      width: 0.75rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .icon-maya {
+    &-one,
+    &-five {
+      margin: calc(#{$maya-margin} / 2);
+    }
+
+    &-five {
+      width: $mayan-five-width-sm;
+    }
+
+    &-one {
+      height: 0.75rem;
+      width: 0.75rem;
+    }
+  }
+}
+
+:host {
+  display: contents;
+}
+
+.svg-icon.lg {
+  margin: 0.5rem 0.75rem;
+}
+
+.svg-icon.sm {
+  margin: -0.5rem -0.75rem;
+}
+
+.icon {
+  transform: scale(1);
+  transition: 0.25s transform ease-in-out;
+}
+
+// Animate number
+.animate {
+  transform: scale(0.9);
+  transition: 0.25s transform ease-in-out;
+}

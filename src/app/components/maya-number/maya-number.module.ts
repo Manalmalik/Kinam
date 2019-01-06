@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { CoreModule } from '@app/core';
+import { CoreModule } from 'core';
 
 import { MayaNumberComponent } from './maya-number.component';
 

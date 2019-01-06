@@ -35,6 +35,12 @@
       ],
       "nahual-date/*": [
         "dist/nahual-date/*"
+      ],
+      "core": [
+        "dist/core"
+      ],
+      "core/*": [
+        "dist/core/*"
       ]
     },
     "lib": [
