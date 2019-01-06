@@ -4,7 +4,6 @@ import { state, trigger, style, transition, animate } from '@angular/animations'
 @Component({
   selector: 'kinam-maya-number',
   templateUrl: './maya-number.component.html',
-  styleUrls: ['./maya-number.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('loading', [

@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
-import { getMayanNumber, MayanDigit, MayanDigits } from 'mayan-number';
+import { getMayanNumber, MayanDigit, MayanDigits } from '../mayan-number';
 
 @Component({
   selector: 'kinam-maya-number-block',

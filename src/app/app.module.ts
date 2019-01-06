@@ -7,8 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CalculatorModule } from './components/calculator/calculator.module';
-import { MayaNumberModule } from './components/maya-number/maya-number.module';
-import { MayaNumberBlockModule } from './components/maya-number-block/maya-number-block.module';
 
 import { BirthdayModule } from './components/birthday/birthday.module';
 import { StorybookModule } from './routes/storybook/storybook.module';
@@ -23,12 +21,9 @@ import { environment } from '../environments/environment';
 
     BirthdayModule,
     CalculatorModule,
-    MayaNumberModule,
-    MayaNumberBlockModule,
     StorybookModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
