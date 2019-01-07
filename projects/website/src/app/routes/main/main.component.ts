@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'kinam-main',
@@ -11,17 +12,19 @@ export class MainComponent {
   public fullPage;
   public config;
 
-  constructor() {
+  constructor(private sanitize: DomSanitizer) {
     this.config = {
-      licenseKey: 'YOUR LICENSE KEY HERE',
-      anchors: ['firstPage', 'secondPage', 'thirdPage'],
-      // menu: '#menu',
-      // navigation: true,
-      sectionsColor: ['#000000', '#000000', '#000000'],
+      licenseKey: 'No License key',
+      anchors: ['welcom', 'mission'],
+      sectionsColor: ['#000000'],
     };
   }
 
-  getRef(fullPageRef) {
+  public getRef(fullPageRef) {
     this.fullPage = fullPageRef;
+  }
+
+  public getSanitized(url: string): SafeResourceUrl {
+    return this.sanitize.bypassSecurityTrustResourceUrl(url);
   }
 }
