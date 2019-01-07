@@ -361,6 +361,14 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@fullpage/angular-fullpage@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@fullpage/angular-fullpage/-/angular-fullpage-0.0.9.tgz#68f23c8054a4fe45dbf9bb974dbda6007c9a1c17"
+  integrity sha512-Mw1G8KylInecaWc5n9XJjZVxhrBZxXxYae6AERwC1HIYHpuPZm3wUJl5SDyMo1eSW9k5JyNoSiSDVZWInnmjfQ==
+  dependencies:
+    fullpage.js "^3.0.4"
+    tslib "^1.9.0"
+
 "@netbasal/spectator@^2.2.0-rc.2":
   version "2.2.0-rc.2"
   resolved "https://registry.yarnpkg.com/@netbasal/spectator/-/spectator-2.2.0-rc.2.tgz#3ff992a76f4d7f1f985827540a376c8757b1b153"
@@ -3148,6 +3156,11 @@ fstream@^1.0.0, fstream@^1.0.2:
     inherits "~2.0.0"
     mkdirp ">=0.5 0"
     rimraf "2"
+
+fullpage.js@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/fullpage.js/-/fullpage.js-3.0.4.tgz#bb3eb1af7ecb5706866abf64ffc7b2535cec39b7"
+  integrity sha512-GWpud0Gvr8i4k3QySoajFevO18UBKMJ9znU3o4uaXZkKYqLtS8d1BSQoAARmYwYgBLOw3YrKAG+4LoaIokO1UA==
 
 gauge@~2.7.3:
   version "2.7.4"

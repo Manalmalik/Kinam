@@ -225,7 +225,7 @@
       "root": "projects/website/",
       "sourceRoot": "projects/website/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "kinam",
       "schematics": {},
       "architect": {
         "build": {
@@ -241,7 +241,7 @@
               "projects/website/src/assets"
             ],
             "styles": [
-              "projects/website/src/styles.css"
+              "projects/website/src/styles.scss"
             ],
             "scripts": []
           },
@@ -297,7 +297,8 @@
             "tsConfig": "projects/website/tsconfig.spec.json",
             "karmaConfig": "projects/website/karma.conf.js",
             "styles": [
-              "projects/website/src/styles.css"
+              "src/global-styles/vendor/bulma.scss",
+              "projects/website/src/styles.scss"
             ],
             "scripts": [],
             "assets": [

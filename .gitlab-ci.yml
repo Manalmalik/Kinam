@@ -22,8 +22,6 @@ Lint and Test App:
   script:
     - npm run -- ng lint kinam
     - npm run -- ng test kinam --watch=false --progress=false
-  environment:
-    name: test
   only:
     - develop
 

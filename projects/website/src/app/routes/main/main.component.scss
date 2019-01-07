@@ -1,0 +1,40 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.bg-slide {
+  background-position: center center;
+}
+
+.slide-1 {
+  background-image: url("/assets/bg1.jpg");
+}
+
+.slide-2 {
+  background-image: url("/assets/round1.jpg");
+}
+
+h1 {
+  font-family: "Lustria";
+  color: white;
+  padding: 1rem 0;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.content-img {
+  border-radius: 50%;
+  border: 0.25rem solid #fff303;
+  max-width: 15rem;
+  margin: 1rem;
+  height: auto;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.filler {
+  height: 99vh;
+}

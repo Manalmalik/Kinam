@@ -17,9 +17,6 @@ const oneSequence = (nr = 1): string[] => {
   return new Array<string>(nr).fill(MayanDigits.One);
 };
 
-
-const logBase = (n: number, base: number) => Math.log(n) / Math.log(base);
-
 function getRow(number: number) {
   if (!number) {
     return [[MayanDigits.Zero]];
@@ -30,6 +27,8 @@ function getRow(number: number) {
 /**
  * Code by https://github.com/gabber7
  */
+
+const logBase = (n: number, base: number) => Math.log(n) / Math.log(base);
 
 function getMayanNumber(number: number): any[] {
   if (number === 0) {
