@@ -362,7 +362,77 @@
           }
         }
       }
+    },
+    "ng-maya-number": {
+      "root": "projects/ng-maya-number",
+      "sourceRoot": "projects/ng-maya-number/src",
+      "projectType": "library",
+      "prefix": "kinam",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-maya-number/tsconfig.lib.json",
+            "project": "projects/ng-maya-number/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-maya-number/src/test.ts",
+            "tsConfig": "projects/ng-maya-number/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-maya-number/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-maya-number/tsconfig.lib.json",
+              "projects/ng-maya-number/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ng-maya-birthday": {
+      "root": "projects/ng-maya-birthday",
+      "sourceRoot": "projects/ng-maya-birthday/src",
+      "projectType": "library",
+      "prefix": "kinam",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-maya-birthday/tsconfig.lib.json",
+            "project": "projects/ng-maya-birthday/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-maya-birthday/src/test.ts",
+            "tsConfig": "projects/ng-maya-birthday/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-maya-birthday/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-maya-birthday/tsconfig.lib.json",
+              "projects/ng-maya-birthday/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "kinam"
+  "defaultProject": "website"
 }

@@ -6,9 +6,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CalculatorModule } from './components/calculator/calculator.module';
+import { BirthdayModule } from 'ng-maya-birthday';
+import { MayanNumberModule } from 'ng-maya-number';
 
-import { BirthdayModule } from './components/birthday/birthday.module';
 import { StorybookModule } from './routes/storybook/storybook.module';
 import { environment } from '../environments/environment';
 
@@ -20,7 +20,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
 
     BirthdayModule,
-    CalculatorModule,
+    MayanNumberModule,
     StorybookModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],

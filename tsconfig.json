@@ -47,6 +47,18 @@
       ],
       "shared/*": [
         "dist/shared/*"
+      ],
+      "ng-maya-number": [
+        "dist/ng-maya-number"
+      ],
+      "ng-maya-number/*": [
+        "dist/ng-maya-number/*"
+      ],
+      "ng-maya-birthday": [
+        "dist/ng-maya-birthday"
+      ],
+      "ng-maya-birthday/*": [
+        "dist/ng-maya-birthday/*"
       ]
     },
     "lib": [

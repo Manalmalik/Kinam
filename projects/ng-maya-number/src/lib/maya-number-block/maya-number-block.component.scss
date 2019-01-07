@@ -1,0 +1,29 @@
+$color-bg: #34495e;
+
+:host {
+  display: block;
+  margin: 0.75rem 1.5rem;
+  color: $color-bg;
+}
+
+.maya-number-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 7.5rem;
+  max-height: 7rem;
+  min-height: 4rem;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.inline-numbers {
+  display: flex;
+  flex-direction: row;
+}
+
+.number-row {
+  text-align: center;
+}

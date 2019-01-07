@@ -8,12 +8,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
 
 /**
  * Implementation for the icon logic.
  */
 @NgModule({
   imports: [
+    CommonModule,
     ReactiveFormsModule,
 
     MatCardModule,
@@ -21,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
   ],
   exports: [
+    CommonModule,
     ReactiveFormsModule,
 
     MatCardModule,
