@@ -4,7 +4,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'kinam-video-embed',
   templateUrl: './video-embed.component.html',
-  styleUrls: ['./video-embed.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VideoEmbedComponent implements AfterContentInit {
