@@ -5,7 +5,6 @@
   "projects": {
     "kinam": {
       "root": "",
-      "sourceRoot": "src",
       "projectType": "application",
       "prefix": "kinam",
       "schematics": {
