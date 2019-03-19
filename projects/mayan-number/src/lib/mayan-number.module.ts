@@ -7,7 +7,13 @@ import { MayaNumberBlockComponent } from './maya-number-block/maya-number-block.
 
 @NgModule({
   imports: [CoreModule],
-  declarations: [MayaNumberComponent, MayaNumberBlockComponent],
-  exports: [MayaNumberComponent, MayaNumberBlockComponent],
+  declarations: [
+    MayaNumberComponent,
+    MayaNumberBlockComponent,
+  ],
+  exports: [
+    MayaNumberComponent,
+    MayaNumberBlockComponent,
+  ],
 })
 export class MayanNumberModule { }

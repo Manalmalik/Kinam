@@ -1,14 +1,11 @@
+import { BirthdayComponent } from './birthday.component';
 import { Spectator, createTestComponentFactory } from '@netbasal/spectator';
-import { ReactiveFormsModule } from '@angular/forms';
 
-import { StorybookComponent } from './storybook.component';
+describe('BirthdayComponent', () => {
 
-describe('StorybookComponent', () => {
-
-  let spectator: Spectator<StorybookComponent>;
+  let spectator: Spectator<BirthdayComponent>;
   const createComponent = createTestComponentFactory({
-    component: StorybookComponent,
-    imports: [ReactiveFormsModule],
+    component: BirthdayComponent,
     shallow: true
   });
 
@@ -17,4 +14,3 @@ describe('StorybookComponent', () => {
     expect(spectator.component).toBeTruthy();
   });
 });
-

@@ -3,19 +3,18 @@
 >
   <article class="column">
     <mat-form-field>      
-      <input
-          matInput
-          [formControl]="date1ctrl"
-          [matDatepicker]="picker1"
-          placeholder="Choose a date"
-          (dateChange)="handleDateChange($event)"
-          (input)="handleInputEvent($event)"
-      > 
-      <mat-datepicker-toggle
-          matSuffix
-          [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker1></mat-datepicker>
+        <input
+            matInput
+            [formControl]="date1ctrl"
+            [matDatepicker]="picker1"
+            placeholder="Choose a date"
+            (dateChange)="handleDateChange($event)"
+        > 
+        <mat-datepicker-toggle
+            matSuffix
+            [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
     <section class="birthday-blocks">
       <kinam-maya-number-block [number]="date1.getMonth()">
@@ -57,49 +56,21 @@
         >
       </div>
     </article>
-    <!-- 
-
-<article>
-
-  </article>
-  
-</section>
-<section
-  class="columns is-desktop"
->
-  <article class="column">
-     <mat-form-field> -->
-      <!-- <input
-        matInput
-        [formControl]="date"
-        [matDatepicker]="picker"
-        placeholder="Choose a date"
-        (dateChange)="handleDateChange($event)"
-        (input)="handleInputEvent($event)"
-      > -->
-      <!-- <mat-datepicker-toggle
-        matSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker> -->
-    <!-- </mat-form-field> -->
-
 
     <mat-form-field>      
       <input
           matInput
           [formControl]="date2ctrl"
-          [matDatepicker]="picker"
+          [matDatepicker]="picker2"
           placeholder="Choose a date"
           (dateChange)="handleDateChange($event)"
-          (input)="handleInputEvent($event)"
       > 
       <mat-datepicker-toggle
           matSuffix
-          [for]="picker"
+          [for]="picker2"
       ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+      <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
     <section class="birthday-blocks">
       <kinam-maya-number-block [number]="date2.getMonth()">
         <strong>
@@ -146,21 +117,21 @@
   class="columns is-desktop"
 >
   <article class="column">
-    <!-- <mat-form-field> -->
-      <!-- <input
-        matInput
-        [formControl]="date"
-        [matDatepicker]="picker"
-        placeholder="Choose a date"
-        (dateChange)="handleDateChange($event)"
-        (input)="handleInputEvent($event)"
-      > -->
-      <!-- <mat-datepicker-toggle
-        matSuffix
-        [for]="picker"
+
+    <mat-form-field>      
+      <input
+          matInput
+          [formControl]="date3ctrl"
+          [matDatepicker]="picker3"
+          placeholder="Choose a date"
+          (dateChange)="handleDateChange($event)"
+      > 
+      <mat-datepicker-toggle
+          matSuffix
+          [for]="picker3"
       ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker> -->
-    <!-- </mat-form-field> -->
+      <mat-datepicker #picker3></mat-datepicker>
+  </mat-form-field>
 
     <section class="birthday-blocks">
       <kinam-maya-number-block [number]="date3.getMonth()">
@@ -208,21 +179,20 @@
   class="columns is-desktop"
 >
   <article class="column">
-    <!-- <mat-form-field> -->
-      <!-- <input
-        matInput
-        [formControl]="date"
-        [matDatepicker]="picker"
-        placeholder="Choose a date"
-        (dateChange)="handleDateChange($event)"
-        (input)="handleInputEvent($event)"
-      > -->
-      <!-- <mat-datepicker-toggle
-        matSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker> -->
-    <!-- </mat-form-field> -->
+      <mat-form-field>      
+          <input
+              matInput
+              [formControl]="date4ctrl"
+              [matDatepicker]="picker4"
+              placeholder="Choose a date"
+              (dateChange)="handleDateChange($event)"
+          > 
+          <mat-datepicker-toggle
+              matSuffix
+              [for]="picker4"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker4></mat-datepicker>
+      </mat-form-field>
 
     <section class="birthday-blocks">
       <kinam-maya-number-block [number]="date3.getMonth()">

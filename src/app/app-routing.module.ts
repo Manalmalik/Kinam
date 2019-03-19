@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { StorybookComponent } from './routes/storybook/storybook.component';
+import { BirthdayComponent } from './components/birthday/birthday.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: StorybookComponent,
+    component: BirthdayComponent,
     children: [
       { path: '**', redirectTo: '', pathMatch: 'full' },
     ]

@@ -6,10 +6,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { BirthdayModule } from 'ng-maya-birthday';
 import { MayanNumberModule } from 'ng-maya-number';
 
-import { StorybookModule } from './routes/storybook/storybook.module';
+import { BirthdayModule } from './components/birthday/birthday.module';
+// import { StorybookModule } from './routes/storybook/storybook.module';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -21,7 +21,6 @@ import { environment } from '../environments/environment';
 
     BirthdayModule,
     MayanNumberModule,
-    StorybookModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   bootstrap: [AppComponent]

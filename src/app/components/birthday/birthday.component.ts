@@ -32,14 +32,13 @@ export class BirthdayComponent implements OnInit {
 
   public handleDateChange(event) {
     const date = event.value;
-    this.
-    this.kinamDate = new KinamNahual(date);
-    this.date = new FormControl(this.kinamDate.date);
+    // this.kinamDate = new KinamNahual(date);
+    // this.date = new FormControl(this.kinamDate.date);
   }
 
   public handleInputEvent(event) {
     const date = event.target.value;
-    this.kinamDate = new KinamNahual(date);
-    this.date = new FormControl(this.kinamDate.date);
+    // this.kinamDate = new KinamNahual(date);
+    // this.date = new FormControl(this.kinamDate.date);
   }
 }
