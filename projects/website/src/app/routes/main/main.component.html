@@ -1,169 +1,54 @@
-<div
-  fullpage
-  id="fullpage"
-  [options]="config"
-  (ref)="getRef($event)"
-  #fullpageRef
->
-  <div class="section">
-    <div class="content flex-center">
-      <img
-        class="main-logo"
-        src="assets/icons/192.png"
-        alt="Kinam Logo"
-      >
-    </div>
-  </div>
-  <section class="section">
-    <div class="slide bg-slide slide-1">
-      <div class="content">
-        <h1>Mission</h1>
-        <div class="slide-content">
-          <article class="partial">
-            <h2>Natives of Guatemmala</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Failure of the government to <br>
-              conserve nature. Provide job <br>
-              opportunities and education.
-            </p>
-          </article>
-          <article class="partial">
-            <h2>Fast Fashion Inc.</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Superficial industry full of <br>
-              chemicals, pollution, overpriced <br>
-              products and forced labor.
-            </p>
-          </article>
-          <article class="partial">
-            <h2>Western Culture</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Consumed by technology and <br>
-              daily stress drift away from <br>
-              inner Balance & Spirituality.
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide bg-slide slide-2">
-      <div class="content">
-        <h1>Situation</h1>
-        <div class="slide-content">
-          <article class="partial">
-            <h2>Opportunities</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Generate job and education opportunities for the <br>
-              Mayan communities of Guatemala
-            </p>
-          </article>
-          <article class="partial">
-            <h2>Infrastructure</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Help improve the <br>
-              local infrastructure <br>
-              and living conditions
-            </p>
-          </article>
-          <article class="partial">
-            <h2>Awareness</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Create awareness for <br>
-              the Mayan culture and <br>
-              their ancient knowledge
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="slide bg-slide slide-2">
-      <div class="content">
-        <h1>Vision</h1>
-        <div class="slide-content">
-          <article class="partial">
-            <h2>Social Business</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Build a sustainable & <br>
-              competitive social business <br>
-              that initiates a virtuous cycle
-            </p>
-          </article>
-          <article class="partial">
-            <h2>Global Access</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Help the mayan artisans monetize <br>
-              their Ancient and handcraft art <br>
-              in the global fashion market
-            </p>
-          </article>
-          <article class="partial">
-            <h2>Immortal Heritage</h2>
-            <img
-              class="content-img border-yellow round"
-              src="/assets/round1.jpg"
-            />
-            <p>
-              Conserve the mayan culture <br>
-              via embedment & distribution of <br>
-              Mayan art in Kinam products
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div class="slide bg-slide slide-2">
-      <div class="content">
-        <h1>Western Culture</h1>
-        <img
-          class="content-img round border-yellow round"
-          src="/assets/round2.jpg"
-        />
+<div class="sidescroll" [ngStyle]="scrollLeftCss" #scroll (scroll)="handleScroll()">
+  <div #first id="sec1" class="sec">
+    <div class="card-1 card">
+        <h1 class="title has-text-white">Welcome!</h1>
         <p>
-          Consumed by technology and daily stress drift away from inner
-          Balance & spirituality.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
         </p>
       </div>
-    </div>
-    <div class="slide bg-slide slide-3">
-      <div class="content">
-        <h1>Video</h1>
-        <kinam-video-embed url="https://www.youtube.com/embed/Ybvb7oy_WV0"></kinam-video-embed>
-      </div>
-    </div> -->
-  </section>
+  </div>
+  <!-- [ngStyle]="sec2Css" -->
+  <div class="sec" id="sec2">
+      <div class="card-1 card" [ngStyle]="card2Transform">
+          <h1 class="title has-text-white">Our Mission</h1>
+          <p>
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+          </p>
+        </div>
+  </div>
+
+  <div id="sec3" class="sec">
+
+      <div class="card-1 card" [ngStyle]="card3Transform">
+          <h1 class="title has-text-white">Our Goal</h1>
+          <p>
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+            Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+          </p>
+        </div>
+  </div>
 </div>
+
+
+<nav class="navbar">
+  <button class="nav-button" (click)="goTo('sec1')">
+      go to 1     
+  </button>
+  <button class="nav-button" (click)="goTo('sec2')">
+      go to 2  
+  </button>
+  <button class="nav-button" (click)="goTo('sec3')">
+      go to 3  
+  </button>
+</nav>

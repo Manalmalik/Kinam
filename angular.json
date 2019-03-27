@@ -216,7 +216,9 @@
               "projects/website/src/assets"
             ],
             "styles": [
+              "src/global-styles/vendor/bulma.scss",              
               "projects/website/src/styles.scss"
+
             ],
             "scripts": []
           },
