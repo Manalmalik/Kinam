@@ -90,3 +90,8 @@ $mayan-five-width-sm: calc(3.75rem + 2 * #{$maya-margin});
   transform: scale(0.9);
   transition: 0.25s transform ease-in-out;
 }
+
+
+path.current-color {
+  stroke: currentColor;
+}

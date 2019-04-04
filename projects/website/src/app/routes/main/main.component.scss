@@ -1,38 +1,13 @@
-.content {
-  margin: 2rem;
-  height: calc(100% - 4rem);
-  border: 1px solid #ffffff;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  h1 {
-    flex: 1;
-    font-size: 5rem;
-    margin-top: 3rem;
-  }
-
-  p {
-    margin: 1rem;
-  }
-}
-
-.slide-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  margin-bottom: 3rem;
-  flex: 9;
-}
-
 .flex-1-1 {
   flex: 1 1;
 }
 
 .flex-stretch {
   align-items: stretch;
+}
+
+kinam-birthday {
+  margin: 1rem 0;
 }
 
 .flex-row {
@@ -45,66 +20,13 @@
   align-items: center;
 }
 
-.bg-slide {
-  background-position: center center;
-}
-
-.slide-1 {
-  background-image: url("/assets/bg1.jpg");
-}
-
-.slide-2 {
-  background-image: url("/assets/round1.jpg");
-}
-
-// h1 {
-//   font-family: "Lustria";
-//   color: white;
-//   padding: 1rem 0;
-//   margin: 0;
-//   text-decoration: underline;
-// }
-
-.main-logo {
-  box-shadow: 0px 0px 1rem 0.5rem rgba(255, 243, 3, 1);
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-
-.content-img {
-  max-width: 15rem;
-  margin: 1rem;
-  height: auto;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
-
-  &.round {
-    border-radius: 50%;
-  }
-
-  &.border-yellow {
-    border: 0.25rem solid #fff303;
-  }
-
-  &.border-white {
-    border: 1px solid #fff;
-  }
-}
-
-p {
-  line-height: 1.5;
-}
-
-.partial {
-  flex: 1 1;
-}
-
 .sidescroll {
   height: 100vh;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  background-image: url('/assets/codex.jpg')
+  background-image: url('/assets/codex-sm.jpg')
 }
 
 .sec {
@@ -117,35 +39,147 @@ p {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 3rem;
+  top: 0;
   display: flex;
+  flex-direction: column;
+  background: #0000;
+  justify-content: center;
 }
 
 
 .nav-button {
   flex: 1;
-  border: 1px solid #444444;
-  color: white;
-  background-color: #333333;
+  border: none;
   font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  width: 1rem;
+  max-width: 1rem;
+  height: 1rem;
+  max-height: 1rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+  transition: all 0.33s ease-in-out;
+  box-shadow: 0px 0px 8px -1px rgba(#333, 0.75);
+
+  &.selected {
+    color: #333333;
+    background-color: white;
+    box-shadow: 0px 0px 8px -1px rgba(255, 255, 255, 0.75);
+
+    transition: all 0.33s ease-in-out;
+  }
 }
+
+
 
 .sec {
   display: flex;
   flex-direction: row;
-  
 }
 
-.card-1 {
-  max-width: 20rem;
-  height: 20rem;
-  margin-top: 10rem;
+.card-container{ 
+  max-width: 30rem;
+  height: 90%;
+  margin-top: 10%;
   margin-left: 3rem;
+  overflow-y: auto;
+  // transition: transform 1ms ease 0s;
+}
+
+.card__black {
   color: white;
   background-color: rgba($color: #000000, $alpha: 0.75);
   overflow-y: auto;
   padding: 1rem;
   border-radius: 0.5rem;
-  box-shadow: inset 0px 0px 8px -1px rgba(255,255,255,1);
+  // box-shadow: inset 0px 0px 8px -1px rgba(255, 255, 255, 0.75);
+
+  h1,
+  h2 {
+    color: white;
+  }
+}
+
+.content--vertical {
+  padding: 0.5rem;
+  border: 0.5rem solid #333333;
+  border-radius: 0.5rem;
+}
+
+.newsletter-box {
+  border: 1px solid #fff;
+  padding: 1rem;
+  margin: 2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.newsletter-button {
+  border: 1px solid #fff;
+  background: transparent;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+}
+
+.newsletter-input {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 0.5rem;
+  width: 100%;
+  transition: box-shadow 200ms ease-out;
+  box-shadow: none;
+
+  &:focus {
+    box-shadow: 0px 0px 8px -1px rgba(255, 255, 255, 0.75);
+    transition: box-shadow 200ms ease-out;
+  }
+}
+
+iframe,
+.content-img {
+  margin: 0.75rem 0;
+  box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.navbar {
+  transform: translateY(0);
+  transition: 0.4s transform ease-in-out;
+}
+
+.slide-out {
+  transform: translatex(-3.25rem);
+  transition: 0.4s transform ease-in-out;
+}
+
+@media screen and (max-width: 480px) {
+  .card-container {
+    max-width: 100%;
+    padding: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .card-container {
+    max-width: 40rem;
+    padding: 2rem;
+  }
+
+  iframe {
+    height: 20rem;
+  }
+
+  iframe,
+  .content-img {
+    margin: 1.5rem 0;
+  }
 }

@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import url(~fullpage.js/dist/fullpage.min.css);
 
 html {
   background-color: #2f3640;
@@ -19,9 +18,16 @@ html {
 p {
   font-family: sans-serif;
 }
+
 body, html{
   scroll-behavior: smooth;
 }
+
+
+.current-color {
+  stroke: currentColor;
+}
+
 
 // ::-webkit-scrollbar { 
 //   display: none; 

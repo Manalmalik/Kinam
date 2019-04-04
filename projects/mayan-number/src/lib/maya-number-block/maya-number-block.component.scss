@@ -3,7 +3,7 @@ $color-bg: #34495e;
 :host {
   display: block;
   margin: 0.75rem 1.5rem;
-  color: $color-bg;
+  color: white;
 }
 
 .maya-number-block {
@@ -12,7 +12,7 @@ $color-bg: #34495e;
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  width: 7.5rem;
+  width: 6rem;
   max-height: 7rem;
   min-height: 4rem;
   border: 1px solid #ddd;
@@ -26,4 +26,8 @@ $color-bg: #34495e;
 
 .number-row {
   text-align: center;
+}
+
+.current-color {
+  color: currentColor;
 }

@@ -17,6 +17,13 @@ import { BirthdayComponent } from './birthday.component';
     MayanNumberModule,
     SharedModule,
   ],
-  exports: [BirthdayComponent]
+  exports: [
+    BirthdayComponent,
+    MatDatepickerModule,
+    MatNativeDateModule,
+
+    MayanNumberModule,
+    SharedModule,
+  ]
 })
 export class BirthdayModule { }

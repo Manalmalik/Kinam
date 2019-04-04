@@ -4,33 +4,32 @@
   <article class="column">
     <mat-form-field>      
       <input
-          matInput
-          [formControl]="date1ctrl"
-          [matDatepicker]="picker1"
-          placeholder="Choose a date"
-          (dateChange)="handleDateChange($event)"
-          (input)="handleInputEvent($event)"
+        matInput
+        [formControl]="dateCtrl"
+        [matDatepicker]="picker"
+        (dateChange)="handleDateChange($event)"
+        (input)="handleInputEvent($event)"
       > 
       <mat-datepicker-toggle
-          matSuffix
-          [for]="picker"
+        matSuffix
+        [for]="picker"
       ></mat-datepicker-toggle>
-      <mat-datepicker #picker1></mat-datepicker>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <section class="birthday-blocks">
-      <kinam-maya-number-block [number]="date1.getMonth()">
+      <kinam-maya-number-block [number]="kinamDate.getMonth()">
         <strong>
-          Month:{{ date1.getMonth() }}
+          Month:{{ kinamDate.getMonth() }}
         </strong>
       </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="date1.getDay()">
+      <kinam-maya-number-block [number]="kinamDate.getDay()">
         <strong>
-          Day: {{ date1.getDay() }}
+          Day: {{ kinamDate.getDay() }}
         </strong>
       </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="date1.getYear()">
+      <kinam-maya-number-block [number]="kinamDate.getYear()">
         <strong>
-          Year: {{ date1.getYear() }}
+          Year: {{ kinamDate.getYear() }}
         </strong>
       </kinam-maya-number-block>
     </section>
@@ -39,230 +38,23 @@
       <table class="table is-fullwidth">
         <tr>
           <th>Nahual Day: </th>
-          <td>{{ date1.nahualDay }}</td>
+          <td>{{ kinamDate.nahualDay }}</td>
         </tr>
         <tr>
           <th>Nahual Name: </th>
-          <td>{{ date1.nahualName }}</td>
+          <td>{{ kinamDate.nahualName }}</td>
         </tr>
         <tr>
           <th>Natural Sign: </th>
-          <td>{{ date1.daySign }}</td>
+          <td>{{ kinamDate.daySign }}</td>
         </tr>
       </table>
-      <div>
+      <!-- <div>
         <img
-          [src]="date1.image"
-          [attr.alt]="'Nahual Sign: ' + date1.daySign"
+          [src]="kinamDate.image"
+          [attr.alt]="'Nahual Sign: ' + kinamDate.daySign"
         >
-      </div>
+      </div> -->
     </article>
-    <!-- 
-
-<article>
-
-  </article>
-  
-</section>
-<section
-  class="columns is-desktop"
->
-  <article class="column">
-     <mat-form-field> -->
-      <!-- <input
-        matInput
-        [formControl]="date"
-        [matDatepicker]="picker"
-        placeholder="Choose a date"
-        (dateChange)="handleDateChange($event)"
-        (input)="handleInputEvent($event)"
-      > -->
-      <!-- <mat-datepicker-toggle
-        matSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker> -->
-    <!-- </mat-form-field> -->
-
-
-    <mat-form-field>      
-      <input
-          matInput
-          [formControl]="date2ctrl"
-          [matDatepicker]="picker"
-          placeholder="Choose a date"
-          (dateChange)="handleDateChange($event)"
-          (input)="handleInputEvent($event)"
-      > 
-      <mat-datepicker-toggle
-          matSuffix
-          [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <section class="birthday-blocks">
-      <kinam-maya-number-block [number]="date2.getMonth()">
-        <strong>
-          Month:{{ date2.getMonth() }}
-        </strong>
-      </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="date2.getDay()">
-        <strong>
-          Day: {{ date2.getDay() }}
-        </strong>
-      </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="date2.getYear()">
-        <strong>
-          Year: {{ date2.getYear() }}
-        </strong>
-      </kinam-maya-number-block>
-    </section>
-
-  </article>
-  <article class="column">
-    <table class="table is-fullwidth">
-      <tr>
-        <th>Nahual Day: </th>
-        <td>{{ date2.nahualDay }}</td>
-      </tr>
-      <tr>
-        <th>Nahual Name: </th>
-        <td>{{ date2.nahualName }}</td>
-      </tr>
-      <tr>
-        <th>Natural Sign: </th>
-        <td>{{ date2.daySign }}</td>
-      </tr>
-    </table>
-    <div>
-      <img
-        [src]="date2.image"
-        [attr.alt]="'Nahual Sign: ' + date2.daySign"
-      >
-    </div>
-  </article>
-</section>
-<section
-  class="columns is-desktop"
->
-  <article class="column">
-    <!-- <mat-form-field> -->
-      <!-- <input
-        matInput
-        [formControl]="date"
-        [matDatepicker]="picker"
-        placeholder="Choose a date"
-        (dateChange)="handleDateChange($event)"
-        (input)="handleInputEvent($event)"
-      > -->
-      <!-- <mat-datepicker-toggle
-        matSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker> -->
-    <!-- </mat-form-field> -->
-
-    <section class="birthday-blocks">
-      <kinam-maya-number-block [number]="date3.getMonth()">
-        <strong>
-          Month:{{ date3.getMonth() }}
-        </strong>
-      </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="date3.getDay()">
-        <strong>
-          Day: {{ date3.getDay() }}
-        </strong>
-      </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="date3.getYear()">
-        <strong>
-          Year: {{ date3.getYear() }}
-        </strong>
-      </kinam-maya-number-block>
-    </section>
-
-  </article>
-  <article class="column">
-    <table class="table is-fullwidth">
-      <tr>
-        <th>Nahual Day: </th>
-        <td>{{ date3.nahualDay }}</td>
-      </tr>
-      <tr>
-        <th>Nahual Name: </th>
-        <td>{{ date3.nahualName }}</td>
-      </tr>
-      <tr>
-        <th>Natural Sign: </th>
-        <td>{{ date3.daySign }}</td>
-      </tr>
-    </table>
-    <div>
-      <img
-        [src]="date3.image"
-        [attr.alt]="'Nahual Sign: ' + date3.daySign"
-      >
-    </div>
-  </article>
-</section>
-<section
-  class="columns is-desktop"
->
-  <article class="column">
-    <!-- <mat-form-field> -->
-      <!-- <input
-        matInput
-        [formControl]="date"
-        [matDatepicker]="picker"
-        placeholder="Choose a date"
-        (dateChange)="handleDateChange($event)"
-        (input)="handleInputEvent($event)"
-      > -->
-      <!-- <mat-datepicker-toggle
-        matSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker> -->
-    <!-- </mat-form-field> -->
-
-    <section class="birthday-blocks">
-      <kinam-maya-number-block [number]="date3.getMonth()">
-        <strong>
-          Month:{{ date3.getMonth() }}
-        </strong>
-      </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="date3.getDay()">
-        <strong>
-          Day: {{ date3.getDay() }}
-        </strong>
-      </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="date3.getYear()">
-        <strong>
-          Year: {{ date3.getYear() }}
-        </strong>
-      </kinam-maya-number-block>
-    </section>
-
-  </article>
-  <article class="column">
-    <table class="table is-fullwidth">
-      <tr>
-        <th>Nahual Day: </th>
-        <td>{{ date4.nahualDay }}</td>
-      </tr>
-      <tr>
-        <th>Nahual Name: </th>
-        <td>{{ date4.nahualName }}</td>
-      </tr>
-      <tr>
-        <th>Natural Sign: </th>
-        <td>{{ date4.daySign }}</td>
-      </tr>
-    </table>
-    <div>
-      <img
-        [src]="date4.image"
-        [attr.alt]="'Nahual Sign: ' + date4.daySign"
-      >
-    </div>
   </article>
 </section>
