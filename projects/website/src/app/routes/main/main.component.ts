@@ -1,57 +1,19 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { of } from 'rxjs';
-import { delay } from 'rxjs/operators';
-import { memoize } from 'decko';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'kinam-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainComponent implements OnInit {
-  public activeElement: number;
-  public fullPage;
-  public config;
+export class MainComponent {
 
-  obs = [];
-
-  public menuHidden = false;
-
-  @ViewChild('scroll') scroll: ElementRef;
-
-  ngOnInit() {
-    of(1).pipe(
-      delay(1000)
-    ).subscribe(
-      _ => (this.menuHidden = true)
-    );
-  }
-
-  public get percentOfStory() {
-    return (Math.floor(this.scroll.nativeElement.scrollLeft) + this.scroll.nativeElement.clientWidth)
-     / this.scroll.nativeElement.scrollWidth;
-  }
-
-  @memoize
-  public card2Transform(percentOfStory) {
-    const transform = Math.floor((percentOfStory * 3 * 200));
-    return (600 - (transform) > 0) ? 
-    { 'transform':  `translateY(-${400 - transform}px)`}
-    : null;
-  }
-  
-  @memoize
-  public card3Transform(percentOfStory) {
-    const transform = Math.floor((percentOfStory * 3 * 200));
-    return (600 - (transform) > 0 && 600 - (transform) < 200) ? 
-    { 'transform':  `translateY(-${600 - (transform)}px)`}
-    : null;
-  }
-
-  goTo(id)  {
-    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
-  }
-
-  handleScroll() {
+  goTo(id: number)  {
+    const width = document.getElementById(`sec${id}`).clientWidth;
+    document.getElementById('sidescroll').scrollTo({
+      left: width * id - width,
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 }

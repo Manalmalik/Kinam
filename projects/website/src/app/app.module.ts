@@ -15,13 +15,13 @@ import { ScrollDirective } from './routes/main/scroll.directive';
     AppComponent,
     MainComponent,
     VideoEmbedComponent,
-    ScrollDirective
+    ScrollDirective,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AngularFullpageModule,
-    BirthdayModule
+    BirthdayModule,
   ],
   bootstrap: [AppComponent]
 })
