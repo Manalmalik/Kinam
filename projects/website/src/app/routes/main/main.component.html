@@ -1,85 +1,15 @@
 <div class="sidescroll" id="sidescroll" parallax #scroll>
   <div id="sec1" class="sec">
-    <div class="card-container">
-      <h1 class="title card card__black has-text-centered">Welcome!</h1>
+    <div class="card-container" *ngIf="(intro$ | async) as fields">
+      <h1 class="title card card__black has-text-centered">{{fields.title}}</h1>
       <section class="content--vertical">
-        <p class="card card__black">
-          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? 
-        </p>
-        
-        <kinam-birthday class="card card__black"></kinam-birthday>
 
-        <p class="card card__black">
-          Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-          Do you see any Teletubbies in here? 
-        </p>
-        
-        <a href="/assets/pyramid.jpg" target="_blank">
-          <img class="content-img" src="/assets/pyramid.jpg" />
-        </a>
+        <p class="card card__black" [innerHTML]="fields.intro_1"></p>
 
-        <p class="card card__black">
-          Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-          Do you see any Teletubbies in here? 
-        </p>
-        
-        <iframe src="https://www.youtube.com/embed/koIjcep1I4A?controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-        <p class="card card__black">
-          Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-        </p>
+        <iframe [src]="getSanitized(fields.video_1)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        <a href="/assets/woman-with-wool.jpg">
-          <img class="content-img" src="/assets/woman-with-wool.jpg" />
-        </a>
+        <p class="card card__black" [innerHTML]="fields.intro_2"></p>
 
-        <div class="card card__black" (click)="goTo(2)">
-          What we do ->
-        </div>
-      </section>
-    </div>
-  </div>
-  <div class="sec" id="sec2">
-    <div class="card-container" id="container-2">
-      <h1 class="title card card__black has-text-centered">Our Mission</h1>
-
-      <section class="content--vertical">
-        <a href="/assets/mission1.jpg" target="_blank">
-          <img class="content-img" src="/assets/mission1.jpg" />
-        </a>
-
-        <p class="card card__black">
-          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-        </p>
-          
-        
-        <a href="/assets/mission2.jpg" target="_blank">
-          <img class="content-img" src="/assets/mission2.jpg" />
-        </a>
-        
-        <p class="card card__black">
-          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-        </p>
-
-        <a href="/assets/mission3.jpg" target="_blank">
-          <img class="content-img" src="/assets/mission3.jpg" />
-        </a>
-
-        <div class="card card__black" (click)="goTo(3)">
-            What we want to achieve ->
-          </div>
-      </section>
-    </div>
-  </div>
-
-  <div class="sec" id="sec3" >
-    <div class="card-container"  id="container-3">
-      <h1 class="title card card__black has-text-centered">Our Goal</h1>
-
-      <section class="content--vertical">
         <div class="newsletter-box card__black">
           <h2 class="subtitle">Get latest updates!</h2>
 
@@ -89,10 +19,58 @@
             Sign up!
           </button>
         </div>
+
+        <img class="content-img" (click)="openTab(fields.picture_1)" [src]="getThumbnail(fields.picture_1, 480)" />
+        <p class="card card__black" [innerHTML]="fields.text_1"></p>
         
+        <img class="content-img" (click)="openTab(fields.picture_2)" [src]="getThumbnail(fields.picture_2, 480)" /> 
+        <p class="card card__black" [innerHTML]="fields.text_2"></p>
+
+        <img class="content-img" (click)="openTab(fields.picture_3)" [src]="getThumbnail(fields.picture_3, 480)" /> 
+        <img class="content-img" (click)="openTab(fields.picture_4)" [src]="getThumbnail(fields.picture_4, 480)" /> 
+
+        <div class="card card__black has-text-centered" (click)="goTo(2)">
+          The Problem.
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="sec" id="sec2">
+    <div class="card-container" *ngIf="(problem$ | async) as fields" id="container-2">
+      <h1 class="title card card__black has-text-centered">The Problem.</h1>
+
+      <section class="content--vertical">
+        <img class="content-img"  [src]="fields.picture_1" />
+
+        <p class="card card__black" [innerHTML]="fields.text_1"></p>
+          
+        
+        <img class="content-img"  [src]="fields.picture_2" />
+        
+        <p class="card card__black" [innerHTML]="fields.text_2"></p>
+
+        <a href="/assets/mission3.jpg" target="_blank">
+          <img class="content-img" src="/assets/mission3.jpg" />
+        </a>
+
+        <div class="card card__black has-text-centered" (click)="goTo(3)">
+          What we want to achieve.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="sec" id="sec3" >
+    <div class="card-container"  id="container-3">
+      <h1 class="title card card__black has-text-centered">Our Goal</h1>
+      <section class="content--vertical">
+        <kinam-birthday class="card card__black"></kinam-birthday>
+
         <p class="card card__black" >
-          Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
+          One of their calendars is called Tzolkin, it is used to calculate a person's Nahual, the equivalent of our western star signs. 
+          <br>
+          <br>
+          There are 20 different Nahuales in the Tzolkin calendar. A Nahual is a Mayan sign, spirit or totem associated with specific personality traits. 
         </p>
       </section>
     </div>
@@ -101,10 +79,7 @@
 
 
 <nav class="navbar">
-  <div class="nav-button selected" id="nav-1" (click)="goTo(1)">   
-  </div>
-  <div class="nav-button" id="nav-2" (click)="goTo(2)">
-  </div>
-  <div class="nav-button" id="nav-3" (click)="goTo(3)">    
-  </div>
+  <div class="nav-button selected" id="nav-1" (click)="goTo(1)">   </div>
+  <div class="nav-button" id="nav-2" (click)="goTo(2)"></div>
+  <div class="nav-button" id="nav-3" (click)="goTo(3)"></div>
 </nav>

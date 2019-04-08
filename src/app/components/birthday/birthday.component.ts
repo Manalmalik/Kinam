@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { KinamNahual, fromNumbers } from 'nahual-date';
@@ -13,7 +13,7 @@ import { KinamNahual, fromNumbers } from 'nahual-date';
 export class BirthdayComponent implements OnInit {
   public dateCtrl: FormControl;
 
-  public date = fromNumbers(18, 8, 1992);
+ @Input() public date = fromNumbers(18, 8, 1992);
 
   public ngOnInit() {
     this.dateCtrl = new FormControl(this.date.date);
