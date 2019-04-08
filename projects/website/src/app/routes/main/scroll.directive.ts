@@ -1,4 +1,4 @@
-import { Directive, ElementRef, AfterViewInit, Renderer2 } from "@angular/core";
+import { Directive, ElementRef, AfterViewInit, Renderer2, Output, EventEmitter } from "@angular/core";
 import { fromEvent, animationFrameScheduler } from 'rxjs';
 import { tap, map, observeOn } from 'rxjs/operators';
 
@@ -6,6 +6,7 @@ import { tap, map, observeOn } from 'rxjs/operators';
     selector: '[parallax]'
 })
 export class ScrollDirective implements AfterViewInit {
+    @Output() bgLoaded = new EventEmitter();
     constructor(private el: ElementRef, private renderer: Renderer2) { }
     ngAfterViewInit(): void {
         const src = 'https://cdn.buttercms.com/V6D8FCrKTfiefKevP1WH';
@@ -15,6 +16,7 @@ export class ScrollDirective implements AfterViewInit {
 
         fromEvent(img, 'load').pipe(
             tap(() => {
+                this.bgLoaded.emit();
                 // @TODO: Loading spinner
                 this.el.nativeElement.style.backgroundImage = `url(${src})`;
                 fromEvent<Event>(this.el.nativeElement, 'scroll').pipe(
@@ -45,7 +47,7 @@ export class ScrollDirective implements AfterViewInit {
                             document.getElementById('nav-3').classList.add('selected');
                         }
 
-                        this.el.nativeElement.style.backgroundPositionX = `-${Math.floor(target['scrollLeft']) * 1.2}px`;
+                        this.el.nativeElement.style.backgroundPositionX = `-${Math.floor(target['scrollLeft']) * 1.5}px`;
                     }
                 );
             })

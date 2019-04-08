@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, Sanitizer } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { ButterCMSService, Slug } from '../../services/butter.service';
 import { Observable } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -13,6 +13,8 @@ export class MainComponent implements OnInit {
 
   public intro$: Observable<any>;
   public problem$: Observable<any>;
+
+  public loaded = false;
 
   constructor(
     private butterCmsService: ButterCMSService,
