@@ -26,7 +26,7 @@ export class BirthdayComponent implements OnInit {
   }
 
   public handleInputEvent(event) {
-    const date = event.target.value;    
+    const date = event.target.value;
     this.date = new KinamNahual(date);
     this.dateCtrl = new FormControl(this.date.date);
   }

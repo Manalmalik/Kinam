@@ -28,11 +28,13 @@ kinam-birthday {
   -webkit-overflow-scrolling: touch;
   position: relative;
   background-size: auto 100%;
+  scroll-snap-type: x mandatory; 
 }
 
 .sec {
   flex: 1;
   min-width: 100vw;
+  scroll-snap-align: start;
 }
 
 
