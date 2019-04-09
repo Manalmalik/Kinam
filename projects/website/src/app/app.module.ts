@@ -1,27 +1,29 @@
-import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AngularFullpageModule } from '@fullpage/angular-fullpage';
+import { BirthdayModule } from 'ng-maya-birthday';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './routes/main/main.component';
-import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
-import { BirthdayModule } from 'ng-maya-birthday';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollDirective } from './routes/main/scroll.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { NewsletterModule } from './components/newsletter/newsletter.module';
+import { CmsParagraphComponent } from './components/cms/paragraph';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    VideoEmbedComponent,
     ScrollDirective,
+    CmsParagraphComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AngularFullpageModule,
     BirthdayModule,
+    HttpClientModule,
+    NewsletterModule
   ],
   bootstrap: [AppComponent]
 })

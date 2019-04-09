@@ -1,30 +1,21 @@
-<div class="sidescroll" id="sidescroll" parallax (bgLoaded)="loaded = true" #scroll>
+<div class="sidescroll" id="sidescroll" parallax (bgLoaded)="loaded = true">
   <div id="sec1" class="sec">
     <div class="card-container" *ngIf="(intro$ | async) as fields">
       <h1 class="title card card__black has-text-centered">{{fields.title}}</h1>
       <section class="content--vertical">
 
-        <p class="card card__black" [innerHTML]="fields.intro_1"></p>
+        <kinam-cms-paragraph [html]="fields.intro_1"></kinam-cms-paragraph>
+        <kinam-cms-paragraph [html]="fields.intro_2"></kinam-cms-paragraph>
 
-        <iframe [src]="getSanitized(fields.video_1)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-        <p class="card card__black" [innerHTML]="fields.intro_2"></p>
-
-        <div class="newsletter-box card__black">
-          <h2 class="subtitle">Get latest updates!</h2>
-
-          <input type="email" class="newsletter-input">
-
-          <button class="newsletter-button">
-            Sign up!
-          </button>
-        </div>
+        <kinam-newsletter></kinam-newsletter>
 
         <img class="content-img" (click)="openTab(fields.picture_1)" [src]="getThumbnail(fields.picture_1, 480)" />
-        <p class="card card__black" [innerHTML]="fields.text_1"></p>
+
+        <kinam-cms-paragraph [html]="fields.text_1"></kinam-cms-paragraph>
         
         <img class="content-img" (click)="openTab(fields.picture_2)" [src]="getThumbnail(fields.picture_2, 480)" /> 
-        <p class="card card__black" [innerHTML]="fields.text_2"></p>
+
+        <kinam-cms-paragraph [html]="fields.text_2"></kinam-cms-paragraph>
 
         <img class="content-img" (click)="openTab(fields.picture_3)" [src]="getThumbnail(fields.picture_3, 480)" /> 
         <img class="content-img" (click)="openTab(fields.picture_4)" [src]="getThumbnail(fields.picture_4, 480)" /> 
@@ -38,16 +29,15 @@
   <div class="sec" id="sec2">
     <div class="card-container" *ngIf="(problem$ | async) as fields" id="container-2">
       <h1 class="title card card__black has-text-centered">The Problem.</h1>
-
       <section class="content--vertical">
+
         <img class="content-img"  [src]="fields.picture_1" />
 
-        <p class="card card__black" [innerHTML]="fields.text_1"></p>
-          
+        <kinam-cms-paragraph [html]="fields.text_1"></kinam-cms-paragraph>
         
         <img class="content-img"  [src]="fields.picture_2" />
         
-        <p class="card card__black" [innerHTML]="fields.text_2"></p>
+        <kinam-cms-paragraph [html]="fields.text_2"></kinam-cms-paragraph>
 
         <a href="/assets/mission3.jpg" target="_blank">
           <img class="content-img" src="/assets/mission3.jpg" />

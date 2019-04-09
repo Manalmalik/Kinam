@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "https://us20.api.mailchimp.com",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }

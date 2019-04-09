@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { ButterCMSService, Slug } from '../../services/butter.service';
 import { Observable } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'kinam-main',
@@ -22,16 +23,26 @@ export class MainComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.intro$ = this.butterCmsService.retrievePage(Slug.Intro);
-    this.problem$ = this.butterCmsService.retrievePage(Slug.Problem);
+    this.intro$ = this.butterCmsService.retrievePage(Slug.Intro).pipe(
+      tap(res => {
+        Object.keys(res).map(key  => ({
+          type: key.split('_')[0],
+          typeId: key.split('_')[1] ? +key.split('_')[1] : null,
+          value: res[key],
+        }));
+
+        this.problem$ = this.butterCmsService.retrievePage(Slug.Problem);
+        }
+      )
+    );
   }
 
-  openTab(url) {
+  openTab(url: string) {
     const win = window.open(url, '_blank');
     win.focus();
   }
 
-  getSanitized(url) {
+  getSanitized(url: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
