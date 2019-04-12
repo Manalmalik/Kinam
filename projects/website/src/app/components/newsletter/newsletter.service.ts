@@ -4,6 +4,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { mergeMap } from 'rxjs/operators';
 
 import { RequestService } from '../../services/request.service';
+import { of } from 'rxjs';
 
 const AUDIENCE_ID = '9f2f798292';
 const baseUrl = `/api`;
@@ -20,24 +21,33 @@ export class NewsletterService {
     ) {}
 
     private _isSubscribed(address: string) {
-        return this.requestService.get(`${baseUrl}${endPoint}${address}`);
+        return this.requestService.get(
+            `${baseUrl}${endPoint}${address}`,
+            { headers: baseHeaders },
+        );
     }
 
     public signUp(mailAddress: string) {
         return this._isSubscribed(mailAddress).pipe(
-            mergeMap(() => this.requestService.post(
-                `${baseUrl}${endPoint}`,
-                {
-                    'email_address': mailAddress,
-                    'status': 'subscribed',
-                    // 'merge_fields': {
-                    //     'FNAME': 'Urist',
-                    //     'LNAME': 'McVankab'
-                    // },
-                },
-                null,
-                baseHeaders
-            ))
+            mergeMap((res) => {
+                if (res) {
+                    // TODO: check for actual subscription
+                    return this.requestService.post(
+                        `${baseUrl}${endPoint}`,
+                        {
+                            'email_address': mailAddress,
+                            'status': 'subscribed',
+                            // 'merge_fields': {
+                            //     'FNAME': 'Urist',
+                            //     'LNAME': 'McVankab'
+                            // },
+                        },
+                        null,
+                        baseHeaders
+                    )
+                }
+                return of(res);
+            })
         );
     }
 }

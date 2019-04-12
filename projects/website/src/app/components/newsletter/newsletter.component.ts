@@ -38,7 +38,6 @@ export class NewsletterComponent {
         private newletterService: NewsletterService
     ) {}
 
-
     public submit(control: FormControl) {
         if (!control.valid) {
             this.invalid = true;

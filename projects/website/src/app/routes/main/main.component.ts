@@ -1,8 +1,8 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ButterCMSService, Slug } from '../../services/butter.service';
 import { Observable } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'kinam-main',
@@ -17,24 +17,24 @@ export class MainComponent implements OnInit {
 
   public loaded = false;
 
+  @ViewChild('scroll') private scroll: ElementRef;
+
   constructor(
     private butterCmsService: ButterCMSService,
     private sanitizer: DomSanitizer,
-  ) {}
 
+  ) {
+  }
+  
   ngOnInit() {
     this.intro$ = this.butterCmsService.retrievePage(Slug.Intro).pipe(
-      tap(res => {
-        Object.keys(res).map(key  => ({
+      map(res => Object.keys(res).map(key  => ({
           type: key.split('_')[0],
           typeId: key.split('_')[1] ? +key.split('_')[1] : null,
           value: res[key],
-        }));
-
-        this.problem$ = this.butterCmsService.retrievePage(Slug.Problem);
-        }
-      )
+        })))
     );
+    this.problem$ = this.butterCmsService.retrievePage(Slug.Problem);
   }
 
   openTab(url: string) {
@@ -52,7 +52,8 @@ export class MainComponent implements OnInit {
  
   goTo(id: number)  {
     const width = document.getElementById(`sec${id}`).clientWidth;
-    document.getElementById('sidescroll').scrollTo({
+
+    this.scroll.nativeElement.scrollTo({
       left: width * id - width,
       top: 0,
       behavior: 'smooth'

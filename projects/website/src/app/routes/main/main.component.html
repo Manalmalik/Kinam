@@ -1,28 +1,25 @@
-<div class="sidescroll" id="sidescroll" parallax (bgLoaded)="loaded = true">
+<div class="sidescroll" id="sidescroll" #scroll parallax (bgLoaded)="loaded = true">
   <div id="sec1" class="sec">
     <div class="card-container" *ngIf="(intro$ | async) as fields">
-      <h1 class="title card card__black has-text-centered">{{fields.title}}</h1>
       <section class="content--vertical">
-
-        <kinam-cms-paragraph [html]="fields.intro_1"></kinam-cms-paragraph>
-        <kinam-cms-paragraph [html]="fields.intro_2"></kinam-cms-paragraph>
-
         <kinam-newsletter></kinam-newsletter>
-
-        <img class="content-img" (click)="openTab(fields.picture_1)" [src]="getThumbnail(fields.picture_1, 480)" />
-
-        <kinam-cms-paragraph [html]="fields.text_1"></kinam-cms-paragraph>
-        
-        <img class="content-img" (click)="openTab(fields.picture_2)" [src]="getThumbnail(fields.picture_2, 480)" /> 
-
-        <kinam-cms-paragraph [html]="fields.text_2"></kinam-cms-paragraph>
-
-        <img class="content-img" (click)="openTab(fields.picture_3)" [src]="getThumbnail(fields.picture_3, 480)" /> 
-        <img class="content-img" (click)="openTab(fields.picture_4)" [src]="getThumbnail(fields.picture_4, 480)" /> 
+        <ng-container *ngFor="let field of fields">
+          <ng-container [ngSwitch]="field.type">
+            <h1 *ngSwitchCase="'title'" class="title card card__black has-text-centered">{{field.value}}</h1>
+            <kinam-cms-paragraph *ngSwitchCase="'intro'" [html]="field.value"></kinam-cms-paragraph>
+            <kinam-cms-paragraph *ngSwitchCase="'text'" [html]="field.value"></kinam-cms-paragraph>
+            <img 
+              *ngSwitchCase="'picture'"
+              class="content-img" 
+              (click)="openTab(field.value)" 
+              [src]="getThumbnail(field.value, 480)" 
+            >
+          </ng-container>
+        </ng-container>
 
         <div class="card card__black has-text-centered" (click)="goTo(2)">
           The Problem.
-        </div>
+        </div> -->
       </section>
     </div>
   </div>

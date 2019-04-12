@@ -4,6 +4,12 @@ import { Injectable } from '@angular/core';
 import { memoize } from 'decko';
 import { Observable } from 'rxjs';
 
+
+interface RequestOpts {
+  params?: HttpParams;
+  headers?: HttpHeaders;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -11,9 +17,11 @@ export class RequestService {
   constructor(private http: HttpClient) {}
 
   @memoize
-  public get(url: string, opts?: any): Observable<any> {
-    const params = this.getParams(opts);
-    return this.http.get(url, { params });
+  public get(url: string, opts?: RequestOpts): Observable<any> {
+    return this.http.get(url, { 
+      params: opts.params,
+      headers: opts.headers,
+    });
   }
 
   public post(url: string, body: any, params?, headers?: HttpHeaders): Observable<any> {
