@@ -1,8 +1,15 @@
 import { Component, ChangeDetectionStrategy, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ButterCMSService, Slug } from '../../services/butter.service';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { tap, map } from 'rxjs/operators';
+
+const mapApiResponse = () => map(res => Object.keys(res).map(key  => ({
+    type: key.split('_')[0],
+    typeId: key.split('_')[1] ? +key.split('_')[1] : null,
+    value: res[key],
+  })));
+
 
 @Component({
   selector: 'kinam-main',
@@ -21,35 +28,19 @@ export class MainComponent implements OnInit {
 
   constructor(
     private butterCmsService: ButterCMSService,
-    private sanitizer: DomSanitizer,
 
-  ) {
-  }
+
+  ) { }
   
   ngOnInit() {
     this.intro$ = this.butterCmsService.retrievePage(Slug.Intro).pipe(
-      map(res => Object.keys(res).map(key  => ({
-          type: key.split('_')[0],
-          typeId: key.split('_')[1] ? +key.split('_')[1] : null,
-          value: res[key],
-        })))
+      mapApiResponse()
     );
-    this.problem$ = this.butterCmsService.retrievePage(Slug.Problem);
+    this.problem$ = this.butterCmsService.retrievePage(Slug.Problem).pipe(
+      mapApiResponse()
+    );
   }
 
-  openTab(url: string) {
-    const win = window.open(url, '_blank');
-    win.focus();
-  }
-
-  getSanitized(url: string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
-  getThumbnail(link: string, width: number): string {
-    return this.butterCmsService.getThumbnail(link, width);
-  }
- 
   goTo(id: number)  {
     const width = document.getElementById(`sec${id}`).clientWidth;
 

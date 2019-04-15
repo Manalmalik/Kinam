@@ -1,0 +1,39 @@
+<!-- <section>
+  <kinam-logo></kinam-logo>
+  <kinam-newsletter></kinam-newsletter>
+</section> -->
+
+<kinam-logo></kinam-logo>
+
+<ng-container *ngIf="(progress | async) as percent">
+  <kinam-upload [value]="percent"></kinam-upload>
+</ng-container>
+
+<div class="has-text-centered button--add">
+  <label for="file-input">
+    <i class="fal fa-cloud-upload"></i>
+  </label>
+  <input #file id="file-input" (change)="upload(file)" type="file" hidden>
+</div>
+
+<section class="section">
+  <div class="container tile-container">
+    <div *ngFor="let song of songs$ | async" class="music-tile is-light notification">
+      <div>
+        <h2 class="subtitle">
+          {{ song.artist }}
+        </h2>
+        <hr>
+        <span>{{ song.title }}</span>
+      </div>
+
+      <i class="fal fa-plus" *ngIf="!song.inPlaylist" (click)="addSongToPlaylist(song)"></i>
+    </div>
+  </div>
+</section>
+
+<kinam-audio></kinam-audio>
+
+<!-- <ng-container *ngFor="let field of fields">
+  <kinam-cms-block [type]="field.type" [value]="field.value"></kinam-cms-block>
+</ng-container> -->

@@ -1,0 +1,36 @@
+:host {
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+}
+
+.overlay {
+  display: flex;
+  flex: 1 1;
+  padding-bottom: 8rem;
+  justify-content: center;
+  align-items: center;
+}
+
+svg,
+g,
+path,
+polygon {
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+#left,
+#right {
+  position: absolute;
+  height: 50vh;
+  transform-origin: bottom center;
+  transform: scale(1) translate3d(0);
+}
+
+.title {
+  align-self: flex-end;
+  color: white;
+  margin: 1.5rem;
+  height: 2rem;
+}

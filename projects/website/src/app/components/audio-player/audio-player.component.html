@@ -1,0 +1,34 @@
+<kinam-playlist
+  class="playlist"
+  [class.slide-out]="!(playlistVisible$ | async)"
+></kinam-playlist>
+
+<div class="miniplayer" [class.slide-out]="!(playerVisible$ | async)">
+  <i class="fal fa-stream" (click)="togglePlaylist()"></i>
+
+  <ng-container *ngIf="(currentSong | async) as song">
+    <div class="play">
+      <i class="fal fa-step-backward"></i>
+      <i
+        class="fal"
+        (click)="togglePlay()"
+        [ngClass]="
+          !!(song.time.isPlaying | async) ? 'fa-pause-circle' : 'fa-play-circle'
+        "
+      ></i>
+      <i class="fal fa-step-forward"></i>
+    </div>
+    <div class="progress-container">
+      <progress
+        [value]="song.time.elapsed | async"
+        [max]="song.time?.total | async"
+      >
+      </progress>
+      <div class="timespan">
+        <span>{{ song.time.elapsed | async }} </span>
+        <span>{{ song.title }}</span>
+        <span> {{ song.time?.total | async }}</span>
+      </div>
+    </div>
+  </ng-container>
+</div>
