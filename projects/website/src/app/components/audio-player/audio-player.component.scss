@@ -100,6 +100,13 @@ progress[value]::-webkit-progress-value {
 }
 
 .slide-out {
-  transform: translateX(20rem);
   transition: transform 0.5s ease-out;
+
+  &__playlist {
+    transform: translateX(20rem);
+  }
+
+  &__player {
+    transform: translateX(15rem);
+  }
 }

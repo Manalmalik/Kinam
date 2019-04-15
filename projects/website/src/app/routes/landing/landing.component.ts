@@ -39,7 +39,10 @@ export class LandingComponent {
   );
 
   public addSongToPlaylist(song) {
-    this.audioService.addSongToPlaylist(song);
+    if (!this.audioService.isinPlaylist(song)) {
+      this.audioService.addSongToPlaylist(song);
+      return;
+    }
   }
 
   public upload(input: HTMLInputElement) {

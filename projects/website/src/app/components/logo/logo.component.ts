@@ -1,4 +1,9 @@
-import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy
+} from "@angular/core";
 
 import { of } from "rxjs";
 import { tap, delay } from "rxjs/operators";
@@ -8,7 +13,8 @@ import { LOGO_ANIMATIONS } from "./animation";
   selector: "kinam-logo",
   templateUrl: "./logo.component.html",
   styleUrls: ["./logo.component.scss"],
-  animations: LOGO_ANIMATIONS
+  animations: LOGO_ANIMATIONS,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LogoComponent implements OnInit {
   public bounce = false;

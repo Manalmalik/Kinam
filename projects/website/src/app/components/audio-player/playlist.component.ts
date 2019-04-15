@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Renderer2 } from "@angular/core";
-import { CdkDragDrop } from "@angular/cdk/drag-drop";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 import { AudioService } from "./audio.service";
 
 import { Song } from "./song";
@@ -8,16 +8,14 @@ import { Observable } from "rxjs";
 @Component({
   selector: "kinam-playlist",
   templateUrl: "./playlist.component.html",
-  styleUrls: ["./playlist.component.scss"]
+  styleUrls: ["./playlist.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PlaylistComponent implements OnInit {
   public playing = false;
   public songs: Observable<Song[]>;
 
-  constructor(
-    private audioService: AudioService,
-    private renderer: Renderer2
-  ) {}
+  constructor(private audioService: AudioService) {}
 
   public ngOnInit() {
     this.songs = this.audioService.playlist;
@@ -31,14 +29,13 @@ export class PlaylistComponent implements OnInit {
   }
 
   public downloadFile(song) {
-    const input = this.renderer.createElement("a");
-    input.setAttribute("href", song.file.src);
-    input.setAttribute("download", song.title);
-    input.click();
+    this.audioService.downloadFile(song);
   }
 
   public dropped(event: CdkDragDrop<string[]>) {
-    // moveItemInArray(this.songs.value, event.previousIndex, event.currentIndex);
+    const { value } = this.audioService.playlist;
+    moveItemInArray(value, event.previousIndex, event.currentIndex);
+    this.audioService.playlist.next(value);
   }
 
   public loadSong(song) {

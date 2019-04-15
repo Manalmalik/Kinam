@@ -27,7 +27,7 @@
         <span>{{ song.title }}</span>
       </div>
 
-      <i class="fal fa-plus" *ngIf="!song.inPlaylist" (click)="addSongToPlaylist(song)"></i>
+      <i class="fal" [ngClass]="song.inPlaylist ? 'fa-stream' : 'fa-plus'" (click)="addSongToPlaylist(song)"></i>
     </div>
   </div>
 </section>

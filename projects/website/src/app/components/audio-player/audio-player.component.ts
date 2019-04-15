@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2 } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { of, BehaviorSubject, Subscription, Observable } from "rxjs";
 import {
   delay,
@@ -18,20 +18,17 @@ export class AudioPlayerComponent implements OnInit {
   public elapsed = "1:33";
   public total = "4:41";
 
-  public playlistVisible$ = new BehaviorSubject(false);
+  public playlistVisible$: BehaviorSubject<boolean>;
   public playerVisible$ = new BehaviorSubject(false);
+
   public progress: BehaviorSubject<number>;
 
   public currentSong: BehaviorSubject<Song>;
   public audioFile: Observable<any>;
 
-  constructor(
-    private audioService: AudioService,
-    private renderer: Renderer2
-  ) {}
-
-  private audioRef: ElementRef;
   private progressSub: Subscription;
+
+  constructor(private audioService: AudioService) {}
 
   ngOnInit(): void {
     of(null)
@@ -39,6 +36,7 @@ export class AudioPlayerComponent implements OnInit {
       .subscribe(() => this.playerVisible$.next(true));
 
     this.currentSong = this.audioService.currentSong;
+    this.playlistVisible$ = this.audioService.playlistVisible$;
 
     this.audioService.currentSong
       .pipe(
@@ -65,7 +63,6 @@ export class AudioPlayerComponent implements OnInit {
             this.audioService.loadSong()
           )
           .subscribe(res => {
-            console.log(res);
             this.audioService.updateSong({ file: res }, song.title);
           });
       });
@@ -78,7 +75,9 @@ export class AudioPlayerComponent implements OnInit {
     }
   }
 
-  public togglePlaylist() {
-    this.playlistVisible$.next(!this.playlistVisible$.value);
+  public toggleSlide() {
+    this.audioService.playlistVisible$.next(
+      !this.audioService.playlistVisible$.value
+    );
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, RendererFactory2, Renderer2 } from "@angular/core";
 import { HttpClient, HttpRequest, HttpEventType } from "@angular/common/http";
 import {
   map,
@@ -30,9 +30,12 @@ const secondsOrMinutes = (val: number) => {
 @Injectable({ providedIn: "root" })
 export class AudioService {
   public playlist = new BehaviorSubject<Song[]>([]);
+  public playlistVisible$ = new BehaviorSubject(false);
   public currentSong = new BehaviorSubject<Song>(null);
+  private renderer: Renderer2;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, rendererFactory: RendererFactory2) {
+    this.renderer = rendererFactory.createRenderer(null, null);
     this.http
       .get(`${AUDIO_SERVER}/listSongs`)
       .pipe(map((res: string[]) => res.map(song => new Song({ title: song }))))
@@ -44,9 +47,12 @@ export class AudioService {
   public songs$ = new BehaviorSubject<Song[]>([]);
 
   public addSongToPlaylist(song: Song) {
+    if (this.isinPlaylist(song)) {
+      return;
+    }
+
     const { title } = song;
 
-    // @TODO: catch  case where alrady i playlist
     const found = this.songs$.value.filter(s => s.title === title);
     found[0].update({ inPlaylist: true });
 
@@ -54,6 +60,17 @@ export class AudioService {
       ...this.playlist.value.filter(s => s.title !== title),
       found[0]
     ]);
+  }
+
+  public downloadFile(song) {
+    const input = this.renderer.createElement("a");
+    input.setAttribute("href", song.file.src);
+    input.setAttribute("download", song.title);
+    input.click();
+  }
+
+  public isinPlaylist(song: Song) {
+    return !!this.playlist.value.find(s => s.title === song.title);
   }
 
   public loadSong() {
