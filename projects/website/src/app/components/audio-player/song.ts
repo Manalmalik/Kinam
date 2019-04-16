@@ -1,14 +1,6 @@
 import { BehaviorSubject } from "rxjs";
-import { secondsToHms } from "./audio.service";
-
-export class BaseModel<T> {
-  constructor(opts?: Partial<T>) {
-    Object.assign(this, opts);
-  }
-  update(opts: Partial<T>) {
-    return Object.assign(this, opts);
-  }
-}
+import { BaseModel } from "../../util/model";
+import { secondsToHms } from "../../util/convert-time";
 
 export class Song extends BaseModel<Song> {
   public title: string;

@@ -11,6 +11,7 @@ import {
 } from "rxjs/operators";
 import { BehaviorSubject, pipe, fromEvent, interval } from "rxjs";
 import { Song } from "./song";
+import { secondsToHms } from "../../util/convert-time";
 
 export const AUDIO_SERVER = "//167.86.100.47:4201";
 
@@ -21,18 +22,6 @@ export const getDownloadProgress = pipe(
       res.loaded && res.total ? Math.round((100 * res.loaded) / res.total) : 0
   }))
 );
-
-export function secondsToHms(d: number) {
-  d = Number(d);
-
-  const h = Math.floor(d / 3600);
-  const m = Math.floor((d % 3600) / 60);
-  const s = Math.floor((d % 3600) % 60);
-
-  return (
-    ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2)
-  );
-}
 
 @Injectable({ providedIn: "root" })
 export class AudioService {
