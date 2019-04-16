@@ -23,6 +23,49 @@ export const getDownloadProgress = pipe(
   }))
 );
 
+export function playSong(song: Song) {
+  this.currentSong.next(song);
+  song.file.play();
+  let previousTime = 0;
+  const { value } = this.currentSong;
+  const { time } = value;
+  time.totalRaw.next(song.file.duration);
+  time.total.next(secondsToHms(song.file.duration));
+  time.isPlaying.next(true);
+
+  return fromEvent(song.file, "playing").pipe(
+    mergeMapTo(interval(1000)),
+    takeWhile(_ => previousTime <= song.file.currentTime),
+    tap(_ => {
+      const { currentTime } = song.file;
+      previousTime = currentTime;
+      if (currentTime >= time.totalRaw.value) {
+        time.isPlaying.next(false);
+      }
+
+      value.setElpased(currentTime);
+    }),
+    map(_ => ({
+      hms: secondsToHms(song.file.currentTime),
+      seconds: song.file.currentTime
+    })),
+    takeWhile(({ seconds }) => !!(seconds <= song.file.duration))
+  );
+}
+
+export const loadSong = () =>
+  pipe(
+    filter((req: any) => req.type && req.type === HttpEventType.Response),
+    map(res => res.body),
+    mergeMap(blob => {
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      return fromEvent(reader, "loadend").pipe(
+        map(event => new Audio(event.target["result"]))
+      );
+    })
+  );
+
 @Injectable({ providedIn: "root" })
 export class AudioService {
   public playlist = new BehaviorSubject<Song[]>([]);
@@ -49,12 +92,12 @@ export class AudioService {
 
     const { title } = song;
 
-    const found = this.songs$.value.filter(s => s.title === title);
-    found[0].update({ inPlaylist: true });
+    const [found] = this.songs$.value.filter(s => s.title === title);
+    found.update({ inPlaylist: true });
 
     this.playlist.next([
       ...this.playlist.value.filter(s => s.title !== title),
-      found[0]
+      found
     ]);
   }
 
@@ -67,50 +110,6 @@ export class AudioService {
 
   public isinPlaylist(song: Song) {
     return !!this.playlist.value.find(s => s.title === song.title);
-  }
-
-  public loadSong() {
-    return pipe(
-      filter((req: any) => req.type && req.type === HttpEventType.Response),
-      map(res => res.body),
-      mergeMap(blob => {
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
-        return fromEvent(reader, "loadend").pipe(
-          map(event => new Audio(event.target["result"]))
-        );
-      })
-    );
-  }
-
-  public playSong(song: Song) {
-    this.currentSong.next(song);
-    song.file.play();
-    let previousTime = 0;
-    const { value } = this.currentSong;
-    const { time } = value;
-    time.totalRaw.next(song.file.duration);
-    time.total.next(secondsToHms(song.file.duration));
-    time.isPlaying.next(true);
-
-    return fromEvent(song.file, "playing").pipe(
-      mergeMapTo(interval(1000)),
-      takeWhile(x => previousTime <= song.file.currentTime),
-      tap(_ => {
-        const { currentTime } = song.file;
-        previousTime = currentTime;
-        if (currentTime >= time.totalRaw.value) {
-          time.isPlaying.next(false);
-        }
-
-        value.setElpased(currentTime);
-      }),
-      map(_ => ({
-        hms: secondsToHms(song.file.currentTime),
-        seconds: song.file.currentTime
-      })),
-      takeWhile(({ seconds }) => !!(seconds <= song.file.duration))
-    );
   }
 
   public updateSong(opts: Partial<Song>, title) {

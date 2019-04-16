@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { of, BehaviorSubject, Subscription, Observable } from "rxjs";
 import {
   delay,
@@ -7,12 +7,13 @@ import {
   takeWhile,
   distinctUntilKeyChanged
 } from "rxjs/operators";
-import { AudioService } from "./audio.service";
+import { AudioService, loadSong } from "./audio.service";
 import { Song } from "./song";
 @Component({
   selector: "kinam-audio",
   templateUrl: "./audio-player.component.html",
-  styleUrls: ["./audio-player.component.scss"]
+  styleUrls: ["./audio-player.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AudioPlayerComponent implements OnInit {
   public elapsed = "1:33";
@@ -60,7 +61,7 @@ export class AudioPlayerComponent implements OnInit {
               this.progress.next(progress);
               this.audioService.currentSong.value.loaded.next(progress);
             }),
-            this.audioService.loadSong()
+            loadSong()
           )
           .subscribe(res => {
             this.audioService.updateSong({ file: res }, song.title);

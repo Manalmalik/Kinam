@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
-import { AudioService } from "./audio.service";
+import { AudioService, playSong } from "./audio.service";
 
 import { Song } from "./song";
 import { Observable } from "rxjs";
@@ -22,7 +22,8 @@ export class PlaylistComponent implements OnInit {
   }
 
   public play(song: Song) {
-    this.audioService.playSong(song).subscribe(() => {});
+    this.audioService.currentSong.next(song);
+    playSong(song).subscribe(() => {});
   }
 
   public downloadFile(song) {
