@@ -19,13 +19,14 @@
 <section class="section">
   <div class="container tile-container">
     <div *ngFor="let song of songs$ | async" class="music-tile is-light notification">
-      <div>
+      <ng-container *ngIf="song.artist">
         <h2 class="subtitle">
           {{ song.artist }}
         </h2>
         <hr>
-        <span>{{ song.title }}</span>
-      </div>
+      </ng-container>
+
+      <span>{{ song.title }}</span>
 
       <i class="fal" [ngClass]="song.inPlaylist ? 'fa-stream' : 'fa-plus'" (click)="addSongToPlaylist(song)"></i>
     </div>

@@ -23,36 +23,6 @@ export const getDownloadProgress = pipe(
   }))
 );
 
-export function playSong(song: Song) {
-  this.currentSong.next(song);
-  song.file.play();
-  let previousTime = 0;
-  const { value } = this.currentSong;
-  const { time } = value;
-  time.totalRaw.next(song.file.duration);
-  time.total.next(secondsToHms(song.file.duration));
-  time.isPlaying.next(true);
-
-  return fromEvent(song.file, "playing").pipe(
-    mergeMapTo(interval(1000)),
-    takeWhile(_ => previousTime <= song.file.currentTime),
-    tap(_ => {
-      const { currentTime } = song.file;
-      previousTime = currentTime;
-      if (currentTime >= time.totalRaw.value) {
-        time.isPlaying.next(false);
-      }
-
-      value.setElpased(currentTime);
-    }),
-    map(_ => ({
-      hms: secondsToHms(song.file.currentTime),
-      seconds: song.file.currentTime
-    })),
-    takeWhile(({ seconds }) => !!(seconds <= song.file.duration))
-  );
-}
-
 export const loadSong = () =>
   pipe(
     filter((req: any) => req.type && req.type === HttpEventType.Response),
@@ -99,6 +69,35 @@ export class AudioService {
       ...this.playlist.value.filter(s => s.title !== title),
       found
     ]);
+  }
+
+  public playSong(song: Song) {
+    song.file.play();
+    let previousTime = 0;
+    const { value } = this.currentSong;
+    const { time } = value;
+    time.totalRaw.next(song.file.duration);
+    time.total.next(secondsToHms(song.file.duration));
+    time.isPlaying.next(true);
+
+    return fromEvent(song.file, "playing").pipe(
+      mergeMapTo(interval(1000)),
+      takeWhile(_ => previousTime <= song.file.currentTime),
+      tap(_ => {
+        const { currentTime } = song.file;
+        previousTime = currentTime;
+        if (currentTime >= time.totalRaw.value) {
+          time.isPlaying.next(false);
+        }
+
+        value.setElpased(currentTime);
+      }),
+      map(_ => ({
+        hms: secondsToHms(song.file.currentTime),
+        seconds: song.file.currentTime
+      })),
+      takeWhile(({ seconds }) => !!(seconds <= song.file.duration))
+    );
   }
 
   public downloadFile(song) {
