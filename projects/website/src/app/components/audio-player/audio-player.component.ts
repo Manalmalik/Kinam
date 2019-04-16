@@ -76,8 +76,7 @@ export class AudioPlayerComponent implements OnInit {
   }
 
   public toggleSlide() {
-    this.audioService.playlistVisible$.next(
-      !this.audioService.playlistVisible$.value
-    );
+    const { value } = this.audioService.playlistVisible$;
+    this.audioService.playlistVisible$.next(!value);
   }
 }

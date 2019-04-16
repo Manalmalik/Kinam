@@ -22,10 +22,17 @@ export const getDownloadProgress = pipe(
   }))
 );
 
-const secondsOrMinutes = (val: number) => {
-  const floored = Math.floor(val);
-  return floored >= 60 ? floored / 60 : floored;
-};
+export function secondsToHms(d: number) {
+  d = Number(d);
+
+  const h = Math.floor(d / 3600);
+  const m = Math.floor((d % 3600) / 60);
+  const s = Math.floor((d % 3600) % 60);
+
+  return (
+    ("0" + h).slice(-2) + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2)
+  );
+}
 
 @Injectable({ providedIn: "root" })
 export class AudioService {
@@ -93,19 +100,27 @@ export class AudioService {
     let previousTime = 0;
     const { value } = this.currentSong;
     const { time } = value;
-    time.total.next(secondsOrMinutes(+song.file.duration));
+    time.totalRaw.next(song.file.duration);
+    time.total.next(secondsToHms(song.file.duration));
     time.isPlaying.next(true);
 
     return fromEvent(song.file, "playing").pipe(
       mergeMapTo(interval(1000)),
-      map(_ => secondsOrMinutes(song.file.currentTime)),
-      takeWhile(x => previousTime <= x),
-      tap(x => {
-        if (x === time.total.value) {
+      takeWhile(x => previousTime <= song.file.currentTime),
+      tap(_ => {
+        const { currentTime } = song.file;
+        previousTime = currentTime;
+        if (currentTime >= time.totalRaw.value) {
           time.isPlaying.next(false);
         }
-        previousTime = x;
-      })
+
+        value.setElpased(currentTime);
+      }),
+      map(_ => ({
+        hms: secondsToHms(song.file.currentTime),
+        seconds: song.file.currentTime
+      })),
+      takeWhile(({ seconds }) => !!(seconds <= song.file.duration))
     );
   }
 

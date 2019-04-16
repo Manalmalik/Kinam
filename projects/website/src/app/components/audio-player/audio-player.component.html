@@ -11,14 +11,24 @@
         "></i>
       <i class="fal fa-step-forward"></i>
     </div>
+
+
     <div class="progress-container">
-      <progress [value]="song.time.elapsed | async" [max]="song.time?.total | async">
-      </progress>
-      <div class="timespan">
-        <span>{{ song.time.elapsed | async }} </span>
-        <span>{{ song.title }}</span>
-        <span> {{ song.time?.total | async }}</span>
-      </div>
+      <ng-container *ngIf="(song.time.totalRaw | async)  as totalRaw">
+        <ng-container *ngIf="(song.time.elapsedRaw | async)  as elapsedRaw">
+          <progress *ngIf="totalRaw > elapsedRaw" [value]="elapsedRaw * 100" [max]="totalRaw * 100"></progress>
+          <div class=" timespan">
+
+            <span>{{ elapsedRaw.toFixed() }} </span>
+
+            <span>{{ song.title }}</span>
+
+            <span>{{ totalRaw.toFixed() }} </span>
+
+          </div>
+        </ng-container>
+      </ng-container>
     </div>
+
   </ng-container>
 </div>

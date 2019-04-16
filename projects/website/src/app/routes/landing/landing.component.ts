@@ -1,10 +1,6 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
-import { CmsService } from "../../services/cms.service";
 import { Song } from "../../components/audio-player/song";
-import {
-  AudioService,
-  AUDIO_SERVER
-} from "../../components/audio-player/audio.service";
+import { AudioService } from "../../components/audio-player/audio.service";
 import { Observable, BehaviorSubject, from } from "rxjs";
 import {
   HttpClient,
@@ -13,8 +9,6 @@ import {
   HttpRequest
 } from "@angular/common/http";
 import { concatMap, map } from "rxjs/operators";
-
-const src = "https://cdn.buttercms.com/V6D8FCrKTfiefKevP1WH";
 
 @Component({
   selector: "kinam-landing",
@@ -26,13 +20,7 @@ export class LandingComponent {
 
   public progress: BehaviorSubject<number>;
 
-  constructor(
-    private cmsService: CmsService,
-    private audioService: AudioService,
-    private http: HttpClient
-  ) {
-    this.cmsService.collections.subscribe(res => {});
-  }
+  constructor(private audioService: AudioService, private http: HttpClient) {}
 
   public songs$: Observable<Song[]> = this.audioService.songs$.pipe(
     map(s => Array.from(s.values()))
@@ -43,6 +31,7 @@ export class LandingComponent {
       this.audioService.addSongToPlaylist(song);
       return;
     }
+    this.audioService.playlistVisible$.next(true);
   }
 
   public upload(input: HTMLInputElement) {

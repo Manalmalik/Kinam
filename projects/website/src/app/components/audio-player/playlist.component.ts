@@ -22,10 +22,7 @@ export class PlaylistComponent implements OnInit {
   }
 
   public play(song: Song) {
-    this.audioService.playSong(song).subscribe(res => {
-      song.time.elapsed.next(res);
-      this.audioService.currentSong.value.time.elapsed.next(res);
-    });
+    this.audioService.playSong(song).subscribe(() => {});
   }
 
   public downloadFile(song) {
