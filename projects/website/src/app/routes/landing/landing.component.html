@@ -13,7 +13,7 @@
   <label for="file-input">
     <i class="fal fa-cloud-upload"></i>
   </label>
-  <input #file id="file-input" (change)="upload(file)" type="file" hidden>
+  <input #file id="file-input" accept="audio/*" (change)="upload(file)" type="file" hidden>
 </div>
 
 <section class="section">
