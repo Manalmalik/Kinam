@@ -10,14 +10,14 @@ import {
 import { AudioService, loadSong } from "./audio.service";
 import { Song } from "./song";
 @Component({
-  selector: "kinam-audio",
-  templateUrl: "./audio-player.component.html",
-  styleUrls: ["./audio-player.component.scss"],
+  selector: 'kinam-audio-player',
+  templateUrl: './audio-player.component.html',
+  styleUrls: ['./audio-player.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AudioPlayerComponent implements OnInit {
-  public elapsed = "1:33";
-  public total = "4:41";
+  public elapsed = '1:33';
+  public total = '4:41';
 
   public playlistVisible$: BehaviorSubject<boolean>;
   public playerVisible$ = new BehaviorSubject(false);
@@ -42,7 +42,7 @@ export class AudioPlayerComponent implements OnInit {
     this.audioService.currentSong
       .pipe(
         filter(x => !!x),
-        distinctUntilKeyChanged("title"),
+        distinctUntilKeyChanged('title'),
         takeWhile(() => !this.progressSub)
       )
       .subscribe(song => {

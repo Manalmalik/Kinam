@@ -1,0 +1,61 @@
+:host {
+  display: block;
+  height: 100%;
+  margin-bottom: 5rem;
+}
+
+.button {
+  &--add {
+    color: white;
+    font-size: 2rem;
+  }
+}
+
+
+.tile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-plus,
+.fa-stream {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+}
+
+.tile-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+
+  .tile {
+    margin: 0.5rem;
+  }
+}
+
+
+.music-tile {
+  height: 100%;
+  position: relative;
+}
+
+
+@media screen and (max-width: 480px) {
+  .tile-container {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+
+  .music-tile {
+    height: unset;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .tile-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

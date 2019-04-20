@@ -2,7 +2,7 @@
   class="columns is-desktop"
 >
   <article class="column">
-    <mat-form-field>      
+    <mat-form-field class="birthday-input">      
       <input
         matInput
         [formControl]="dateCtrl"
@@ -44,17 +44,17 @@
           <th>Nahual Name: </th>
           <td>{{ kinamDate.nahualName }}</td>
         </tr>
-        <tr>
+        <!-- <tr>
           <th>Natural Sign: </th>
           <td>{{ kinamDate.daySign }}</td>
-        </tr>
+        </tr> -->
       </table>
-      <!-- <div>
+      <div>
         <img
           [src]="kinamDate.image"
           [attr.alt]="'Nahual Sign: ' + kinamDate.daySign"
         >
-      </div> -->
+      </div>
     </article>
   </article>
 </section>

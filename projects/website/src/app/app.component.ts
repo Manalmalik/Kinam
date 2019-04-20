@@ -4,7 +4,6 @@ import {
   loadSong
 } from "./components/audio-player/audio.service";
 import { filter, mergeMap } from "rxjs/operators";
-import { Visualizer } from "./routes/landing/visualizer";
 
 @Component({
   selector: "app-root",
@@ -12,7 +11,9 @@ import { Visualizer } from "./routes/landing/visualizer";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  constructor(private audioService: AudioService) {}
+  constructor(private audioService: AudioService) {
+    debugger
+  }
 
   ngOnInit(): void {
     this.audioService.songs$
@@ -22,7 +23,7 @@ export class AppComponent {
         loadSong()
       )
       .subscribe(res => {
-        new Visualizer(res.src);
+
       });
   }
 }

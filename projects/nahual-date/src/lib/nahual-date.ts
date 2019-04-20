@@ -18,21 +18,24 @@ class KinamNahual {
   public date: Date;
 
   constructor(date?: Date) {
-    if (date) {
+    if (date && date instanceof Date) {
       this.date = date;
     } else {
       this.date = new Date();
     }
 
+    const month = date.getMonth() + 1;
+    const dateStr = new Date(`${date.getFullYear()}-${month < 10 ? (`0${month}`) : month}-${date.getDate()}`);
     const { nahual, day } = nahualGetter.nahual(date);
 
-    this.nahualDay = day + 1;
+
+    this.nahualDay = day;
     this.nahualName = nahual;
     this.daySign = findDaySign(this.nahualDay);
     this.image = getImg(this.daySign);
   }
 
-  public isValidDate = (date: string | Date) => format(date) !== 'Invalid Date';
+  public isValidDate = (date: string | Date) => format(date, 'YYYY-MM-DD') !== 'Invalid Date';
 
   public format(customFormat = 'YYYY-MM-DD') {
     return format(
@@ -46,7 +49,7 @@ class KinamNahual {
   }
 
   public getMonth() {
-    return this.date.getMonth() + 1;
+    return this.date.getMonth();
   }
 
   public getYear() {
@@ -55,12 +58,6 @@ class KinamNahual {
 
 }
 
-const fromNumbers = (day: number, month: number, year: number) => {
-  const dateFromNumber = new Date(year, month - 1, day);
-  return new KinamNahual(dateFromNumber);
-};
-
-
 const kinamNahual = (date?: Date) => new KinamNahual(date);
 
-export { fromNumbers, kinamNahual, KinamNahual };
+export { kinamNahual, KinamNahual };
