@@ -1,29 +1,27 @@
-
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { Song } from '../../components/audio-player/song';
-import { AudioService } from '../../components/audio-player/audio.service';
-import { Observable, BehaviorSubject, from } from 'rxjs';
+import { Component, ViewChild, ElementRef } from "@angular/core";
+import { Song } from "../../components/audio-player/song";
+import { AudioService } from "../../components/audio-player/audio.service";
+import { Observable, BehaviorSubject, from, Subscription } from "rxjs";
 import {
   HttpClient,
   HttpEventType,
   HttpResponse,
   HttpRequest
-} from '@angular/common/http';
-import { concatMap, map } from 'rxjs/operators';
+} from "@angular/common/http";
+import { concatMap, map } from "rxjs/operators";
 
 @Component({
-  selector: 'kinam-audio-suite',
-  styleUrls: ['./kinam-audio-suite.component.scss'],
-  templateUrl: './kinam-audio-suite.component.html'
+  selector: "kinam-audio-suite",
+  styleUrls: ["./kinam-audio-suite.component.scss"],
+  templateUrl: "./kinam-audio-suite.component.html"
 })
 export class KinamAudioComponent {
-  @ViewChild('file') file: ElementRef;
+  @ViewChild("file") file: ElementRef;
 
   public progress: BehaviorSubject<number>;
+  private subscription = new Subscription();
 
-  constructor(private audioService: AudioService, private http: HttpClient) {
-    debugger;
-  }
+  constructor(private audioService: AudioService, private http: HttpClient) {}
 
   public songs$: Observable<Song[]> = this.audioService.songs$.pipe(
     map(s => Array.from(s.values()))
@@ -44,11 +42,17 @@ export class KinamAudioComponent {
 
     this.progress = new BehaviorSubject(0);
 
-    const files = Array.from(input.files).map(file => {
+    const files = this.getRequest(input.files);
+
+    this.subscription.add(this.uploadObservable(files));
+  }
+
+  private getRequest(files: FileList) {
+    return Array.from(files).map(file => {
       const formData: FormData = new FormData();
-      formData.append('file', file, file.name);
+      formData.append("file", file, file.name);
       const req = new HttpRequest(
-        'POST',
+        "POST",
         `//167.86.100.47:4201/add`,
         formData,
         {
@@ -57,8 +61,10 @@ export class KinamAudioComponent {
       );
       return this.http.request(req);
     });
+  }
 
-    from(files)
+  private uploadObservable(files: Observable<any>[]) {
+    return from(files)
       .pipe(concatMap(s => s))
       .subscribe((event: any) => {
         if (event.type === HttpEventType.UploadProgress) {

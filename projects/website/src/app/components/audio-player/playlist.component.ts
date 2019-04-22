@@ -22,7 +22,7 @@ export class PlaylistComponent implements OnInit {
   }
 
   public play(song: Song) {
-    this.audioService.currentSong.next(song);
+    this.audioService.currentSong$.next(song);
     this.audioService.playSong(song).subscribe(() => {});
   }
 
@@ -37,7 +37,7 @@ export class PlaylistComponent implements OnInit {
   }
 
   public loadSong(song) {
-    this.audioService.currentSong.next(song);
+    this.audioService.currentSong$.next(song);
   }
 
   public togglePlay() {

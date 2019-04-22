@@ -1,59 +1,52 @@
-<section
-  class="columns is-desktop"
->
+<section class="columns is-desktop">
   <article class="column">
-    <mat-form-field class="birthday-input">      
+    <mat-form-field class="birthday-input">
       <input
         matInput
         [formControl]="dateCtrl"
         [matDatepicker]="picker"
+        (blur)="handleDateChange($event)"
         (dateChange)="handleDateChange($event)"
-        (input)="handleInputEvent($event)"
-      > 
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
+        (keydown.enter)="handleDateChange($event)"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <section class="birthday-blocks">
-      <kinam-maya-number-block [number]="kinamDate.getMonth()">
-        <strong>
-          Month:{{ kinamDate.getMonth() }}
-        </strong>
+      <kinam-maya-number-block [number]="kinamDate?.getDay()">
+        <strong> Day: {{ kinamDate?.getDay() }} </strong>
       </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="kinamDate.getDay()">
-        <strong>
-          Day: {{ kinamDate.getDay() }}
-        </strong>
+
+      <kinam-maya-number-block [number]="kinamDate?.getMonth()">
+        <strong> Month: {{ kinamDate?.getMonth() }} </strong>
       </kinam-maya-number-block>
-      <kinam-maya-number-block [number]="kinamDate.getYear()">
-        <strong>
-          Year: {{ kinamDate.getYear() }}
-        </strong>
+
+      <kinam-maya-number-block [number]="kinamDate?.getYear()">
+        <strong> Year: {{ kinamDate?.getYear() }} </strong>
       </kinam-maya-number-block>
     </section>
 
     <article class="column">
       <table class="table is-fullwidth">
         <tr>
-          <th>Nahual Day: </th>
-          <td>{{ kinamDate.nahualDay }}</td>
+          <th>Nahual Day:</th>
+          <td>{{ kinamDate?.nahualDay }}</td>
         </tr>
         <tr>
-          <th>Nahual Name: </th>
-          <td>{{ kinamDate.nahualName }}</td>
+          <th>Nahual Name:</th>
+          <td>{{ kinamDate?.nahualName }}</td>
         </tr>
         <!-- <tr>
           <th>Natural Sign: </th>
-          <td>{{ kinamDate.daySign }}</td>
+          <td>{{ kinamDate?.daySign }}</td>
         </tr> -->
       </table>
+
       <div>
         <img
-          [src]="kinamDate.image"
-          [attr.alt]="'Nahual Sign: ' + kinamDate.daySign"
-        >
+          [src]="kinamDate?.image"
+          [attr.alt]="'Nahual Sign: ' + kinamDate?.daySign"
+        />
       </div>
     </article>
   </article>

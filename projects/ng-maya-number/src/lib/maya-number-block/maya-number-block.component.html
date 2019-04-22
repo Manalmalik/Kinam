@@ -1,9 +1,8 @@
-<ng-container *ngIf="getMayanNumberBlock(number) as numberBlock">
-  <ng-content></ng-content>
-  <section
-    *ngFor="let groups of numberBlock"
-    class="maya-number-block"
-  >
+<div
+  *ngIf="getMayanNumberBlock(number) as numberBlock"
+  class="number-container"
+>
+  <section *ngFor="let groups of numberBlock" class="maya-number-block">
     <div
       class="number-row inline-numbers"
       *ngFor="let row of groups"
@@ -14,4 +13,5 @@
       </ng-container>
     </div>
   </section>
-</ng-container>
+</div>
+<ng-content></ng-content>

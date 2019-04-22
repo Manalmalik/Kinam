@@ -1,32 +1,39 @@
-import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ViewEncapsulation,
+  Input
+} from "@angular/core";
+import { FormControl } from "@angular/forms";
 
-import { KinamNahual } from 'nahual-date';
+import { KinamNahual, kinamNahual } from "nahual-date";
+import { addHours } from "date-fns";
 
 @Component({
-  selector: 'kinam-birthday',
-  templateUrl: './birthday.component.html',
-  styleUrls: ['./birthday.component.scss'],
+  selector: "kinam-birthday",
+  templateUrl: "./birthday.component.html",
+  styleUrls: ["./birthday.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.ShadowDom,
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class BirthdayComponent implements OnInit {
   public dateCtrl: FormControl;
-  @Input() kinamDate = new KinamNahual(new Date());
+
+  @Input() date = new Date();
+  public kinamDate: KinamNahual;
 
   public ngOnInit() {
+    this.kinamDate = kinamNahual(this.date);
     this.dateCtrl = new FormControl(this.kinamDate.date);
   }
 
   public handleDateChange(event) {
     const { value } = event.target;
-    this.kinamDate = new KinamNahual(value);
-    this.dateCtrl = new FormControl(this.kinamDate.date);
-  }
-
-  public handleInputEvent(event) {
-    const { value } = event.target;
-    this.kinamDate = new KinamNahual(value);
-    this.dateCtrl = new FormControl(this.kinamDate.date);
+    if (value) {
+      const midDay = addHours(value, 12);
+      this.kinamDate = kinamNahual(midDay);
+      this.dateCtrl = new FormControl(this.kinamDate.date);
+    }
   }
 }

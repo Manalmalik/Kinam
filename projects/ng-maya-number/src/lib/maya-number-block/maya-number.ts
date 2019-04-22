@@ -1,10 +1,10 @@
 enum MayanDigits {
-  Zero = '@',
-  One = '.',
-  Five = '-',
+  Zero = "@",
+  One = ".",
+  Five = "-"
 }
 
-type MayanDigit = '@' | '.' | '-';
+type MayanDigit = "@" | "." | "-";
 
 /**
  * Getter for sequences of simple numbers
@@ -21,7 +21,10 @@ function getRow(number: number) {
   if (!number) {
     return [[MayanDigits.Zero]];
   }
-  return [oneSequence(Math.floor(number % 5)), fiveSequence(Math.floor(number / 5))];
+  return [
+    oneSequence(Math.floor(number % 5)),
+    fiveSequence(Math.floor(number / 5))
+  ];
 }
 
 /**

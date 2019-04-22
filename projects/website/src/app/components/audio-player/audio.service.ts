@@ -10,6 +10,7 @@ import {
   takeWhile
 } from "rxjs/operators";
 import { BehaviorSubject, pipe, fromEvent, interval } from "rxjs";
+
 import { Song } from "./song";
 import { secondsToHms } from "../../util/convert-time";
 
@@ -23,24 +24,23 @@ export const getDownloadProgress = pipe(
   }))
 );
 
-export const loadSong = () =>
-  pipe(
-    filter((req: any) => req.type && req.type === HttpEventType.Response),
-    map(res => res.body),
-    mergeMap(blob => {
-      const reader = new FileReader();
-      reader.readAsDataURL(blob);
-      return fromEvent(reader, "loadend").pipe(
-        map(event => new Audio(event.target["result"]))
-      );
-    })
-  );
+export const loadSong = pipe(
+  filter((req: any) => req.type && req.type === HttpEventType.Response),
+  map(res => res.body),
+  mergeMap(blob => {
+    const reader = new FileReader();
+    reader.readAsDataURL(blob);
+    return fromEvent(reader, "loadend").pipe(
+      map(event => new Audio(event.target["result"]))
+    );
+  })
+);
 
 @Injectable({ providedIn: "root" })
 export class AudioService {
   public playlist = new BehaviorSubject<Song[]>([]);
   public playlistVisible$ = new BehaviorSubject(false);
-  public currentSong = new BehaviorSubject<Song>(null);
+  public currentSong$ = new BehaviorSubject<Song>(null);
   private renderer: Renderer2;
 
   constructor(private http: HttpClient, rendererFactory: RendererFactory2) {
@@ -74,7 +74,7 @@ export class AudioService {
   public playSong(song: Song) {
     song.file.play();
     let previousTime = 0;
-    const { value } = this.currentSong;
+    const { value } = this.currentSong$;
     const { time } = value;
     time.totalRaw.next(song.file.duration);
     time.total.next(secondsToHms(song.file.duration));
@@ -86,6 +86,7 @@ export class AudioService {
       tap(_ => {
         const { currentTime } = song.file;
         previousTime = currentTime;
+
         if (currentTime >= time.totalRaw.value) {
           time.isPlaying.next(false);
         }
@@ -132,13 +133,12 @@ export class AudioService {
     }
   }
 
-  public postFile() {}
-
-  private progressRequest({ time = 1000, method = "GET", url }) {
+  private progressRequest({ method = "GET", url }) {
     const req = new HttpRequest(method, url, {
       reportProgress: true,
       responseType: "blob"
     });
+
     return this.http.request(req).pipe(
       getDownloadProgress,
       distinctUntilKeyChanged("progress")

@@ -17,7 +17,8 @@ const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
                 (click)="invalid = false"
                 [class.invalid]="invalid"
                 class="newsletter-input"
-                >
+                placeholder="Your email"
+              >
                 
             <input 
                 type="submit" 

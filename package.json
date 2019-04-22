@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve --project website --proxy-config ./proxy.conf.json",
     "build": "ng build",
+    "build:all": "ng build core && ng build ng-maya-number && ng build ng-maya-birthday && ng build shared",
     "build:website": "ng build website --prod",
     "deploy:website": "./deploy.sh",
     "bdw": "npm run build:website && npm run deploy:website",

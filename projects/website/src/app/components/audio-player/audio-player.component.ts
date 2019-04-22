@@ -24,7 +24,7 @@ export class AudioPlayerComponent implements OnInit {
 
   public progress: BehaviorSubject<number>;
 
-  public currentSong: BehaviorSubject<Song>;
+  public currentSong$: BehaviorSubject<Song>;
   public audioFile: Observable<any>;
 
   private progressSub: Subscription;
@@ -36,10 +36,10 @@ export class AudioPlayerComponent implements OnInit {
       .pipe(delay(2000))
       .subscribe(() => this.playerVisible$.next(true));
 
-    this.currentSong = this.audioService.currentSong;
+    this.currentSong$ = this.audioService.currentSong$;
     this.playlistVisible$ = this.audioService.playlistVisible$;
 
-    this.audioService.currentSong
+    this.audioService.currentSong$
       .pipe(
         filter(x => !!x),
         distinctUntilKeyChanged('title'),
@@ -48,8 +48,8 @@ export class AudioPlayerComponent implements OnInit {
       .subscribe(song => {
         this.progress = new BehaviorSubject(0);
 
-        if (!this.currentSong.value) {
-          this.currentSong.next(new Song(song));
+        if (!this.currentSong$.value) {
+          this.currentSong$.next(new Song(song));
         }
 
         this.audioService
@@ -57,11 +57,11 @@ export class AudioPlayerComponent implements OnInit {
           .pipe(
             tap(({ progress }) => {
               this.audioService.reportProgress(song.title, progress);
-              this.audioService.currentSong.next(this.currentSong.value);
+              this.audioService.currentSong$.next(this.currentSong$.value);
               this.progress.next(progress);
-              this.audioService.currentSong.value.loaded.next(progress);
+              this.audioService.currentSong$.value.loaded.next(progress);
             }),
-            loadSong()
+            loadSong
           )
           .subscribe(res => {
             this.audioService.updateSong({ file: res }, song.title);
@@ -70,7 +70,7 @@ export class AudioPlayerComponent implements OnInit {
   }
 
   public togglePlay() {
-    const { value } = this.audioService.currentSong;
+    const { value } = this.audioService.currentSong$;
     if (value) {
       Object.assign({ ...value, ...{ playing: !value.playing } });
     }

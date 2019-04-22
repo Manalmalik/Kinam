@@ -3,7 +3,7 @@
 <div class="miniplayer" [class.slide-out__player]="!(playerVisible$ | async)">
   <i class="fal fa-stream" (click)="toggleSlide()"></i>
 
-  <ng-container *ngIf="(currentSong | async) as song">
+  <ng-container *ngIf="(currentSong$ | async) as song">
     <div class="play">
       <i class="fal fa-step-backward"></i>
       <i class="fal" (click)="togglePlay()" [ngClass]="

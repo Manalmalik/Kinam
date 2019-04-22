@@ -1,12 +1,11 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-
-import { getMayanNumber, MayanDigit, MayanDigits } from 'mayan-number';
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
+import { MayanDigit, MayanDigits, getMayanNumber } from "./maya-number";
 
 @Component({
-  selector: 'kinam-maya-number-block',
-  templateUrl: './maya-number-block.component.html',
-  styleUrls: ['./maya-number-block.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: "kinam-maya-number-block",
+  templateUrl: "./maya-number-block.component.html",
+  styleUrls: ["./maya-number-block.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MayaNumberBlockComponent {
   @Input() number: number;
@@ -49,6 +48,6 @@ export class MayaNumberBlockComponent {
     if (!val.length) {
       return true;
     }
-    return typeof val === 'string';
+    return typeof val === "string";
   }
 }

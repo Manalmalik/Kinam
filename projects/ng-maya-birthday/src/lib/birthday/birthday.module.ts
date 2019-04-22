@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from "@angular/material/core";
+import { MatDatepickerModule } from "@angular/material/datepicker";
 
-import { MayanNumberModule } from 'mayan-number';
-import { SharedModule } from 'shared';
+import { MayanNumberModule } from "ng-maya-number";
+import { SharedModule } from "shared";
 
-import { BirthdayComponent } from './birthday.component';
+import { BirthdayComponent } from "./birthday.component";
 
 @NgModule({
   declarations: [BirthdayComponent],
@@ -15,7 +15,7 @@ import { BirthdayComponent } from './birthday.component';
     MatNativeDateModule,
 
     MayanNumberModule,
-    SharedModule,
+    SharedModule
   ],
   exports: [
     BirthdayComponent,
@@ -23,7 +23,7 @@ import { BirthdayComponent } from './birthday.component';
     MatNativeDateModule,
 
     MayanNumberModule,
-    SharedModule,
+    SharedModule
   ]
 })
-export class BirthdayModule { }
+export class BirthdayModule {}
