@@ -28,7 +28,7 @@ kinam-birthday {
   -webkit-overflow-scrolling: touch;
   position: relative;
   background-size: auto 100%;
-  scroll-snap-type: x mandatory; 
+  scroll-snap-type: x mandatory;
 }
 
 .sec {
@@ -36,7 +36,6 @@ kinam-birthday {
   min-width: 100vw;
   scroll-snap-align: start;
 }
-
 
 strong {
   color: white !important;
@@ -58,13 +57,13 @@ strong {
   transition: all 0.33s ease-in-out;
   box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.5);
   transform: scale(1);
-  
+
   &:hover:not(.selected) {
     cursor: pointer;
     transform: scale(1.25);
     box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.75);
   }
-  
+
   &.selected {
     color: #333333;
     background-color: white;
@@ -90,14 +89,12 @@ iframe {
   width: 100%;
 }
 
-
 .slide-out {
   transform: translatex(-3.25rem);
   transition: 0.4s transform ease-in-out;
 }
 
 @media screen and (max-width: 480px) {
-
   .card-container {
     max-width: 100%;
     margin-left: 1rem;
@@ -110,7 +107,7 @@ iframe {
   .card-container {
     margin-left: 4rem;
   }
-} 
+}
 
 @media screen and (min-width: 1280px) {
   .card-container {

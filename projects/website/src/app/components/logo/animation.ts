@@ -14,7 +14,8 @@ export const LOGO_ANIMATIONS = [
         '2000ms cubic-bezier(0.17,0.43,0.75,0.97)',
         keyframes([
           style({
-            transform: 'rotate(-90deg) translateY(-50%) translateX(25%) scale(0.7)',
+            transform:
+              'rotate(-90deg) translateY(-50%) translateX(25%) scale(0.7)',
             display: 'block',
             opacity: '0',
             offset: 0,

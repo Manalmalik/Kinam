@@ -2,10 +2,11 @@ import {
   Component,
   OnInit,
   ChangeDetectorRef,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  OnDestroy
 } from '@angular/core';
 
-import { of } from 'rxjs';
+import { of, Subscription } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 import { LOGO_ANIMATIONS } from './animation';
 
@@ -16,25 +17,33 @@ import { LOGO_ANIMATIONS } from './animation';
   animations: LOGO_ANIMATIONS,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LogoComponent implements OnInit {
+export class LogoComponent implements OnInit, OnDestroy {
   public bounce = false;
   public title = false;
   public loadend = false;
+  private subscription = new Subscription();
 
   constructor(private cd: ChangeDetectorRef) {}
 
   public ngOnInit() {
-    of('hi').pipe(
-      delay(500),
-      tap(res => {
-        this.loadend = true;
-        this.cd.detectChanges();
+    this.subscription.add(
+      of('hi')
+        .pipe(
+          delay(500),
+          tap(_ => {
+            this.loadend = true;
+            this.cd.detectChanges();
 
-        this.bounce = !this.bounce;
-        this.title = !this.title;
-        this.cd.detectChanges();
-      })
-    )
-    .subscribe();
+            this.bounce = !this.bounce;
+            this.title = !this.title;
+            this.cd.detectChanges();
+          })
+        )
+        .subscribe()
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

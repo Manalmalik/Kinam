@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'kinam-calculator',
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.scss'],
+  styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent implements OnInit {
   @Input() initValue: number;

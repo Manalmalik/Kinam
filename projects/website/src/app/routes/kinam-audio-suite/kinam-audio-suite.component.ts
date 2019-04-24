@@ -1,22 +1,22 @@
-import { Component, ViewChild, ElementRef } from "@angular/core";
-import { Song } from "../../components/audio-player/song";
-import { AudioService } from "../../components/audio-player/audio.service";
-import { Observable, BehaviorSubject, from, Subscription } from "rxjs";
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Song } from '../../components/audio-player/song';
+import { AudioService } from '../../components/audio-player/audio.service';
+import { Observable, BehaviorSubject, from, Subscription } from 'rxjs';
 import {
   HttpClient,
   HttpEventType,
   HttpResponse,
   HttpRequest
-} from "@angular/common/http";
-import { concatMap, map } from "rxjs/operators";
+} from '@angular/common/http';
+import { concatMap, map } from 'rxjs/operators';
 
 @Component({
-  selector: "kinam-audio-suite",
-  styleUrls: ["./kinam-audio-suite.component.scss"],
-  templateUrl: "./kinam-audio-suite.component.html"
+  selector: 'kinam-audio-suite',
+  styleUrls: ['./kinam-audio-suite.component.scss'],
+  templateUrl: './kinam-audio-suite.component.html'
 })
 export class KinamAudioComponent {
-  @ViewChild("file") file: ElementRef;
+  @ViewChild('file') file: ElementRef;
 
   public progress: BehaviorSubject<number>;
   private subscription = new Subscription();
@@ -50,9 +50,9 @@ export class KinamAudioComponent {
   private getRequest(files: FileList) {
     return Array.from(files).map(file => {
       const formData: FormData = new FormData();
-      formData.append("file", file, file.name);
+      formData.append('file', file, file.name);
       const req = new HttpRequest(
-        "POST",
+        'POST',
         `//167.86.100.47:4201/add`,
         formData,
         {

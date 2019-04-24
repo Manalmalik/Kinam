@@ -1,14 +1,19 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
-import { Observable } from "rxjs";
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ViewEncapsulation
+} from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Observable } from 'rxjs';
 
-import { AudioService } from "./audio.service";
-import { Song } from "./song";
+import { AudioService } from './audio.service';
+import { Song } from './song';
 
 @Component({
-  selector: "kinam-playlist",
-  templateUrl: "./playlist.component.html",
-  styleUrls: ["./playlist.component.scss"],
+  selector: 'kinam-playlist',
+  templateUrl: './playlist.component.html',
+  styleUrls: ['./playlist.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PlaylistComponent implements OnInit {

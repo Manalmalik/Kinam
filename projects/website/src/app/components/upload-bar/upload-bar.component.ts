@@ -1,7 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "kinam-upload",
+  selector: 'kinam-upload',
   template: `
     <div *ngIf="!!value" class="columns is-mobile is-gapless is-vcentered">
       <div class="column has-text-centered">
@@ -14,7 +14,7 @@ import { Component, Input } from "@angular/core";
       </div>
     </div>
   `,
-  styleUrls: ["./upload-bar.component.scss"]
+  styleUrls: ['./upload-bar.component.scss']
 })
 export class UploadBarComponent {
   @Input() public value: number;

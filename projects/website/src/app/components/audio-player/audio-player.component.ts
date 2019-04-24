@@ -1,14 +1,19 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { of, BehaviorSubject, Subscription, Observable } from "rxjs";
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ViewEncapsulation
+} from '@angular/core';
+import { of, BehaviorSubject, Subscription, Observable } from 'rxjs';
 import {
   delay,
   tap,
   filter,
   takeWhile,
   distinctUntilKeyChanged
-} from "rxjs/operators";
-import { AudioService, loadSong } from "./audio.service";
-import { Song } from "./song";
+} from 'rxjs/operators';
+import { AudioService, loadSong } from './audio.service';
+import { Song } from './song';
 @Component({
   selector: 'kinam-audio-player',
   templateUrl: './audio-player.component.html',

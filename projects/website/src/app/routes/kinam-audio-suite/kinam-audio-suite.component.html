@@ -8,22 +8,36 @@
   <label for="file-input">
     <i class="fal fa-cloud-upload"></i>
   </label>
-  <input #file id="file-input" accept="audio/*" (change)="upload(file)" type="file" hidden>
+  <input
+    #file
+    id="file-input"
+    accept="audio/*"
+    (change)="upload(file)"
+    type="file"
+    hidden
+  />
 </div>
 
 <section class="section">
   <div class="container tile-container">
-    <div *ngFor="let song of songs$ | async" class="music-tile is-light notification">
+    <div
+      *ngFor="let song of (songs$ | async)"
+      class="music-tile is-light notification"
+    >
       <ng-container *ngIf="song.artist">
         <h2 class="subtitle">
           {{ song.artist }}
         </h2>
-        <hr>
+        <hr />
       </ng-container>
 
       <span>{{ song.title }}</span>
 
-      <i class="fal" [ngClass]="song.inPlaylist ? 'fa-stream' : 'fa-plus'" (click)="addSongToPlaylist(song)"></i>
+      <i
+        class="fal"
+        [ngClass]="song.inPlaylist ? 'fa-stream' : 'fa-plus'"
+        (click)="addSongToPlaylist(song)"
+      ></i>
     </div>
   </div>
 </section>

@@ -1,9 +1,7 @@
 import { Spectator, createTestComponentFactory } from '@netbasal/spectator';
 import { MayaNumberComponent } from './maya-number.component';
 
-
 describe('MayaNumberComponent', () => {
-
   let spectator: Spectator<MayaNumberComponent>;
   const createComponent = createTestComponentFactory({
     component: MayaNumberComponent,
@@ -15,4 +13,3 @@ describe('MayaNumberComponent', () => {
     expect(spectator.component).toBeTruthy();
   });
 });
-

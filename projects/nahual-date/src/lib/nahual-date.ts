@@ -1,12 +1,22 @@
-import { format } from "date-fns";
-import * as nahualGetter from "nahuales";
+import { format } from 'date-fns';
+import * as nahualGetter from 'nahuales';
 
-import { DAY_SIGNS } from "./day-sign";
+import { DAY_SIGNS } from './day-sign';
+import { of } from 'rxjs';
 
-const findDaySign = (day: number) =>
-  DAY_SIGNS.find(sign => sign.day === day).name;
+const FORMAT = 'YYYY-MM-DD';
+const INVALID_DATE = 'Invalid Date';
+
+function findDaySign(day: number) {
+  const sign = DAY_SIGNS.find(s => s.day === day);
+  return sign ? sign : { name: '' };
+}
 
 const getImg = (daySign: string) => `assets/signs/${daySign}.png`;
+
+const isValidDate = (date: string | Date) => {
+  return format(date, FORMAT) !== INVALID_DATE;
+};
 
 class KinamNahual {
   public nahualName: string;
@@ -16,7 +26,7 @@ class KinamNahual {
   public date = new Date();
 
   constructor(date?: Date) {
-    if (this.isValidDate(date)) {
+    if (isValidDate(date)) {
       this.date = new Date(date);
     } else {
       this.date = new Date();
@@ -29,15 +39,11 @@ class KinamNahual {
     /**
      * TODO: validate day signs with dag
      */
-    this.daySign = findDaySign(this.nahualDay);
+    this.daySign = findDaySign(this.nahualDay).name;
     this.image = getImg(this.daySign);
   }
 
-  public isValidDate(date: string | Date) {
-    return format(date, "YYYY-MM-DD") !== "Invalid Date";
-  }
-
-  public format(customFormat = "YYYY-MM-DD") {
+  public format(customFormat = FORMAT) {
     return format(this.date, customFormat);
   }
 
@@ -55,5 +61,6 @@ class KinamNahual {
 }
 
 const kinamNahual = (date: Date) => new KinamNahual(date);
+const asObservable = (date: Date) => of(kinamNahual(date));
 
-export { kinamNahual, KinamNahual };
+export { kinamNahual, KinamNahual, isValidDate, asObservable };

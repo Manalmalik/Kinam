@@ -3,17 +3,17 @@ import {
   ChangeDetectionStrategy,
   OnInit,
   OnDestroy
-} from "@angular/core";
+} from '@angular/core';
 import {
   AudioService,
   loadSong
-} from "./components/audio-player/audio.service";
-import { filter, mergeMap } from "rxjs/operators";
-import { Subscription } from "rxjs";
+} from './components/audio-player/audio.service';
+import { filter, mergeMap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
+  selector: 'app-root',
+  templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnDestroy, OnInit {

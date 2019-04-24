@@ -21,9 +21,21 @@ $color-bg: #34495e;
   width: 7.5rem;
   max-height: 7rem;
   min-height: 4rem;
-  // border: 1px solid #ddd;
-  padding: 0.5rem;
+  padding: 0.25rem;
+  box-sizing: content-box;
 }
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .maya-number-block {
+    margin: 0.75rem 0.75rem;
+  }
+}
+
+// @media screen and (min-width: 481px) and (max-width: 768px) {
+//   .maya-number-block {
+//     width: 5rem;
+//   }
+// }
 
 .inline-numbers {
   display: flex;

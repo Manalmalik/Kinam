@@ -1,10 +1,10 @@
 enum MayanDigits {
-  Zero = "@",
-  One = ".",
-  Five = "-"
+  Zero = '@',
+  One = '.',
+  Five = '-'
 }
 
-type MayanDigit = "@" | "." | "-";
+type MayanDigit = '@' | '.' | '-';
 
 /**
  * Getter for sequences of simple numbers

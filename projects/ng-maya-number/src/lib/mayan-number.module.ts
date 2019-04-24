@@ -9,7 +9,11 @@ import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   imports: [CoreModule, SharedModule],
-  declarations: [CalculatorComponent, MayaNumberComponent, MayaNumberBlockComponent],
-  exports: [CalculatorComponent, MayaNumberComponent, MayaNumberBlockComponent],
+  declarations: [
+    CalculatorComponent,
+    MayaNumberComponent,
+    MayaNumberBlockComponent
+  ],
+  exports: [CalculatorComponent, MayaNumberComponent, MayaNumberBlockComponent]
 })
-export class MayanNumberModule { }
+export class MayanNumberModule {}

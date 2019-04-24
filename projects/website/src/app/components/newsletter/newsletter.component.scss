@@ -1,54 +1,61 @@
-:host{
+:host {
   border: 1px solid #fff;
-  padding: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba($color: #000000, $alpha: 0.75);
+  background-color: black;
+  filter: invert(100%);
 }
 
 form {
-  text-align: center; 
+  text-align: center;
 }
-  
+
 .subtitle {
   color: white;
 }
 
 .newsletter-button {
-  border: 1px solid #fff;
+  border: 1px solid black;
   background: transparent;
-  color: white;
   padding: 0.5rem 1rem;
   margin: 1rem auto;
   cursor: pointer;
   transition: 0.2s ease-in all;
-  
+
+  background: white;
+  color: black;
+  border-radius: 0.5rem;
+
   &:hover {
     color: black;
     background-color: white;
     transition: 0.2s ease-in all;
   }
 }
-  
 
 .newsletter-input {
   border: 1px solid #fff;
+  border-radius: 0.5rem;
   background: transparent;
   color: #fff;
   padding: 0.5rem;
-  width: 100%;
   transition: all 200ms ease-out;
   box-shadow: none;
   text-align: center;
+  display: block;
+  width: -webkit-fill-available;
 
-  &:focus {
-    box-shadow: 0px 0px 8px -1px rgba(255, 255, 255, 0.75);
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: 0px 0px 6px 2px rgba(255, 255, 255, 0.75);
     transition: box-shadow 200ms ease-out;
   }
 }
-  
 
 .invalid {
   border: 1px solid red;

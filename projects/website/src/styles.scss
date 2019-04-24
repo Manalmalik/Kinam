@@ -19,7 +19,6 @@ p {
   font-family: sans-serif;
 }
 
-
 strong {
   color: white;
 }
@@ -32,7 +31,6 @@ html {
 .current-color {
   stroke: currentColor;
 }
-
 
 .card-container {
   max-width: 30rem;
@@ -58,4 +56,12 @@ html {
   h2 {
     color: white;
   }
+}
+
+.cdk-overlay-container {
+  filter: invert(100%);
+}
+
+.mat-form-field-infix {
+  margin-left: 24px;
 }

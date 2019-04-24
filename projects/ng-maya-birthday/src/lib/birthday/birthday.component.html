@@ -1,18 +1,40 @@
 <section class="columns is-desktop">
   <article class="column">
-    <mat-form-field class="birthday-input">
+    <div>
+      <!-- <ng-container *ngIf="isIOS; else desktop"> -->
       <input
-        matInput
-        [formControl]="dateCtrl"
-        [matDatepicker]="picker"
-        (blur)="handleDateChange($event)"
-        (dateChange)="handleDateChange($event)"
-        (keydown.enter)="handleDateChange($event)"
+        #iosPicker
+        style="position: absolute; left: -100vw;"
+        type="date"
+        [value]="dateConfig?.today"
+        [min]="dateConfig?.min"
+        [max]="dateConfig?.today"
+        name="date"
       />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <section class="birthday-blocks">
+      <mat-form-field class="birthday-input">
+        <input
+          matInput
+          [formControl]="dateCtrl"
+          (click)="openIOS(iosPicker)"
+          [matDatepicker]="picker"
+          (blur)="handleDateChange($event)"
+          (dateChange)="handleDateChange($event)"
+          (keydown.enter)="handleDateChange($event)"
+          [value]="dateConfig?.today"
+          [min]="dateConfig?.min"
+          [max]="dateConfig?.today"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker
+          [startAt]="dateConfig?.today"
+          [startView]="dateConfig?.startView"
+          [touchUi]="dateConfig?.touchUi"
+          #picker
+        ></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <section class="birthday-blocks" *ngIf="!(loading$ | async)">
       <kinam-maya-number-block [number]="kinamDate?.getDay()">
         <strong> Day: {{ kinamDate?.getDay() }} </strong>
       </kinam-maya-number-block>

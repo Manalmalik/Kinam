@@ -3,10 +3,21 @@
   display: block;
 }
 
-.birthday-blocks {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+.birthday {
+  &-blocks {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 2rem;
+  }
+
+  &-input {
+    border: 1px solid;
+    border-radius: 1.5rem;
+    background: #fff;
+    padding: 0 1.5rem;
+    filter: invert(100%);
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -17,19 +28,16 @@
   }
 }
 
+img {
+  filter: invert(100%);
+}
+
 table {
   width: 50%;
   margin: 2rem auto;
   text-align: center;
   table-layout: fixed;
-  color: white;
-}
-
-.birthday-input {
-  color: white;
-  border: 1px solid;
-  border-radius: 1.5rem;
-  padding-left: 2rem;
+  filter: invert(100%);
 }
 
 strong {

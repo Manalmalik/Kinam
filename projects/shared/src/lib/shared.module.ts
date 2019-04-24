@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -20,7 +19,7 @@ import { CommonModule } from '@angular/common';
 
     MatCardModule,
     MatInputModule,
-    MatFormFieldModule,
+    MatFormFieldModule
   ],
   exports: [
     CommonModule,
@@ -28,7 +27,7 @@ import { CommonModule } from '@angular/common';
 
     MatCardModule,
     MatInputModule,
-    MatFormFieldModule,
-  ],
+    MatFormFieldModule
+  ]
 })
-export class SharedModule { }
+export class SharedModule {}

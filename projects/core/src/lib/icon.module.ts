@@ -8,13 +8,8 @@ import { IconDirective } from './icon.directive';
  * Implementation for the icon logic.
  */
 @NgModule({
-  imports: [
-    CommonModule,
-  ],
-  declarations: [
-    IconDirective,
-    IconComponent,
-  ],
-  exports: [IconComponent, IconDirective],
+  imports: [CommonModule],
+  declarations: [IconDirective, IconComponent],
+  exports: [IconComponent, IconDirective]
 })
-export class IconModule { }
+export class IconModule {}

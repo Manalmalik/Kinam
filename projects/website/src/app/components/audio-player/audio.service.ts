@@ -1,5 +1,5 @@
-import { Injectable, RendererFactory2, Renderer2 } from "@angular/core";
-import { HttpClient, HttpRequest, HttpEventType } from "@angular/common/http";
+import { Injectable, RendererFactory2, Renderer2 } from '@angular/core';
+import { HttpClient, HttpRequest, HttpEventType } from '@angular/common/http';
 import {
   map,
   filter,
@@ -8,13 +8,13 @@ import {
   mergeMap,
   mergeMapTo,
   takeWhile
-} from "rxjs/operators";
-import { BehaviorSubject, pipe, fromEvent, interval } from "rxjs";
+} from 'rxjs/operators';
+import { BehaviorSubject, pipe, fromEvent, interval } from 'rxjs';
 
-import { Song } from "./song";
-import { secondsToHms } from "../../util/convert-time";
+import { Song } from './song';
+import { secondsToHms } from '../../util/convert-time';
 
-export const AUDIO_SERVER = "//167.86.100.47:4201";
+export const AUDIO_SERVER = '//167.86.100.47:4201';
 
 export const getDownloadProgress = pipe(
   map((res: any) => ({
@@ -30,13 +30,13 @@ export const loadSong = pipe(
   mergeMap(blob => {
     const reader = new FileReader();
     reader.readAsDataURL(blob);
-    return fromEvent(reader, "loadend").pipe(
-      map(event => new Audio(event.target["result"]))
+    return fromEvent(reader, 'loadend').pipe(
+      map(event => new Audio(event.target['result']))
     );
   })
 );
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class AudioService {
   public playlist = new BehaviorSubject<Song[]>([]);
   public playlistVisible$ = new BehaviorSubject(false);
@@ -80,7 +80,7 @@ export class AudioService {
     time.total.next(secondsToHms(song.file.duration));
     time.isPlaying.next(true);
 
-    return fromEvent(song.file, "playing").pipe(
+    return fromEvent(song.file, 'playing').pipe(
       mergeMapTo(interval(1000)),
       takeWhile(_ => previousTime <= song.file.currentTime),
       tap(_ => {
@@ -102,9 +102,9 @@ export class AudioService {
   }
 
   public downloadFile(song) {
-    const input = this.renderer.createElement("a");
-    input.setAttribute("href", song.file.src);
-    input.setAttribute("download", song.title);
+    const input = this.renderer.createElement('a');
+    input.setAttribute('href', song.file.src);
+    input.setAttribute('download', song.title);
     input.click();
   }
 
@@ -133,15 +133,15 @@ export class AudioService {
     }
   }
 
-  private progressRequest({ method = "GET", url }) {
+  private progressRequest({ method = 'GET', url }) {
     const req = new HttpRequest(method, url, {
       reportProgress: true,
-      responseType: "blob"
+      responseType: 'blob'
     });
 
     return this.http.request(req).pipe(
       getDownloadProgress,
-      distinctUntilKeyChanged("progress")
+      distinctUntilKeyChanged('progress')
     );
   }
 

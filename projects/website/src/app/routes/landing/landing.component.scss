@@ -1,9 +1,14 @@
 :host {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
-kinam-birthday,
+.kinam-birthday {
+  text-align: center;
+}
+
+.kinam-birthday,
 kinam-newsletter {
   margin: 2rem auto;
 }

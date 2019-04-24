@@ -1,11 +1,7 @@
-<kinam-maya-number-block [number]="inputControl.value"></kinam-maya-number-block>
+<kinam-maya-number-block
+  [number]="inputControl.value"
+></kinam-maya-number-block>
 
 <mat-form-field>
-  <input
-    matInput
-    type="number"
-    min="0"
-    step="1"
-    [formControl]="inputControl"
-  >
+  <input matInput type="number" min="0" step="1" [formControl]="inputControl" />
 </mat-form-field>

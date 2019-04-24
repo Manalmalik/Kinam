@@ -11,7 +11,6 @@
   }
 }
 
-
 .tile {
   display: flex;
   justify-content: space-between;
@@ -36,12 +35,10 @@
   }
 }
 
-
 .music-tile {
   height: 100%;
   position: relative;
 }
-
 
 @media screen and (max-width: 480px) {
   .tile-container {

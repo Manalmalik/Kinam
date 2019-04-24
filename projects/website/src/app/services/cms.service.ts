@@ -1,17 +1,17 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { mergeMap } from "rxjs/operators";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { mergeMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
-const BASE_URL = "http://167.86.100.47:8080/api";
-const TOKEN = "02289893fa008d75b0ac14cdff5978";
+const BASE_URL = 'http://167.86.100.47:8080/api';
+const TOKEN = '02289893fa008d75b0ac14cdff5978';
 
 interface Collection {
   foo;
 }
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class CmsService {
   constructor(private http: HttpClient) {}
@@ -29,7 +29,7 @@ export class CmsService {
     return this.http.post<Collection>(
       `${BASE_URL}/collections/get/${name}?token=${TOKEN}`,
       {
-        headers: new HttpHeaders({ "Content-Type": "application/json" }),
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
         body: JSON.stringify({
           filter: { published: true }
         })

@@ -1,5 +1,8 @@
 import { IconDirective } from './icon.directive';
-import { createHostComponentFactory, SpectatorWithHost } from '@netbasal/spectator';
+import {
+  createHostComponentFactory,
+  SpectatorWithHost
+} from '@netbasal/spectator';
 
 describe('IconDirective ', () => {
   let host: SpectatorWithHost<IconDirective>;
