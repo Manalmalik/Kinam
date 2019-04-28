@@ -1,16 +1,21 @@
-<div
-  *ngIf="getMayanNumberBlock(number) as numberBlock"
-  class="number-container"
->
-  <section *ngFor="let groups of numberBlock" class="maya-number-block">
+<div *ngIf="getVal$(number) | async as numberBlock" class="number-container">
+  <section
+    *ngFor="let blockRow of numberBlock.block; let i = index"
+    class="maya-number-block"
+  >
     <div
+      *ngFor="let numberRow of blockRow; let j = index"
       class="number-row"
-      *ngFor="let row of groups"
-      [class.inline-numbers]="hasInlineElements(number)"
+      [class.inline-numbers]="
+        numberBlock.inner[i].numeric[j] < 5 &&
+        numberBlock.inner[i].numeric[j] > 1
+      "
+      [class.justify-content-center]="numberBlock.numeric[i] === 2"
     >
-      <ng-container *ngFor="let val of row">
-        <kinam-maya-number [number]="val"></kinam-maya-number>
-      </ng-container>
+      <kinam-maya-number
+        *ngFor="let glyph of numberRow"
+        [number]="glyph"
+      ></kinam-maya-number>
     </div>
   </section>
 </div>

@@ -3,6 +3,8 @@ $color-bg: #34495e;
 :host {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0.75rem 1.5rem;
   color: white;
 }
@@ -31,17 +33,17 @@ $color-bg: #34495e;
   }
 }
 
-// @media screen and (min-width: 481px) and (max-width: 768px) {
-//   .maya-number-block {
-//     width: 5rem;
-//   }
-// }
-
 .inline-numbers {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
+  width: 6rem;
 }
 
 .number-row {
   text-align: center;
+}
+
+.justify-content-center {
+  justify-content: center;
 }

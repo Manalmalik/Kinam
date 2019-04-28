@@ -1,8 +1,4 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  ViewEncapsulation
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { FormControl, Validators } from '@angular/forms';
 import { NewsletterService } from './newsletter.service';
@@ -13,8 +9,6 @@ const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
   selector: 'kinam-newsletter',
   template: `
     <form (ngSubmit)="submit(emailControl)">
-      <h2 class="subtitle">Get latest updates!</h2>
-
       <input
         type="email"
         [formControl]="emailControl"
@@ -32,7 +26,10 @@ const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 })
 export class NewsletterComponent {
   public invalid = false;
-  public emailControl = new FormControl(null, Validators.pattern(MAIL_REGEX));
+  public emailControl = new FormControl(null, [
+    Validators.pattern(MAIL_REGEX),
+    Validators.required
+  ]);
 
   constructor(private newletterService: NewsletterService) {}
 

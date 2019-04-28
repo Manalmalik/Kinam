@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  ViewChild,
-  ElementRef
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {
   DateAdapter,
@@ -13,19 +7,19 @@ import {
 } from '@angular/material/core';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
+import { MobileDetectService } from 'core';
+import { Moment } from 'moment';
+import { BehaviorSubject } from 'rxjs';
+
 import { KinamNahual, kinamNahual } from 'nahual-date';
 
 import { DateFormat } from './date-format';
-
-import { MobileDetectService } from 'core';
 import { moment } from './moment';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'kinam-birthday',
   templateUrl: './birthday.component.html',
   styleUrls: ['./birthday.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: DateAdapter,
@@ -40,10 +34,8 @@ export class BirthdayComponent implements OnInit {
 
   public kinamDate: KinamNahual;
   public dateCtrl: FormControl;
-  public isIOS: boolean;
   public loading$ = new BehaviorSubject(false);
-
-  @ViewChild('iosPicker') iosPicker: ElementRef<HTMLInputElement>;
+  private lastDate: Moment;
 
   public dateConfig: {
     min: Date;
@@ -55,8 +47,6 @@ export class BirthdayComponent implements OnInit {
   constructor(private mobileDetectService: MobileDetectService) {}
 
   public ngOnInit() {
-    this.isIOS = this.mobileDetectService.isIOS;
-
     this.dateConfig = {
       min: new Date('1900-01-01'),
       today: new Date(),
@@ -67,43 +57,21 @@ export class BirthdayComponent implements OnInit {
     this.dateCtrl = new FormControl(this.kinamDate.date);
   }
 
-  public openIOS(element: HTMLInputElement) {
-    if (this.mobileDetectService.isIOS) {
-      element.focus();
+  private checkValue(value) {
+    if (this.lastDate && this.lastDate.isSame(value.add(12, 'hours'))) {
+      return;
     }
-  }
 
-  private handleKeybordEvent(value) {
-    const [day, month, year] = value.split('.');
+    value = value.add(12, 'hours');
 
-    let date = moment(new Date(`${month}/${day}/${year}`));
-    date = date.add(12, 'hours');
-
-    this.kinamDate = kinamNahual(date.toDate());
+    this.kinamDate = kinamNahual(value.toDate());
     this.dateCtrl = new FormControl(this.kinamDate.date);
   }
 
-  private checkValue(value) {
-    this.loading$.next(true);
-    if (value) {
-      if (value instanceof KeyboardEvent) {
-        if (typeof value === 'string') {
-          this.handleKeybordEvent(value);
-        }
-      } else {
-        if (moment.isMoment(value)) {
-          let date = value;
-          date = date.add(12, 'hours');
-
-          this.kinamDate = kinamNahual(date.toDate());
-          this.dateCtrl = new FormControl(this.kinamDate.date);
-        }
-      }
-    }
-    this.loading$.next(false);
-  }
-  public handleDateChange(event) {
-    const { value } = event.target;
-    this.checkValue(value);
+  public handleDateChange(input) {
+    const { value } = input;
+    const [day, month, year] = value.split('.');
+    const date = moment(new Date(`${year}/${month}/${day}`));
+    this.checkValue(date);
   }
 }

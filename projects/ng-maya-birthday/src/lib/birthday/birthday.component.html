@@ -1,28 +1,14 @@
 <section class="columns is-desktop">
   <article class="column">
     <div>
-      <!-- <ng-container *ngIf="isIOS; else desktop"> -->
-      <input
-        #iosPicker
-        style="position: absolute; left: -100vw;"
-        type="date"
-        [value]="dateConfig?.today"
-        [min]="dateConfig?.min"
-        [max]="dateConfig?.today"
-        name="date"
-      />
       <mat-form-field class="birthday-input">
         <input
           matInput
+          #dateInput
           [formControl]="dateCtrl"
-          (click)="openIOS(iosPicker)"
           [matDatepicker]="picker"
-          (blur)="handleDateChange($event)"
-          (dateChange)="handleDateChange($event)"
-          (keydown.enter)="handleDateChange($event)"
+          (dateChange)="handleDateChange(dateInput)"
           [value]="dateConfig?.today"
-          [min]="dateConfig?.min"
-          [max]="dateConfig?.today"
         />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker
@@ -64,12 +50,12 @@
         </tr> -->
       </table>
 
-      <div>
+      <ng-container *ngIf="kinamDate?.image">
         <img
           [src]="kinamDate?.image"
           [attr.alt]="'Nahual Sign: ' + kinamDate?.daySign"
         />
-      </div>
+      </ng-container>
     </article>
   </article>
 </section>

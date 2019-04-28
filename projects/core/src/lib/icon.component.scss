@@ -3,6 +3,12 @@ $maya-margin: 0.25rem;
 $mayan-five-width: 5rem + $maya-margin * 4;
 $mayan-five-width-sm: 3.75rem + $maya-margin * 4;
 
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .icon-maya {
   &-one,
   &-five {
@@ -19,8 +25,7 @@ $mayan-five-width-sm: 3.75rem + $maya-margin * 4;
     min-width: $mayan-five-width-sm;
     display: block;
     height: 0.75rem;
-    margin-top: 0.33rem;
-    margin-bottom: 0.33rem;
+    margin: 0.25rem auto;
   }
 
   &-one {
@@ -72,14 +77,6 @@ $mayan-five-width-sm: 3.75rem + $maya-margin * 4;
   }
 }
 
-// .svg-icon.lg {
-//   margin: 0.5rem 0.75rem;
-// }
-
-// .svg-icon.sm {
-//   margin: -0.5rem -0.75rem;
-// }
-
 .icon {
   transform: scale(1);
   transition: 0.25s transform ease-in-out;
@@ -93,10 +90,4 @@ $mayan-five-width-sm: 3.75rem + $maya-margin * 4;
 
 path.current-color {
   stroke: currentColor;
-}
-
-:host {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
 }

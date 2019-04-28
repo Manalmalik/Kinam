@@ -24,17 +24,18 @@ export const getDownloadProgress = pipe(
   }))
 );
 
-export const loadSong = pipe(
-  filter((req: any) => req.type && req.type === HttpEventType.Response),
-  map(res => res.body),
-  mergeMap(blob => {
-    const reader = new FileReader();
-    reader.readAsDataURL(blob);
-    return fromEvent(reader, 'loadend').pipe(
-      map(event => new Audio(event.target['result']))
-    );
-  })
-);
+export const loadSong = () =>
+  pipe(
+    filter((req: any) => req.type && req.type === HttpEventType.Response),
+    map(res => res.body),
+    mergeMap(blob => {
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      return fromEvent(reader, 'loadend').pipe(
+        map(event => new Audio(event.target['result']))
+      );
+    })
+  );
 
 @Injectable({ providedIn: 'root' })
 export class AudioService {

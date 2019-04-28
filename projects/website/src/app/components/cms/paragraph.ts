@@ -1,14 +1,10 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  Input,
-  ViewEncapsulation
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'kinam-cms-paragraph',
   template: `
     <p class="card card__black" [innerHTML]="html"></p>
+    <ng-content></ng-content>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })

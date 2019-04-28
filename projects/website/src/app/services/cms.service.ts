@@ -25,7 +25,7 @@ export class CmsService {
       );
   }
 
-  public getCollection(name: string): Observable<Collection> {
+  public getCollection(name: string): Observable<any> {
     return this.http.post<Collection>(
       `${BASE_URL}/collections/get/${name}?token=${TOKEN}`,
       {

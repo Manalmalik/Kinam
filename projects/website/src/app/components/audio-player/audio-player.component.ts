@@ -66,7 +66,7 @@ export class AudioPlayerComponent implements OnInit {
               this.progress.next(progress);
               this.audioService.currentSong$.value.loaded.next(progress);
             }),
-            loadSong
+            loadSong()
           )
           .subscribe(res => {
             this.audioService.updateSong({ file: res }, song.title);

@@ -12,7 +12,8 @@ function findDaySign(day: number) {
   return sign ? sign : { name: '' };
 }
 
-const getImg = (daySign: string) => `assets/signs/${daySign}.png`;
+const getImg = (daySign: string) =>
+  daySign ? `assets/signs/${daySign}.png` : '';
 
 const isValidDate = (date: string | Date) => {
   return format(date, FORMAT) !== INVALID_DATE;
