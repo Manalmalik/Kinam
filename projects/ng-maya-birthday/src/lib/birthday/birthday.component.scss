@@ -8,7 +8,11 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin: 2rem;
+    margin: 2rem 139rem;
+    filter: invert(100%);
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-radius: 0.25rem;
   }
 
   &-input {
@@ -48,4 +52,28 @@ table {
 
 strong {
   margin-top: 1rem;
+}
+
+.date-input {
+  border-radius: 0;
+  // background: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 1rem;
+  color: black;
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  border-bottom: 1px solid #373737;
+  transition: border-bottom 0.2s ease-in-out;
+
+  &:active,
+  &:focus {
+    border-bottom: 1px solid black;
+    transition: border-bottom 0.2s ease-in-out;
+    outline: none;
+  }
 }

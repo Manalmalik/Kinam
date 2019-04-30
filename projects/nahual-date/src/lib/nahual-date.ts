@@ -23,8 +23,8 @@ class KinamNahual {
   public nahualName: string;
   public nahualDay: number;
   public daySign: string;
-  public image = `assets/signs/oc.png`;
-  public date = new Date();
+  public image: string;
+  public date: Date;
 
   constructor(date?: Date) {
     if (isValidDate(date)) {
@@ -33,7 +33,13 @@ class KinamNahual {
       this.date = new Date();
     }
 
-    const { nahual, day } = nahualGetter.nahual(date);
+    this.update(this.date);
+  }
+
+  public update(date: Date) {
+    this.date = date;
+
+    const { nahual, day } = nahualGetter.nahual(this.date);
 
     this.nahualDay = day;
     this.nahualName = nahual;
@@ -48,15 +54,15 @@ class KinamNahual {
     return format(this.date, customFormat);
   }
 
-  public getDay() {
+  public get day() {
     return this.date.getDate();
   }
 
-  public getMonth() {
+  public get month() {
     return this.date.getMonth() + 1;
   }
 
-  public getYear() {
+  public get year() {
     return this.date.getFullYear();
   }
 }

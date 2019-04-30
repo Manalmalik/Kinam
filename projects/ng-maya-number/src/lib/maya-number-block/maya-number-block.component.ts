@@ -28,21 +28,15 @@ export class MayaNumberBlockComponent implements OnInit {
       map(res => getMayanNumber(res)),
       map(res => res.map(x => x.filter(y => y.length))),
       map(block => {
-        const numeric = block.map(x =>
-          x.map(y => this.getValFromRow(y)).reduce((acc, val) => acc + val, 0)
-        );
-
-        const inner = block.map(x => {
-          return {
+        return {
+          numeric: block.map(x =>
+            x.map(y => this.getValFromRow(y)).reduce((acc, val) => acc + val, 0)
+          ),
+          block,
+          inner: block.map(x => ({
             mayan: x,
             numeric: x.map(this.getValFromRow)
-          };
-        });
-
-        return {
-          numeric,
-          block,
-          inner
+          }))
         };
       })
     );

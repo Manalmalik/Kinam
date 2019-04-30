@@ -10,8 +10,8 @@ $color-bg: #34495e;
 }
 
 .number-container {
-  border: 1px solid white;
   border-radius: 0.5rem;
+  background: black;
 }
 
 .maya-number-block {
@@ -38,6 +38,12 @@ $color-bg: #34495e;
   justify-content: space-between;
   flex-direction: row;
   width: 6rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .number-row {
+    width: 4.75rem;
+  }
 }
 
 .number-row {

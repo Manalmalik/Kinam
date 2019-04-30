@@ -1,6 +1,6 @@
 <section class="columns is-desktop">
   <article class="column">
-    <div>
+    <!-- <div>
       <mat-form-field class="birthday-input">
         <input
           matInput
@@ -18,19 +18,40 @@
           #picker
         ></mat-datepicker>
       </mat-form-field>
-    </div>
+    </div> -->
 
-    <section class="birthday-blocks" *ngIf="!(loading$ | async)">
-      <kinam-maya-number-block [number]="kinamDate?.getDay()">
-        <strong> Day: {{ kinamDate?.getDay() }} </strong>
+    <section [formGroup]="form" class="birthday-blocks">
+      <kinam-maya-number-block [number]="kinamDate?.day">
+        <input
+          class="date-input"
+          type="number"
+          min="1"
+          [max]="maxDates[form?.get('month')?.value - 1]"
+          placeholder="1"
+          formControlName="day"
+        />
       </kinam-maya-number-block>
 
-      <kinam-maya-number-block [number]="kinamDate?.getMonth()">
-        <strong> Month: {{ kinamDate?.getMonth() }} </strong>
+      <kinam-maya-number-block [number]="kinamDate?.month">
+        <input
+          class="date-input"
+          type="number"
+          min="1"
+          max="12"
+          placeholder="7"
+          formControlName="month"
+        />
       </kinam-maya-number-block>
 
-      <kinam-maya-number-block [number]="kinamDate?.getYear()">
-        <strong> Year: {{ kinamDate?.getYear() }} </strong>
+      <kinam-maya-number-block [number]="kinamDate?.year">
+        <input
+          class="date-input"
+          type="number"
+          min="1900"
+          max="2099"
+          placeholder="1992"
+          formControlName="year"
+        />
       </kinam-maya-number-block>
     </section>
 
@@ -44,18 +65,17 @@
           <th>Nahual Name:</th>
           <td>{{ kinamDate?.nahualName }}</td>
         </tr>
-        <!-- <tr>
-          <th>Natural Sign: </th>
+        <tr>
+          <th>Natural Sign:</th>
           <td>{{ kinamDate?.daySign }}</td>
-        </tr> -->
+        </tr>
       </table>
 
-      <ng-container *ngIf="kinamDate?.image">
-        <img
-          [src]="kinamDate?.image"
-          [attr.alt]="'Nahual Sign: ' + kinamDate?.daySign"
-        />
-      </ng-container>
+      <img
+        *ngIf="kinamDate?.image"
+        [src]="kinamDate?.image"
+        [attr.alt]="'Nahual Sign: ' + kinamDate?.daySign"
+      />
     </article>
   </article>
 </section>

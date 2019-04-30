@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   DateAdapter,
   MAT_DATE_LOCALE,
@@ -7,7 +7,6 @@ import {
 } from '@angular/material/core';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
-import { MobileDetectService } from 'core';
 import { Moment } from 'moment';
 import { BehaviorSubject } from 'rxjs';
 
@@ -44,34 +43,39 @@ export class BirthdayComponent implements OnInit {
     touchUi: boolean;
   };
 
-  constructor(private mobileDetectService: MobileDetectService) {}
+  public form: FormGroup;
+
+  public maxDates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
   public ngOnInit() {
-    this.dateConfig = {
-      min: new Date('1900-01-01'),
-      today: new Date(),
-      startView: 'multi-year',
-      touchUi: this.mobileDetectService.isMobile
-    };
-    this.kinamDate = kinamNahual(this.dateConfig.today);
-    this.dateCtrl = new FormControl(this.kinamDate.date);
-  }
+    const today = new Date();
+    this.form = new FormGroup({
+      day: new FormControl(today.getDate(), [
+        Validators.required,
+        Validators.min(1),
+        Validators.max(31)
+      ]),
+      month: new FormControl(today.getMonth() + 1, [
+        Validators.required,
+        Validators.min(1),
+        Validators.max(12)
+      ]),
+      year: new FormControl(today.getFullYear(), [
+        Validators.required,
+        Validators.min(1900),
+        Validators.max(2099)
+      ])
+    });
 
-  private checkValue(value) {
-    if (this.lastDate && this.lastDate.isSame(value.add(12, 'hours'))) {
-      return;
-    }
+    this.kinamDate = kinamNahual(today);
 
-    value = value.add(12, 'hours');
-
-    this.kinamDate = kinamNahual(value.toDate());
-    this.dateCtrl = new FormControl(this.kinamDate.date);
-  }
-
-  public handleDateChange(input) {
-    const { value } = input;
-    const [day, month, year] = value.split('.');
-    const date = moment(new Date(`${year}/${month}/${day}`));
-    this.checkValue(date);
+    this.form.valueChanges.subscribe(({ day, month, year }) => {
+      let date = moment(new Date(`${year}/${month}/${day}`));
+      date = date.add(12, 'hours');
+      if (this.lastDate && this.lastDate.isSame(date.add(12, 'hours'))) {
+        return;
+      }
+      this.kinamDate.update(date.toDate());
+    });
   }
 }

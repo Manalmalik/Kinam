@@ -13,15 +13,14 @@ const base = new Promise(resolve => {
     child.exec('npm run -- ng build ng-maya-number', () => {
       console.log('maya-number done');
       resolve();
-    });
+      child.exec('npm run -- ng build ng-maya-birthday', () => {
+        console.log('birth-date done');
 
-    child.exec('npm run -- ng build ng-maya-birthday', () => {
-      console.log('birth-date done');
-    });
-
-    child.exec('npm run -- ng build website --prod', () => {
-      resolve();
-      console.log('all done');
+        child.exec('npm run -- ng build website --prod', () => {
+          resolve();
+          console.log('all done');
+        });
+      });
     });
   });
 });
