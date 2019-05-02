@@ -1,75 +1,25 @@
-import { Component, EventEmitter } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  ElementRef,
+  ViewEncapsulation
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { moment } from 'ng-maya-birthday';
 import { Moment } from 'moment';
+import { animate, style, AnimationBuilder } from '@angular/animations';
 
 @Component({
   selector: 'kinam-date',
-  template: `
-    <div class="container">
-      <div class="btn-container" (click)="toggle()">
-        <i class="fal" [ngClass]="open ? 'fa-minus' : 'fa-plus'"></i>
-      </div>
-      <div style="position: relative; width: 20rem">
-        <div class="date" [class.date-invisible]="open">
-          <div
-            *ngIf="
-              form.get('day').value &&
-                form.get('month').value &&
-                form.get('year').value;
-              else noBd
-            "
-          >
-            {{ form.get('day').value }}.{{ form.get('month').value }}.{{
-              form.get('year').value
-            }}
-          </div>
-        </div>
-        <form
-          class="outer"
-          action=""
-          [formGroup]="form"
-          [class.closed]="!open"
-          (submit)="toggle()"
-        >
-          <input
-            type="number"
-            min="1"
-            max="31"
-            placeholder="1"
-            formControlName="day"
-          />
-
-          <input
-            type="number"
-            min="1"
-            max="12"
-            placeholder="7"
-            formControlName="month"
-          />
-
-          <input
-            type="number"
-            min="1900"
-            max="2099"
-            placeholder="1992"
-            formControlName="year"
-          />
-          <button type="submit" hidden></button>
-        </form>
-      </div>
-    </div>
-    <ng-template #noBd>
-      <span (click)="toggle()" class="enter-label">Enter your Birthday</span>
-      <ng-template> </ng-template
-    ></ng-template>
-  `,
-  styleUrls: ['./date-input.scss']
+  templateUrl: './date-input.html',
+  styleUrls: ['./date-input.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DateInputComponent {
+  constructor(private _builder: AnimationBuilder) {}
   public open = false;
-
   public form = new FormGroup({
     day: new FormControl(null, Validators.required),
     month: new FormControl(null, Validators.required),
@@ -88,7 +38,29 @@ export class DateInputComponent {
     }
   }
 
-  toggle() {
+  private animFactory(direction: number, open: boolean) {
+    return this._builder.build([
+      style({
+        transform: `translateY(${open ? 0 : direction * 200}px)`,
+        opacity: open ? '1' : '0'
+      }),
+      animate(
+        '200ms cubic-bezier(0.17,0.43,0.75,0.97)',
+        style({
+          transform: `translateY(${!open ? 0 : direction * 200}px)`,
+          opacity: !open ? '1' : '0'
+        })
+      )
+    ]);
+  }
+
+  toggle(el: ElementRef, el2: ElementRef) {
     this.open = !this.open;
+    const player = this.animFactory(!this.open ? 1 : -1, this.open).create(el);
+    const player2 = this.animFactory(this.open ? 1 : -1, !this.open).create(
+      el2
+    );
+    player.play();
+    player2.play();
   }
 }

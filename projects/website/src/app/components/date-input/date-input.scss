@@ -11,20 +11,28 @@
   overflow: hidden;
 }
 
+// @keyframes slideOut {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: translateY(-200px);
+//   }
+// }
+
 .date {
   transition: 0.2s all ease-in-out;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
   opacity: 1;
   position: absolute;
   margin-top: 1rem;
   font-size: 1.5rem;
   font-family: "Montserrat", sans-serif;
 
-  &-invisible {
-    opacity: 0;
-    transition: 0.2s all ease-in-out;
-    transform: translateY(-200px);
-  }
+  // &-invisible {
+  //   transition: 0.2s all ease-in-out;
+  // }
 }
 
 .fa-plus,
@@ -39,6 +47,7 @@ input {
   background: rgba(0, 0, 0, 0);
   padding: 1rem;
   color: white;
+  border: none;
   font-size: 2rem;
   font-family: "Montserrat", sans-serif;
   border-top: none;
@@ -62,9 +71,9 @@ input {
 }
 
 .outer {
-  transform: translateY(0);
-  opacity: 1;
-  transition: 0.2s all ease-in;
+  // transform: translateY(0);
+  // opacity: 1;
+  // transition: 0.2s all ease-in;
   overflow: hidden;
   position: absolute;
 
@@ -73,11 +82,11 @@ input {
     // width: 100%;
   }
 
-  &.closed {
-    transform: translateY(200px);
-    opacity: 0;
-    transition: 0.2s all ease-out;
-  }
+  // &.closed {
+  //   transform: translateY(200px);
+  //   opacity: 0;
+  //   transition: 0.2s all ease-out;
+  // }
 }
 
 .enter-label {
