@@ -3,16 +3,36 @@
   display: block;
 }
 
+.title {
+  margin-bottom: 2rem;
+}
+
+.anim-container {
+  height: 325px;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .anim-container {
+    height: 615px;
+  }
+}
+
+.calculating, 
+.reading {
+  position: absolute;
+  width: 100%;
+}
+
 .birthday {
   &-blocks {
+    max-width: 30rem;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin: 2rem 139rem;
+    margin: 2rem auto;
     filter: invert(100%);
-    margin-left: 5rem;
-    margin-right: 5rem;
-    border-radius: 0.25rem;
+    border-radius: .25rem;
   }
 
   &-input {
@@ -30,11 +50,21 @@
   }
 }
 
+@media only screen and (max-width: 320px) {
+  .birthday-blocks {
+      margin: 2rem;
+  }
+}
+
+kinam-maya-number-block {
+  width: calc(100% / 3);
+}
+
 @media only screen and (max-width: 600px) {
   .birthday-blocks {
-    align-items: center;
+    align-items: flex-end ;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 
@@ -56,24 +86,26 @@ strong {
 
 .date-input {
   border-radius: 0;
-  // background: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #0000;
   border: none;
-  padding: 1rem;
-  color: black;
+  padding: 1rem 0;
+  color: #000;
+  max-width: 110px;
+  width: 110px;
   font-size: 2rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat,sans-serif;
   border-top: none;
   border-left: none;
   border-right: none;
   text-align: center;
-  border-bottom: 1px solid #373737;
-  transition: border-bottom 0.2s ease-in-out;
+  box-shadow: 0 1px 0 0 rgba(122,122,122,.5);
+  transition: .2s ease-in-out;
 
   &:active,
   &:focus {
-    border-bottom: 1px solid black;
-    transition: border-bottom 0.2s ease-in-out;
+    // border-bottom: 2px solid black;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,1);
     outline: none;
   }
 }

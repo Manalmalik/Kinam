@@ -1,0 +1,138 @@
+<!-- [ngClass]="{
+  'flex': (param$ | async) === 'flex',
+  'grid': (param$ | async) === 'grid'
+}" -->
+<div
+  class="bg-image"
+  #bgImage
+  (click)="$event.stopPropagation()"
+>
+  <div
+    class="product-img"
+    [class.in-focus]="id === 1"
+    (click)="setInFocus(1)"
+    [ngStyle]="getThumbnail('Yossi') | async"
+  >
+    <div
+      class="content-box"
+      [routerLink]="['detail']"
+      [queryParams]="{ img: 'yossi' }"
+    >
+      <div class="color-strip">
+        <div class="bg bg-red"></div>
+        <div class="bg bg-black"></div>
+        <div class="bg bg-red"></div>
+      </div>
+
+      <h2 class="title has-color-white">Get it</h2>
+
+    </div>
+  </div>
+  <div
+    class="product-img"
+    [class.in-focus]="id === 2"
+    (click)="setInFocus(2)"
+    [ngStyle]="getThumbnail('Yossi2') | async"
+  >
+
+    <div
+      class="content-box"
+      [routerLink]="['detail']"
+      [queryParams]="{ img: 'vonni' }"
+    >
+      <div class="color-strip">
+        <div class="bg bg-green"></div>
+        <div class="bg bg-blue"></div>
+        <div class="bg bg-red"></div>
+      </div>
+
+      <h2 class="title has-color-white">Get it</h2>
+
+    </div>
+  </div>
+  <div
+    class="product-img"
+    [class.in-focus]="id === 3"
+    (click)="setInFocus(3)"
+    [ngStyle]="getThumbnail('Vonni') | async"
+  >
+    <div
+      class="content-box"
+      [routerLink]="['detail']"
+      [queryParams]="{ img: 'yossi2' }"
+    >
+      <div class="color-strip">
+        <div class="bg bg-blue"></div>
+        <div class="bg bg-white"></div>
+        <div class="bg bg-blue"></div>
+
+      </div>
+      <h2 class="title has-color-white">Get it</h2>
+
+    </div>
+  </div>
+  <div
+    class="product-img"
+    [class.in-focus]="id === 4"
+    (click)="setInFocus(4)"
+    [ngStyle]="getThumbnail('Yossi') | async"
+  >
+    <div
+      class="content-box"
+      [routerLink]="['detail']"
+      [queryParams]="{ img: 'yossi' }"
+    >
+
+      <div class="color-strip">
+        <div class="bg bg-red"></div>
+        <div class="bg bg-black"></div>
+        <div class="bg bg-red"></div>
+      </div>
+
+      <h2 class="title has-color-white">Get it</h2>
+    </div>
+  </div>
+  <div
+    class="product-img"
+    [class.in-focus]="id === 5"
+    (click)="setInFocus(5)"
+    [ngStyle]="getThumbnail('Yossi2') | async"
+  >
+    <div
+      class="content-box"
+      [routerLink]="['detail']"
+      [queryParams]="{ img: 'vonni' }"
+    >
+
+      <div class="color-strip">
+        <div class="bg bg-red"></div>
+        <div class="bg bg-green"></div>
+        <div class="bg bg-blue"></div>
+        <div class="bg bg-green"></div>
+        <div class="bg bg-blue"></div>
+        <div class="bg bg-red"></div>
+      </div>
+
+    </div>
+  </div>
+  <div
+    class="product-img"
+    [class.in-focus]="id === 5"
+    (click)="setInFocus(5)"
+    [ngStyle]="getThumbnail('Vonni') | async"
+  >
+    <div
+      class="content-box"
+      [routerLink]="['detail']"
+      [queryParams]="{ img: 'yossi2' }"
+    >
+      <div class="color-strip">
+        <div class="bg bg-blue"></div>
+        <div class="bg bg-white"></div>
+        <div class="bg bg-blue"></div>
+
+      </div>
+      <h2 class="title has-color-white">Get it</h2>
+    </div>
+  </div>
+</div>

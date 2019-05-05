@@ -1,81 +1,100 @@
-<section class="columns is-desktop">
-  <article class="column">
-    <!-- <div>
-      <mat-form-field class="birthday-input">
-        <input
-          matInput
-          #dateInput
-          [formControl]="dateCtrl"
-          [matDatepicker]="picker"
-          (dateChange)="handleDateChange(dateInput)"
-          [value]="dateConfig?.today"
-        />
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker
-          [startAt]="dateConfig?.today"
-          [startView]="dateConfig?.startView"
-          [touchUi]="dateConfig?.touchUi"
-          #picker
-        ></mat-datepicker>
-      </mat-form-field>
-    </div> -->
+<div
+  [formGroup]="form"
+  class="birthday-blocks"
+>
+  <kinam-maya-number-block [number]="kinamDate?.day">
+    <input
+      class="date-input"
+      type="number"
+      min="1"
+      [max]="maxDates[form?.get('month')?.value - 1]"
+      placeholder="1"
+      formControlName="day"
+    />
+  </kinam-maya-number-block>
 
-    <section [formGroup]="form" class="birthday-blocks">
-      <kinam-maya-number-block [number]="kinamDate?.day">
-        <input
-          class="date-input"
-          type="number"
-          min="1"
-          [max]="maxDates[form?.get('month')?.value - 1]"
-          placeholder="1"
-          formControlName="day"
-        />
-      </kinam-maya-number-block>
+  <kinam-maya-number-block [number]="kinamDate?.month">
+    <input
+      class="date-input"
+      type="number"
+      min="1"
+      max="12"
+      placeholder="7"
+      formControlName="month"
+    />
+  </kinam-maya-number-block>
 
-      <kinam-maya-number-block [number]="kinamDate?.month">
-        <input
-          class="date-input"
-          type="number"
-          min="1"
-          max="12"
-          placeholder="7"
-          formControlName="month"
-        />
-      </kinam-maya-number-block>
+  <kinam-maya-number-block [number]="kinamDate?.year">
+    <input
+      class="date-input"
+      type="number"
+      min="1900"
+      max="2099"
+      placeholder="1992"
+      formControlName="year"
+    />
+  </kinam-maya-number-block>
+</div>
 
-      <kinam-maya-number-block [number]="kinamDate?.year">
-        <input
-          class="date-input"
-          type="number"
-          min="1900"
-          max="2099"
-          placeholder="1992"
-          formControlName="year"
-        />
-      </kinam-maya-number-block>
-    </section>
+<div
+  class="anim-container"
+  [ngSwitch]="!(loading$ | async)"
+>
 
-    <article class="column">
-      <table class="table is-fullwidth">
-        <tr>
-          <th>Nahual Day:</th>
-          <td>{{ kinamDate?.nahualDay }}</td>
-        </tr>
-        <tr>
-          <th>Nahual Name:</th>
-          <td>{{ kinamDate?.nahualName }}</td>
-        </tr>
-        <tr>
-          <th>Natural Sign:</th>
-          <td>{{ kinamDate?.daySign }}</td>
-        </tr>
-      </table>
-
+  <div
+    class="reading columns"
+    *ngSwitchCase="true"
+    [@calc]
+  >
+    <div class="column is-6">
+      <h2 class="title has-text-centered has-text-white">
+        Your Nahual: {{ kinamDate?.nahualName  }}
+      </h2>
       <img
         *ngIf="kinamDate?.image"
         [src]="kinamDate?.image"
         [attr.alt]="'Nahual Sign: ' + kinamDate?.daySign"
       />
-    </article>
-  </article>
-</section>
+    </div>
+    <div class="column is-6 flex-center">
+      <kinam-readings></kinam-readings>
+    </div>
+  </div>
+
+  <div
+    *ngSwitchCase="false"
+    [@calc]
+    class="calculating"
+  >
+    <h2 class="title has-text-white">Calculating your Nahual.</h2>
+    <div>
+      <svg
+        width="100px"
+        height="100px"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+        class="lds-ball"
+        style="background: none;"
+      >
+        <circle
+          cx="50"
+          cy="35.7097"
+          r="13"
+          fill="#fdfdfd"
+        >
+          <animate
+            attributeName="cy"
+            calcMode="spline"
+            values="23;77;23"
+            keyTimes="0;0.5;1"
+            dur="1"
+            keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9"
+            begin="0s"
+            repeatCount="indefinite"
+          ></animate>
+        </circle>
+      </svg>
+    </div>
+  </div>
+</div>

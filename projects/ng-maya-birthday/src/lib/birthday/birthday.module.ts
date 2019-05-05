@@ -7,15 +7,19 @@ import { MayanNumberModule } from 'ng-maya-number';
 import { SharedModule } from 'shared';
 
 import { BirthdayComponent } from './birthday.component';
+import { ReadingsModule } from './hover-card/readings.module';
+import { DateInputComponent } from './date-input/date-input';
 
 @NgModule({
-  declarations: [BirthdayComponent],
+  declarations: [BirthdayComponent, DateInputComponent],
   imports: [
     MatDatepickerModule,
     MatNativeDateModule,
 
     MayanNumberModule,
-    SharedModule
+    SharedModule,
+    ReadingsModule,
+
   ],
   exports: [
     BirthdayComponent,
@@ -26,4 +30,4 @@ import { BirthdayComponent } from './birthday.component';
     SharedModule
   ]
 })
-export class BirthdayModule {}
+export class BirthdayModule { }

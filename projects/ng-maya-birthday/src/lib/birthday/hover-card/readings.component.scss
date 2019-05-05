@@ -35,7 +35,7 @@
   color: white;
   z-index: 3;
   font-size: 2rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: century-gothic, sans-serif;
 }
 
 .overlay {
@@ -43,6 +43,10 @@
   position: absolute;
   z-index: 5;
   transition: background 0.3s ease-in-out;
+}
+
+.inner, .fill {
+  border-radius: 0.5rem;
 }
 
 .text {
@@ -71,4 +75,8 @@
       transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     }
   }
+}
+
+:host {
+  margin: 2rem;
 }

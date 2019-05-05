@@ -1,8 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import './app/styles/fonts';
+@import './app/styles/input';
+
 html {
   background-color: #2f3640;
   box-sizing: content-box;
+
+  font-family: century-gothic, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  font-family: century-gothic, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .fp-tableCell {
@@ -65,4 +78,15 @@ html {
 
 .mat-form-field-infix {
   margin-left: 24px;
+}
+
+
+.flex {
+  display: flex;
+
+  &-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

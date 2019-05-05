@@ -15,6 +15,6 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
-  styleUrls: ['./readings.scss']
+  styleUrls: ['./readings.component.scss']
 })
-export class GetReadingComponent {}
+export class GetReadingComponent { }

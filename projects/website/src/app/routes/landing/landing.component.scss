@@ -14,3 +14,15 @@ kinam-cms-paragraph {
   text-align: center;
   display: block;
 }
+
+
+.birthday-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  kinam-birthday {
+    max-width: 40rem;
+  }
+}

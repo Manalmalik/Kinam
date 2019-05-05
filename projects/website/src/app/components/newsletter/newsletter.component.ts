@@ -18,7 +18,10 @@ const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
         placeholder="Your email"
       />
 
-      <input type="submit" class="newsletter-button" value="Sign up!" />
+      <div type="submit button" (click)="submit(emailControl)" class="newsletter-button">
+      Sign up!
+     <!-- <i class="fal fa-envelope-open"></i> -->
+      </div>
     </form>
   `,
   styleUrls: ['newsletter.component.scss'],
@@ -31,14 +34,17 @@ export class NewsletterComponent {
     Validators.required
   ]);
 
-  constructor(private newletterService: NewsletterService) {}
+  constructor(private newletterService: NewsletterService) { }
 
   public submit(control: FormControl) {
     if (!control.valid) {
       this.invalid = true;
       return;
     }
+    debugger;
 
-    this.newletterService.signUp(control.value).subscribe(res => {}, err => {});
+    this.newletterService.signUp(control.value).subscribe(res => {
+      debugger;
+    }, err => { });
   }
 }

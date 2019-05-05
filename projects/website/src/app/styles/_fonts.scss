@@ -1,0 +1,20 @@
+.font-gothic {
+    font-family: century-gothic,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+
+    &.bold {
+        font-weight: 700;
+    }
+
+    &.italic {
+        font-style: italic;
+    }
+}
+
+
+p {
+    font-family: century-gothic,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}

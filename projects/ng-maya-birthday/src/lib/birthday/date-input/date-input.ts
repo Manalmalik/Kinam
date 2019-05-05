@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { moment } from 'ng-maya-birthday';
+import { moment } from '../moment';
 import { Moment } from 'moment';
 import { animate, style, AnimationBuilder } from '@angular/animations';
 

@@ -34,7 +34,9 @@ function getRow(number: number) {
 const logBase = (n: number, base: number) => Math.log(n) / Math.log(base);
 
 function getMayanNumber(number: number): any[] {
-  console.log(number);
+  if (number === NaN) {
+    return;
+  }
   if (number === 0) {
     return [[MayanDigits.Zero]];
   }

@@ -23,13 +23,18 @@ $color-bg: #34495e;
   width: 7.5rem;
   max-height: 7rem;
   min-height: 4rem;
-  padding: 0.25rem;
+  padding: 0.5rem 0.25rem;
   box-sizing: content-box;
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .maya-number-block {
-    margin: 0.75rem 0.75rem;
+    margin: 0.5rem;
+    max-width: 4.5rem;
+  }
+
+  :host {
+    margin: 0.5rem;
   }
 }
 

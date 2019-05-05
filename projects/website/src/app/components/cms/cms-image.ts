@@ -5,8 +5,13 @@ import {
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
-import { ButterCMSService } from '../../services/butter.service';
+// import { ButterCMSService } from '../../services/butter.service';
 
+
+/**
+ * 
+ * TODO: replace cms service
+ */
 @Component({
   selector: 'kinam-cms-image',
   template: `
@@ -33,10 +38,10 @@ export class CmsImageComponent implements OnInit {
   public thumbnail: string;
   @Input() url: string;
 
-  constructor(private butterCmsService: ButterCMSService) {}
+  // constructor(private butterCmsService: ButterCMSService) {}
 
   ngOnInit() {
-    this.thumbnail = this.butterCmsService.getThumbnail(this.url, 480);
+    // this.thumbnail = this.butterCmsService.getThumbnail(this.url, 480);
   }
 
   openTab(url: string) {
