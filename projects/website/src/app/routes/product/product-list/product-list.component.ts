@@ -1,9 +1,10 @@
 import { Component, ChangeDetectionStrategy, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { map } from 'rxjs/operators';
-import { CmsService, AssetId } from '../../../services/cms.service';
 import { Observable } from 'rxjs';
 
+import { CmsService } from '@website/services';
 
 @Component({
   selector: 'kinam-product-list',

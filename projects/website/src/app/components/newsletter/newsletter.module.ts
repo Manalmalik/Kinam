@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 
+import { SharedModule } from 'shared';
+
 import { NewsletterService, BirthdayDialogComponent } from './newsletter.service';
 import { NewsletterComponent } from './newsletter.component';
-import { SharedModule } from 'shared';
 
 @NgModule({
   imports: [SharedModule],

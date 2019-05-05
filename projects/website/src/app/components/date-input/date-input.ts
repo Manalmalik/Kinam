@@ -1,3 +1,4 @@
+import { animate, style, AnimationBuilder } from '@angular/animations';
 import {
   Component,
   EventEmitter,
@@ -6,9 +7,8 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { moment } from 'ng-maya-birthday';
 import { Moment } from 'moment';
-import { animate, style, AnimationBuilder } from '@angular/animations';
+import { moment } from 'ng-maya-birthday';
 
 @Component({
   selector: 'kinam-date',

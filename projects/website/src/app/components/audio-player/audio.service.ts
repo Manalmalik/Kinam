@@ -12,7 +12,7 @@ import {
 import { BehaviorSubject, pipe, fromEvent, interval } from 'rxjs';
 
 import { Song } from './song';
-import { secondsToHms } from '../../util/convert-time';
+import { secondsToHms } from '@website/util/convert-time';
 
 export const AUDIO_SERVER = '//167.86.100.47:4201';
 

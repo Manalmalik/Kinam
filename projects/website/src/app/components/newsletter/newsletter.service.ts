@@ -7,7 +7,7 @@ import { filter, concatMapTo } from 'rxjs/operators';
 
 import { LocalStorageService } from 'core';
 
-import { RequestService } from '../../services/request.service';
+import { RequestService } from '@website/services';
 
 const AUDIENCE_ID = '9f2f798292';
 const baseUrl = `/api`;

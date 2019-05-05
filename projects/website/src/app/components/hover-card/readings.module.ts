@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
+
+import { SharedModule } from 'shared';
+
 import { GetReadingComponent } from './readings.component';
-import { CoreModule } from 'core';
 
 @NgModule({
     declarations: [GetReadingComponent],
-    imports: [CoreModule],
+    exports: [GetReadingComponent],
+    imports: [SharedModule],
 })
 export class ReadingsModule { }
 

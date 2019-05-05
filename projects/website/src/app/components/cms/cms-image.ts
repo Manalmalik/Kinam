@@ -3,13 +3,12 @@ import {
   ChangeDetectionStrategy,
   Input,
   OnInit,
-  ViewEncapsulation
 } from '@angular/core';
 // import { ButterCMSService } from '../../services/butter.service';
 
 
 /**
- * 
+ *
  * TODO: replace cms service
  */
 @Component({

@@ -11,20 +11,53 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-    "typeRoots": ["node_modules/@types"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "paths": {
-      "@app-environment": ["src/environments/environment"],
-      "nahual-date": ["dist/nahual-date"],
-      "nahual-date/*": ["dist/nahual-date/*"],
-      "core": ["dist/core"],
-      "core/*": ["dist/core/*"],
-      "shared": ["dist/shared"],
-      "shared/*": ["dist/shared/*"],
-      "ng-maya-number": ["dist/ng-maya-number"],
-      "ng-maya-number/*": ["dist/ng-maya-number/*"],
-      "ng-maya-birthday": ["dist/ng-maya-birthday"],
-      "ng-maya-birthday/*": ["dist/ng-maya-birthday/*"]
+      "@app-environment": [
+        "src/environments/environment"
+      ],
+      "nahual-date": [
+        "dist/nahual-date"
+      ],
+      "nahual-date/*": [
+        "dist/nahual-date/*"
+      ],
+      "core": [
+        "dist/core"
+      ],
+      "core/*": [
+        "dist/core/*"
+      ],
+      "shared": [
+        "dist/shared"
+      ],
+      "shared/*": [
+        "dist/shared/*"
+      ],
+      "ng-maya-number": [
+        "dist/ng-maya-number"
+      ],
+      "ng-maya-number/*": [
+        "dist/ng-maya-number/*"
+      ],
+      "ng-maya-birthday": [
+        "dist/ng-maya-birthday"
+      ],
+      "ng-maya-birthday/*": [
+        "dist/ng-maya-birthday/*"
+      ],
+      "@website": [
+        "projects/website/src/app"
+      ],
+      "@website/*": [
+        "projects/website/src/app/*"
+      ],
     },
-    "lib": ["es2018", "dom"]
+    "lib": [
+      "es2018",
+      "dom"
+    ]
   }
 }

@@ -2,7 +2,6 @@ import {
   Component,
   OnInit,
   ChangeDetectionStrategy,
-  ViewEncapsulation
 } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Observable } from 'rxjs';
@@ -20,7 +19,7 @@ export class PlaylistComponent implements OnInit {
   public playing = false;
   public songs: Observable<Song[]>;
 
-  constructor(private audioService: AudioService) {}
+  constructor(private audioService: AudioService) { }
 
   public ngOnInit() {
     this.songs = this.audioService.playlist;
@@ -28,7 +27,7 @@ export class PlaylistComponent implements OnInit {
 
   public play(song: Song) {
     this.audioService.currentSong$.next(song);
-    this.audioService.playSong(song).subscribe(() => {});
+    this.audioService.playSong(song).subscribe(() => { });
   }
 
   public downloadFile(song) {
