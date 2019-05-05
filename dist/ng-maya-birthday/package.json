@@ -1,0 +1,22 @@
+{
+  "name": "ng-maya-birthday",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0",
+    "@angular/material": "^7.1.1"
+  },
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "main": "bundles/ng-maya-birthday.umd.js",
+  "module": "fesm5/ng-maya-birthday.js",
+  "es2015": "fesm2015/ng-maya-birthday.js",
+  "esm5": "esm5/ng-maya-birthday.js",
+  "esm2015": "esm2015/ng-maya-birthday.js",
+  "fesm5": "fesm5/ng-maya-birthday.js",
+  "fesm2015": "fesm2015/ng-maya-birthday.js",
+  "typings": "ng-maya-birthday.d.ts",
+  "metadata": "ng-maya-birthday.metadata.json",
+  "sideEffects": false
+}

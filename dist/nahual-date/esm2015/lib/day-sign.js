@@ -1,0 +1,108 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/** @type {?} */
+export const DAY_SIGNS = [
+    {
+        name: 'imix',
+        label: 'Imix',
+        day: 1
+    },
+    {
+        name: 'ik',
+        label: 'Ikʼ',
+        day: 2
+    },
+    {
+        name: 'akbal',
+        label: 'Akʼbʼal',
+        day: 3
+    },
+    {
+        name: 'kan',
+        label: 'Kʼan',
+        day: 4
+    },
+    {
+        name: 'chicchan',
+        label: 'Chikchan',
+        day: 5
+    },
+    {
+        name: 'cimi',
+        label: 'Kimi',
+        day: 6
+    },
+    {
+        name: 'manik',
+        label: 'Manikʼ',
+        day: 7
+    },
+    {
+        name: 'lamat',
+        label: 'Lamat',
+        day: 8
+    },
+    {
+        name: 'muluc',
+        label: 'Muluk',
+        day: 9
+    },
+    {
+        name: 'oc',
+        label: 'Ok',
+        day: 10
+    },
+    {
+        name: 'chuen',
+        label: 'Chuwen',
+        day: 11
+    },
+    {
+        name: 'eb',
+        label: 'Ebʼ',
+        day: 12
+    },
+    {
+        name: 'ben',
+        label: 'Bʼen',
+        day: 13
+    },
+    {
+        name: 'ix',
+        label: 'Ix',
+        day: 14
+    },
+    {
+        name: 'men',
+        label: 'Men',
+        day: 15
+    },
+    {
+        name: 'cib',
+        label: 'Kibʼ',
+        day: 16
+    },
+    {
+        name: 'caban',
+        label: 'Kabʼan',
+        day: 17
+    },
+    {
+        name: 'etznab',
+        label: 'Etzʼnabʼ',
+        day: 18
+    },
+    {
+        name: 'cauac',
+        label: 'Kawak',
+        day: 19
+    },
+    {
+        name: 'ahau',
+        label: 'Ajaw',
+        day: 20
+    }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGF5LXNpZ24uanMiLCJzb3VyY2VSb290Ijoibmc6Ly9uYWh1YWwtZGF0ZS8iLCJzb3VyY2VzIjpbImxpYi9kYXktc2lnbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBLE1BQU0sT0FBTyxTQUFTLEdBQUc7SUFDdkI7UUFDRSxJQUFJLEVBQUUsTUFBTTtRQUNaLEtBQUssRUFBRSxNQUFNO1FBQ2IsR0FBRyxFQUFFLENBQUM7S0FDUDtJQUNEO1FBQ0UsSUFBSSxFQUFFLElBQUk7UUFDVixLQUFLLEVBQUUsS0FBSztRQUNaLEdBQUcsRUFBRSxDQUFDO0tBQ1A7SUFDRDtRQUNFLElBQUksRUFBRSxPQUFPO1FBQ2IsS0FBSyxFQUFFLFNBQVM7UUFDaEIsR0FBRyxFQUFFLENBQUM7S0FDUDtJQUNEO1FBQ0UsSUFBSSxFQUFFLEtBQUs7UUFDWCxLQUFLLEVBQUUsTUFBTTtRQUNiLEdBQUcsRUFBRSxDQUFDO0tBQ1A7SUFDRDtRQUNFLElBQUksRUFBRSxVQUFVO1FBQ2hCLEtBQUssRUFBRSxVQUFVO1FBQ2pCLEdBQUcsRUFBRSxDQUFDO0tBQ1A7SUFDRDtRQUNFLElBQUksRUFBRSxNQUFNO1FBQ1osS0FBSyxFQUFFLE1BQU07UUFDYixHQUFHLEVBQUUsQ0FBQztLQUNQO0lBQ0Q7UUFDRSxJQUFJLEVBQUUsT0FBTztRQUNiLEtBQUssRUFBRSxRQUFRO1FBQ2YsR0FBRyxFQUFFLENBQUM7S0FDUDtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixLQUFLLEVBQUUsT0FBTztRQUNkLEdBQUcsRUFBRSxDQUFDO0tBQ1A7SUFDRDtRQUNFLElBQUksRUFBRSxPQUFPO1FBQ2IsS0FBSyxFQUFFLE9BQU87UUFDZCxHQUFHLEVBQUUsQ0FBQztLQUNQO0lBQ0Q7UUFDRSxJQUFJLEVBQUUsSUFBSTtRQUNWLEtBQUssRUFBRSxJQUFJO1FBQ1gsR0FBRyxFQUFFLEVBQUU7S0FDUjtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixLQUFLLEVBQUUsUUFBUTtRQUNmLEdBQUcsRUFBRSxFQUFFO0tBQ1I7SUFDRDtRQUNFLElBQUksRUFBRSxJQUFJO1FBQ1YsS0FBSyxFQUFFLEtBQUs7UUFDWixHQUFHLEVBQUUsRUFBRTtLQUNSO0lBQ0Q7UUFDRSxJQUFJLEVBQUUsS0FBSztRQUNYLEtBQUssRUFBRSxNQUFNO1FBQ2IsR0FBRyxFQUFFLEVBQUU7S0FDUjtJQUNEO1FBQ0UsSUFBSSxFQUFFLElBQUk7UUFDVixLQUFLLEVBQUUsSUFBSTtRQUNYLEdBQUcsRUFBRSxFQUFFO0tBQ1I7SUFDRDtRQUNFLElBQUksRUFBRSxLQUFLO1FBQ1gsS0FBSyxFQUFFLEtBQUs7UUFDWixHQUFHLEVBQUUsRUFBRTtLQUNSO0lBQ0Q7UUFDRSxJQUFJLEVBQUUsS0FBSztRQUNYLEtBQUssRUFBRSxNQUFNO1FBQ2IsR0FBRyxFQUFFLEVBQUU7S0FDUjtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixLQUFLLEVBQUUsUUFBUTtRQUNmLEdBQUcsRUFBRSxFQUFFO0tBQ1I7SUFDRDtRQUNFLElBQUksRUFBRSxRQUFRO1FBQ2QsS0FBSyxFQUFFLFVBQVU7UUFDakIsR0FBRyxFQUFFLEVBQUU7S0FDUjtJQUNEO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixLQUFLLEVBQUUsT0FBTztRQUNkLEdBQUcsRUFBRSxFQUFFO0tBQ1I7SUFDRDtRQUNFLElBQUksRUFBRSxNQUFNO1FBQ1osS0FBSyxFQUFFLE1BQU07UUFDYixHQUFHLEVBQUUsRUFBRTtLQUNSO0NBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgREFZX1NJR05TID0gW1xuICB7XG4gICAgbmFtZTogJ2ltaXgnLFxuICAgIGxhYmVsOiAnSW1peCcsXG4gICAgZGF5OiAxXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnaWsnLFxuICAgIGxhYmVsOiAnSWvKvCcsXG4gICAgZGF5OiAyXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnYWtiYWwnLFxuICAgIGxhYmVsOiAnQWvKvGLKvGFsJyxcbiAgICBkYXk6IDNcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdrYW4nLFxuICAgIGxhYmVsOiAnS8q8YW4nLFxuICAgIGRheTogNFxuICB9LFxuICB7XG4gICAgbmFtZTogJ2NoaWNjaGFuJyxcbiAgICBsYWJlbDogJ0NoaWtjaGFuJyxcbiAgICBkYXk6IDVcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdjaW1pJyxcbiAgICBsYWJlbDogJ0tpbWknLFxuICAgIGRheTogNlxuICB9LFxuICB7XG4gICAgbmFtZTogJ21hbmlrJyxcbiAgICBsYWJlbDogJ01hbmlryrwnLFxuICAgIGRheTogN1xuICB9LFxuICB7XG4gICAgbmFtZTogJ2xhbWF0JyxcbiAgICBsYWJlbDogJ0xhbWF0JyxcbiAgICBkYXk6IDhcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdtdWx1YycsXG4gICAgbGFiZWw6ICdNdWx1aycsXG4gICAgZGF5OiA5XG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnb2MnLFxuICAgIGxhYmVsOiAnT2snLFxuICAgIGRheTogMTBcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdjaHVlbicsXG4gICAgbGFiZWw6ICdDaHV3ZW4nLFxuICAgIGRheTogMTFcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdlYicsXG4gICAgbGFiZWw6ICdFYsq8JyxcbiAgICBkYXk6IDEyXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnYmVuJyxcbiAgICBsYWJlbDogJ0LKvGVuJyxcbiAgICBkYXk6IDEzXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnaXgnLFxuICAgIGxhYmVsOiAnSXgnLFxuICAgIGRheTogMTRcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdtZW4nLFxuICAgIGxhYmVsOiAnTWVuJyxcbiAgICBkYXk6IDE1XG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnY2liJyxcbiAgICBsYWJlbDogJ0tpYsq8JyxcbiAgICBkYXk6IDE2XG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnY2FiYW4nLFxuICAgIGxhYmVsOiAnS2FiyrxhbicsXG4gICAgZGF5OiAxN1xuICB9LFxuICB7XG4gICAgbmFtZTogJ2V0em5hYicsXG4gICAgbGFiZWw6ICdFdHrKvG5hYsq8JyxcbiAgICBkYXk6IDE4XG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnY2F1YWMnLFxuICAgIGxhYmVsOiAnS2F3YWsnLFxuICAgIGRheTogMTlcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdhaGF1JyxcbiAgICBsYWJlbDogJ0FqYXcnLFxuICAgIGRheTogMjBcbiAgfVxuXTtcbiJdfQ==

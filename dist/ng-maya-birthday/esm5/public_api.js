@@ -1,0 +1,11 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/*
+ * Public API Surface of ng-maya-birthday
+ */
+export { BirthdayModule } from './lib/birthday/birthday.module';
+export { moment } from './lib/birthday/moment';
+export { DateFormat } from './lib/birthday/date-format';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljX2FwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL25nLW1heWEtYmlydGhkYXkvIiwic291cmNlcyI6WyJwdWJsaWNfYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFJQSwrQkFBYyxnQ0FBZ0MsQ0FBQztBQUMvQyxPQUFPLEVBQUUsTUFBTSxFQUFFLE1BQU0sdUJBQXVCLENBQUM7QUFDL0MsT0FBTyxFQUFFLFVBQVUsRUFBRSxNQUFNLDRCQUE0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBuZy1tYXlhLWJpcnRoZGF5XG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9saWIvYmlydGhkYXkvYmlydGhkYXkubW9kdWxlJztcbmV4cG9ydCB7IG1vbWVudCB9IGZyb20gJy4vbGliL2JpcnRoZGF5L21vbWVudCc7XG5leHBvcnQgeyBEYXRlRm9ybWF0IH0gZnJvbSAnLi9saWIvYmlydGhkYXkvZGF0ZS1mb3JtYXQnO1xuIl19
