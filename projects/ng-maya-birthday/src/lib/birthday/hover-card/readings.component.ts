@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
         <div class="inner outline"></div>
         <div class="behind fill">
           <div class="text">
-            Get your Maya Readings
+            Get your Tzolkʼin Readings
           </div>
         </div>
       </div>

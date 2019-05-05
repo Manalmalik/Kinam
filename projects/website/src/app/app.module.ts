@@ -25,6 +25,8 @@ import { KinamAudioComponent } from './routes/kinam-audio-suite/kinam-audio-suit
 import { LandingComponent } from './routes/landing/landing.component';
 import { ProductListComponent } from './routes/product/product-list/product-list.component';
 import { ProductPageComponent } from './routes/product/product-page/product-page.component';
+import { BirthdayDialogComponent } from './components/newsletter/newsletter.service';
+import { ErrorDialogComponent } from './services/dialog.service';
 
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
@@ -47,7 +49,6 @@ const routes: Routes = [
 
     ProductListComponent,
     ProductPageComponent,
-
     CmsParagraphComponent,
     CmsBlockComponent,
     CmsImageComponent,
@@ -63,8 +64,9 @@ const routes: Routes = [
 
     LoginDialogComponent,
     DateInputComponent,
+    ErrorDialogComponent,
   ],
-  entryComponents: [LoginDialogComponent],
+  entryComponents: [LoginDialogComponent, ErrorDialogComponent],
   imports: [
     CoreModule,
     SharedModule,

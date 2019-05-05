@@ -10,6 +10,6 @@ import { NewsletterComponent } from './newsletter.component';
   declarations: [NewsletterComponent, BirthdayDialogComponent],
   exports: [NewsletterComponent, BirthdayDialogComponent],
   providers: [NewsletterService],
-  entryComponents: [BirthdayDialogComponent]
+  entryComponents: [BirthdayDialogComponent, NewsletterComponent,]
 })
 export class NewsletterModule { }

@@ -9,7 +9,7 @@ const INVALID_DATE = 'Invalid Date';
 
 function findDaySign(day: number) {
   const sign = DAY_SIGNS.find(s => s.day === day);
-  return sign ? sign : { name: '' };
+  return sign ? sign : { name: '', label: '' };
 }
 
 const getImg = (daySign: string) =>
@@ -25,6 +25,7 @@ class KinamNahual {
   public daySign: string;
   public image: string;
   public date: Date;
+  public label: string;
 
   constructor(date?: Date) {
     if (isValidDate(date)) {
@@ -46,8 +47,10 @@ class KinamNahual {
     /**
      * TODO: validate day signs with dag
      */
-    this.daySign = findDaySign(this.nahualDay).name;
-    this.image = getImg(this.daySign);
+    const daySign = findDaySign(this.nahualDay);
+    this.daySign = daySign.label;
+
+    this.image = getImg(daySign.name);
   }
 
   public format(customFormat = FORMAT) {

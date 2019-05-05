@@ -29,8 +29,9 @@ $color-bg: #34495e;
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .maya-number-block {
-    margin: 0.5rem;
-    max-width: 4.5rem;
+    margin: .5rem;
+    max-width: 3.5rem;
+    padding: 0.2rem;
   }
 
   :host {
@@ -45,7 +46,12 @@ $color-bg: #34495e;
   width: 6rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+  .number-row {
+    width: 4.25rem;
+  }
+
+@media only screen and (min-width: 320px)  and (max-width: 600px) {
   .number-row {
     width: 4.75rem;
   }

@@ -1,7 +1,8 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
 import { FormControl, Validators } from '@angular/forms';
 import { NewsletterService } from './newsletter.service';
+import { DialogService } from '../../services/dialog.service';
 
 const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -12,8 +13,6 @@ const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
       <input
         type="email"
         [formControl]="emailControl"
-        (click)="invalid = false"
-        [class.invalid]="invalid"
         class="newsletter-input"
         placeholder="Your email"
       />
@@ -28,23 +27,42 @@ const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NewsletterComponent {
-  public invalid = false;
+  public error: string;
   public emailControl = new FormControl(null, [
     Validators.pattern(MAIL_REGEX),
     Validators.required
   ]);
 
-  constructor(private newletterService: NewsletterService) { }
+  constructor(private newletterService: NewsletterService, private dialogService: DialogService, private cd: ChangeDetectorRef) { }
 
   public submit(control: FormControl) {
     if (!control.valid) {
-      this.invalid = true;
       return;
     }
-    debugger;
 
-    this.newletterService.signUp(control.value).subscribe(res => {
-      debugger;
-    }, err => { });
+    this.newletterService.signUp(control.value).subscribe(
+      res => {
+
+      },
+      ({ error }) => {
+        if (error.status === 400) {
+          let errorMsg;
+          switch (error.title) {
+            case 'Member Exists': {
+              errorMsg = 'We already signed this email up.';
+              break;
+            }
+            default: {
+              errorMsg = error.detail;
+              break;
+            }
+          }
+          this.dialogService.error(errorMsg).afterClosed()
+            .subscribe(({ invalid }) => {
+              this.emailControl.setErrors({ invalid });
+              this.cd.detectChanges();
+            });
+        }
+      });
   }
 }

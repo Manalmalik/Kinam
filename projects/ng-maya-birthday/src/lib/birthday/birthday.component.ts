@@ -15,13 +15,16 @@ import { LocalStorageService } from 'core';
 
 import { DateFormat } from './date-format';
 import { moment } from './moment';
-import { tap, switchMap, debounceTime } from 'rxjs/operators';
+import { tap, switchMap, debounceTime, filter, distinctUntilChanged } from 'rxjs/operators';
+
+const YEAR_MAX = 2099;
+const YEAR_MIN = 1900;
 
 const validators = {
   year: [
     Validators.required,
-    Validators.min(1900),
-    Validators.max(2099)
+    Validators.min(YEAR_MIN),
+    Validators.max(YEAR_MAX)
   ],
   month: [
     Validators.required,
@@ -109,9 +112,28 @@ export class BirthdayComponent implements OnInit {
     }
 
     this.form.valueChanges.pipe(
+      distinctUntilChanged(),
       switchMap(x => of(x)),
       tap(() => this.loading$.next(true)),
       debounceTime(1000),
+      filter(
+        ({ day, month, year }) => {
+          const x = !(
+            !isNaN(day) &&
+            !isNaN(month) &&
+            !isNaN(year) &&
+            !!day &&
+            !!month &&
+            !!year &&
+            year <= YEAR_MAX &&
+            year >= YEAR_MIN
+          );
+          if (x === false) {
+            return true;
+          }
+          return false;
+        }
+      )
     ).subscribe(({ day, month, year }) => {
       let date = moment(new Date(`${year}/${month}/${day}`));
       date = date.add(12, 'hours');

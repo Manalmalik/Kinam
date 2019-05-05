@@ -18,9 +18,23 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  .birthday-input {
+    font-size: 1.5rem;
+  }
+}
+
+.is-centered {
+   margin: 2rem auto;
+}
+
+.is-inverted {
+  filter: invert(100%);
+}
+
 .calculating, 
 .reading {
-  position: absolute;
+  // position: absolute;
   width: 100%;
 }
 

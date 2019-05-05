@@ -8,7 +8,7 @@
       type="number"
       min="1"
       [max]="maxDates[form?.get('month')?.value - 1]"
-      placeholder="1"
+      placeholder="Day"
       formControlName="day"
     />
   </kinam-maya-number-block>
@@ -19,7 +19,7 @@
       type="number"
       min="1"
       max="12"
-      placeholder="7"
+      placeholder="Month"
       formControlName="month"
     />
   </kinam-maya-number-block>
@@ -30,7 +30,7 @@
       type="number"
       min="1900"
       max="2099"
-      placeholder="1992"
+      placeholder="Year"
       formControlName="year"
     />
   </kinam-maya-number-block>
@@ -46,17 +46,37 @@
     *ngSwitchCase="true"
     [@calc]
   >
-    <div class="column is-6">
+    <div class="column is-4">
       <h2 class="title has-text-centered has-text-white">
         Your Nahual: {{ kinamDate?.nahualName  }}
       </h2>
+      <h2 class="title has-text-centered has-text-white">
+        Your Day Sign: {{ kinamDate?.daySign }}
+      </h2>
+    </div>
+    <div class="column is-4">
       <img
         *ngIf="kinamDate?.image"
         [src]="kinamDate?.image"
         [attr.alt]="'Nahual Sign: ' + kinamDate?.daySign"
       />
     </div>
-    <div class="column is-6 flex-center">
+    <div class="column is-4">
+      <h2 class="title has-text-centered has-text-white">
+        Galactic Number: {{ kinamDate?.nahualDay  }}
+      </h2>
+      <kinam-maya-number-block
+        class="is-centered is-inverted"
+        [number]="kinamDate?.nahualDay"
+      ></kinam-maya-number-block>
+    </div>
+  </div>
+
+  <div
+    class="columns"
+    *ngSwitchCase="true"
+  >
+    <div class="column is-6 is-offset-3 flex-center">
       <kinam-readings></kinam-readings>
     </div>
   </div>
