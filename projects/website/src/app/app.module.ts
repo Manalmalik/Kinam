@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule, Injectable, Component, Inject } from '@angular/core';
+import { Routes, RouterModule, Resolve } from '@angular/router';
 
 import { CoreModule } from 'core';
 import { BirthdayModule } from 'ng-maya-birthday';
 import { SharedModule } from 'shared';
 
-import { AppComponent, LoginDialogComponent } from './app.component';
+import { AppComponent } from './app.component';
 
 import { MainComponent } from './routes/main/main.component';
 import { ScrollDirective } from './routes/main/scroll.directive';
@@ -25,8 +25,29 @@ import { ProductPageComponent } from './routes/product/product-page/product-page
 import { DialogComponent } from './services/dialog.service';
 import { CmsModule } from './components/cms/cms.module';
 
+import { MatDialog } from '@angular/material/dialog';
+import { CanActivate } from '@angular/router';
+import { LoginDialogComponent } from './login-dialog.component';
+
+
+
+@Injectable()
+export class EntryGuard implements CanActivate {
+
+  constructor(private dialog: MatDialog) {
+    // super(null);
+  }
+  canActivate() {
+    return new Promise<boolean>(resolve => {
+      this.dialog.open(LoginDialogComponent, { disableClose: true }).afterClosed().subscribe((res) => {
+        resolve(res);
+      });
+    });
+  }
+}
+
 const routes: Routes = [
-  { path: '', component: LandingComponent, pathMatch: 'full' },
+  { path: '', canActivate: [EntryGuard], component: LandingComponent, pathMatch: 'full' },
   { path: 'audio', component: KinamAudioComponent },
   {
     path: 'product', children: [
@@ -35,7 +56,7 @@ const routes: Routes = [
       { path: '**', redirectTo: '' }
     ]
   },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
@@ -60,6 +81,7 @@ const routes: Routes = [
     DateInputComponent,
     DialogComponent,
   ],
+  providers: [EntryGuard],
   entryComponents: [LoginDialogComponent, DialogComponent],
   imports: [
     CmsModule,
@@ -67,7 +89,7 @@ const routes: Routes = [
     SharedModule,
     BirthdayModule,
     NewsletterModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes)
   ],
   bootstrap: [AppComponent]
 })
