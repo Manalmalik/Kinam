@@ -16,15 +16,21 @@
         <kinam-cms-paragraph [html]="content.text_1"></kinam-cms-paragraph>
       </div>
     </div>
-    <div class="row">
-      <div class="column">
-        <kinam-cms-paragraph [html]="content.newsletter_text">
-          <kinam-newsletter></kinam-newsletter>
-        </kinam-cms-paragraph>
-      </div>
+  </div>
+</section>
+
+<section>
+  <div class="row">
+    <div class="column">
+      <!-- <kinam-cms-paragraph [html]="content.newsletter_text">
+      </kinam-cms-paragraph> -->
+      <kinam-newsletter></kinam-newsletter>
     </div>
   </div>
 </section>
 
 
-<kinam-birthday class="section"></kinam-birthday>
+<kinam-birthday
+  class="section"
+  [content$]="calendar$"
+> </kinam-birthday>

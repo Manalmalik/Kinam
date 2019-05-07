@@ -8,19 +8,13 @@
 }
 
 .anim-container {
-  height: 325px;
+  // height: 325px;
   position: relative;
 }
 
 @media screen and (max-width: 767px) {
   .anim-container {
-    height: 615px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .birthday-input {
-    font-size: 1.5rem;
+    // height: 615px;
   }
 }
 
@@ -34,8 +28,7 @@
 
 .calculating, 
 .reading {
-  // position: absolute;
-  width: 100%;
+  box-sizing: border-box;
 }
 
 .birthday {
@@ -67,6 +60,11 @@
 @media only screen and (max-width: 320px) {
   .birthday-blocks {
       margin: 2rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .birthday-blocks {
+    max-width: 20rem;  
   }
 }
 
@@ -121,5 +119,16 @@ strong {
     transition: all 0.2s ease-in-out;
     box-shadow: 0px 2px 0px 0px rgba(0,0,0,1);
     outline: none;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 320px) {
+  img {
+    max-width: 164px;
+  }
+  .date-input {
+    font-size: 1.5rem;
+    max-width: 4.75rem;
   }
 }

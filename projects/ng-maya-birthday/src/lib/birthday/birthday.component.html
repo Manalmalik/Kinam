@@ -38,6 +38,7 @@
 
 <div
   class="anim-container"
+  *ngIf="content$ | async as content"
   [ngSwitch]="!(loading$ | async)"
 >
 
@@ -46,15 +47,15 @@
     *ngSwitchCase="true"
     [@calc]
   >
-    <div class="column is-4">
+    <div class="column is-4-desktop">
       <h2 class="title has-text-centered has-text-white">
-        Your Nahual: {{ kinamDate?.nahualName  }}
+        {{content.your_nahual}} {{ kinamDate?.nahualName  }}
       </h2>
       <h2 class="title has-text-centered has-text-white">
-        Your Day Sign: {{ kinamDate?.daySign }}
+        {{content.your_daysign}} {{ kinamDate?.daySign }}
       </h2>
     </div>
-    <div class="column is-4">
+    <div class="column is-4-desktop">
       <img
         *ngIf="kinamDate?.image"
         [src]="kinamDate?.image"
@@ -63,7 +64,7 @@
     </div>
     <div class="column is-4">
       <h2 class="title has-text-centered has-text-white">
-        Galactic Number: {{ kinamDate?.nahualDay  }}
+        {{content.your_nahual_number}} {{ kinamDate?.nahualDay  }}
       </h2>
       <kinam-maya-number-block
         class="is-centered is-inverted"
@@ -86,7 +87,7 @@
     [@calc]
     class="calculating"
   >
-    <h2 class="title has-text-white">Calculating your Nahual.</h2>
+    <h2 class="title has-text-white"> {{content.calculating}}</h2>
     <div>
       <svg
         width="100px"

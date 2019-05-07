@@ -10,9 +10,6 @@ import { AppComponent, LoginDialogComponent } from './app.component';
 import { MainComponent } from './routes/main/main.component';
 import { ScrollDirective } from './routes/main/scroll.directive';
 import { NewsletterModule } from './components/newsletter/newsletter.module';
-import { CmsParagraphComponent } from './components/cms/cms-paragraph';
-import { CmsBlockComponent } from './components/cms/cms-block';
-import { CmsImageComponent } from './components/cms/cms-image';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 import { DateInputComponent } from './components/date-input/date-input';
@@ -25,8 +22,8 @@ import { KinamAudioComponent } from './routes/kinam-audio-suite/kinam-audio-suit
 import { LandingComponent } from './routes/landing/landing.component';
 import { ProductListComponent } from './routes/product/product-list/product-list.component';
 import { ProductPageComponent } from './routes/product/product-page/product-page.component';
-import { BirthdayDialogComponent } from './components/newsletter/newsletter.service';
-import { ErrorDialogComponent } from './services/dialog.service';
+import { DialogComponent } from './services/dialog.service';
+import { CmsModule } from './components/cms/cms.module';
 
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
@@ -49,9 +46,6 @@ const routes: Routes = [
 
     ProductListComponent,
     ProductPageComponent,
-    CmsParagraphComponent,
-    CmsBlockComponent,
-    CmsImageComponent,
 
     NavigationComponent,
     KinamAudioComponent,
@@ -64,10 +58,11 @@ const routes: Routes = [
 
     LoginDialogComponent,
     DateInputComponent,
-    ErrorDialogComponent,
+    DialogComponent,
   ],
-  entryComponents: [LoginDialogComponent, ErrorDialogComponent],
+  entryComponents: [LoginDialogComponent, DialogComponent],
   imports: [
+    CmsModule,
     CoreModule,
     SharedModule,
     BirthdayModule,

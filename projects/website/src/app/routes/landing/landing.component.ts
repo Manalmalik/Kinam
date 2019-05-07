@@ -1,8 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-// import { CmsService } from '@website/services/cms.service';
-import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { CmsService } from '../../services/cms.service';
+
+import { CmsService } from 'core';
 
 @Component({
   selector: 'kinam-landing',
@@ -14,10 +13,10 @@ export class LandingComponent implements OnInit {
   constructor(private cmsService: CmsService) { }
 
   public content$: Observable<any>;
+  public calendar$: Observable<any>;
 
   public ngOnInit() {
-    this.content$ = this.cmsService
-      .getCollection('landing')
-      .pipe(map(x => x.entries[0]));
+    this.content$ = this.cmsService.getSingleton('landing');
+    this.calendar$ = this.cmsService.getSingleton('calendar');
   }
 }

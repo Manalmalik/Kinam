@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   DateAdapter,
@@ -8,7 +8,7 @@ import {
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, of, Observable } from 'rxjs';
 
 import { KinamNahual, kinamNahual } from 'nahual-date';
 import { LocalStorageService } from 'core';
@@ -70,9 +70,12 @@ const validators = {
 export class BirthdayComponent implements OnInit {
   public date = new Date();
 
+  @Input() public content$: Observable<any>;
+
   public kinamDate: KinamNahual;
   public dateCtrl: FormControl;
   public loading$ = new BehaviorSubject(false);
+
 
   constructor(
     private localStorageService: LocalStorageService,
@@ -90,7 +93,6 @@ export class BirthdayComponent implements OnInit {
   public maxDates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
   public ngOnInit() {
-
     const lastDate = localStorage.getItem('birthday');
 
     const today = new Date();

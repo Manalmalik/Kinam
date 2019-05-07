@@ -3,8 +3,20 @@ import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/
 import { FormControl, Validators } from '@angular/forms';
 import { NewsletterService } from './newsletter.service';
 import { DialogService } from '../../services/dialog.service';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { CmsService } from 'core';
 
+// tslint:disable-next-line: max-line-length
 const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const MAIL_VALIDATORS = [
+  Validators.pattern(MAIL_REGEX),
+  Validators.required
+];
+
+export interface KinamError {
+  error: string;
+  detail: string;
+}
 
 @Component({
   selector: 'kinam-newsletter',
@@ -18,8 +30,7 @@ const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
       />
 
       <div type="submit button" (click)="submit(emailControl)" class="newsletter-button">
-      Sign up!
-     <!-- <i class="fal fa-envelope-open"></i> -->
+        {{ (content$ | async)?.label_signup_button || 'Sign up' }}
       </div>
     </form>
   `,
@@ -28,12 +39,19 @@ const MAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 })
 export class NewsletterComponent {
   public error: string;
-  public emailControl = new FormControl(null, [
-    Validators.pattern(MAIL_REGEX),
-    Validators.required
-  ]);
+  public emailControl = new FormControl(null, MAIL_VALIDATORS);
+  public content$: Observable<any>;
 
-  constructor(private newletterService: NewsletterService, private dialogService: DialogService, private cd: ChangeDetectorRef) { }
+
+  constructor(
+    private newletterService: NewsletterService,
+    private dialogService: DialogService,
+    private cd: ChangeDetectorRef,
+    private cmsService: CmsService,
+  ) {
+
+    this.content$ = this.cmsService.getSingleton('newsletter');
+  }
 
   public submit(control: FormControl) {
     if (!control.valid) {
@@ -41,28 +59,15 @@ export class NewsletterComponent {
     }
 
     this.newletterService.signUp(control.value).subscribe(
-      res => {
-
+      () => {
+        this.dialogService.success('Thanks for signing up!');
       },
-      ({ error }) => {
-        if (error.status === 400) {
-          let errorMsg;
-          switch (error.title) {
-            case 'Member Exists': {
-              errorMsg = 'We already signed this email up.';
-              break;
-            }
-            default: {
-              errorMsg = error.detail;
-              break;
-            }
-          }
-          this.dialogService.error(errorMsg).afterClosed()
-            .subscribe(({ invalid }) => {
-              this.emailControl.setErrors({ invalid });
-              this.cd.detectChanges();
-            });
-        }
+      ({ detail }) => {
+        this.dialogService.error(detail).afterClosed()
+          .subscribe(({ invalid }) => {
+            this.emailControl.setErrors({ invalid });
+            this.cd.detectChanges();
+          });
       });
   }
 }

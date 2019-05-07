@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-import { CmsService } from '@website/services';
+import { CmsService } from 'core';
 
 @Component({
   selector: 'kinam-product-list',
