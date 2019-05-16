@@ -7933,6 +7933,11 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
+scroll-snap@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/scroll-snap/-/scroll-snap-1.0.6.tgz#369e8ef1c15f00c6299aa8a8a1f7f794fa5fda22"
+  integrity sha512-9QPdQFwZ31A7wQBDJxXblvK0+pdYyNh7tn4wVOsS5bbqhj/ZBFFlgHokAxbogiXcTdUIdq2UBovXf/3gylcKYw==
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"

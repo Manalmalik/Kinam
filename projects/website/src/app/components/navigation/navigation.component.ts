@@ -1,26 +1,42 @@
 import {
   Component,
   ChangeDetectionStrategy,
+  Input,
 } from '@angular/core';
 
 @Component({
   selector: 'kinam-navigation',
   template: `
-    <div class="nav-button selected" id="nav-1" (click)="goTo(1)"></div>
-    <div class="nav-button" id="nav-2" (click)="goTo(2)"></div>
-    <div class="nav-button" id="nav-3" (click)="goTo(3)"></div>
+    <ng-container
+      *ngFor="let step of steps"
+    >
+      <div
+        class="nav-button"
+        [class.selected]="step.step === selectedStep"
+        [id]="step.id"
+        (click)="goTo(step.step)"
+      ></div>
+    </ng-container>
   `,
   styleUrls: ['./navigation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationComponent {
-  goTo(id: number) {
-    const width = document.getElementById(`sec${id}`).clientWidth;
+  @Input() selectedStep = '0';
+  @Input() steps = [
+    { step: '0', id: 'step-0' },
+    { step: '1', id: 'step-1' },
+    { step: '2', id: 'step-2' },
+    { step: '3', id: 'step-3' },
+  ];
 
-    document.getElementById('').scrollTo({
-      left: width * id - width,
-      top: 0,
-      behavior: 'smooth'
-    });
+  goTo(id: string) {
+    // const width = document.getElementById(`sec${id}`).clientWidth;
+
+    // document.getElementById(id).scrollTo({
+    //   left: width * +id - width,
+    //   top: 0,
+    //   behavior: 'smooth'
+    // });
   }
 }

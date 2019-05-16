@@ -84,10 +84,10 @@ export class ProductPageComponent implements AfterViewInit, OnInit {
     this.img$ = this.route.queryParams.pipe(
       map(p => {
         switch (p.img) {
-          case 'yossi': return 'http://kinam13.com:8080/storage/uploads/2019/04/30/5cc8c7bb9f67ayossi.jpeg';
-          case 'yossi2': return 'http://kinam13.com:8080/storage/uploads/2019/05/03/5ccba4d5922dcyossi2.jpeg';
-          case 'vonni': return 'http://kinam13.com:8080/storage/uploads/2019/05/03/5ccba4d435eb8vonni.jpg';
-          default: return 'http://kinam13.com:8080/storage/uploads/2019/04/30/5cc8c7bb9f67ayossi.jpeg';
+          // case 'yossi': return '//cms.kinam13.com/storage/thumbs/6e9f0fed0e21dcf300d811595a2588fd_500x667_100_1557754212_thumbnail_adb115059e28d960fa8badfac5516667.jpg';
+          // case 'yossi2': return 'http://kinam13.com:8080/storage/uploads/2019/05/03/5ccba4d5922dcyossi2.jpeg';
+          // case 'vonni': return 'http://kinam13.com:8080/storage/uploads/2019/05/03/5ccba4d435eb8vonni.jpg';
+          default: return '//cms.kinam13.com/storage/thumbs/6e9f0fed0e21dcf300d811595a2588fd_500x667_100_1557754212_thumbnail_adb115059e28d960fa8badfac5516667.jpg';
         }
       }),
       tap(img => {
@@ -97,15 +97,15 @@ export class ProductPageComponent implements AfterViewInit, OnInit {
 
 
   public ngAfterViewInit() {
-    this.lower.nativeElement.style.top = `calc(${innerHeight} - 4rem)`;
-    this.bgImage.nativeElement.style.height = innerHeight;
-    this.upperLeft.nativeElement.style.width = upperMaxWidth;
-    this.upperRight.nativeElement.style.width = upperMaxWidth;
-    this.upperLeft.nativeElement.style.maxHeight = upperMaxHeight;
-    this.upperRight.nativeElement.style.maxHeight = upperMaxHeight;
-    this.upperLeft.nativeElement.style.height = upperMaxHeight;
-    this.upperRight.nativeElement.style.height = upperMaxHeight;
+    // this.lower.nativeElement.style.top = `calc(${innerHeight} - 4rem)`;
+    // this.upperLeft.nativeElement.style.width = upperMaxWidth;
+    // this.upperRight.nativeElement.style.width = upperMaxWidth;
+    // this.upperLeft.nativeElement.style.maxHeight = upperMaxHeight;
+    // this.upperRight.nativeElement.style.maxHeight = upperMaxHeight;
+    // this.upperLeft.nativeElement.style.height = upperMaxHeight;
+    // this.upperRight.nativeElement.style.height = upperMaxHeight;
     this.productImg.nativeElement.style.height = innerHeight;
+    this.bgImage.nativeElement.style.height = innerHeight;
   }
 
 

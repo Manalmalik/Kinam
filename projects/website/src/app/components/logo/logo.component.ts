@@ -23,7 +23,7 @@ export class LogoComponent implements OnInit, OnDestroy {
   public loadend = false;
   private subscription = new Subscription();
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(private cd: ChangeDetectorRef) { }
 
   public ngOnInit() {
     this.subscription.add(
@@ -47,3 +47,16 @@ export class LogoComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 }
+
+@Component({
+  selector: 'kinam-simple-logo',
+  templateUrl: './logo.html',
+  styles: [`
+    svg {
+      fill: #fff;
+      width: 2.5rem;
+      margin: 0.5rem 1rem;
+    }
+  `]
+})
+export class SimpleLogo { }

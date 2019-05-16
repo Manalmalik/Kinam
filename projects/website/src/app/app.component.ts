@@ -1,13 +1,13 @@
-import { Component, OnDestroy, Inject, AfterViewInit } from '@angular/core';
+import { Component, OnDestroy, AfterViewInit } from '@angular/core';
 
 import { Subscription, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import {
-  MatDialog
-} from '@angular/material/dialog';
+
+import { MatDialog } from '@angular/material/dialog';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 import { LoginDialogComponent } from './login-dialog.component';
 
+import { LocalStorageService } from 'core';
 
 
 @Component({

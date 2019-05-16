@@ -1,5 +1,5 @@
 import { NgModule, Injectable, Component, Inject } from '@angular/core';
-import { Routes, RouterModule, Resolve } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { CoreModule } from 'core';
 import { BirthdayModule } from 'ng-maya-birthday';
@@ -13,7 +13,7 @@ import { NewsletterModule } from './components/newsletter/newsletter.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 import { DateInputComponent } from './components/date-input/date-input';
-import { LogoComponent } from './components/logo/logo.component';
+import { LogoComponent, SimpleLogo } from './components/logo/logo.component';
 import { AudioPlayerComponent } from './components/audio-player/audio-player.component';
 import { PlaylistComponent } from './components/audio-player/playlist.component';
 import { UploadBarComponent } from './components/upload-bar/upload-bar.component';
@@ -28,26 +28,31 @@ import { CmsModule } from './components/cms/cms.module';
 import { MatDialog } from '@angular/material/dialog';
 import { CanActivate } from '@angular/router';
 import { LoginDialogComponent } from './login-dialog.component';
-
-
+import { ScrollSnapDirective } from 'src/app/directives/scroll-snap.directive';
 
 @Injectable()
 export class EntryGuard implements CanActivate {
 
-  constructor(private dialog: MatDialog) {
-    // super(null);
-  }
+  constructor(private dialog: MatDialog) { }
+
   canActivate() {
+    const isAuthenticated = JSON.parse(localStorage.getItem('authenticated'));
+
     return new Promise<boolean>(resolve => {
-      this.dialog.open(LoginDialogComponent, { disableClose: true }).afterClosed().subscribe((res) => {
-        resolve(res);
-      });
+      if (!isAuthenticated) {
+        this.dialog.open(LoginDialogComponent, { disableClose: true })
+          .afterClosed()
+          .subscribe((res) => {
+            localStorage.setItem('authenticated', `${res}`);
+            resolve(res);
+          });
+      }
     });
   }
 }
 
 const routes: Routes = [
-  { path: '', canActivate: [EntryGuard], component: LandingComponent, pathMatch: 'full' },
+  { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'audio', component: KinamAudioComponent },
   {
     path: 'product', children: [
@@ -64,6 +69,7 @@ const routes: Routes = [
     AppComponent,
     MainComponent,
     ScrollDirective,
+    ScrollSnapDirective,
 
     ProductListComponent,
     ProductPageComponent,
@@ -71,6 +77,7 @@ const routes: Routes = [
     NavigationComponent,
     KinamAudioComponent,
     LogoComponent,
+    SimpleLogo,
 
     AudioPlayerComponent,
     PlaylistComponent,

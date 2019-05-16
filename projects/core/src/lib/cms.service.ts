@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const BASE_URL = '//cms.kinam13.com/api';
-const TOKEN = '770cb5550af4d14fbb43797851fde7';
+const BASE_URL = 'https://cms.kinam13.com/api';
+const TOKEN = '29571af1461d10906b8fd77c143849';
 
 export enum AssetCrop {
     Thumbnail = 'thumbnail',
@@ -21,9 +21,9 @@ interface Dimension {
 }
 
 export enum AssetId {
-    Yossi = '5cc8c7bb64323600530003b3',
+    Yossi = '5cd9716464653800280003a0',
     Yossi2 = '5ccba4d564323600530001ab',
-    Vonni = '5ccba4d4643236004300009f',
+    Vonni = '5cd97110646538001a000352'
 }
 
 
@@ -65,7 +65,7 @@ export class CmsService {
 
         const params = new URLSearchParams();
 
-        params.append('token', TOKEN);
+        params.append('token', '22e67ea810a180f9c4c6bbf379b8b6');
         params.append('src', src);
         params.append('crop', crop);
         params.append('w', `${dimension.value}`);
@@ -82,7 +82,7 @@ export class CmsService {
         if (!this._thumbnail[src]) {
             this._thumbnail[src] = this._getThumbnail({ src: AssetId[`${src}`] }).pipe(
                 map(url => ({
-                    'background-image': `url('${url}')`
+                    'background-image': `url('//${url}')`
                 }))
             );
         }

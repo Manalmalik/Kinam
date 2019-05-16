@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   DateAdapter,
@@ -9,13 +9,13 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 
 import { BehaviorSubject, of, Observable } from 'rxjs';
+import { tap, switchMap, debounceTime, filter, distinctUntilChanged } from 'rxjs/operators';
 
 import { KinamNahual, kinamNahual } from 'nahual-date';
 import { LocalStorageService } from 'core';
 
 import { DateFormat } from './date-format';
 import { moment } from './moment';
-import { tap, switchMap, debounceTime, filter, distinctUntilChanged } from 'rxjs/operators';
 
 const YEAR_MAX = 2099;
 const YEAR_MIN = 1900;
@@ -79,6 +79,7 @@ export class BirthdayComponent implements OnInit {
 
   constructor(
     private localStorageService: LocalStorageService,
+    private cd: ChangeDetectorRef
   ) { }
 
   public dateConfig: {
@@ -115,12 +116,12 @@ export class BirthdayComponent implements OnInit {
 
     this.form.valueChanges.pipe(
       distinctUntilChanged(),
-      switchMap(x => of(x)),
+      switchMap(value => of(value)),
       tap(() => this.loading$.next(true)),
       debounceTime(1000),
       filter(
         ({ day, month, year }) => {
-          const x = !(
+          const isValid = !(
             !isNaN(day) &&
             !isNaN(month) &&
             !isNaN(year) &&
@@ -130,7 +131,7 @@ export class BirthdayComponent implements OnInit {
             year <= YEAR_MAX &&
             year >= YEAR_MIN
           );
-          if (x === false) {
+          if (isValid === false) {
             return true;
           }
           return false;
@@ -142,6 +143,7 @@ export class BirthdayComponent implements OnInit {
       this.localStorageService.set('birthday', date.toString());
       this.kinamDate.update(date.toDate());
       this.loading$.next(false);
+      this.cd.detectChanges();
     });
   }
 }

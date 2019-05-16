@@ -1,36 +1,123 @@
-<section class="section">
-  <kinam-logo></kinam-logo>
-  <div
-    *ngIf="content$ | async as content"
-    class="container"
-  >
-    <div class="row">
-      <div class="column">
-        <h1 class="title has-text-centered has-text-white">
-          {{ content.title }}
-        </h1>
+<div class="row">
+  <div class="column">
+    <div class="icon-header">
+
+      <kinam-simple-logo></kinam-simple-logo>
+
+      <img src="/assets/menu.svg" class="menu-icon" (click)="toggleMenu()" />
+
+    </div>
+  </div>
+</div>
+
+<div style="position: relative; margin-top: 50px; overflow-x: hidden">
+
+  <div class="headline">
+    Help <br>
+    Rebuild <br>
+    Guatemala
+  </div>
+
+
+  <div class="slider-container right">
+    <div class="img-nav__container">
+      <kinam-navigation class="img-nav img-nav--right" [selectedStep]="selectedStepTop"></kinam-navigation>
+    </div>
+    <div class="swipe-container" kinamScrollSnap (snap)="snapTop($event)">
+      <div [ngStyle]="{ 'background-image': 'url(' + 'assets/yossi.jpeg' + ')' }" *ngFor="let img of ['1','2','3','4']"
+        class="image-container">
       </div>
     </div>
-    <div class="row">
-      <div class="column">
-        <kinam-cms-paragraph [html]="content.text_1"></kinam-cms-paragraph>
+    <!-- 
+    <div class="arrows">
+      <i class="fal fa-angle-left"></i>
+      <i class="fal fa-angle-right"></i>
+    </div> -->
+
+  </div>
+
+  <div class="columns">
+    <div class="column is-6-tablet is-offset-3-tablet">
+      <div class="behind-the-product">
+        <div class="stripe"></div>
+        <span class="nowrap">behind the product</span>
       </div>
     </div>
   </div>
-</section>
 
-<section>
-  <div class="row">
-    <div class="column">
-      <!-- <kinam-cms-paragraph [html]="content.newsletter_text">
-      </kinam-cms-paragraph> -->
-      <kinam-newsletter></kinam-newsletter>
+  <div class="arrow-down">
+    <i class="fal fa-chevron-down"></i>
+  </div>
+
+  <section class="kinam-section">
+    <div class="row">
+      <div class="column">
+        <div class="text-content">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore
+          magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+          kasd
+          gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing
+          elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos
+          et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum
+          dolor
+          sit amet.
+
+          <div style="margin-top: 1.5rem; margin-bottom: 1rem;">
+            <a class="link" href="">learn more <i class="fal fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div kinamScrollSnap class="slider-container left">
+    <div class="img-nav__container">
+      <kinam-navigation class="img-nav img-nav--right" [selectedStep]="selectedStepBottom"></kinam-navigation>
+    </div>
+
+    <div class="swipe-container" kinamScrollSnap (snap)="snapBottom($event)">
+      <div [ngStyle]="{ 'background-image': 'url(' + 'assets/vonni.png' + ')' }" *ngFor="let img of ['1','2','3','4']"
+        class="image-container">
+      </div>
     </div>
   </div>
-</section>
+
+  <div class="columns">
+    <div class="column is-6-tablet is-offset-3-tablet">
+      <div class="personalize-jacket">
+        <kinam-simple-logo></kinam-simple-logo>
+        <div class="nowrap">
+          Personalize your <br>
+          Kinam Jacket
+        </div>
+        <div class="stripe"></div>
+      </div>
+    </div>
+  </div>
+
+  <kinam-birthday class="kinam-section" [content$]="calendar$"> </kinam-birthday>
+
+  <aside class="side-menu" [class.hidden]="menuHidden">
+
+    <div class="menu-inner-close" (click)="toggleMenu()">
+      <i class="fal fa-times"></i>
+    </div>
 
 
-<kinam-birthday
-  class="section"
-  [content$]="calendar$"
-> </kinam-birthday>
+    <ul>
+      <li>
+        Welcome
+      </li>
+      <li>
+        Product
+      </li>
+      <li>
+        Mission
+      </li>
+    </ul>
+  </aside>
