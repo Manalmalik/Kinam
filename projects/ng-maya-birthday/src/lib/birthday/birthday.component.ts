@@ -138,8 +138,15 @@ export class BirthdayComponent implements OnInit {
         }
       )
     ).subscribe(({ day, month, year }) => {
-      let date = moment(new Date(`${year}/${month}/${day}`));
-      date = date.add(12, 'hours');
+      const dayStr = day < 10 ? `0${day}` : day;
+      const monthStr = month < 10 ? `0${month}` : month;
+      const date = moment.utc(`${year}/${monthStr}/${dayStr}`);
+
+      const offset = date.utcOffset();
+      if (!date.isValid() || offset !== 0) {
+        throw new Error('Date invalid!');
+      }
+
       this.localStorageService.set('birthday', date.toString());
       this.kinamDate.update(date.toDate());
       this.loading$.next(false);

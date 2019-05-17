@@ -29,7 +29,6 @@
   font-weight: 700;
   position: absolute;
   left: 1rem;
-  // top: 7rem;
   z-index: 2;
 }
 
@@ -48,8 +47,13 @@
   position: relative;
   margin-bottom: 1rem;
 
+  &.left {
+    margin-right: auto;
+  }
+
   &.right {
-    margin-left: auto; 
+    margin-left: auto;
+
   }
 }
 
@@ -69,7 +73,7 @@
 
 .swipe-container {
   position: absolute;
-  left: 0;
+  left: 0 ;
   right: 0;
   bottom: 0;
   top: 0;
@@ -79,11 +83,9 @@
   overflow-x: auto;
 }
 
-@media screen and (min-width: 0px) and (max-width: 479px) {
-  .headline {
-    font-size: 2.5rem;
-    line-height: 1.15;
-    top: 3rem;
+@media screen and (min-width: 0px) and (max-width: 1023px) {
+  .swipe-container {
+    left: 0;
   }
 }
 
@@ -117,18 +119,11 @@
   background-position: center center;
   box-shadow: inset 0px 0px 111px 0px rgba(0,0,0,0.85);
 
-
   img {
     max-width: 70vw;
     width: 70vw;
   }
 }
-
-
-
-
-
-
 
 .kinam-section {
   padding: 0.25rem;
@@ -206,6 +201,7 @@ img {
     padding: 2rem;
     box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0);
     transition: box-shadow 0.4s;
+    cursor: pointer;
 
     &:hover {
       box-shadow: inset 0px -4px 0px 0px rgba(0,0,0,0.75);
@@ -215,7 +211,6 @@ img {
 }
 
 .link  {
-
   padding-bottom: 1rem;
   text-decoration: none;
   color: white;
