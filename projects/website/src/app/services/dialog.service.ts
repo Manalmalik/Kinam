@@ -8,6 +8,8 @@ import { FormControl } from '@angular/forms';
     <h1 mat-dialog-title>{{data.title}}</h1>
     <div mat-dialog-content>
       {{ data.data }}
+      <br>
+      <ng-content></ng-content>
     </div>
     <div mat-dialog-actions>
       <button mat-button (click)="onSubmit()" cdkFocusInitial>
@@ -52,6 +54,13 @@ export class DialogService {
     this._dialogRef = this.dialog.open(DialogComponent, {
       data: { title: 'Huh...', data: error },
       width: '240px'
+    });
+    return this._dialogRef;
+  }
+
+  public info(data: any): MatDialogRef<DialogComponent> {
+    this._dialogRef = this.dialog.open(DialogComponent, {
+      data: { title: 'Infos', data },
     });
     return this._dialogRef;
   }

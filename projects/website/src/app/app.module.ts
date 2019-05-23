@@ -29,6 +29,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { CanActivate } from '@angular/router';
 import { LoginDialogComponent } from './login-dialog.component';
 import { ScrollSnapDirective } from 'src/app/directives/scroll-snap.directive';
+import { MenuComponent } from './components/menu/menu.component';
+import { ReadingsModule } from './components/hover-card/readings.module';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @Injectable()
 export class EntryGuard implements CanActivate {
@@ -54,6 +57,7 @@ export class EntryGuard implements CanActivate {
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'audio', component: KinamAudioComponent },
+  { path: 'calendar', component: CalendarComponent },
   {
     path: 'product', children: [
       { path: '', component: ProductListComponent },
@@ -87,6 +91,8 @@ const routes: Routes = [
     LoginDialogComponent,
     DateInputComponent,
     DialogComponent,
+    MenuComponent,
+    CalendarComponent,
   ],
   providers: [EntryGuard],
   entryComponents: [LoginDialogComponent, DialogComponent],
@@ -96,6 +102,7 @@ const routes: Routes = [
     SharedModule,
     BirthdayModule,
     NewsletterModule,
+    ReadingsModule,
     RouterModule.forRoot(routes)
   ],
   bootstrap: [AppComponent]

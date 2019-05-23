@@ -1,11 +1,8 @@
-import { format } from 'date-fns';
 import * as nahualGetter from 'nahuales';
 
 import { DAY_SIGNS } from './day-sign';
-import { of } from 'rxjs';
-
-const FORMAT = 'YYYY-MM-DD';
-const INVALID_DATE = 'Invalid Date';
+import * as moment_ from 'moment';
+export const moment = moment_;
 
 function findDaySign(day: number) {
   const sign = DAY_SIGNS.find(s => s.day === day);
@@ -15,9 +12,6 @@ function findDaySign(day: number) {
 const getImg = (daySign: string) =>
   daySign ? `assets/signs/${daySign}.png` : '';
 
-const isValidDate = (date: string | Date) => {
-  return format(date, FORMAT) !== INVALID_DATE;
-};
 
 class KinamNahual {
   public nahualName: string;
@@ -28,10 +22,11 @@ class KinamNahual {
   public label: string;
 
   constructor(date?: Date) {
-    if (isValidDate(date)) {
-      this.date = new Date(date);
+    const newDate = moment.utc(date);
+    if (newDate.isValid()) {
+      this.date = newDate.toDate();
     } else {
-      this.date = new Date();
+      this.date = moment.utc().toDate();
     }
 
     this.update(this.date);
@@ -53,10 +48,6 @@ class KinamNahual {
     this.image = getImg(daySign.name);
   }
 
-  public format(customFormat = FORMAT) {
-    return format(this.date, customFormat);
-  }
-
   public get day() {
     return this.date.getDate();
   }
@@ -71,6 +62,5 @@ class KinamNahual {
 }
 
 const kinamNahual = (date: Date) => new KinamNahual(date);
-const asObservable = (date: Date) => of(kinamNahual(date));
 
-export { kinamNahual, KinamNahual, isValidDate, asObservable };
+export { kinamNahual, KinamNahual };

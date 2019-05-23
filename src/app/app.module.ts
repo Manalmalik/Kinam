@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SharedModule } from 'shared';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatDialogModule,
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })

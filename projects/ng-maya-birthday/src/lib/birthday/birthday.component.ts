@@ -17,6 +17,8 @@ import { LocalStorageService } from 'core';
 import { DateFormat } from './date-format';
 import { moment } from './moment';
 
+
+
 const YEAR_MAX = 2099;
 const YEAR_MIN = 1900;
 
@@ -70,28 +72,36 @@ const validators = {
 export class BirthdayComponent implements OnInit {
   public date = new Date();
 
-  @Input() public content$: Observable<any>;
+  @Input() public content$: Observable<any> = of({
+    calculating: 'Traversing the stars...',
+    your_nahual: 'Your Nawal',
+    your_daysign: 'Your Spirit Guardian',
+    your_nahual_number: 'Your Energy Number',
+  });
 
   public kinamDate: KinamNahual;
   public dateCtrl: FormControl;
-  public loading$ = new BehaviorSubject(false);
+  public loading$: BehaviorSubject<boolean>;
 
+  private _focussed: 'day' | 'month' | 'year';
+
+  public get focussed() {
+    return this._focussed;
+  }
 
   constructor(
     private localStorageService: LocalStorageService,
     private cd: ChangeDetectorRef
   ) { }
 
-  public dateConfig: {
-    min: Date;
-    today: Date;
-    startView: 'multi-year' | 'year';
-    touchUi: boolean;
-  };
-
   public form: FormGroup;
 
   public maxDates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+
+  public setInit() {
+    this.loading$.next(true);
+  }
 
   public ngOnInit() {
     const lastDate = localStorage.getItem('birthday');
@@ -117,25 +127,21 @@ export class BirthdayComponent implements OnInit {
     this.form.valueChanges.pipe(
       distinctUntilChanged(),
       switchMap(value => of(value)),
-      tap(() => this.loading$.next(true)),
-      debounceTime(1000),
+      tap(() => {
+        this.loading$ = new BehaviorSubject(true);
+      }),
+      debounceTime(3000),
       filter(
-        ({ day, month, year }) => {
-          const isValid = !(
-            !isNaN(day) &&
-            !isNaN(month) &&
-            !isNaN(year) &&
-            !!day &&
-            !!month &&
-            !!year &&
-            year <= YEAR_MAX &&
-            year >= YEAR_MIN
-          );
-          if (isValid === false) {
-            return true;
-          }
-          return false;
-        }
+        ({ day, month, year }) => (
+          !isNaN(day) &&
+          !isNaN(month) &&
+          !isNaN(year) &&
+          !!day &&
+          !!month &&
+          !!year &&
+          year <= YEAR_MAX &&
+          year >= YEAR_MIN
+        ),
       )
     ).subscribe(({ day, month, year }) => {
       const dayStr = day < 10 ? `0${day}` : day;
@@ -152,5 +158,20 @@ export class BirthdayComponent implements OnInit {
       this.loading$.next(false);
       this.cd.detectChanges();
     });
+
+
+    this.form.patchValue({
+      year: 2019,
+    });
+  }
+
+  public focus(focussed: 'day' | 'month' | 'year') {
+    if (focussed && focussed !== this._focussed) {
+      this._focussed = focussed;
+    }
+  }
+
+  public blur() {
+    this._focussed = null;
   }
 }
