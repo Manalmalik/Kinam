@@ -24,4 +24,4 @@ import { SharedModule } from 'shared';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class RootModule { }

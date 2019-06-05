@@ -17,11 +17,8 @@ import { LocalStorageService } from 'core';
 import { DateFormat } from './date-format';
 import { moment } from './moment';
 
-
-
 const YEAR_MAX = 2099;
 const YEAR_MIN = 1900;
-
 
 @Component({
   selector: 'kinam-birthday',
@@ -53,7 +50,12 @@ const YEAR_MIN = 1900;
   ]
 })
 export class BirthdayComponent implements OnInit {
-  public date = new Date();
+
+  constructor(
+    private localStorageService: LocalStorageService,
+    private cd: ChangeDetectorRef
+  ) { }
+
 
   @Input() public content$: Observable<any> = of({
     calculating: 'Traversing the stars...',
@@ -62,29 +64,18 @@ export class BirthdayComponent implements OnInit {
     your_nahual_number: 'Your Energy Number',
   });
 
-  public kinamDate: KinamNahual;
-  public dateCtrl: FormControl;
-  public loading$: BehaviorSubject<boolean>;
-
-  private _focussed: 'day' | 'month' | 'year';
-
   public get focussed() {
     return this._focussed;
   }
+  public date = new Date();
 
-  constructor(
-    private localStorageService: LocalStorageService,
-    private cd: ChangeDetectorRef
-  ) { }
-
+  public kinamDate: KinamNahual;
+  public dateCtrl: FormControl;
+  public loading$: BehaviorSubject<boolean>;
   public form: FormGroup;
-
   public maxDates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-
-  public setInit() {
-    this.loading$.next(true);
-  }
+  private _focussed: 'day' | 'month' | 'year';
 
   public ngOnInit() {
     const lastDate = localStorage.getItem('birthday');
@@ -92,17 +83,17 @@ export class BirthdayComponent implements OnInit {
     const today = new Date();
     if (!lastDate) {
       this.form = new FormGroup({
-        day: new FormControl(today.getDate(), validators.day),
-        month: new FormControl(today.getMonth() + 1, validators.month),
-        year: new FormControl(today.getFullYear(), validators.year)
+        day: new FormControl(today.getDate()),
+        month: new FormControl(today.getMonth() + 1),
+        year: new FormControl(today.getFullYear())
       });
       this.kinamDate = kinamNahual(today);
     } else {
       const timestamp = new Date(lastDate);
       this.form = new FormGroup({
-        day: new FormControl(timestamp.getDate(), validators.day),
-        month: new FormControl(timestamp.getMonth() + 1, validators.month),
-        year: new FormControl(timestamp.getFullYear(), validators.year)
+        day: new FormControl(timestamp.getDate()),
+        month: new FormControl(timestamp.getMonth() + 1),
+        year: new FormControl(timestamp.getFullYear())
       });
       this.kinamDate = kinamNahual(timestamp);
     }
@@ -146,6 +137,10 @@ export class BirthdayComponent implements OnInit {
     this.form.patchValue({
       year: 2019,
     });
+  }
+
+  public setInit() {
+    this.loading$.next(true);
   }
 
   public focus(focussed: 'day' | 'month' | 'year') {
