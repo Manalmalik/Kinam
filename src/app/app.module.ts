@@ -6,9 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from 'shared';
+import { CalendarComponent } from './routes/calendar/calendar.component';
+import { PlaybookComponent } from './routes/playbook/playbook.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CalendarComponent, PlaybookComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

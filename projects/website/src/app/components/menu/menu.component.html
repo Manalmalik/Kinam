@@ -3,22 +3,16 @@
 
   <aside class="side-menu" [class.hidden]="menuHidden.hidden">
 
-    <div class="menu-inner-close" (click)="toggleMenu()">
+    <div class="menu-inner-close" (click)="close()">
       <i class="fal fa-times"></i>
     </div>
 
     <ul>
-      <li>
+      <li (click)="navigate('')">
         WELCOME
       </li>
-      <li>
-        PRODUCT
-      </li>
-      <li>
-        MISSION
-      </li>
-      <li>
-        CALENDAR
+      <li (click)="navigate('playbook')">
+        PLAYBOOK
       </li>
     </ul>
   </aside>

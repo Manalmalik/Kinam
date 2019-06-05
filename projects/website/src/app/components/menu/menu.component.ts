@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LandingService } from '@website/routes/landing/landing.service';
+import { LandingService } from '@website/services/landing.service';
 
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'kinam-menu',
@@ -13,14 +14,20 @@ export class MenuComponent implements OnInit {
   menuHidden$: Observable<{ hidden: boolean }>;
 
   constructor(
-    private landingService: LandingService
+    private landingService: LandingService,
+    private router: Router,
   ) { }
 
   public ngOnInit() {
     this.menuHidden$ = this.landingService.menuHidden$;
   }
 
-  public toggleMenu() {
-    this.landingService.toggleMenu();
+  public close() {
+    this.landingService.setMenu({ hidden: true });
+  }
+
+  public navigate(url?: string) {
+    this.router.navigate([`/${url}`]);
+    this.landingService.setMenu({ hidden: true });
   }
 }

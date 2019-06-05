@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <title>Website</title>
   <base href="/" />
-  <link
+  <!-- <link
     rel="stylesheet"
     href="https://use.typekit.net/phn8lap.css"
   >
@@ -22,7 +22,7 @@
     href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1"
     crossorigin="anonymous"
-  />
+  /> -->
 
   <style>
     #spinner {
@@ -38,48 +38,18 @@
     }
   </style>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-  />
-  <link
-    rel="icon"
-    type="image/x-icon"
-    href="favicon.ico"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
 <body>
   <app-root>
-    <div
-      style="color: white"
-      id="spinner"
-    >
-      <svg
-        width="200px"
-        height="200px"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="xMidYMid"
-        class="lds-ball"
-        style="background: none;"
-      >
-        <circle
-          cx="50"
-          cy="35.7097"
-          r="13"
-          fill="#fdfdfd"
-        >
-          <animate
-            attributeName="cy"
-            calcMode="spline"
-            values="23;77;23"
-            keyTimes="0;0.5;1"
-            dur="1"
-            keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9"
-            begin="0s"
-            repeatCount="indefinite"
-          ></animate>
+    <div style="color: white" id="spinner">
+      <svg width="200px" height="200px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid" class="lds-ball" style="background: none;">
+        <circle cx="50" cy="35.7097" r="13" fill="#fdfdfd">
+          <animate attributeName="cy" calcMode="spline" values="23;77;23" keyTimes="0;0.5;1" dur="1"
+            keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" begin="0s" repeatCount="indefinite"></animate>
         </circle>
       </svg>
     </div>

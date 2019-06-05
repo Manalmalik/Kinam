@@ -29,7 +29,7 @@ export interface KinamError {
         placeholder="Your email"
       />
 
-      <div type="submit button" (click)="submit(emailControl)" class="newsletter-button">
+      <div type="submit button" (click)="submit(emailControl)" class="newsletter-button nowrap">
         {{ (content$ | async)?.label_signup_button || 'Sign up' }}
       </div>
     </form>

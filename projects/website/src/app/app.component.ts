@@ -6,8 +6,7 @@ import { delay } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 import { LoginDialogComponent } from './login-dialog.component';
-
-import { LocalStorageService } from 'core';
+import { LandingService } from './services/landing.service';
 
 
 @Component({
@@ -33,11 +32,11 @@ import { LocalStorageService } from 'core';
   ]
 })
 export class AppComponent implements OnDestroy, AfterViewInit {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private landingService: LandingService) { }
   private subscription = new Subscription();
 
   public authenticated = false;
-  state = false;
+  public state = false;
 
   anim() {
     this.state = !this.state;
@@ -65,6 +64,10 @@ export class AppComponent implements OnDestroy, AfterViewInit {
           this.authenticated = true;
         });
     }
+  }
+
+  public toggleMenu() {
+    this.landingService.toggleMenu();
   }
 
   public ngOnDestroy(): void {

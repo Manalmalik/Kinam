@@ -117,7 +117,7 @@
     your Nawal
   </div> -->
 
-  <div [formGroup]="form">
+  <!-- <div [formGroup]="form">
     <div class="birthday-input">
       <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'day'">
         <label class="label">Day</label>
@@ -131,17 +131,14 @@
       </div>
       <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'year'">
         <label class="label">Year</label>
-        <input class="date-input" (focus)="focus('year')" (blur)="blur()" id="year" type="number" min="1900" max="2099"
+        <input class="date-input" (focus)="focus('year')" id="year" type="number" min="1900" max="2099"
           placeholder="Year" formControlName="year" />
       </div>
-    </div>
+    </div> -->
 
-    <div class="column is-6 is-offset-3 flex-center">
-      <kinam-readings (click)="showReadings()"></kinam-readings>
-    </div>
-
-    <!-- </form> -->
-
-    <kinam-menu (toggle)="setMenuState($event)"></kinam-menu>
-
+  <div class="column is-6 is-offset-3 flex-center">
+    <kinam-readings></kinam-readings>
   </div>
+
+  <kinam-menu></kinam-menu>
+</section>

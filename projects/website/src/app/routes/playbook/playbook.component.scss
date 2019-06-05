@@ -1,0 +1,152 @@
+:host {
+    color: white;   
+    margin-top: 5rem;
+    display: block;
+}
+
+h1, h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.btn {
+    height: 3rem;
+    min-width: 5rem;
+    cursor: pointer;
+
+    &--primary {
+        border: 2px solid white;
+        color: white;
+        background-color: transparent;
+        border-radius: 3rem;
+        font-size: 1.25rem;
+        padding: 0.25rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: 0.2s all ease-out;
+
+        &:hover {
+            color: black;
+            background-color: white;
+
+            transition: 0.2s all ease-out;
+        }
+    }
+}
+
+.icon-header {
+    z-index: 5;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.85;
+  } 
+  
+
+.column {
+    &__divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .stripe {
+        flex: 1;
+        height: 1px;
+        min-width: 6rem;
+        min-height: 1px;
+        background-color: #fff;
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  .icon-header {
+    z-index: 5;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.85;
+
+    .menu-icon {
+        width: auto;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+  } 
+
+  
+.text-flex-start{
+    justify-content: flex-start;
+}
+
+.gradient {
+
+  &__container {
+    position: relative;
+    margin: 1rem auto;
+    width: 600px;
+    height: 400px;  
+    overflow: hidden;
+  } 
+
+  &__overlay {
+    width: 600px;
+    height: 400px;  
+    position: absolute;
+
+    cursor: pointer;
+  
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 10%, rgba(0,212,255,0) 100%);
+    transition: transform 400ms ease-out;
+    transition-delay: 200ms;
+
+
+    transform: translateY(0);
+
+    &:hover { 
+      background: rgb(2,0,36);
+      background: linear-gradient(0deg, rgba(2,0,36,1) 10%, rgba(0,212,255,0) 100%);
+      transition: transform 400ms ease-out;
+      transition-delay: 200ms;
+      transform: translateY(100px);
+    }
+  }
+
+
+  &__image {
+    width: 600px;
+    height: 400px;  
+    background-image: url("/assets/mission1.jpg");
+    background-size: cover;
+    filter: grayscale(25%);
+    position: absolute;
+  }
+}

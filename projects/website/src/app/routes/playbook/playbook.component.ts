@@ -1,0 +1,16 @@
+import { Component } from '@angular/core';
+import { LandingService } from '../../services/landing.service';
+
+@Component({
+  selector: 'kinam-playbook',
+  templateUrl: './playbook.component.html',
+  styleUrls: ['./playbook.component.scss']
+})
+export class PlaybookComponent {
+
+  constructor(private landingService: LandingService) { }
+
+  public toggleMenu() {
+    this.landingService.toggleMenu();
+  }
+}

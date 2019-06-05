@@ -11,8 +11,8 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: white;
 }
-
 
 strong {
   color: white !important;
@@ -20,4 +20,8 @@ strong {
 
 path.current-color {
   stroke: currentColor;
+}
+
+.nowrap {
+  white-space: nowrap;
 }

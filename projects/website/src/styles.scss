@@ -9,12 +9,17 @@ html {
 }
 
 html {
-  background-color: #2f3640;
+  background: black;
+  color: white;
   box-sizing: content-box;
-
   font-family: century-gothic, sans-serif;
   font-style: normal;
   font-weight: 400;
+}
+
+h1, h2, h3 h4 {
+  color: white;
+  font-weight: bold;
 }
 
 body {
@@ -27,11 +32,6 @@ body {
   height: 0 !important;
   background-color: rgba($color: #000000, $alpha: 0.8);
   text-align: center;
-}
-
-html {
-  background: black;
-  color: white;
 }
 
 p {
@@ -85,12 +85,10 @@ html {
   margin-left: 24px;
 }
 
-
 .flex {
   display: flex;
 
   &-center {
-    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -142,4 +140,8 @@ html {
 
 .section {
   padding: 2rem 1.5rem !important;
+}
+
+.nowrap {
+  white-space: nowrap;
 }

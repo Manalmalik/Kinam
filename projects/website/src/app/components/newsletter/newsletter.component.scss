@@ -1,5 +1,4 @@
 :host {
-  border-radius: 0.5rem;
   padding: 1rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -10,7 +9,12 @@
 }
 
 form {
+  border-radius: 0.5rem;
   text-align: center;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden
 }
 
 .subtitle {
@@ -18,15 +22,21 @@ form {
 }
 
 .newsletter-button {
-  border: 1px solid #fff;
   background: #0000;
   padding: 0.75rem 2rem;
-  margin-top: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top-right-radius: 0.5rem;
+  border-bottom-righ-radius: 0.5rem;
+  // margin-top: 2rem;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.2s ease-in all;
   color: #fff;
-  border-radius: 0.5rem;
+  // border-radius: 0.5rem;
 
   .fal {
     max-width: 0;
@@ -52,8 +62,10 @@ form {
 }
 
 .newsletter-input {
-  border: 1px solid #fff;
-  border-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+
+  border: none;
   background: transparent;
   color: #fff;
   transition: all 200ms ease-out;
@@ -61,7 +73,7 @@ form {
   text-align: center;
   display: block;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   width: -webkit-fill-available;
 
   &:focus,
@@ -74,7 +86,7 @@ form {
   }
 }
 
-.invalid, .ng-dirty.ng-invalid {
-  border: 1px solid red;
-  transition: border 200ms ease-out;
-}
+// .invalid, .ng-dirty.ng-invalid {
+//   border: 1px solid red;
+//   transition: border 200ms ease-out;
+// }

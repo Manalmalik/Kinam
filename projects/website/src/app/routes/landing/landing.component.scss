@@ -23,13 +23,14 @@
   position: fixed;
   background-color: #000;
   opacity: 0.85;
+  
+  .menu-icon {
+    width: auto;
+    height: 1.5rem;
+    cursor: pointer;
+  }
 } 
 
-.menu-icon {
-  width: auto;
-  height: 1.5rem;
-  cursor: pointer;
-}
 
 
 .help-rebuild { 
@@ -60,6 +61,14 @@
       flex: 1;
     }
   }
+}
+
+.stripe {
+  height: 1px;
+  min-width: 6rem;
+  min-height: 1px;
+  background-color: #fff;
+  padding: 0 1rem;
 }
 
 
@@ -134,13 +143,6 @@ img {
   align-items: center;
 }
 
-.stripe {
-  height: 1px;
-  min-width: 6rem;
-  min-height: 1px;
-  background-color: #fff;
-  padding: 0 1rem;
-}
 
 .arrow-down {
   text-align: center;
@@ -152,9 +154,6 @@ img {
   align-items: center;
 }
 
-.nowrap {
-  white-space: nowrap;
-}
 
 .link  {
   padding-bottom: 1rem;
