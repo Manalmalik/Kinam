@@ -1,3 +1,31 @@
+<div *ngIf="content$ | async as content" [ngSwitch]="!(loading$ | async)">
+  {{maxDates[form.value.month - 1]}}
+  <div [formGroup]="form">
+    <div class="birthday-input">
+      <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'day'">
+        <label class="label">Day</label>
+        <input class="date-input" (focus)="focus('day')" (blur)="blur()" id="day" type="number" min="1"
+          [max]="maxDates[form.value.month - 1]" placeholder="Day" formControlName="day" />
+      </div>
+      <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'month'">
+        <label class="label">Month</label>
+        <input class="date-input" (focus)="focus('month')" (blur)="blur()" id="month" type="number" min="1" max="12"
+          placeholder="Month" formControlName="month" />
+      </div>
+      <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'year'">
+        <label class="label">Year</label>
+        <input class="date-input" (focus)="focus('year')" (blur)="blur()" id="year" type="number" min="1900" max="2099"
+          placeholder="Year" formControlName="year" />
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 
+    
+OLD STUFF!!!    
+    
+    
 <div
   class="btn-container"
   (click)="toggle(date, inputs)"
@@ -65,4 +93,4 @@
     (click)="toggle(date, inputs)"
     class="enter-label"
   >Enter your Birthday</span>
-</ng-template>
+</ng-template> -->

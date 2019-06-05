@@ -12,9 +12,6 @@ import { NewsletterModule } from './components/newsletter/newsletter.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DateInputComponent } from './components/date-input/date-input';
 import { LogoComponent, SimpleLogo } from './components/logo/logo.component';
-import { AudioPlayerComponent } from './components/audio-player/audio-player.component';
-import { PlaylistComponent } from './components/audio-player/playlist.component';
-import { UploadBarComponent } from './components/upload-bar/upload-bar.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ReadingsModule } from './components/hover-card/readings.module';
 import { CmsModule } from './components/cms/cms.module';
@@ -85,9 +82,6 @@ const routes: Routes = [
     LogoComponent,
     SimpleLogo,
 
-    AudioPlayerComponent,
-    PlaylistComponent,
-    UploadBarComponent,
     LandingComponent,
 
     LoginDialogComponent,

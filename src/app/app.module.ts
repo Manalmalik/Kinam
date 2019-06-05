@@ -6,11 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from 'shared';
-import { CalendarComponent } from './routes/calendar/calendar.component';
-import { PlaybookComponent } from './routes/playbook/playbook.component';
+
+/**
+ * IMPORTANT:
+ * This module is the root module
+ * But it is not in use for building the actual website
+ */
 
 @NgModule({
-  declarations: [AppComponent, CalendarComponent, PlaybookComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

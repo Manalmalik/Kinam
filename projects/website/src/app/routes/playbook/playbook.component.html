@@ -5,6 +5,7 @@
 
 <h1>Playbook</h1>
 
+<hr>
 
 <h2>Complex button</h2>
 
@@ -27,6 +28,17 @@
 
 <hr>
 
+
+<h2>Date Input</h2>
+
+<div class="columns flex-center">
+  <div class="column">
+    <kinam-date></kinam-date>
+  </div>
+</div>
+
+<hr>
+
 <h2>Newsletter</h2>
 
 <kinam-newsletter></kinam-newsletter>
@@ -44,11 +56,20 @@
         <div class="stripe"></div>
       </div>
       <div class="column column__divider text-flex-start">
+        <kinam-simple-logo style="margin-right: 1rem;"></kinam-simple-logo>
         <span class="nowrap">behind the product</span>
       </div>
     </div>
   </div>
   <div class="column is-2"></div>
+</div>
+
+<div class="columns">
+  <div class="column is-12">
+    <div class="arrow-down">
+      <i class="fal fa-chevron-down"></i>
+    </div>
+  </div>
 </div>
 
 <hr>
@@ -65,3 +86,33 @@
 </div>
 
 <kinam-menu></kinam-menu>
+
+<hr>
+
+<h2>Maya Number</h2>
+
+<div class="columns">
+  <div class="column">
+    <kinam-maya-number-block class="is-centered" [number]="number?.day">
+    </kinam-maya-number-block>
+  </div>
+  <div class="column">
+    <kinam-maya-number-block class="is-centered" [number]="number?.month">
+    </kinam-maya-number-block>
+  </div>
+  <div class="column">
+    <kinam-maya-number-block class="is-centered" [number]="number?.year">
+    </kinam-maya-number-block>
+  </div>
+</div>
+<div class="columns flex-center">
+  <div class="column has-text-centered">
+    On a keyboard you can use arrow keys to go higher/lower which looks cool :)
+  </div>
+</div>
+
+<div class="columns flex-center">
+  <div class="column">
+    <kinam-date (dateChange)="handleDateChange($event)"></kinam-date>
+  </div>
+</div>

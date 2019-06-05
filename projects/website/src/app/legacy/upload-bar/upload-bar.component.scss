@@ -1,0 +1,15 @@
+:host {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  color: white;
+  background: #000;
+  z-index: 2;
+  padding: 0.25rem 0;
+
+  progress {
+    flex: 1;
+  }
+}

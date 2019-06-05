@@ -1,6 +1,4 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { Song } from '../../components/audio-player/song';
-import { AudioService } from '../../components/audio-player/audio.service';
 import { Observable, BehaviorSubject, from, Subscription } from 'rxjs';
 import {
   HttpClient,
@@ -9,6 +7,9 @@ import {
   HttpRequest
 } from '@angular/common/http';
 import { concatMap, map } from 'rxjs/operators';
+
+import { AudioService } from '@website/legacy/audio-player/audio.service';
+import { Song } from '@website/legacy/audio-player/song';
 
 @Component({
   selector: 'kinam-audio-suite',
@@ -21,7 +22,7 @@ export class KinamAudioComponent {
   public progress: BehaviorSubject<number>;
   private subscription = new Subscription();
 
-  constructor(private audioService: AudioService, private http: HttpClient) {}
+  constructor(private audioService: AudioService, private http: HttpClient) { }
 
   public songs$: Observable<Song[]> = this.audioService.songs$.pipe(
     map(s => Array.from(s.values()))
