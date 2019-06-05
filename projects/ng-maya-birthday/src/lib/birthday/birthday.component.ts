@@ -17,8 +17,8 @@ import { LocalStorageService } from 'core';
 import { DateFormat } from './date-format';
 import { moment } from './moment';
 
-const YEAR_MAX = 2099;
-const YEAR_MIN = 1900;
+export const YEAR_MAX = 2099;
+export const YEAR_MIN = 1900;
 
 @Component({
   selector: 'kinam-birthday',
@@ -68,7 +68,6 @@ export class BirthdayComponent implements OnInit {
     return this._focussed;
   }
   public date = new Date();
-
   public kinamDate: KinamNahual;
   public dateCtrl: FormControl;
   public loading$: BehaviorSubject<boolean>;

@@ -8,8 +8,8 @@ import {
 } from '@angular/common/http';
 import { concatMap, map } from 'rxjs/operators';
 
-import { AudioService } from '@website/legacy/audio-player/audio.service';
-import { Song } from '@website/legacy/audio-player/song';
+import { AudioService } from 'legacy/audio-player/audio.service';
+import { Song } from 'legacy/audio-player/song';
 
 @Component({
   selector: 'kinam-audio-suite',

@@ -1,6 +1,6 @@
 import { BehaviorSubject } from 'rxjs';
-import { BaseModel } from '../../util/model';
-import { secondsToHms } from '../../util/convert-time';
+import { BaseModel } from '../../projects/website/src/app/util/model';
+import { secondsToHms } from '../../projects/website/src/app/util/convert-time';
 
 export class Song extends BaseModel<Song> {
   public title: string;
