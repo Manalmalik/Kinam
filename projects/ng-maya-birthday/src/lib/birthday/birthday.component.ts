@@ -22,23 +22,6 @@ import { moment } from './moment';
 const YEAR_MAX = 2099;
 const YEAR_MIN = 1900;
 
-const validators = {
-  year: [
-    Validators.required,
-    Validators.min(YEAR_MIN),
-    Validators.max(YEAR_MAX)
-  ],
-  month: [
-    Validators.required,
-    Validators.min(1),
-    Validators.max(12)
-  ],
-  day: [
-    Validators.required,
-    Validators.min(1),
-    Validators.max(31)
-  ]
-};
 
 @Component({
   selector: 'kinam-birthday',
