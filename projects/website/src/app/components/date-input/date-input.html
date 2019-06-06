@@ -1,5 +1,4 @@
 <div *ngIf="content$ | async as content" [ngSwitch]="!(loading$ | async)">
-  {{maxDates[form.value.month - 1]}}
   <div [formGroup]="form">
     <div class="birthday-input">
       <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'day'">

@@ -1,22 +1,13 @@
 <kinam-navigation></kinam-navigation>
 
-<div
-  class="sidescroll"
-  id="sidescroll"
-  #scroll
-  parallax
-  (bgLoaded)="loaded = true"
->
+<div class="sidescroll" id="sidescroll" #scroll parallax (bgLoaded)="loaded = true">
   <div id="sec1" class="sec">
     <div class="card-container" *ngIf="(intro$ | async) as fields">
       <section class="content--vertical">
         <kinam-newsletter></kinam-newsletter>
 
         <ng-container *ngFor="let field of fields">
-          <kinam-cms-block
-            [type]="field.type"
-            [value]="field.value"
-          ></kinam-cms-block>
+          <kinam-cms-block [type]="field.type" [value]="field.value"></kinam-cms-block>
         </ng-container>
 
         <div class="card card__black has-text-centered" (click)="goTo(2)">
@@ -26,17 +17,10 @@
     </div>
   </div>
   <div class="sec" id="sec2">
-    <div
-      class="card-container"
-      *ngIf="(problem$ | async) as fields"
-      id="container-2"
-    >
+    <div class="card-container" *ngIf="(problem$ | async) as fields" id="container-2">
       <section class="content--vertical">
         <ng-container *ngFor="let field of fields">
-          <kinam-cms-block
-            [type]="field.type"
-            [value]="field.value"
-          ></kinam-cms-block>
+          <kinam-cms-block [type]="field.type" [value]="field.value"></kinam-cms-block>
         </ng-container>
 
         <div class="card card__black has-text-centered" (click)="goTo(3)">
@@ -67,26 +51,11 @@
 </div>
 
 <div style="color: white" *ngIf="!loaded" id="spinner">
-  <svg
-    width="200px"
-    height="200px"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="xMidYMid"
-    class="lds-ball"
-    style="background: none;"
-  >
+  <svg width="200px" height="200px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+    preserveAspectRatio="xMidYMid" class="lds-ball" style="background: none;">
     <circle cx="50" cy="35.7097" r="13" fill="#fdfdfd">
-      <animate
-        attributeName="cy"
-        calcMode="spline"
-        values="23;77;23"
-        keyTimes="0;0.5;1"
-        dur="1"
-        keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9"
-        begin="0s"
-        repeatCount="indefinite"
-      ></animate>
+      <animate attributeName="cy" calcMode="spline" values="23;77;23" keyTimes="0;0.5;1" dur="1"
+        keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" begin="0s" repeatCount="indefinite"></animate>
     </circle>
   </svg>
 </div>

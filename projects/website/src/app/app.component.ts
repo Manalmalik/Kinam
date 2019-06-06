@@ -10,7 +10,7 @@ import { LandingService } from './services/landing.service';
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'kinam-root',
   templateUrl: './app.component.html',
   animations: [
     trigger('woo', [
@@ -31,7 +31,7 @@ import { LandingService } from './services/landing.service';
     ])
   ]
 })
-export class AppComponent implements OnDestroy, AfterViewInit {
+export class WebsiteComponent implements OnDestroy, AfterViewInit {
   constructor(public dialog: MatDialog, private landingService: LandingService) { }
   private subscription = new Subscription();
 

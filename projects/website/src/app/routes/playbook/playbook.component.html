@@ -116,3 +116,15 @@
     <kinam-date (dateChange)="handleDateChange($event)"></kinam-date>
   </div>
 </div>
+
+<div class="columns flex-center">
+  <div class="column">
+    <div class="columns">
+      <div class="swipe-container" kinamScrollSnap (snap)="snapBottom($event)">
+        <div [ngStyle]="{ 'background-image': 'url(' + '/assets/vonni.png' + ')' }"
+          *ngFor="let img of ['1','2','3','4']" class="image-container">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
