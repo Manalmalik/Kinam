@@ -1,5 +1,8 @@
 # Kinam
 
+## Important
+The folder "legacy" contains components which we do not need right now. However, geel free to explore!
+
 ## Start App:
 `npm install`
 `npm run build:all`
