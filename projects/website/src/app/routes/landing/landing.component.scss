@@ -1,9 +1,255 @@
-// :host {
-//   color: white;
-//   position: relative;
-//   padding-top: 5rem;
-//   display: block;
-// }
+:host {
+  color: white;
+  position: relative;
+  display: block;
+}
+
+.header {
+  justify-content: space-between;
+  padding-top: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  background-color: rgba(0,0,0,0.5);
+
+  z-index: 99;
+}
+
+
+.btn {
+  height: 3rem;
+  min-width: 5rem;
+  cursor: pointer;
+
+  &--primary {
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    border-radius: 3rem;
+    font-size: 1.25rem;
+    padding: 0.25rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 1.75rem;
+    transition: 0.2s all ease-out;
+
+    &:hover {
+        color: black;
+        background-color: white;
+        transition: 0.2s all ease-out;
+    }
+  }
+}
+
+.menu {
+  .column {
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+.divider {
+  &__stripe {
+    height: 3rem;
+    width: 1px;
+    background-color: white;
+  }
+}
+
+.section {
+  &__hero {
+    position: relative;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+
+    &__heading {
+      text-align: right;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    &__content {
+      position: absolute;
+      align-items: flex-end;
+      width: 100%;
+      top: 12.5rem;
+    }
+
+    &__interaction {
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      .watch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      
+      .fa-play-circle {
+        font-size: 2.5rem;
+        margin-left: 1.5rem;
+      }
+
+      .divider {
+        &__stripe {
+          margin: 0 2rem;
+        }
+      }
+    }
+  }
+
+  &__jacket {
+
+    &__header {
+      font-size: 3.5rem;
+      font-weight: bolder;
+      text-align: right;
+      line-height: 1.25;
+    }
+
+    &__img-grid {
+      display: grid;
+      grid-template-columns: 25% 33% auto;
+      grid-gap: 0.5rem;
+
+      &__img1,
+      &__img2,
+      &__img3 {
+        background-image: url(/assets/mission1.jpg);
+        background-size: cover;
+        height: 15rem;
+        filter: contrast(1);
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          filter: contrast(1.25);
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &__mayans { 
+    &__img-grid__img1 {
+      background-image: url(/assets/mission1.jpg);
+      background-size: cover;
+      height: 30rem;
+    }
+   }
+
+  &__social { 
+    &__img-grid__img1 {
+      background-image: url(/assets/mission1.jpg);
+      background-size: cover;
+      height: 30rem;
+    }
+  }
+
+  &__participate {
+    margin-bottom: 3rem;
+  }
+
+  &__footer{ 
+    background-color: white;
+    min-height: 4rem;
+  }
+}
+
+.gradient {
+  height: 600px;  
+  width: 100%;
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+  } 
+
+  &__image {
+    background-image: url("/assets/mission1.jpg");
+    background-size: cover;
+    filter: grayscale(25%);
+    position: absolute;
+  }
+
+  &__overlay {
+    position: absolute;
+
+    cursor: pointer;
+  
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
+    transition: transform 800ms ease-out;
+    transition-delay: 200ms;
+
+
+    transform: translateY(0);
+
+    &:hover { 
+      background: rgb(2,0,36);
+      background: linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
+      transition: transform 800ms ease-out;
+      transition-delay: 200ms;
+      transform: translateY(100px);
+    }
+  }
+}
+
+.btn__indigogo {
+  border: 1px solid white;
+  border-radius: 0.33rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+
+    
+  transition: 0.2 ease-out;
+  background-color: black;
+  color: white;
+  text-align: center;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2 ease-out;
+  }
+  
+  &__container {
+    text-align: center;
+    margin-top: 3rem;
+  }
+}
+
+
+.interaction {
+  font-size: 1.5rem;
+
+  &__jacket {
+    display: flex;
+    flex-direction: row;
+
+    &__item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      
+      .fal {
+        margin: 0 2rem;
+        font-size: 2rem;
+      }
+    }
+  }
+}
 
 // .justify-flex-start {
 //   justify-content: flex-start;
@@ -307,6 +553,3 @@
 // }
 
 
-.section__footer{ 
-  background-color: white;
-}

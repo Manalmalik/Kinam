@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
  * This module is the root module
  * But it is not in use for building the actual website which is a project itself
  */
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
