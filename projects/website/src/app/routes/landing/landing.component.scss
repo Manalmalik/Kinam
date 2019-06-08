@@ -109,10 +109,12 @@
   &__jacket {
 
     &__header {
-      font-size: 3.5rem;
+      font-size: 6.5rem;
       font-weight: bolder;
       text-align: right;
-      line-height: 1.25;
+      line-height: 1.1;
+      position: relative;
+      top: -125px;
     }
 
     &__img-grid {
@@ -139,7 +141,7 @@
 
   &__mayans { 
     &__img-grid__img1 {
-      background-image: url(/assets/mission1.jpg);
+      background-image: url(/assets/mayansBg.jpg);
       background-size: cover;
       height: 30rem;
     }
@@ -147,7 +149,7 @@
 
   &__social { 
     &__img-grid__img1 {
-      background-image: url(/assets/mission1.jpg);
+      background-image: url(/assets/socialBg.jpg);
       background-size: cover;
       height: 30rem;
     }
@@ -552,4 +554,123 @@
 //   }
 // }
 
+
+
+
+
+/**
+Complex Button start
+*/
+
+.hover-container {
+  background-color: black;
+  //display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.inner {
+  border: 1px solid white;
+  width: 28.5rem;
+  height: 5rem;
+  font-size: 2rem;
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.outline {
+  border: 1px solid white;
+  width: 28.5rem;
+  height: 5rem;
+}
+
+.behind {
+  background: transparent;
+  width: 28.5rem;
+  height: 5rem;
+  border: 1px solid;
+  transform: translateX(-1%) translateY(-110%);
+  position: absolute;
+  background-color: black;
+}
+
+.fill {
+  color: white;
+  z-index: 3;
+  font-size: 2rem;
+  font-family: century-gothic, sans-serif;
+}
+
+.overlay {
+  background: transparent;
+  position: absolute;
+  z-index: 5;
+  transition: background 0.3s ease-in-out;
+}
+
+// .inner, .fill {
+//   border-radius: 0.5rem;
+// }
+
+.text {
+  margin: 1rem 2rem;
+}
+
+.outer {
+  cursor: pointer;
+
+  &:hover {
+    .fill {
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .overlay {
+      border: 1px solid black;
+      transition: border 0.3s ease-in-out;
+    }
+
+    .inner {
+      background-color: black;
+      color: white;
+      z-index: -1;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+  }
+}
+
+.indieGogoContainer {
+  margin: 10px 10px 0 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.indiegogoLink {
+  color: #de1778;
+}
+.orderNowContainer {
+  margin-top: 20px;
+}
+
+.orderNowContent {
+  margin-top: 20px;
+}
+
+.wallBG {
+  background-image: url("/assets/wall_bg.jpg");
+}
+
+/**
+Complex Button end
+*/
+
+.orderNowLinks a {
+  font-size: 1.5rem;
+  color: white;
+}
+.orderNowLinks a:hover {
+  color: #363636;
+}
 
