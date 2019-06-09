@@ -136,6 +136,16 @@
           transition: all 0.2s ease-in-out;
         }
       }
+
+      &__img1 {
+        background-image: url(/assets/jacket1_bg.jpg);
+      }
+      &__img2 {
+        background-image: url(/assets/jacket2_bg.jpg);
+      }
+      &__img3 {
+        background-image: url(/assets/jacket3_bg.jpg);
+      }
     }
   }
 
@@ -667,7 +677,7 @@ Complex Button end
 */
 
 .orderNowLinks a {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
 }
 .orderNowLinks a:hover {
