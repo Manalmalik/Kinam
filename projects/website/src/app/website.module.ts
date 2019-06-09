@@ -9,7 +9,7 @@ import { WebsiteComponent } from './app.component';
 
 import { NewsletterModule } from './components/newsletter/newsletter.module';
 import { DateInputComponent } from './components/date-input/date-input';
-import { SimpleLogo } from './components/logo/logo.component';
+import { SimpleLogo } from './components/logo/logo';
 import { MenuComponent } from './components/menu/menu.component';
 import { ReadingsModule } from './components/hover-card/readings.module';
 import { CmsModule } from './components/cms/cms.module';

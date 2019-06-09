@@ -127,7 +127,8 @@
       &__img3 {
         background-image: url(/assets/mission1.jpg);
         background-size: cover;
-        height: 15rem;
+        background-position: center center;
+        height: 25rem;
         filter: contrast(1);
         transition: all 0.2s ease-in-out;
 
@@ -655,21 +656,27 @@ Complex Button start
   }
 }
 
-.indieGogoContainer {
-  margin: 10px 10px 0 0;
-  font-size: 1rem;
-  line-height: 1;
+.indiegogo {
+  &__container {
+    margin: 10px 10px 0 0;
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  &__link {
+    color: #de1778;
+    font-weight: bold;
+  }
 }
 
-.indiegogoLink {
-  color: #de1778;
-}
-.orderNowContainer {
-  margin-top: 20px;
-}
+.order-now {
+  &__container {
+    margin-top: 20px;
+  }
 
-.orderNowContent {
-  margin-top: 20px;
+  &__content {
+    margin-top: 20px;
+  }
 }
 
 .wallBG {
