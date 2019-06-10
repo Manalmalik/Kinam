@@ -15,6 +15,16 @@
   z-index: 99;
 }
 
+.discover-more {
+  transform: translateY(-5rem);
+}
+
+.menu {
+  a {
+    color: inherit;
+    cursor: pointer;
+  }
+}
 
 .btn {
   height: 3rem;
@@ -42,12 +52,17 @@
   }
 }
 
-.menu {
-  .column {
-    text-align: center;
-    cursor: pointer;
+.column.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+
+  kinam-simple-logo {
+    margin: 0 2rem;
+    display: block;
   }
 }
+
 
 .divider {
   &__stripe {
@@ -109,6 +124,7 @@
   }
 
   &__jacket {
+    position: relative;
 
     &__header {
       font-size: 6.5rem;
@@ -252,6 +268,8 @@
   &__jacket {
     display: flex;
     flex-direction: row;
+    position: absolute;
+    bottom: 3rem;
 
     &__item {
       display: flex;
@@ -383,7 +401,7 @@ Complex Button end
     color: white;
 
     &:hover {
-      color: #363636;
+      color: #adadad;
     }
   }
 }
@@ -394,7 +412,6 @@ Complex Button end
 
   .hover-container {
     background-color: black;
-    //display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -476,14 +493,16 @@ Complex Button end
 .rightColumnMargin {
   margin-left: 2rem;
 }
+
 .meetTheMayans {
   position: relative;
-  top: -230px;
+  top: -14.5rem;
   font-size: 2rem;
   font-weight: bolder;
+  cursor: pointer;
 }
 
-.contentBlock {
+.content-block {
   &__headline {
     font-size: 3rem;
     font-weight: bolder;
