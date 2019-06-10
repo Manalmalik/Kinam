@@ -21,12 +21,6 @@ import { Component } from '@angular/core';
         </g>
     </svg>
     `,
-    styles: [`
-      svg {
-        fill: #fff;
-        height: 2rem;
-        margin-left: 2rem;
-      }
-    `]
+    styleUrls: ['./logo.scss']
 })
 export class SimpleLogo { }
