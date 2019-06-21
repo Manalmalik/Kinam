@@ -4,11 +4,16 @@
 The folder "legacy" contains components which we do not need right now. However, geel free to explore!
 
 ## Start App:
+
 `npm install`
 
 `npm run build:all`
 
 `npm start`
+
+## Deploy App:
+
+`npm run deploy:website`
 
 ## Routes:
 `/`:                Landing
