@@ -149,8 +149,7 @@ a {
 
       &__img1,
       &__img2,
-      &__img3 {
-        background-image: url(/assets/mission1.jpg);
+      &__img3 { 
         background-size: cover;
         background-position: center center;
         height: 25rem;
@@ -195,7 +194,6 @@ a {
       padding-right: 2rem;
       top: -125px;
     }
-
   }
 
   &__social { 
@@ -257,10 +255,10 @@ a {
     transition-delay: 200ms;
     transform: translateY(0);
   }
-}
 
-.gradient--small {
-  height: 400px;
+  &--small {
+    height: 400px;
+  }
 }
 
 .btn {
@@ -320,7 +318,6 @@ Complex Button start
 
 .hover-container {
   background-color: black;
-  //display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -436,8 +433,8 @@ Complex Button end
 }
 
 .btn--mayans {
-  float: right;
-  margin-top: 20px;
+  width: 15rem;
+  margin: 1.5rem auto 0 auto;
 
   .hover-container {
     background-color: black;
@@ -519,7 +516,7 @@ Complex Button end
   margin: 17px;
 }
 
-.mr-2 {
+.ml-2 {
   margin-left: 2rem;
 }
 
@@ -553,9 +550,23 @@ Complex Button end
 
 
 @media (min-width: 0) and (max-width: 768px) {
+
+  .interaction__jacket {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__item {
+      margin-top: 1rem;
+    }
+  }
+
+  .header {
+    display: none;
+  }
+
   .section {
     padding: 3rem 0;
-    
+
     &__hero {
       &__heading {
         justify-content: center; 
@@ -597,12 +608,14 @@ Complex Button end
     display: none;
   }
   
-  .btn--indigogo {
-    font-size: 1rem;
-  }
+  .btn {
+    &--indigogo {
+      font-size: 1rem;
+    }
 
-  .btn--mayans {
-    margin: 20px 0;
+    &--mayans {
+      margin: 1.5rem 0;
+    }
   }
 
   .section__social__header,
@@ -610,5 +623,9 @@ Complex Button end
   .section__jacket__header {
     font-size: 4rem;
     top: 0;
+  }
+
+  .discover-more {
+    transform: none;
   }
 }
