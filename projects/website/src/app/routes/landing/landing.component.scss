@@ -79,23 +79,23 @@ a {
 .section {
   &__hero {
     position: relative;
-    margin-top: 4rem;
     margin-bottom: 2rem;
 
     &__heading {
       text-align: right;
       font-size: 6rem;
       font-weight: 900;
-      line-height: 1.25;
+      line-height: 1;
       display: flex;
       justify-content: flex-end;
     }
 
     &__content {
       position: absolute;
-      align-items: flex-end;
-      width: 100%;
-      top: 4.5rem;
+      align-items: center;
+      min-width: 100%;
+      top: 0;
+      height: 100vh;
     }
 
     &__interaction {
@@ -104,6 +104,8 @@ a {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      font-size: 2rem;
+      font-weight: bolder;
 
       margin-bottom: 2rem;
 
@@ -180,7 +182,21 @@ a {
       height: 30rem;
       background-position: center center;
     }
-   }
+  }
+
+
+  &__music {
+    &__header {
+      font-size: 6.5rem;
+      font-weight: bolder;
+      text-align: right;
+      line-height: 1.1;
+      position: relative;
+      padding-right: 2rem;
+      top: -125px;
+    }
+
+  }
 
   &__social { 
     &__img-grid__img1 {
@@ -218,7 +234,7 @@ a {
 }
 
 .gradient {
-  height: 600px;  
+  height: 100vh;  
   width: 100%;
 
   &__container {
@@ -236,18 +252,10 @@ a {
     position: absolute;
     cursor: pointer;
     background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 120%);
     transition: transform 800ms ease-out;
     transition-delay: 200ms;
     transform: translateY(0);
-
-    &:hover { 
-      background: rgb(2,0,36);
-      background: linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
-      transition: transform 800ms ease-out;
-      transition-delay: 200ms;
-      transform: translateY(100px);
-    }
   }
 }
 
@@ -427,7 +435,7 @@ Complex Button end
   }
 }
 
-.buttonMayans {
+.btn--mayans {
   float: right;
   margin-top: 20px;
 
@@ -508,14 +516,14 @@ Complex Button end
 
 .mayan-reading__text {
   font-size: 1rem;
-  margin: 17px 18px 0 0px;
+  margin: 17px;
 }
 
-.rightColumnMargin {
+.mr-2 {
   margin-left: 2rem;
 }
 
-.meetTheMayans {
+.meet-the-mayans {
   position: relative;
   top: -14.5rem;
   font-size: 2rem;
@@ -543,3 +551,64 @@ Complex Button end
   }
 }
 
+
+@media (min-width: 0) and (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+    
+    &__hero {
+      &__heading {
+        justify-content: center; 
+        text-align: center; 
+        margin: 3rem 0;
+        font-size: 3rem;
+      }
+      
+      &__interaction {
+        justify-content: center; 
+      }
+  
+      &__text {
+        text-align: center;
+        padding: 3rem 5rem;
+      }
+    }
+
+    &__footer {
+      text-align: center;
+    }
+  }
+
+  .interaction__jacket {
+    position: relative;
+    bottom: 0;
+  }
+
+  .order-now__links  {
+    text-align: center;
+  }
+
+  .hover-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .meet-the-mayans {  
+    display: none;
+  }
+  
+  .btn--indigogo {
+    font-size: 1rem;
+  }
+
+  .btn--mayans {
+    margin: 20px 0;
+  }
+
+  .section__social__header,
+  .section__music__header,
+  .section__jacket__header {
+    font-size: 4rem;
+    top: 0;
+  }
+}
