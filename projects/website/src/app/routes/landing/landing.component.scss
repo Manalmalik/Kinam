@@ -4,6 +4,7 @@
   display: block;
 }
 
+
 a {
   color: inherit;
 }
@@ -93,9 +94,10 @@ a {
     &__content {
       position: absolute;
       align-items: center;
-      min-width: 100%;
-      top: 0;
+      // min-width: 100%;
+      // max-width: 100vw;
       height: 100vh;
+      top: 0;
     }
 
     &__interaction {
@@ -110,6 +112,7 @@ a {
       margin-bottom: 2rem;
 
       .watch {
+        padding: 0.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -303,6 +306,10 @@ a {
       flex-direction: row;
       align-items: center;
       justify-content: center;
+
+      .icon-label {
+        padding: 0.25rem;
+      }
       
       .fal {
         margin: 0 2rem;
@@ -514,6 +521,16 @@ Complex Button end
 .mayan-reading__text {
   font-size: 1rem;
   margin: 17px;
+
+  span {
+    margin-right: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.scroll-label {
+  font-size: 1.5rem;
+  transform: translateY(-3rem);
 }
 
 .ml-2 {
@@ -549,7 +566,7 @@ Complex Button end
 }
 
 
-@media (min-width: 0) and (max-width: 768px) {
+@media (min-width: 0) and (max-width: 1087px) {
 
   .interaction__jacket {
     flex-wrap: wrap;
@@ -567,6 +584,7 @@ Complex Button end
   .section {
     padding: 3rem 0;
 
+    
     &__hero {
       &__heading {
         justify-content: center; 
@@ -578,6 +596,11 @@ Complex Button end
       
       &__interaction {
         justify-content: center; 
+        flex-direction: column;
+   
+        .divider {
+          display: none;
+        }
       }
   
       &__text {
