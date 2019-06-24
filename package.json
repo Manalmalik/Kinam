@@ -31,6 +31,8 @@
     "@angular/router": "~7.2.12",
     "@angular/service-worker": "~7.2.12",
     "@netbasal/spectator": "^2.2.0-rc.2",
+    "@nguniversal/express-engine": "^7.1.1",
+    "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
     "bulma": "^0.7.2",
     "core-js": "^2.5.4",
     "css-scroll-snap-polyfill": "^0.1.2",

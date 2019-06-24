@@ -422,7 +422,7 @@ Complex Button end
 */
 
 .order-now {
-  &__links a{
+  &__links a {
     font-size: 1.2rem;
     color: white;
 
@@ -573,6 +573,7 @@ Complex Button end
         text-align: center; 
         margin: 3rem 0;
         font-size: 3rem;
+        line-height: 1.5;
       }
       
       &__interaction {

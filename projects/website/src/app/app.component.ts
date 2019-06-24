@@ -1,4 +1,4 @@
-import { Component, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnDestroy, AfterViewInit, OnInit } from '@angular/core';
 
 import { Subscription, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 import { LoginDialogComponent } from './login-dialog.component';
 import { LandingService } from './services/landing.service';
+import { TitleService } from './services/title.service';
 
 
 @Component({
@@ -31,12 +32,16 @@ import { LandingService } from './services/landing.service';
     ])
   ]
 })
-export class WebsiteComponent implements OnDestroy, AfterViewInit {
-  constructor(public dialog: MatDialog, private landingService: LandingService) { }
+export class WebsiteComponent implements OnInit, OnDestroy, AfterViewInit {
+  constructor(public dialog: MatDialog, private landingService: LandingService, private titleService: TitleService) { }
   private subscription = new Subscription();
 
   public authenticated = false;
   public state = false;
+
+  public ngOnInit() {
+    this.titleService.setTitle({ description: 'Welcome to Guatemala - Fashion. Music. Technology. Support our Crowdfunding!' });
+  }
 
   anim() {
     this.state = !this.state;

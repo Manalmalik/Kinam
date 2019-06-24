@@ -1,54 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { CmsService } from 'core';
 import { LandingService } from '../../services/landing.service';
+import { TitleService } from '@website/services/title.service';
 
 @Component({
   selector: 'kinam-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
 })
-export class LandingComponent {
+export class LandingComponent implements OnInit {
 
-  constructor(private cmsService: CmsService, private landingService: LandingService) { }
+  constructor(private landingService: LandingService, private titleService: TitleService) { }
 
-
-  /**
-   * Legacy: Start
-   */
-
-  // @ViewChild('sliderContainer') sliderContainer: ElementRef;
-  // public form: FormGroup;
-  // public content$: Observable<any>;
-  // public calendar$: Observable<any>;
-  // public selectedStepTop = '0';
-  // public selectedStepBottom = '0';
-  // public ngOnInit() {
-  // this.content$ = this.cmsService.getSingleton('landing');
-  // const timestamp = new Date();
-  // this.form = new FormGroup({
-  //   day: new FormControl(timestamp.getDate(), BIRTDAY_VALIDATORS.day),
-  //   month: new FormControl(timestamp.getMonth() + 1, BIRTDAY_VALIDATORS.month),
-  //   year: new FormControl(timestamp.getFullYear(), BIRTDAY_VALIDATORS.year)
-  // });
-  // }
-  // public patch() {
-  //   this.form.patchValue({ day: 22 });
-  // }
-
-  // public toggleMenu() {
-  //   this.landingService.toggleMenu();
-  // }
-
-  // public snapTop(e) {
-  //   this.selectedStepTop = e;
-  // }
-
-  // public snapBottom(e) {
-  //   this.selectedStepBottom = e;
-  // }
-
-  /**
-   * Legacy: End
-   */
+  public ngOnInit() {
+    this.titleService.setTitle({ description: 'Welcome to Guatemala - Fashion. Music. Technology. Support our Crowdfunding!' });
+  }
 }
