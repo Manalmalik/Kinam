@@ -269,6 +269,7 @@ a {
 
   &--small {
     height: 400px;
+    margin-bottom: 2rem;
   }
 }
 
@@ -648,6 +649,10 @@ Complex Button end
     &--mayans {
      margin:  2.5rem auto
     }
+  }
+
+  .section__social__text {
+    margin: 1.5rem auto;
   }
 
   .section__social__header,
