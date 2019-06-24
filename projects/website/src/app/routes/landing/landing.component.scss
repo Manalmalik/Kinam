@@ -247,6 +247,13 @@ a {
     background-size: cover;
     filter: grayscale(25%);
     position: absolute;
+    transition: all 0.33s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: none;
+      transition: all 0.33s ease-in-out;
+    }
   }
 
   &__overlay {
@@ -399,7 +406,7 @@ Complex Button start
 
 .indiegogo {
   &__container {
-    margin: 10px 10px 0 0;
+    margin: 0.5rem 1rem 0 0;
     font-size: 1rem;
     line-height: 1.1;
   }
