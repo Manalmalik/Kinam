@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --project website --proxy-config ./proxy.conf.json --host 0.0.0.0",
+    "start": "ng serve --project website --host 0.0.0.0",
     "build": "ng build",
     "dev-build:website": "ng build website",
     "build:website": "ng build website --prod",
