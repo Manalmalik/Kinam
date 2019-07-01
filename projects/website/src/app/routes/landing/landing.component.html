@@ -1,7 +1,5 @@
 <div cdkScrollable>
-  <!-- 
-  Menu
- -->
+  <!--  Menu -->
 <div class="columns header">
   <div class="column logo has-text-centered">
     <kinam-simple-logo></kinam-simple-logo> <span>KINAM</span>
@@ -62,7 +60,7 @@
   </div>
 
   <div class="columns discover-more">
-    <div class="column is-12 has-text-centered">
+    <div class="column is-12 has-text-centered" style="min-height: 20rem;">
       <div class="scroll-label">
         <i class="fal fa-chevron-down"></i> <br>
         discover more
@@ -85,11 +83,34 @@
     <div class="section__jacket__img-grid__img3" #jacketGrid></div>
   </div>
   <div class="columns">
-    <div class="column is-4 is-6-desktop">
-      <div class="section__jacket__header">
+    <div class="column is-4 is-6-desktop ">
+      <h1 class="section__jacket__header">
         The<br>
         Jacket
-      </div>
+      </h1>
+
+      <div class="interaction__jacket">
+          <div class="interaction__jacket__item">
+            <i class="fal fa-seedling"></i>
+            <div class="icon-label">
+              natural <br>
+              materials
+            </div>
+          </div>
+          <div class="interaction__jacket__item">
+            <i class="fal fa-flower-tulip"></i>
+            <div class="icon-label">
+              sustainable <br>
+              model
+            </div>
+          </div>
+          <div class="interaction__jacket__item">
+            <i class="fal fa-hand-holding-heart"></i>
+            <div class="icon-label">
+              handmade
+            </div>
+          </div>
+        </div>
     </div>
     <div class="column order-now__container">
       <div class="hover-container">
@@ -111,33 +132,13 @@
       </div>
       <div class="order-now__links">
         <br>
-        <a href="#"><i class="fal fa-plus"></i> customize your jacket</a>
+        <a href="#">
+          <i class="fal fa-plus"></i> customize your jacket
+        </a>
         <br><br>
-        <a href="#"><i class="fal fa-plus"></i> behind the product</a>
-      </div>
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column is-6 interaction__jacket">
-      <div class="interaction__jacket__item">
-        <i class="fal fa-seedling"></i>
-        <div class="icon-label">
-          natural <br>
-          materials
-        </div>
-      </div>
-      <div class="interaction__jacket__item">
-        <i class="fal fa-flower-tulip"></i>
-        <div class="icon-label">
-          sustainable <br>
-          model
-        </div>
-      </div>
-      <div class="interaction__jacket__item">
-        <i class="fal fa-hand-holding-heart"></i>
-        <div class="icon-label">
-          handmade
-        </div>
+        <a href="#">
+          <i class="fal fa-plus"></i> behind the product
+        </a>
       </div>
     </div>
   </div>
@@ -153,10 +154,11 @@
   </div>
   <div class="columns section__mayans">
     <div class="column is-6">
-      <div class="section__jacket__header">
+      <h1 class="section-header">
         The<br>
-        MAYANS<br>
-        <div class="btn--mayans">
+        MAYANS
+      </h1>
+      <div class="btn--mayans">
           <div class="hover-container">
             <div class="outer">
               <div class="inner overlay"></div>
@@ -169,7 +171,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
     <div class="column is-6 ml-2">
       <div class="meet-the-mayans">
@@ -191,7 +192,7 @@
 <!-- 
   Section: Social Projects
  -->
-<section class="section section__social" id="social-projects">
+<section class="section__social" id="social-projects">
   <div class="columns">
     <div class="column">
       <div class="gradient gradient--small gradient__container">
@@ -199,10 +200,12 @@
       </div>
     </div>
   </div>
-  <div class="columns section__social">
-    <div class="column section__social__header">
+  <div class="columns section__social is-gapless">
+    <div class="column section__social__header is-6-tablet">
+      <h1 class="section-header">
         Social<br>
         Projects
+      </h1>
     </div>
     <div class="column section__social__text">
       To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indigenous tribes
@@ -214,32 +217,29 @@
 <!-- 
   Section: Music
  -->
-<!-- <section class="section section__music" id="music">
-  <div class="columns">
-    <div class="column">
-      <div class="section__music__header">
-        The<br>
-        Music
-      </div>
-    </div>
-  </div>
+<section class="section__music" id="music">
+  
   <div class="gradient gradient__container">
     <div class="gradient gradient__image wall__bg"></div>
     <div class="gradient gradient__overlay"></div>
+    <div  class="has-text-centered spotify-container">
+      <iframe src="https://open.spotify.com/embed/album/323XXC7S9P5DhJJevRVzqy" class="spotify-player" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
   </div>
-</section> -->
+
+  <h1 class="section__music__header">
+    The<br>
+    Music
+  </h1>
+</section>
 
 <!-- 
   Section: Participate
  -->
-<section class="section section__participate">
-  <div class="columns">
-    <div class="column is-12 has-text-centered">
-      <div class="scroll-label">
-        participate <br>
-        <i class="fal fa-chevron-down"></i>
-      </div>
-    </div>
+<section class="section__participate">
+  <div style="font-size: 1.5rem; text-align: center">
+    participate <br>
+    <i class="fal fa-chevron-down"></i>
   </div>
   <div class="btn--indigogo__container">
     <span class="btn btn--indigogo">

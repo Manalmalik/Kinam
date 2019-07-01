@@ -9,8 +9,26 @@
 }
 
 
+.section-header {
+  font-size: 6.5rem;
+  font-weight: bolder;
+  text-align: right;
+  line-height: 1.1;
+  position: relative;
+  padding-right: 2rem;
+  transform: translateY(-120px);
+}
+
+.btn--mayans {
+  transform: translateY(-120px);
+}
+
 a {
   color: inherit;
+}
+
+.spotify-player {
+  height: 380px;
 }
 
 .header {
@@ -78,6 +96,7 @@ a {
     height: 3rem;
     width: 1px;
     background-color: white;
+    margin: 0 2rem;
   }
 }
 
@@ -126,12 +145,6 @@ a {
       .fa-play-circle {
         font-size: 2.5rem;
         margin-left: 1.5rem;
-      }
-
-      .divider {
-        &__stripe {
-          margin: 0 2rem;
-        }
       }
     }
   }
@@ -203,7 +216,7 @@ a {
   }
 
   &__social { 
-    transform: translateY(-120px);
+    // transform: translateY(-120px);
 
     &__img {
       background-image: url(/assets/socialBg.jpg);
@@ -224,7 +237,7 @@ a {
 
     &__text {
       max-width: 20rem;
-      // margin-left: auto;
+      margin-right: 10rem;
     }
   }
 
@@ -239,8 +252,14 @@ a {
   }
 }
 
+.spotify-container {
+  position: absolute;
+  width: 100%;
+  top: 60px;
+}
+
 .gradient {
-  height: 100vh;  
+  height: 60vh;  
   width: 100%;
 
   &__container {
@@ -544,7 +563,7 @@ Complex Button end
 
 .scroll-label {
   font-size: 1.5rem;
-  transform: translateY(-3rem);
+  transform: translateY(15rem);
 }
 
 .ml-2 {
@@ -564,7 +583,7 @@ Complex Button end
     font-size: 3rem;
     font-weight: bolder;
     line-height: 1.1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
   }
   &__body {
     font-size: 1rem;
@@ -577,6 +596,10 @@ Complex Button end
   &__link {
     cursor: pointer;
   }
+}
+
+.section__jacket__header {
+  transform: translateY(-120px);
 }
 
 
@@ -617,11 +640,7 @@ Complex Button end
       
       &__interaction {
         justify-content: center; 
-        flex-direction: column;
-   
-        .divider {
-          display: none;
-        }
+        flex-direction: row;
       }
   
       &__text {
@@ -659,17 +678,16 @@ Complex Button end
     }
 
     &--mayans {
-     margin:  2.5rem auto
+      margin: 1.5rem auto;
     }
   }
 
-  .section__social__text {
-    margin: 1.5rem auto;
+  .divider__stripe {
+    margin: 0 1rem;
   }
 
-  .columns.section__social,
-  .columns.section__mayans {
-    transform: translateY(-120px)
+  .section__social__text {
+    margin: 1.5rem auto 2rem 0;
   }
 
   .section__social__header,
@@ -684,5 +702,40 @@ Complex Button end
 
   .gradient--small {
     max-height: 260px;
+  }
+
+  .section-header {
+    font-size: 4.5rem;
+    // transform: translateY(-60px);
+  }
+  .btn--mayans {
+    transform: translateY(-60px);
+  }
+
+  
+}
+
+h1 {
+  pointer-events: none;
+}
+
+@media (min-width: 0) and (max-width: 767px) {
+  .section__jacket {
+    .column.is-4.is-6-desktop {
+      height: 12rem;
+    }
+  }
+  .interaction__jacket,
+  .section__social__text {
+    bottom: 4rem;
+  }
+
+  .section__social__text {
+    margin: 1rem 1rem 1rem auto !important;
+    text-align: right;
+  }
+
+  .section__social__header {
+    height: 7rem;
   }
 }
