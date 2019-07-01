@@ -107,7 +107,6 @@ h1 {
 .section {
   &__hero {
     position: relative;
-    margin-bottom: 2rem;
 
     &__heading {
       text-align: right;
@@ -585,6 +584,7 @@ Complex Button start
 .content-block {
   margin-left: 2rem;
   margin-bottom: 2rem;
+
   &__headline {
     font-size: 3rem;
     font-weight: bolder;
@@ -605,7 +605,7 @@ Complex Button start
 }
 
 .section__jacket__header {
-  transform: translateY(-120px);
+  transform: translateY(-85px);
 }
 
 .interaction__jacket {
@@ -616,6 +616,7 @@ Complex Button start
     margin-top: 1rem;
   }
 }
+
 
 @media (min-width: 0) and (max-width: 1087px) {
 
@@ -662,6 +663,7 @@ Complex Button start
     position: absolute;
     right: 0;
     bottom: 8rem;
+    top: 6rem;
   }
 
   .order-now__links  {
@@ -711,6 +713,7 @@ Complex Button start
 
   .section-header {
     font-size: 4.5rem;
+    transform: translateY(-80px);
   }
 
   .btn--mayans {
@@ -796,9 +799,14 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 768px) {
+  .content-block {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
   .section-header,
   .section__music__header {
-    font-size: 3.5rem;
+    // font-size: 3.5rem;
   }
 }
 
@@ -810,4 +818,10 @@ Complex Button start
   display: flex; 
   justify-content: center; 
   align-items: center;
+}
+
+@media (min-width: 1087px)  { 
+  .gradient--small {
+    max-height: 390px;
+  }
 }
