@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef, Renderer2, ViewChildren } from '@angular/core';
 
 import { animationFrameScheduler, of } from 'rxjs';
-import { observeOn, map } from 'rxjs/operators';
+import { observeOn, map, throttleTime } from 'rxjs/operators';
 
 import { TitleService } from '@website/services';
 
@@ -22,14 +22,19 @@ export class LandingComponent implements OnInit {
   onScroll(e) {
     of(e).pipe(
       observeOn(animationFrameScheduler),
+      throttleTime(30),
       map((res) => res.target.scrollingElement)
     ).subscribe(
       res => {
         const { scrollTop, scrollHeight } = res;
         const height = scrollHeight - window.innerHeight;
         const percent = Math.floor((scrollTop / height) * 100);
-        this.renderer.setStyle(this.mayansImg.nativeElement, `background-position-y`, `${percent}%`)
-        this.renderer.setStyle(this.socialImg.nativeElement, `background-position-y`, `${percent}%`)
+        if (percent > 10) {
+          this.renderer.setStyle(this.mayansImg.nativeElement, `background-position-y`, `${percent}%`)
+          if (percent > 30) {
+            this.renderer.setStyle(this.socialImg.nativeElement, `background-position-y`, `${percent}%`)
+          }
+        }
       }
     )
   }

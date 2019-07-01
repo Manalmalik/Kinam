@@ -244,6 +244,7 @@ h1 {
     color: black;
     background-color: white;
     min-height: 4rem;
+    font-weight: bold;
   }
 }
 
@@ -477,7 +478,7 @@ Complex Button start
 
 .btn--mayans {
   width: 15rem;
-  margin: 1.5rem auto 0 auto;
+  margin: 1.5rem 3rem 0 auto;
 
   .hover-container {
     background-color: black;
@@ -682,7 +683,7 @@ Complex Button start
     }
 
     &--mayans {
-      margin: 1.5rem 0 0 auto;
+      margin: 1.5rem 2.5rem 0 auto;
     }
   }
 
