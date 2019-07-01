@@ -1,10 +1,10 @@
 import { Component, OnDestroy, AfterViewInit, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { trigger, transition, style, animate, group } from '@angular/animations';
 
 import { Subscription, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-import { MatDialog } from '@angular/material/dialog';
-import { trigger, transition, style, animate, group } from '@angular/animations';
 import { LoginDialogComponent } from './login-dialog.component';
 import { LandingService } from './services/landing.service';
 import { TitleService } from './services/title.service';
@@ -34,7 +34,7 @@ import { TitleService } from './services/title.service';
 })
 export class WebsiteComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(public dialog: MatDialog, private landingService: LandingService, private titleService: TitleService) { }
-  private subscription = new Subscription();
+private subscription = new Subscription();
 
   public authenticated = false;
   public state = false;

@@ -178,11 +178,11 @@ a {
   }
 
   &__mayans { 
-    &__img-grid__img1 {
+    &__img {
       background-image: url(/assets/mayansBg.jpg);
       background-size: cover;
       height: 30rem;
-      background-position: center center;
+      background-position: 0% 0%;
     }
   }
 
@@ -200,7 +200,7 @@ a {
   }
 
   &__social { 
-    &__img-grid__img1 {
+    &__img {
       background-image: url(/assets/socialBg.jpg);
       background-size: cover;
       height: 30rem;
@@ -250,11 +250,11 @@ a {
     position: absolute;
     transition: all 0.33s ease-in-out;
 
-    &:hover {
-      transform: scale(1.1);
-      filter: none;
-      transition: all 0.33s ease-in-out;
-    }
+    // &:hover {
+    //   transform: scale(1.1);
+    //   filter: none;
+    //   transition: all 0.33s ease-in-out;
+    // }
   }
 
   &__overlay {
@@ -339,10 +339,15 @@ Complex Button start
   position: relative;
 }
 
-.inner {
-  border: 1px solid white;
+
+.inner, 
+.outline,
+.behind {
   width: 28.5rem;
   height: 5rem;
+}
+.inner {
+  border: 1px solid white;
   font-size: 2rem;
   background-color: white;
   transition: background-color 0.3s ease-in-out;
@@ -350,14 +355,10 @@ Complex Button start
 
 .outline {
   border: 1px solid white;
-  width: 28.5rem;
-  height: 5rem;
 }
 
 .behind {
   background: transparent;
-  width: 28.5rem;
-  height: 5rem;
   border: 1px solid;
   transform: translateX(-1%) translateY(-110%);
   position: absolute;
@@ -576,6 +577,13 @@ Complex Button end
 
 
 @media (min-width: 0) and (max-width: 1087px) {
+
+  .inner, 
+  .outline,
+  .behind {
+    width: 18.5rem;
+    height: 8rem;
+  }
 
   .interaction__jacket {
     flex-wrap: wrap;

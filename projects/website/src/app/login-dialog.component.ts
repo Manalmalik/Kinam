@@ -10,7 +10,7 @@ const hashed = '9cc193592428c5de4ed32e2080fe2b2c';
 @Component({
     selector: 'kinam-login-dialog',
     template: `
-    <h1 mat-dialog-title>Hi!</h1>
+    <h1 mat-dialog-title>Enter Password</h1>
     <div mat-dialog-content>
       <mat-form-field>
         <input matInput [formControl]="form" />
@@ -21,7 +21,10 @@ const hashed = '9cc193592428c5de4ed32e2080fe2b2c';
         Ok
       </button>
     </div>
-  `
+  `,
+  styles: [`
+    h1 { color: black }
+  `]
 })
 export class LoginDialogComponent {
     constructor(

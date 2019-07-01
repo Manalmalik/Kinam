@@ -18,7 +18,7 @@ export class ScrollDirective implements AfterViewInit {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
-    const src = 'https://cdn.buttercms.com/V6D8FCrKTfiefKevP1WH';
+    const src = '/assets/mayansBg.jpg';
     const img = this.renderer.createElement('img');
 
     img.src = src;
@@ -28,8 +28,10 @@ export class ScrollDirective implements AfterViewInit {
         tap(() => {
           this.bgLoaded.emit();
           // @TODO: Loading spinner
+          // debugger
+
           this.el.nativeElement.style.backgroundImage = `url(${src})`;
-          fromEvent<Event>(this.el.nativeElement, 'scroll')
+          fromEvent<Event>(document.body, 'scroll')
             .pipe(
               map(event => event.target),
               observeOn(animationFrameScheduler)
@@ -41,31 +43,9 @@ export class ScrollDirective implements AfterViewInit {
                   this.el.nativeElement.clientWidth) /
                 this.el.nativeElement.scrollWidth;
 
-              document.getElementById(
-                'container-2'
-              ).style.transform = `translateY(-${400 - progress * 600}px)`;
-              document.getElementById(
-                'container-3'
-              ).style.transform = `translateY(-${600 - progress * 600}px)`;
+                // debugger
 
-              if (progress * numberOfSlides < numberOfSlides - 1.5) {
-                document.getElementById('nav-1').classList.add('selected');
-                document.getElementById('nav-2').classList.remove('selected');
-              }
-
-              if (
-                progress * numberOfSlides >= numberOfSlides - 1.5 &&
-                numberOfSlides - 0.5
-              ) {
-                document.getElementById('nav-1').classList.remove('selected');
-                document.getElementById('nav-2').classList.add('selected');
-                document.getElementById('nav-3').classList.remove('selected');
-              }
-
-              if (progress * numberOfSlides >= numberOfSlides - 0.5) {
-                document.getElementById('nav-2').classList.remove('selected');
-                document.getElementById('nav-3').classList.add('selected');
-              }
+              console.log(progress);
 
               this.el.nativeElement.style.backgroundPositionX = `-${Math.floor(
                 target['scrollLeft']

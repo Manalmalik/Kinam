@@ -23,6 +23,7 @@ import { DialogComponent } from './services/dialog.service';
 import { EntryGuard } from './services/entry-guard';
 
 import { ScrollSnapDirective } from './directives/scroll-snap.directive';
+import { ScrollDirective } from './directives/scroll.directive';
 
 
 const routes: Routes = [
@@ -35,7 +36,7 @@ const routes: Routes = [
   declarations: [
     WebsiteComponent,
     ScrollSnapDirective,
-
+    ScrollDirective,
     SimpleLogo,
 
     LandingComponent,

@@ -19,6 +19,7 @@ const base = new Promise(resolve => {
         child.exec('npm run -- ng build website --prod', () => {
           resolve();
           console.log('all done');
+          process.exit(0);
         });
       });
     });

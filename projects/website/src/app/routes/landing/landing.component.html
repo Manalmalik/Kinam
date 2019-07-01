@@ -1,4 +1,5 @@
-<!-- 
+<div cdkScrollable>
+  <!-- 
   Menu
  -->
 <div class="columns header">
@@ -47,8 +48,8 @@
         <div class="divider">
           <div class="divider__stripe"></div>
         </div>
-        <kinam-newsletter></kinam-newsletter>
-        <!-- <div class="btn btn--primary">Participate</div> -->
+        <!-- <kinam-newsletter></kinam-newsletter> -->
+        <div class="btn btn--primary">Participate</div>
       </div>
       <div class="columns">
         <div class="column is-6-desktop section__hero__text">
@@ -79,9 +80,9 @@
     <!-- 
       Model Images
      -->
-    <div class="section__jacket__img-grid__img1"></div>
-    <div class="section__jacket__img-grid__img2"></div>
-    <div class="section__jacket__img-grid__img3"></div>
+    <div class="section__jacket__img-grid__img1" #jacketGrid></div>
+    <div class="section__jacket__img-grid__img2" #jacketGrid></div>
+    <div class="section__jacket__img-grid__img3" #jacketGrid></div>
   </div>
   <div class="columns">
     <div class="column is-4 is-6-desktop">
@@ -148,7 +149,7 @@
 
 <section class="section section__mayans" id="mayans">
   <div class="gradient gradient--small gradient__container">
-    <div class="gradient gradient--small gradient__image section__mayans__img-grid__img1"></div>
+    <div class="gradient gradient--small gradient__image section__mayans__img" #mayansImg></div>
   </div>
   <div class="columns">
     <div class="column is-6">
@@ -193,9 +194,8 @@
 <section class="section section__social" id="social-projects">
   <div class="columns">
     <div class="column">
-      <!-- <div class="section__social__img-grid__img1"></div> -->
       <div class="gradient gradient--small gradient__container">
-        <div class="gradient gradient--small gradient__image section__social__img-grid__img1"></div>
+        <div class="gradient gradient--small gradient__image section__social__img" #socialImg></div>
       </div>
     </div>
   </div>
@@ -300,3 +300,4 @@
     </div>
   </div>
 </section>
+</div>

@@ -19,6 +19,6 @@ export class PlaybookComponent {
 
   public handleDateChange({ day, month, year }) {
     this.number = { day, month, year };
-    debugger
+    // debugger
   }
 }
