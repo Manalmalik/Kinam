@@ -1,8 +1,7 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef, Renderer2, ViewChildren } from '@angular/core';
-import { ScrollDispatcher } from '@angular/cdk/scrolling';
 
-import { from, animationFrameScheduler, of, fromEvent } from 'rxjs';
-import { observeOn, filter, debounce, debounceTime, map } from 'rxjs/operators';
+import { animationFrameScheduler, of } from 'rxjs';
+import { observeOn, map } from 'rxjs/operators';
 
 import { TitleService } from '@website/services';
 
@@ -13,7 +12,7 @@ import { TitleService } from '@website/services';
 })
 export class LandingComponent implements OnInit {
 
-  constructor(private titleService: TitleService, private renderer: Renderer2) {}
+  constructor(private titleService: TitleService, private renderer: Renderer2) { }
 
   @ViewChild('mayansImg') mayansImg: ElementRef;
   @ViewChild('socialImg') socialImg: ElementRef;
@@ -21,23 +20,23 @@ export class LandingComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(e) {
-      of(e).pipe(
-        observeOn(animationFrameScheduler),
-        map((res) => res.target.scrollingElement)
-      ).subscribe(
-        res => {  
-          const { scrollTop, scrollHeight } = res;
-          const height = scrollHeight - window.innerHeight;
-          const percent  = Math.floor((scrollTop / height) * 100);
-          this.renderer.setStyle(this.mayansImg.nativeElement, `background-position-y`, `${percent}%`)
-          this.renderer.setStyle(this.socialImg.nativeElement, `background-position-y`, `${percent}%`)
-        }
-      )
+    of(e).pipe(
+      observeOn(animationFrameScheduler),
+      map((res) => res.target.scrollingElement)
+    ).subscribe(
+      res => {
+        const { scrollTop, scrollHeight } = res;
+        const height = scrollHeight - window.innerHeight;
+        const percent = Math.floor((scrollTop / height) * 100);
+        this.renderer.setStyle(this.mayansImg.nativeElement, `background-position-y`, `${percent}%`)
+        this.renderer.setStyle(this.socialImg.nativeElement, `background-position-y`, `${percent}%`)
+      }
+    )
   }
 
   public ngOnInit() {
-    this.titleService.setTitle({ 
-      description: 'A Portal to the Mayan World - Fashion. Music. Art. Technology. - Support our Crowdfunding!' 
+    this.titleService.setTitle({
+      description: 'A Portal to the Mayan World - Fashion. Music. Art. Technology. - Support our Crowdfunding!'
     });
   }
 }
