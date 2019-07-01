@@ -4,6 +4,10 @@
   display: block;
 }
 
+.column {
+  position: relative;
+}
+
 
 a {
   color: inherit;
@@ -142,7 +146,6 @@ a {
       line-height: 1.1;
       position: relative;
       padding-right: 2rem;
-      top: -125px;
     }
 
     &__img-grid {
@@ -200,6 +203,8 @@ a {
   }
 
   &__social { 
+    transform: translateY(-120px);
+
     &__img {
       background-image: url(/assets/socialBg.jpg);
       background-size: cover;
@@ -215,12 +220,11 @@ a {
       line-height: 1.1;
       position: relative;
       padding-right: 2rem;
-      top: -125px;
     }
 
     &__text {
       max-width: 20rem;
-      margin-left: auto;
+      // margin-left: auto;
     }
   }
 
@@ -663,14 +667,22 @@ Complex Button end
     margin: 1.5rem auto;
   }
 
+  .columns.section__social,
+  .columns.section__mayans {
+    transform: translateY(-120px)
+  }
+
   .section__social__header,
   .section__music__header,
   .section__jacket__header {
     font-size: 4rem;
-    top: 0;
   }
 
   .discover-more {
     transform: none;
+  }
+
+  .gradient--small {
+    max-height: 260px;
   }
 }
