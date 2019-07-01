@@ -9,13 +9,13 @@
 }
 
 .section-header {
-  font-size: 6.5rem;
+  font-size: 105px;
   font-weight: bolder;
   text-align: right;
   line-height: 1.1;
   position: relative;
   padding-right: 2rem;
-  transform: translateY(-160px);
+  transform: translateY(-115px);
 }
 
 .btn--mayans {
@@ -47,7 +47,7 @@ h1 {
 }
 
 .discover-more {
-  transform: translateY(-5rem);
+  transform: translateY(5rem);  
 }
 
 .menu {
@@ -119,10 +119,7 @@ h1 {
     }
 
     &__content {
-      position: absolute;
-      align-items: center;
-      height: 100vh;
-      top: 0;
+      transform: translateY(-250px);
     }
 
     &__interaction {
@@ -133,8 +130,6 @@ h1 {
       align-items: center;
       font-size: 2rem;
       font-weight: bolder;
-
-      margin-bottom: 2rem;
 
       .watch {
         padding: 0.5rem;
@@ -213,7 +208,7 @@ h1 {
       line-height: 1.1;
       position: relative;
       padding-right: 2rem;
-      top: -125px;
+      transform: translateY(-230px);
     }
   }
 
@@ -272,7 +267,6 @@ h1 {
     filter: grayscale(25%);
     position: absolute;
     transition: all 0.33s ease-in-out;
-
   }
 
   &__overlay {
@@ -318,6 +312,17 @@ h1 {
   }
 }
 
+.section.responsive {
+  transform: translateY(-80px);
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+  .section.responsive {
+    transform: translateY(-30px);
+  }
+}
+
+
 
 .interaction {
   font-size: 1.5rem;
@@ -327,6 +332,10 @@ h1 {
     flex-direction: row;
     position: absolute;
     bottom: 3rem;
+    right: 0;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    font-size: 0.75rem;
 
     &__item {
       display: flex;
@@ -557,7 +566,7 @@ Complex Button start
 
 .scroll-label {
   font-size: 1.5rem;
-  transform: translateY(15rem);
+  // transform: translateY(15rem);
 }
 
 .ml-2 {
@@ -573,6 +582,8 @@ Complex Button start
 }
 
 .content-block {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
   &__headline {
     font-size: 3rem;
     font-weight: bolder;
@@ -596,6 +607,14 @@ Complex Button start
   transform: translateY(-120px);
 }
 
+.interaction__jacket {
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__item {
+    margin-top: 1rem;
+  }
+}
 
 @media (min-width: 0) and (max-width: 1087px) {
 
@@ -606,14 +625,7 @@ Complex Button start
     height: 8rem;
   }
 
-  .interaction__jacket {
-    flex-wrap: wrap;
-    justify-content: center;
-
-    &__item {
-      margin-top: 1rem;
-    }
-  }
+  
 
   .header {
     display: none;
@@ -625,9 +637,6 @@ Complex Button start
     
     &__hero {
       &__heading {
-        justify-content: center; 
-        text-align: center; 
-        margin: 3rem 0;
         font-size: 3rem;
         line-height: 1.5;
       }
@@ -638,8 +647,8 @@ Complex Button start
       }
   
       &__text {
+        margin-top: 2rem;
         text-align: center;
-        padding: 3rem 5rem;
       }
     }
 
@@ -649,8 +658,9 @@ Complex Button start
   }
 
   .interaction__jacket {
-    position: relative;
-    bottom: 0;
+    position: absolute;
+    right: 0;
+    bottom: 8rem;
   }
 
   .order-now__links  {
@@ -672,7 +682,7 @@ Complex Button start
     }
 
     &--mayans {
-      margin: 1.5rem auto;
+      margin: 1.5rem 0 0 auto;
     }
   }
 
@@ -707,27 +717,81 @@ Complex Button start
   }
 }
 
-@media (min-width: 0) and (max-width: 767px) {
-  .section__jacket {
-    .column.is-6 {
-      height: 12rem;
+
+@media (min-width: 0) and (max-width: 768px) {
+
+  .watch,
+  .btn--primary {
+    font-size: 1rem;
+  }
+
+  .btn--mayans {
+    margin: 1rem auto;
+  }
+
+  .interaction__jacket__item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-block {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .section {
+    &__music__header {
+      transform: translateY(-90px);
+    }
+
+    &__hero {
+      &__heading {
+        justify-content: center; 
+        text-align: center; 
+      }
+    }
+
+    &__jacket {
+      .column.is-6 {
+        height: 12rem;
+      }
+    }
+
+    &__social__text {
+      bottom: 8rem;
+      top: -4rem;
+      margin: 1rem 1rem 1rem auto !important;
+      text-align: right;
+    }
+
+    &__social__header {
+      height: 7rem;
+    }  
+
+    &-header {
+      transform: translateY(-130px);
     }
   }
-  .interaction__jacket,
-  .section__social__text {
-    bottom: 4rem;
+
+  .scroll-label {
+    transform: translateY(6rem);
   }
 
-  .section__social__text {
-    margin: 1rem 1rem 1rem auto !important;
-    text-align: right;
+  .interaction__jacket {
+    bottom: 3rem;
+    width: 100%;
+    margin: 0;
   }
 
-  .section__social__header {
-    height: 7rem;
+  .gradient {
+    height: 40vh;
   }
+}
 
-  .section-header {
-    transform: translateY(-130px);
+
+@media (min-width: 0) and (max-width: 768px) {
+  .section-header,
+  .section__music__header {
+    font-size: 3.5rem;
   }
 }
