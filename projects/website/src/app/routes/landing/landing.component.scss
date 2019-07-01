@@ -27,7 +27,7 @@ a {
 }
 
 .spotify-player {
-  height: 380px;
+  height: 300px;
 }
 
 
@@ -648,7 +648,7 @@ Complex Button start
       }
   
       &__text {
-        margin-top: 2rem;
+        // margin-top: 2rem;
         text-align: center;
       }
     }
@@ -800,4 +800,14 @@ Complex Button start
   .section__music__header {
     font-size: 3.5rem;
   }
+}
+
+.discover-more > div {
+  text-align: center;
+  min-height: 0; 
+  position: absolute; 
+  width: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
 }
