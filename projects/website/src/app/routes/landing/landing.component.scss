@@ -719,6 +719,10 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 768px) {
+  .content-block__headline,
+  .content-block__body {
+    text-align: center;
+  }
 
   .watch,
   .btn--primary {
@@ -760,8 +764,9 @@ Complex Button start
     &__social__text {
       bottom: 8rem;
       top: -4rem;
-      margin: 1rem 1rem 1rem auto !important;
-      text-align: right;
+      // margin: 1rem 1rem 1rem auto !important;
+      margin: 0 auto !important;
+      text-align: center;
     }
 
     &__social__header {
