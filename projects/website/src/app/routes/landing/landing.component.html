@@ -1,314 +1,341 @@
-<div cdkScrollable>
-  <!--  Menu -->
-  <div class="columns header">
-    <div class="column logo has-text-centered">
-      <kinam-simple-logo></kinam-simple-logo> <span>KINAM</span>
-    </div>
-
-    <div class="column is-6">
-      <div class="columns menu has-text-centered">
-        <div class="column">
-          <a href="#jacket">the jacket</a>
-        </div>
-        <div class="column">
-          <a href="#mayans">the mayans</a>
-        </div>
-        <div class="column">
-          <a href="#social-projects">social projects</a>
-        </div>
-        <div class="column">
-          <a href="#music">music</a>
-        </div>
-      </div>
-    </div>
+<!--  Menu -->
+<div class="columns header">
+  <div class="column logo has-text-centered">
+    <img src="assets/kinam_logo_white_website_white.svg" width="200" alt="Logo" style="margin-left: 2rem;">
   </div>
 
-  <!-- 
+  <div class="icon-header">
+    <img src="/assets/menu.svg" class="menu-icon" (click)="toggleMenu()" />
+  </div>
+</div>
+
+<!-- 
   Section: Help rebuild Guatemala
  -->
-  <section class="section__hero">
-    <div class="gradient gradient__container">
-      <div class="gradient gradient__image wall__bg"></div>
-      <div class="gradient gradient__overlay"></div>
-    </div>
-
-    <div class="section__hero__content flex-center container">
-      <div class="columns">
-        <div class="column is-5 is-6-desktop section__hero__heading">
-          <div>
-            <span>Help</span><br>
-            <span>Rebuild</span> <br>
-            <span>Guatemala</span>
-          </div>
-        </div>
-        <div class="column is-6 is-4-desktop" style="display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="section__hero__interaction">
-            <div class="columns is-mobile is-gapless" style="align-items: center">
-              <div class="column">
-                <div class="watch">WATCH<i class="far fa-play-circle"></i></div>
-              </div>
-              <div class="divider">
-                <div class="divider__stripe"></div>
-              </div>
-              <div class="column">
-                <div class="btn btn--primary">Participate</div>
-              </div>
-            </div>
-            <!-- <kinam-newsletter></kinam-newsletter> -->
-          </div>
-          <div class="columns hero-text">
-            <div class="column section__hero__text">
-              <p>
-                To uncover and conserve all the secrets hidden in the
-                jungle of Guatemala and to help the indegnous tribes
-                build a better future for their people
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="discover-more">
-        <div>
-          <div class="scroll-label">
-            <i class="fal fa-chevron-down"></i> <br>
-            discover more
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: The Jacket -->
-  <section class="section section__jacket" id="jacket">
-    <div class="columns section__jacket__img-grid">
-      <!--  Model Images -->
-      <div class="section__jacket__img-grid__img1" #jacketGrid></div>
-      <div class="section__jacket__img-grid__img2" #jacketGrid></div>
-      <div class="section__jacket__img-grid__img3" #jacketGrid></div>
-    </div>
-    <div class="columns">
-      <div class="column is-6">
-        <h1 class="section__jacket__header">
-          THE<br>
-          JACKET
-        </h1>
-        <div class="interaction__jacket">
-          <div class="interaction__jacket__item">
-            <i class="fal fa-seedling"></i>
-            <div class="icon-label">
-              natural <br>
-              materials
-            </div>
-          </div>
-          <div class="interaction__jacket__item">
-            <i class="fal fa-flower-tulip"></i>
-            <div class="icon-label">
-              sustainable <br>
-              model
-            </div>
-          </div>
-          <div class="interaction__jacket__item">
-            <i class="fal fa-hand-holding-heart"></i>
-            <div class="icon-label">
-              handmade
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column order-now__container">
-        <div class="hover-container">
-          <div class="outer">
-            <div class="inner overlay" id="overlay"></div>
-            <div class="inner outline"></div>
-            <div class="behind fill ">
-              <div class="order-now__content">
-                <div class="is-pulled-left">
-                  &nbsp;&nbsp;&nbsp;ORDER NOW <i class="fal fa-chevron-right"></i>
-                </div>
-                <div class="is-pulled-right indiegogo__container ">
-                  Support our <br>
-                  <a class="indiegogo__link" href="#">INDIEGOGO</a> campaign
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="order-now__links">
-          <br>
-          <a href="#">
-            <i class="fal fa-plus"></i> customize your jacket
-          </a>
-          <br><br>
-          <a href="#">
-            <i class="fal fa-plus"></i> behind the product
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--  Section: The Mayans -->
-  <div class="gradient gradient--small gradient__container">
-    <div class="gradient gradient--small gradient__image section__mayans__img" #mayansImg></div>
+<section class="section__hero">
+  <div class="gradient gradient__container">
+    <div class="gradient gradient__image wall__bg"></div>
+    <div class="gradient gradient__overlay"></div>
   </div>
-  <section class="section responsive">
-    <section class="section__mayans" id="mayans">
-      <div class="columns section__mayans">
-        <div class="column is-6">
-          <h1 class="section-header">
-            THE<br>
-            MAYANS
-          </h1>
-          <div class="btn--mayans">
-            <div class="hover-container">
-              <div class="outer">
-                <div class="inner overlay"></div>
-                <div class="inner outline"></div>
-                <div class="behind fill ">
-                  <div class="mayan-reading__text">
-                    <span>KNOW YOUR MAYA SIGN</span> <i class="fal fa-chevron-right"></i>
-                  </div>
+
+  <div class="section__hero__content flex-center container">
+    <div class="columns">
+      <div class="column is-5 is-6-desktop section__hero__heading">
+        <div>
+          <span>Help</span><br>
+          <span>Rebuild</span> <br>
+          <span>Guatemala</span>
+        </div>
+      </div>
+      <div class="column" style="display: flex; flex-direction: column; justify-content: flex-end;">
+        <div class="section__hero__interaction">
+          <div class="columns is-mobile is-gapless" style="align-items: center">
+            <div class="column">
+              <div class="watch">WATCH
+
+                <img src="assets/play_btn.svg" style="width: 64px; margin-left: 0.5rem">
+                <!-- <i class="far fa-play-circle"></i> -->
+
+              </div>
+            </div>
+            <div class="divider">
+              <div class="divider__stripe"></div>
+            </div>
+            <div class="column">
+              <div class="btn btn--primary">participate</div>
+            </div>
+          </div>
+          <!-- <kinam-newsletter></kinam-newsletter> -->
+        </div>
+        <div class="columns hero-text">
+          <div class="column section__hero__text">
+            <p>
+              To uncover and conserve all the secrets hidden in the
+              jungle of Guatemala and to help the indegnous tribes
+              build a better future for their people
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="discover-more">
+      <div>
+        <div class="scroll-label">
+          discover more <br>
+          <i class="fal fa-chevron-down"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section: The Jacket -->
+<section class="section section__jacket" id="jacket">
+  <div class="columns section__jacket__img-grid">
+    <!--  Model Images -->
+    <div class="section__jacket__img-grid__img1" #jacketGrid></div>
+    <div class="section__jacket__img-grid__img2" #jacketGrid></div>
+    <div class="section__jacket__img-grid__img3" #jacketGrid></div>
+  </div>
+  <div class="columns" style="margin-bottom: 10rem">
+    <div class="column is-6">
+      <h1 class="section__jacket__header">
+        THE<br>
+        JACKET
+      </h1>
+      <div class="interaction__jacket">
+        <div class="interaction__jacket__item">
+          <i class="fal fa-seedling"></i>
+          <div class="icon-label">
+            natural <br>
+            materials
+          </div>
+        </div>
+        <div class="interaction__jacket__item">
+          <i class="fal fa-flower-tulip"></i>
+          <div class="icon-label">
+            sustainable <br>
+            model
+          </div>
+        </div>
+        <div class="interaction__jacket__item">
+          <i class="fal fa-hand-holding-heart"></i>
+          <div class="icon-label">
+            handmade
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column order-now__container">
+      <div class="hover-container">
+        <div class="outer">
+          <div class="inner overlay" id="overlay"></div>
+          <div class="inner outline"></div>
+          <div class="behind fill ">
+            <div class="order-now__content">
+              <div class="is-pulled-left"
+                style="font-weight: 600;font-family: century-gothic;font-size: 24px;margin-top: 8px;">
+                &nbsp;&nbsp;&nbsp;ORDER NOW <i class="fal fa-chevron-right" style="margin-left: 6px"></i>
+              </div>
+              <div class="is-pulled-right indiegogo__container">
+                Support our <br>
+                <a class="indiegogo__link" href="#">INDIEGOGO</a> campaign
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-now__links">
+        <br>
+        <a href="#">
+          Find out more <i class="fal fa-chevron-right"></i><i class="fal fa-chevron-right"></i>
+        </a>
+        <!-- <br><br>
+        <a href="#">
+          _____ behind the product
+        </a>
+
+        <br>
+        <br>
+        <i class="fal fa-chevron-down" style="font-size: 2rem"></i> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!--  Section: The Mayans -->
+<div class="gradient gradient--small gradient__container">
+  <div class="gradient gradient--small gradient__image section__mayans__img" #mayansImg></div>
+</div>
+<section class="section responsive">
+  <section class="section__mayans" id="mayans">
+    <div class="columns section__mayans is-gapless">
+      <div class="column is-6">
+        <h1 class="section-header">
+          THE<br>
+          MAYANS
+        </h1>
+        <div class="btn--mayans">
+          <div class="hover-container">
+            <div class="outer">
+              <div class="inner overlay"></div>
+              <div class="inner outline"></div>
+              <div class="behind fill ">
+                <div class="mayan-reading__text">
+                  <span>DISCOVER YOUR <br> MAYA SIGN</span>
+                  <i class="fal fa-chevron-right is-pulled-right"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="column is-6">
-          <div class="meet-the-mayans">
-            MEET THE MAYANS
-            <i class="fal fa-chevron-right"></i>
-          </div>
-          <div class="content-block" style="margin-top: 2rem;">
-            <div class="content-block__headline">A lost<br>civilization</div>
-            <div class="content-block__body">
-              To uncover and conserve all the secrets<br>
-              hidden in the jungle of Guatemala and to help<br>
-              the indigenous tribes build a better future for<br>
-              their people
+      </div>
+      <div class="column is-6">
+        <!-- <div class="meet-the-mayans">
+          MEET THE MAYANS
+          <i class="fal fa-chevron-right"></i>
+        </div> -->
+        <div class="content-block" style="margin-top: 2rem;">
+          <div class="content-block__headline">A lost<br>civilization</div>
+          <div class="content-block__body">
+            <div class="columns">
+              <div class="column is-6">
+                To uncover and conserve all the secrets
+                hidden in the jungle of Guatemala and to help
+                the indigenous tribes build a better future for
+                their people
+                <br>
+                <span style="color: #ffffff; text-decoration: underline; cursor: pointer;"> learn more</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </section>
+</section>
 
-  <!-- 
+<!-- 
   Section: Social Projects
 -->
 
-  <div class="gradient gradient--small gradient__container">
-    <div class="gradient gradient--small gradient__image section__social__img" #socialImg></div>
-  </div>
+<div class="gradient gradient--small gradient__container">
+  <div class="gradient gradient--small gradient__image section__social__img" #socialImg></div>
+</div>
 
-  <section class="section responsive">
-    <div class="container">
-      <section class="section__social" id="social-projects">
-        <div class="columns section__social">
-          <div class="column section__social__header is-6-tablet">
-            <h1 class="section-header">
-              SOCIAL<br>
-              PROJECTS
-            </h1>
+<section class="section responsive">
+  <div>
+    <section class="section__social" id="social-projects">
+      <div class="columns is-gapless section__social">
+        <div class="column section__social__header is-6-tablet">
+          <h1 class="section-header">
+            SOCIAL<br>
+            PROJECTS
+          </h1>
+          <div class="interaction__jacket" style="margin-right: 8rem; text-align: left;">
+            <div class="interaction__jacket__item">
+              <i class="fal fa-book-open"></i>
+              <div class="icon-label">
+                education <br>
+                development
+              </div>
+            </div>
+            <div class="interaction__jacket__item">
+              <i class="fas fa-globe-americas"></i>
+              <div class="icon-label">
+                culture <br>
+                preservation
+              </div>
+            </div>
+            <div class="interaction__jacket__item">
+              <i class="fal fa-briefcase"></i>
+              <div class="icon-label">
+                creating <br>
+                jobs
+              </div>
+            </div>
           </div>
-          <!-- <div class="column section__social__text">
+        </div>
+        <!-- <div class="column section__social__text">
             <div style="margin-top: 2rem">
               To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indigenous
               tribes
               build a better future for their people
             </div>
           </div> -->
-          <div class="content-block" style="margin-top: 3rem;">
-            <div class="content-block__headline">A lost<br>civilization</div>
-            <div class="content-block__body">
-              To uncover and conserve all the secrets<br>
-              hidden in the jungle of Guatemala and to help<br>
-              the indigenous tribes build a better future for<br>
-              their people
-            </div>
+        <div class="content-block" style="margin-top: 3rem;">
+          <div class="content-block__headline">A lost<br>civilization</div>
+          <div class="content-block__body">
+            To uncover and conserve all the secrets<br>
+            hidden in the jungle of Guatemala and to help<br>
+            the indigenous tribes build a better future for<br>
+            their people
           </div>
         </div>
-      </section>
-    </div>
-  </section>
-  <!-- 
+      </div>
+    </section>
+  </div>
+</section>
+<!-- 
     Section: Music
   -->
-  <section class="section__music" id="music">
+<section class="section__music" id="music">
 
-    <div class="gradient gradient__container">
-      <div class="gradient gradient__image wall__bg"></div>
-      <div class="gradient gradient__overlay"></div>
-      <div class="has-text-centered spotify-container">
-        <iframe src="https://open.spotify.com/embed/album/323XXC7S9P5DhJJevRVzqy" class="spotify-player" frameborder="0"
-          allowtransparency="true" allow="encrypted-media"></iframe>
-      </div>
+  <div class="gradient gradient__container">
+    <div class="gradient gradient__image wall__bg"></div>
+    <div class="gradient gradient__overlay"></div>
+    <div class="has-text-centered spotify-container">
+      <iframe src="https://open.spotify.com/embed/album/323XXC7S9P5DhJJevRVzqy" class="spotify-player" frameborder="0"
+        allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
+  </div>
 
-    <h1 class="section__music__header">
-      THE<br>
-      MUSIC
-    </h1>
-  </section>
+  <h1 class="section__music__header">
+    THE<br>
+    MUSIC
+  </h1>
+</section>
 
-  <!-- 
+<!-- 
     Section: Participate
   -->
-  <section class="section__participate">
-    <div style="font-size: 1.5rem; text-align: center">
-      participate <br>
-      <i class="fal fa-chevron-down"></i>
-    </div>
-    <div class="btn--indigogo__container">
-      <span class="btn btn--indigogo">
-        Support our <span class="indiegogo__link">Indigogo</span> campaign
-      </span>
-    </div>
-  </section>
+<section class="section__participate">
+  <div style="font-size: 1.5rem; text-align: center">
+    participate <br>
+    <i class="fal fa-chevron-down"></i>
+  </div>
+  <div class="btn--indigogo__container">
+    <span class="btn btn--indigogo">
+      Support our <span class="indiegogo__link">Indigogo</span> campaign
+    </span>
+  </div>
+</section>
 
 
-  <!-- 
+<!-- 
     Section: Footer
   -->
-  <section class="section section__footer">
-    <div class="columns">
-      <div class="column is-1" style="display: flex; justify-content: center; align-items: center;">
-        <kinam-simple-logo></kinam-simple-logo>
-      </div>
+<section class="section section__footer">
+  <div class="columns">
+    <div class="column is-1" style="display: flex; justify-content: center; align-items: center;">
+      <kinam-simple-logo></kinam-simple-logo>
+    </div>
 
-      <div class="column">
-        <a href="mailto:nick@kinam13.com">nick@kinam13.com</a>
-        <br>
-        <a href="tel:+4916096803437">+49 160 96803437</a>
-      </div>
+    <div class="column">
+      <a href="mailto:nick@kinam13.com">nick@kinam13.com</a>
+      <br>
+      <a href="tel:+4916096803437">+49 160 96803437</a>
+    </div>
 
-      <div class="column">
-        Stromstraße 36
-        <br>
-        Berlin, Germany
-      </div>
+    <div class="column">
+      Stromstraße 36
+      <br>
+      Berlin, Germany
+    </div>
 
-      <div class="column"></div>
+    <div class="column"></div>
 
-      <div class="column">
-        <div class="columns social-links">
-          <div class="column social-links__link">
-            <i class="fab fa-facebook-square"></i>
+    <div class="column">
+      <div class="columns social-links">
+        <div class="column social-links__link">
+          <i class="fab fa-facebook-square"></i>
+          <br>
+          facebook
+        </div>
+        <div class="column social-links__link">
+          <a href="https://www.instagram.com/kinambrand/" target="_blank">
+            <i class="fab fa-instagram"></i>
             <br>
-            facebook
-          </div>
-          <div class="column social-links__link">
-            <a href="https://www.instagram.com/kinambrand/" target="_blank">
-              <i class="fab fa-instagram"></i>
-              <br>
-              instagram
-            </a>
-          </div>
-          <div class="column social-links__link">
-            <i class="fab fa-youtube"></i>
-            <br>
-            youtube
-          </div>
+            instagram
+          </a>
+        </div>
+        <div class="column social-links__link">
+          <i class="fab fa-youtube"></i>
+          <br>
+          youtube
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+
+<kinam-menu></kinam-menu>
