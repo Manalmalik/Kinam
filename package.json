@@ -12,7 +12,8 @@
     "test": "ng test",
     "test:ci": "ng test --watch=false --progress=false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "node build.js"
   },
   "private": true,
   "dependencies": {
