@@ -37,8 +37,8 @@ h1 {
 
 .menu-icon {
   width: 6rem;
-    margin-top: 40px;
-    margin-right: 40px; 
+  margin-top: 40px;
+  margin-right: 40px; 
 }
 
 .header {
@@ -48,7 +48,7 @@ h1 {
   left: 0;
   right: 0;
   top: 0;
-  z-index: 99;
+  z-index: 50;
 }
 
 .discover-more {
@@ -337,26 +337,19 @@ h1 {
     justify-content: flex-start;
   }
 }
-@media (min-width: 0) and (max-width: 768px) {
-  .section.responsive {
-    transform: translateY(-30px);
-  }
-}
-
 
 
 .interaction {
   font-size: 1.5rem;
 
-  &__jacket {
+  &-bar {
     display: flex;
     flex-direction: row;
-    position: absolute;
-    bottom: 5rem;
-    right: 0;
-    margin-right: 8.5rem;
+    transform: translateY(-80px);
+    margin-right: 7.5rem;
     font-size: 0.75rem;
     text-align: left;
+    justify-content: flex-end;
 
     &__item {
       display: flex;
@@ -367,6 +360,7 @@ h1 {
         padding: 0.25rem 0.75rem;
       }
       
+      .fas, 
       .fal {
         margin: 0 0.5rem;
         font-size: 48px;
@@ -604,7 +598,6 @@ Complex Button start
 .scroll-label {
   font-size: 1.5rem;
   font-family: century-gothic;
-  // transform: translateY(15rem);
 }
 
 .ml-2 {
@@ -667,16 +660,13 @@ Complex Button start
 }
 
 
-@media (min-width: 0) and (max-width: 1087px) {
-
-  .section__hero__text {
-    text-align: center;
-  }
-
-  
+@media (min-width: 0) and (max-width: 1087px) {  
   .section {
     padding: 3rem 0;
 
+    &__jacket__header {
+      font-size: 6.2rem;
+    }
     
     &__hero {
       &__heading {
@@ -688,18 +678,15 @@ Complex Button start
         justify-content: center; 
         flex-direction: row;
       }
+
+      &__text {
+        text-align: center;
+      }
     }
 
     &__footer {
       text-align: center;
     }
-  }
-
-  .interaction__jacket {
-    position: absolute;
-    right: 0;
-    bottom: 8rem;
-    top: 6rem;
   }
 
   .order-now__links  {
@@ -759,8 +746,33 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 768px) {
+  .section.responsive {
+    transform: translateY(-30px);
+  }
+
+  .interaction-bar {
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .logo {
+    img {
+      max-width: 8rem;
+    }
+  }
+
+  .menu-icon {
+    width: 5rem;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+
   .section__hero__text {
     padding: 2rem;
+
+    p {
+      font-size: 18px;
+    }
   }
 
   .content-block__headline,
@@ -836,10 +848,7 @@ Complex Button start
   .gradient {
     height: 40vh;
   }
-}
 
-
-@media (min-width: 0) and (max-width: 768px) {
   .content-block {
     margin-left: 0;
     margin-bottom: 0;
