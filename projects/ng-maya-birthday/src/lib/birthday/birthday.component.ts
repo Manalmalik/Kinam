@@ -58,7 +58,7 @@ export class BirthdayComponent implements OnInit {
 
 
   @Input() public content$: Observable<any> = of({
-    calculating: 'Traversing the stars...',
+    calculating: 'Calculating...',
     your_nahual: 'Your Nawal',
     your_daysign: 'Your Spirit Guardian',
     your_nahual_number: 'Your Energy Number',
@@ -103,7 +103,7 @@ export class BirthdayComponent implements OnInit {
       tap(() => {
         this.loading$ = new BehaviorSubject(true);
       }),
-      debounceTime(3000),
+      debounceTime(1000),
       filter(
         ({ day, month, year }) => (
           !isNaN(day) &&

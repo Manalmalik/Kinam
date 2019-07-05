@@ -34,11 +34,12 @@
         <h2 class="title has-text-centered has-text-white">
           {{content.your_daysign}}:
           <br>
-          {{ kinamDate?.nahualName }}
+          {{ kinamDate?.daySign }}
         </h2>
       </div>
       <div class="column is-4-desktop">
-        <img *ngIf="kinamDate?.image" [src]="kinamDate?.image" [attr.alt]="'Nawal Sign: ' + kinamDate?.daySign" />
+        <img *ngIf="kinamDate?.image" [src]="kinamDate?.image" [attr.alt]="'Nawal Sign: ' + kinamDate?.daySign"
+          class="nawal-img" />
       </div>
       <div class="column is-4">
         <h2 class="title has-text-centered has-text-white">

@@ -10,7 +10,7 @@ function findDaySign(day: number) {
 }
 
 const getImg = (daySign: string) =>
-  daySign ? `assets/signs/${daySign}.png` : '';
+  daySign ? `assets/nawales/${daySign}.jpg` : '';
 
 
 class KinamNahual {

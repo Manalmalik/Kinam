@@ -44,7 +44,7 @@
 <kinam-newsletter></kinam-newsletter>
 
 <hr>
-
+<!-- 
 <h2>Divider</h2>
 
 
@@ -83,7 +83,7 @@
       <div class="gradient__overlay"></div>
     </div>
   </div>
-</div>
+</div> -->
 
 <kinam-menu></kinam-menu>
 
@@ -112,19 +112,21 @@
 </div>
 
 <div class="columns flex-center">
-  <div class="column">
+  <div class="column has-text-centered">
     <kinam-date (dateChange)="handleDateChange($event)"></kinam-date>
   </div>
 </div>
 
-<div class="columns flex-center">
+<!-- <div class="columns flex-center">
   <div class="column">
     <div class="columns">
       <div class="swipe-container" kinamScrollSnap>
-        <div [ngStyle]="{ 'background-image': 'url(' + '/assets/vonni.png' + ')' }"
+        <div [ngStyle]="{ 'background-image': 'url(' + '/assets/jacket1_bg.jpg' + ')' }"
           *ngFor="let img of ['1','2','3','4']" class="image-container">
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<kinam-birthday></kinam-birthday>

@@ -1,78 +1,78 @@
 export const DAY_SIGNS = [
   {
-    name: 'imix',
+    name: 'imox',
     'label-yucatec': 'Imix',
     'label': 'Imox',
     day: 1
   },
   {
-    name: 'ik',
+    name: 'iq',
     'label-yucatec': 'Ikʼ',
     'label': 'Iqʼ',
     day: 2
   },
   {
-    name: 'akbal',
+    name: 'aqabal',
     'label-yucatec': 'Akʼbʼal',
     'label': 'Aqʼabʼal',
     day: 3
   },
   {
-    name: 'kan',
+    name: 'kat',
     'label-yucatec': 'Kʼan',
     'label': 'Kʼat',
     day: 4
   },
   {
-    name: 'chicchan',
+    name: 'kan',
     'label-yucatec': 'Chikchan',
     'label': 'Kan',
     day: 5
   },
   {
-    name: 'cimi',
+    name: 'kame',
     'label-yucatec': 'Kimi',
     'label': 'Kame',
     day: 6
   },
   {
-    name: 'manik',
+    name: 'kej',
     'label-yucatec': 'Manikʼ',
     'label': 'Kej',
     day: 7
   },
   {
-    name: 'lamat',
+    name: 'qanil',
     'label-yucatec': 'Lamat',
     'label': 'Qʼanil',
     day: 8
   },
   {
-    name: 'muluc',
+    name: 'toj',
     'label-yucatec': 'Muluk',
     'label': 'Toj',
     day: 9
   },
   {
-    name: 'oc',
+    name: 'tzi',
     'label-yucatec': 'Ok',
     'label': 'Tʼzi',
     day: 10
   },
   {
-    name: 'chuen',
+    name: 'batz',
     'label-yucatec': 'Chuwen',
     'label': `B'atz'`,
     day: 11
   },
   {
-    name: 'eb',
+    name: 'e',
     'label-yucatec': 'Ebʼ',
     'label': `E`,
     day: 12
   },
   {
-    name: 'ben',
+    name: 'aj',
     'label-yucatec': 'Bʼen',
     'label': 'Aj',
     day: 13
@@ -84,37 +84,37 @@ export const DAY_SIGNS = [
     day: 14
   },
   {
-    name: 'men',
+    name: 'tzkin',
     'label-yucatec': 'Men',
-    'label': `Tz'ikin`,
+    'label': `Tz'kin`,
     day: 15
   },
   {
-    name: 'cib',
+    name: 'ajmaq',
     'label-yucatec': 'Kibʼ',
     'label': 'Ajmaq',
     day: 16
   },
   {
-    name: 'caban',
+    name: 'noj',
     'label-yucatec': 'Kabʼan',
     'label': `No'j`,
     day: 17
   },
   {
-    name: 'etznab',
+    name: 'tijax',
     'label-yucatec': 'Etzʼnabʼ',
     'label': 'Tijaxʼ',
     day: 18
   },
   {
-    name: 'cauac',
+    name: 'kawoq',
     'label-yucatec': 'Kawak',
     'label': 'Kawoq',
     day: 19
   },
   {
-    name: 'ahau',
+    name: 'ajpu',
     'label-yucatec': 'Ajaw',
     'label': 'Ajpu',
     day: 20
