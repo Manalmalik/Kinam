@@ -1,4 +1,4 @@
-  import {
+import {
   Directive,
   ElementRef,
   AfterViewInit,
@@ -15,7 +15,7 @@ import { tap, map, observeOn } from 'rxjs/operators';
 export class ScrollDirective implements AfterViewInit {
   @Output() bgLoaded = new EventEmitter();
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   ngAfterViewInit(): void {
     const src = '/assets/mayansBg.jpg';
@@ -28,7 +28,6 @@ export class ScrollDirective implements AfterViewInit {
         tap(() => {
           this.bgLoaded.emit();
           // @TODO: Loading spinner
-          // debugger
 
           this.el.nativeElement.style.backgroundImage = `url(${src})`;
           fromEvent<Event>(document.body, 'scroll')
@@ -37,22 +36,12 @@ export class ScrollDirective implements AfterViewInit {
               observeOn(animationFrameScheduler)
             )
             .subscribe(target => {
-              const numberOfSlides = 3;
-              const progress =
-                (Math.floor(this.el.nativeElement.scrollLeft) +
-                  this.el.nativeElement.clientWidth) /
-                this.el.nativeElement.scrollWidth;
-
-                // debugger
-
-              console.log(progress);
-
               this.el.nativeElement.style.backgroundPositionX = `-${Math.floor(
                 target['scrollLeft']
               ) * 1.5}px`;
             });
         })
       )
-      .subscribe(res => {});
+      .subscribe(res => { });
   }
 }

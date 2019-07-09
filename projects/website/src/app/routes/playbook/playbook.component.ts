@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { LandingService } from '../../services/landing.service';
-import { Moment } from 'moment';
 
 @Component({
   selector: 'kinam-playbook',
@@ -19,6 +18,5 @@ export class PlaybookComponent {
 
   public handleDateChange({ day, month, year }) {
     this.number = { day, month, year };
-    // debugger
   }
 }
