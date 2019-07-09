@@ -1,17 +1,80 @@
 import * as nahualGetter from 'nahuales';
 
-import { DAY_SIGNS } from './day-sign';
 import * as moment_ from 'moment';
 export const moment = moment_;
 
-function findDaySign(day: number) {
-  const sign = DAY_SIGNS.find(s => s.day === day);
-  return sign ? sign : { name: '', label: '' };
+const nahuales = {
+  1: 'B\'atz\'',
+  2: 'E',
+  3: 'Aj',
+  4: 'Ix',
+  5: 'Tz\'ikin',
+  6: 'Ajmak',
+  7: 'No\'j',
+  8: 'Tijax',
+  9: 'Kawok',
+  10: 'Ajpu',
+  11: 'Imox',
+  12: 'Iq\'',
+  13: 'Aq\'ab\'al',
+  14: 'K\'at',
+  15: 'Kan',
+  16: 'Kame',
+  17: 'Kej',
+  18: 'Q\'anil',
+  19: 'Toj',
+  20: 'Tz\'i',
+};
+
+
+
+export enum Nawal {
+  batz = 'B\'atz\'',
+  e = 'E',
+  aj = 'Aj',
+  ix = 'Ix',
+  tzikin = 'Tz\'ikin',
+  ajmak = 'Ajmak',
+  noj = 'No\'j',
+  tijax = 'Tijax',
+  kawok = 'Kawok',
+  ajpu = 'Ajpu',
+  imox = 'Imox',
+  iq = 'Iq\'',
+  aqabal = 'Aq\'ab\'al',
+  kat = 'K\'at',
+  kan = 'Kan',
+  kame = 'Kame',
+  kej = 'Kej',
+  qanil = 'Q\'anil',
+  toj = 'Toj',
+  tzi = 'Tz\'i',
 }
 
-const getImg = (daySign: string) =>
-  daySign ? `assets/nawales/${daySign}.jpg` : '';
+export const NAWAL_IMG = {
+  [Nawal.aj]: 'aj.jpg',
+  [Nawal.ajmak]: 'ajmak.jpg',
+  [Nawal.ajpu]: 'ajpu.jpg',
+  [Nawal.aqabal]: 'aqabal.jpg',
+  [Nawal.batz]: 'batz.jpg',
+  [Nawal.e]: 'e.jpg',
+  [Nawal.imox]: 'imox.jpg',
+  [Nawal.iq]: 'iq.jpg',
+  [Nawal.ix]: 'ix.jpg',
+  [Nawal.kame]: 'kame.jpg',
+  [Nawal.kan]: 'kan.jpg',
+  [Nawal.kat]: 'kat.jpg',
+  [Nawal.kawok]: 'kawok.jpg',
+  [Nawal.kej]: 'kej.jpg',
+  [Nawal.noj]: 'noj.jpg',
+  [Nawal.qanil]: 'qanil.jpg',
+  [Nawal.tijax]: 'tijax.jpg',
+  [Nawal.toj]: 'toj.jpg',
+  [Nawal.tzi]: 'tzi.jpg',
+  [Nawal.tzikin]: 'tzikin.jpg',
+}
 
+const getImg = (daySign: string) => `assets/nawales/${daySign}.jpg`
 
 class KinamNahual {
   public nahualName: string;
@@ -39,13 +102,8 @@ class KinamNahual {
 
     this.nahualDay = day;
     this.nahualName = nahual;
-    /**
-     * TODO: validate day signs with dag
-     */
-    const daySign = findDaySign(this.nahualDay);
-    this.daySign = daySign.label;
-
-    this.image = getImg(daySign.name);
+    this.image = 'assets/nawales/' + NAWAL_IMG[nahual];
+    debugger
   }
 
   public get day() {
