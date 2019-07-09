@@ -477,6 +477,13 @@ Complex Button start
     margin-top: 20px;
   }
 
+  &__links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
   &__content {
     margin-top: 16px;
   }
@@ -784,6 +791,13 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 768px) {
+
+  .order-now {
+    &__links {
+      justify-content:center;
+      padding-top: 1rem;
+    }
+  }
 
   .hover-container {
     transform: scale(0.75);
