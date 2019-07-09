@@ -26,8 +26,6 @@ const nahuales = {
   20: 'Tz\'i',
 };
 
-
-
 export enum Nawal {
   batz = 'B\'atz\'',
   e = 'E',
@@ -74,8 +72,6 @@ export const NAWAL_IMG = {
   [Nawal.tzikin]: 'tzikin.jpg',
 }
 
-const getImg = (daySign: string) => `assets/nawales/${daySign}.jpg`
-
 class KinamNahual {
   public nahualName: string;
   public nahualDay: number;
@@ -103,7 +99,6 @@ class KinamNahual {
     this.nahualDay = day;
     this.nahualName = nahual;
     this.image = 'assets/nawales/' + NAWAL_IMG[nahual];
-    debugger
   }
 
   public get day() {
