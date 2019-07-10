@@ -4,7 +4,7 @@
   display: block;
 }
 
-.column {
+.column {   
   position: relative;
 }
 
@@ -651,6 +651,28 @@ Complex Button start
   
   &__link {
     cursor: pointer;
+    transition: 0.2s color ease-in-out;
+    
+    &--facebook {
+        &:hover {
+            color: #4768ad;
+            transition: 0.2s color ease-in-out;
+        }
+    }
+ 
+    &--instagram {
+        &:hover {
+            color: #ffc000;
+            transition: 0.2s color ease-in-out;
+        }
+    }
+ 
+    &--youtube {
+        &:hover {
+            color: red;
+            transition: 0.2s color ease-in-out;
+        }
+    }
   }
 }
 
@@ -893,7 +915,6 @@ Complex Button start
     &__social__text {
       bottom: 8rem;
       top: -4rem;
-      // margin: 1rem 1rem 1rem auto !important;
       margin: 0 auto !important;
       text-align: center;
     }

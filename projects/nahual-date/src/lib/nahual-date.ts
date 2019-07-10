@@ -3,29 +3,6 @@ import * as nahualGetter from 'nahuales';
 import * as moment_ from 'moment';
 export const moment = moment_;
 
-const nahuales = {
-  1: 'B\'atz\'',
-  2: 'E',
-  3: 'Aj',
-  4: 'Ix',
-  5: 'Tz\'ikin',
-  6: 'Ajmak',
-  7: 'No\'j',
-  8: 'Tijax',
-  9: 'Kawok',
-  10: 'Ajpu',
-  11: 'Imox',
-  12: 'Iq\'',
-  13: 'Aq\'ab\'al',
-  14: 'K\'at',
-  15: 'Kan',
-  16: 'Kame',
-  17: 'Kej',
-  18: 'Q\'anil',
-  19: 'Toj',
-  20: 'Tz\'i',
-};
-
 export enum Nawal {
   batz = 'B\'atz\'',
   e = 'E',
@@ -48,6 +25,8 @@ export enum Nawal {
   toj = 'Toj',
   tzi = 'Tz\'i',
 }
+
+const BASE_PATH = 'assets/nawales/';
 
 export const NAWAL_IMG = {
   [Nawal.aj]: 'aj.jpg',
@@ -98,7 +77,7 @@ class KinamNahual {
 
     this.nahualDay = day;
     this.nahualName = nahual;
-    this.image = 'assets/nawales/' + NAWAL_IMG[nahual];
+    this.image = BASE_PATH + NAWAL_IMG[nahual];
   }
 
   public get day() {

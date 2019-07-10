@@ -6,8 +6,9 @@ import { Subscription, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 import { LoginDialogComponent } from './login-dialog.component';
-import { LandingService } from './services/landing.service';
+import { AbstractMenu } from './components/menu/abstract-menu';
 import { TitleService } from './services/title.service';
+import { LandingService } from './services';
 
 
 @Component({
@@ -32,9 +33,11 @@ import { TitleService } from './services/title.service';
     ])
   ]
 })
-export class WebsiteComponent implements OnInit, OnDestroy, AfterViewInit {
-  constructor(public dialog: MatDialog, private landingService: LandingService, private titleService: TitleService) { }
-private subscription = new Subscription();
+export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy, AfterViewInit {
+  constructor(public dialog: MatDialog, private titleService: TitleService, landingService: LandingService) {
+    super(landingService)
+  }
+  private subscription = new Subscription();
 
   public authenticated = false;
   public state = false;
@@ -69,10 +72,6 @@ private subscription = new Subscription();
           this.authenticated = true;
         });
     }
-  }
-
-  public toggleMenu() {
-    this.landingService.toggleMenu();
   }
 
   public ngOnDestroy(): void {

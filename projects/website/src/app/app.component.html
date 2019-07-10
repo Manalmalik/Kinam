@@ -1,3 +1,14 @@
+<div class="columns is-mobile header">
+    <div class="column logo has-text-centered">
+        <img src="assets/kinam_logo_white_website_white.svg" width="200" alt="Logo" style="margin-left: 2rem;">
+    </div>
+    <div class="icon-header">
+        <img src="/assets/menu.svg" class="menu-icon" (click)="toggleMenu()" />
+    </div>
+</div>
+
 <ng-container *ngIf="authenticated">
     <router-outlet></router-outlet>
 </ng-container>
+
+<kinam-menu></kinam-menu>
