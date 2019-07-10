@@ -36,12 +36,6 @@ h1 {
   pointer-events: none;
 }
 
-.menu-icon {
-  width: 6rem;
-  margin-top: 40px;
-  margin-right: 40px; 
-}
-
 .header {
   justify-content: space-between;
   padding-top: 1rem;
@@ -345,38 +339,6 @@ h1 {
   }
 }
 
-
-.interaction {
-  font-size: 1.5rem;
-
-  &-bar {
-    display: flex;
-    flex-direction: row;
-    transform: translateY(-50px);
-    margin-right: 7.5rem;
-    font-size: 0.75rem;
-    text-align: left;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    &__item {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin: 1rem 0;
-      
-      .icon-label {
-        padding: 0.25rem 0.75rem;
-      }
-      
-      .fas, 
-      .fal {
-        margin: 0 0.5rem;
-        font-size: 48px;
-      }
-    }
-  }
-}
 
 /**
 Complex Button start

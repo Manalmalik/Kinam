@@ -31,7 +31,22 @@ import { LandingService } from './services';
         ])
       ])
     ])
-  ]
+  ],
+  styles: [`
+  .menu-icon {
+    width: 6rem;
+    margin-top: 40px;
+    margin-right: 40px; 
+  }
+
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  `]
 })
 export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy, AfterViewInit {
   constructor(public dialog: MatDialog, private titleService: TitleService, landingService: LandingService) {
