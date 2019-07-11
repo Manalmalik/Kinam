@@ -24,12 +24,12 @@ import { EntryGuard } from './services/entry-guard';
 
 import { ScrollSnapDirective } from './directives/scroll-snap.directive';
 import { ScrollDirective } from './directives/scroll.directive';
+import {ProductSliderModule} from "@website/components/product-slider/product-slider.module";
 import { ProductComponent } from './routes/product/product.component';
 
 
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
-  { path: 'product', component: ProductComponent },
   { path: 'playbook', component: PlaybookComponent },
   { path: '**', redirectTo: '' },
 ];
@@ -59,6 +59,7 @@ const routes: Routes = [
     BirthdayModule,
     NewsletterModule,
     ReadingsModule,
+    ProductSliderModule,
     RouterModule.forRoot(routes)
   ],
   bootstrap: [WebsiteComponent]

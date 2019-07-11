@@ -1,0 +1,15 @@
+.mat-tab-label .mat-tab-label-content {
+  color: white;
+}
+
+/* ink bar */
+.mat-ink-bar {
+  background-color: var(--primary-color, white) !important;
+}
+
+.tabOutline {
+  padding: 20px;
+  border: 1px solid white;
+  max-width: 800px;
+  min-height: 200px;
+}
