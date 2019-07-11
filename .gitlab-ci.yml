@@ -1,11 +1,5 @@
 image: mg92/trion-rsync:latest
 
-# Folder is cached between builds
-# Watch when adding dependencies
-cache:
-  paths:
-    - node_modules/
-
 before_script:
   - mkdir -p ~/.ssh
   - npm install @angular-devkit/build-angular
@@ -22,8 +16,8 @@ stages:
 Deploy:
   stage: deploy
   script:
-    - npm run -- ng build --progress=false --prod
-    - rsync -avz -e "ssh -o StrictHostKeyChecking=no" --progress ./dist/kinam/* root@173.212.231.161:/var/www/html/kinam
+    - npm run build:website
+    - rsync -avz -e "ssh -o StrictHostKeyChecking=no" --progress ./dist/website/* root@167.86.100.47:/var/www/html
   only:
     - master
 
