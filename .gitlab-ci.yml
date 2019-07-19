@@ -6,7 +6,6 @@ before_script:
   - echo "$DEPLOY_KEY" | tr -d '\r' | ssh-add - > /dev/null
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
-  - npm install @angular-devkit/build-angular
   - npm link
   - node ./build.js
   - echo -e "$DEPLOY_KEY" > ~/.ssh/id_rsa
