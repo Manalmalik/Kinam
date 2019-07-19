@@ -36,7 +36,9 @@ export class ProjectComponent implements OnInit {
 
     setTimeout(() => anim.create(this.main.nativeElement).play(), 200);
 
+    this.meta.removeTag('name=image');
     this.meta.removeTag('name=description');
+    this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/socialBg.jpg' });
     this.meta.addTag({ name: 'description', content: `We aim to build pride and appreciation for the Maya culture amongst younger generations and equip them with the necessary tools for future success.` });
     this.titleService.setTitle({ description: 'Education Through Football. Unveiling Maya Art. Discovering Ancient Secrets.' })
   }
