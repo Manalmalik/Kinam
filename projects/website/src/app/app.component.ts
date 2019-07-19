@@ -3,12 +3,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 
 import { Subscription, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { delay, filter } from 'rxjs/operators';
 
 import { LoginDialogComponent } from './login-dialog.component';
 import { AbstractMenu } from './components/menu/abstract-menu';
-import { TitleService } from './services/title.service';
 import { LandingService } from './services';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
 
 
 @Component({
@@ -33,6 +34,11 @@ import { LandingService } from './services';
     ])
   ],
   styles: [`
+  .logo img {
+    margin-left: 2rem;
+    cursor: pointer;
+  }
+
   .menu-icon {
     width: 6rem;
     margin-top: 40px;
@@ -59,8 +65,8 @@ import { LandingService } from './services';
   }
   `]
 })
-export class WebsiteComponent extends AbstractMenu implements OnDestroy, AfterViewInit {
-  constructor(public dialog: MatDialog, landingService: LandingService) {
+export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy, AfterViewInit {
+  constructor(public dialog: MatDialog, landingService: LandingService, private router: Router, private viewportScroller: ViewportScroller) {
     super(landingService)
   }
   private subscription = new Subscription();
@@ -70,6 +76,14 @@ export class WebsiteComponent extends AbstractMenu implements OnDestroy, AfterVi
 
   anim() {
     this.state = !this.state;
+  }
+
+  public ngOnInit() {
+    this.router.events.pipe(
+      filter(e => e instanceof NavigationStart)
+    ).subscribe(
+      () => this.viewportScroller.scrollToPosition([0, 0]),
+    )
   }
 
   public ngAfterViewInit(): void {
