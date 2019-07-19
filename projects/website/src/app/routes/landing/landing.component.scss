@@ -792,7 +792,7 @@ Complex Button start
   }
 
   .order-now__container {
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 3rem;
   }
 
@@ -940,6 +940,12 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 480px) { 
+
+  .logo img {
+      max-width: 8rem;
+      margin-top: 1rem;
+  }
+
   .section-header {
     padding-right: 0;
   }
@@ -962,6 +968,14 @@ Complex Button start
     transform: translateY(-102px);
     text-align: left;
     margin-left: 1rem;
+  }
+
+  .section__jacket__header {
+    text-align: left;
+  }
+
+  .section__hero__heading {
+    font-size: 3rem;
   }
 
   .btn--primary {

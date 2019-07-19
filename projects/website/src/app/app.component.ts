@@ -46,6 +46,17 @@ import { LandingService } from './services';
     right: 0;
     z-index: 2;
   }
+
+  @media (min-width: 0) and (max-width: 480px) {  
+    .logo img {
+      max-width: 8rem;
+      margin-top: 1rem;
+    }
+
+    .menu-icon {
+      width: 4rem;
+    }
+  }
   `]
 })
 export class WebsiteComponent extends AbstractMenu implements OnDestroy, AfterViewInit {
