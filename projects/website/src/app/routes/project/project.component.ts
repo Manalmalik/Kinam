@@ -16,7 +16,8 @@ export class ProjectComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.meta.addTag({ name: 'description', content: `We aim to build pride and appreciation for the Maya culture amongst younger generations and equip them with the necessary tools for future success. ` });
-    this.titleService.setTitle({ description: 'Education Through Football. Unveiling Maya Art. Discovering Ancient Secrets.    ' })
+    this.meta.removeTag('name=description');
+    this.meta.addTag({ name: 'description', content: `We aim to build pride and appreciation for the Maya culture amongst younger generations and equip them with the necessary tools for future success.` });
+    this.titleService.setTitle({ description: 'Education Through Football. Unveiling Maya Art. Discovering Ancient Secrets.' })
   }
 }
