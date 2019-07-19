@@ -76,6 +76,7 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
     private meta: Meta
   ) {
     super(landingService)
+
   }
   private subscription = new Subscription();
 
@@ -97,15 +98,15 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
     this.meta.addTag({ name: 'og:image', content: 'https://kinam13.com/assets/wall_bg.jpg' });
     this.meta.addTag({ name: 'og:description', content: `To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their people` });
     this.meta.addTag({ name: 'og:url', content: `https://kinam13.com/the-mayans` });
+
     this.meta.addTag({ name: 'og:type', content: `website` });
 
+
+    debugger
     this.router.events.pipe(
       filter(e => e instanceof NavigationStart)
     ).subscribe(
-      () => {
-        this.viewportScroller.scrollToPosition([0, 0]);
-        this.metaService.removeMeta();
-      },
+      () => this.viewportScroller.scrollToPosition([0, 0]),
     )
   }
 
