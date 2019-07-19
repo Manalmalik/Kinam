@@ -444,6 +444,17 @@ Complex Button start
     justify-content: flex-start;
     align-items: center;
     padding-top: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+
+    a {
+      font-size: 1.2rem;
+      color: white;
+  
+      &:hover {
+        color: #adadad;
+      }
+    } 
   }
 
   &__content {
@@ -458,16 +469,6 @@ Complex Button start
 
 /** Complex Button end */
 
-.order-now {
-  &__links a {
-    font-size: 1.2rem;
-    color: white;
-
-    &:hover {
-      color: #adadad;
-    }
-  }
-}
 
 .btn--mayans {
   width: 11rem;

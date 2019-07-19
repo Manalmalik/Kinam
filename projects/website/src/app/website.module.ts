@@ -26,6 +26,13 @@ import { ScrollSnapDirective } from './directives/scroll-snap.directive';
 import { ScrollDirective } from './directives/scroll.directive';
 import { ProductSliderModule } from "@website/components/product-slider/product-slider.module";
 import { ProductComponent } from './routes/product/product.component';
+import { ProductHeaderComponent } from './components/product-header/product-header.component';
+import { TeamComponent } from './routes/team/team.component';
+import { StoryComponent } from './routes/story/story.component';
+import { PartnersComponent } from './routes/partners/partners.component';
+import { MusicComponent } from './routes/music/music.component';
+import { MayansComponent } from './routes/mayans/mayans.component';
+import { ProjectComponent } from './routes/project/project.component';
 
 
 const routes: Routes = [
@@ -50,6 +57,13 @@ const routes: Routes = [
     MenuComponent,
     PlaybookComponent,
     ProductComponent,
+    ProductHeaderComponent,
+    TeamComponent,
+    StoryComponent,
+    PartnersComponent,
+    MusicComponent,
+    MayansComponent,
+    ProjectComponent,
   ],
   providers: [EntryGuard],
   entryComponents: [LoginDialogComponent, DialogComponent],
