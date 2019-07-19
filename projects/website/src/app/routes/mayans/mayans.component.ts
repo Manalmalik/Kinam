@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
+
+import { TitleService } from '@website/services';
 
 @Component({
   selector: 'kinam-mayans',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MayansComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private meta: Meta,
+    private titleService: TitleService,
+  ) { }
 
   ngOnInit() {
+    this.meta.addTag({ name: 'description', content: `In the jungles of Guatemala the ancient civilization of the Mayas with its beautiful art, architecture & astrology is waiting to be shared with the world.` });
+    this.titleService.setTitle({ description: 'An Ancient Civilization.' })
   }
-
 }
