@@ -28,11 +28,13 @@
         flex-direction: row;
         justify-content: space-between;
         min-width: 512px;
+        width: 512px;
         align-items: center;
     }
 
     &-container {
         display: flex;
+        min-width: 480px;
         width: 480px;
         overflow: hidden;
         margin: 1rem;
@@ -101,5 +103,12 @@
 
     .tile_10 {
         background-color: #f9f1f4;
+    }
+}
+
+@media (min-width: 0) and (max-width: 768px) { 
+
+    .headline {
+        justify-content: center
     }
 }
