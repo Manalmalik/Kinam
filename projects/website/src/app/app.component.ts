@@ -90,19 +90,13 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
   public ngOnInit() {
 
     this.metaService.removeMeta();
+    this.metaService.setMeta({
+      description: 'To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their people',
+      image: 'https://kinam13.com/assets/wall_bg.jpg',
+      title: 'A Portal to the Mayan World.',
+      url: `https://kinam13.com`
+    });
 
-    this.meta.addTag({ name: 'description', content: `To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their peopleTo uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their peopleTo uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their people` });
-    this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/wall_bg.jpg' });
-
-    this.meta.addTag({ name: 'og:title', content: 'A Portal to the Mayan World.' });
-    this.meta.addTag({ name: 'og:image', content: 'https://kinam13.com/assets/wall_bg.jpg' });
-    this.meta.addTag({ name: 'og:description', content: `To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their people` });
-    this.meta.addTag({ name: 'og:url', content: `https://kinam13.com/the-mayans` });
-
-    this.meta.addTag({ name: 'og:type', content: `website` });
-
-
-    debugger
     this.router.events.pipe(
       filter(e => e instanceof NavigationStart)
     ).subscribe(

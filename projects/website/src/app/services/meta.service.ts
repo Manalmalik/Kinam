@@ -13,9 +13,23 @@ export class MetaService {
     this.meta.removeTag(`name='og:description'`);
     this.meta.removeTag(`name='og:url'`);
     this.meta.removeTag(`name='og:title'`);
-    this.meta.removeTag(`name='og:type'`);
 
     this.meta.removeTag('name=image');
     this.meta.removeTag('name=description');
+  }
+
+  public setMeta({
+    description,
+    image,
+    title,
+    url
+  }) {
+    this.meta.addTag({ name: 'description', content: description });
+    this.meta.addTag({ name: 'image', content: image });
+
+    this.meta.addTag({ name: 'og:title', content: title });
+    this.meta.addTag({ name: 'og:image', content: image });
+    this.meta.addTag({ name: 'og:description', content: description });
+    this.meta.addTag({ name: 'og:url', content: url });
   }
 }

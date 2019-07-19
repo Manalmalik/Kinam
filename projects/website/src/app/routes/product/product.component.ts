@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { AnimationBuilder, style, animate } from '@angular/animations';
-import { Meta } from '@angular/platform-browser';
 
 import { AbstractMenu } from '@website/components/menu/abstract-menu';
 import { LandingService, TitleService, MetaService } from '@website/services';
@@ -16,7 +15,6 @@ export class ProductComponent extends AbstractMenu implements OnInit {
     landingService: LandingService,
     private _builder: AnimationBuilder,
     private titleService: TitleService,
-    private meta: Meta,
     private metaService: MetaService,
   ) {
     super(landingService);
@@ -25,13 +23,12 @@ export class ProductComponent extends AbstractMenu implements OnInit {
   public ngOnInit() {
     this.metaService.removeMeta();
 
-    this.meta.addTag({ name: 'og:title', content: 'The Jacket - Garments Telling Stories.' });
-    this.meta.addTag({ name: 'og:image', content: 'https://kinam13.com/assets/models/kaqchikel.png' });
-    this.meta.addTag({ name: 'og:url', content: `https://kinam13.com/the-jacket` });
-    this.meta.addTag({ name: 'og:type', content: `website` });
-
-    this.meta.addTag({ name: 'description', content: 'Unique jackets for a good cause, using hand-woven textiles by Maya-descendant artisans from Guatemala and produced in EU with collaboration of product developer experts from Berlin.' });
-    this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/models/kaqchikel.png' });
+    this.metaService.setMeta({
+      description: 'Unique jackets for a good cause, using hand-woven textiles by Maya-descendant artisans from Guatemala and produced in EU with collaboration of product developer experts from Berlin.',
+      image: 'https://kinam13.com/assets/models/kaqchikel.png',
+      title: 'The Jacket - Garments Telling Stories.',
+      url: `https://kinam13.com/the-jacket`
+    });
 
     this.titleService.setTitle({ description: 'The Jacket - Garments Telling Stories' });
 
