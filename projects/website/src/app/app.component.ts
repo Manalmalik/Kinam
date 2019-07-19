@@ -79,7 +79,7 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
   }
   private subscription = new Subscription();
 
-  public authenticated = false;
+  public authenticated = true;
   public state = false;
 
   anim() {
@@ -110,27 +110,27 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
   }
 
   public ngAfterViewInit(): void {
-    if (!(localStorage.getItem('authenticated') === 'true')) {
-      of('hi')
-        .pipe(delay(100))
-        .subscribe(_ => {
-          const dialogRef = this.dialog.open(LoginDialogComponent, {
-            width: '250px'
-          });
+    // if (!(localStorage.getItem('authenticated') === 'true')) {
+    //   of('hi')
+    //     .pipe(delay(100))
+    //     .subscribe(_ => {
+    //       const dialogRef = this.dialog.open(LoginDialogComponent, {
+    //         width: '250px'
+    //       });
 
-          dialogRef.afterClosed().subscribe(result => {
-            if (result) {
-              this.authenticated = true;
-            }
-          });
-        });
-    } else {
-      of('hi')
-        .pipe(delay(100))
-        .subscribe(res => {
-          this.authenticated = true;
-        });
-    }
+    //       dialogRef.afterClosed().subscribe(result => {
+    //         if (result) {
+    //           this.authenticated = true;
+    //         }
+    //       });
+    //     });
+    // } else {
+    //   of('hi')
+    //     .pipe(delay(100))
+    //     .subscribe(res => {
+    //       this.authenticated = true;
+    //     });
+    // }
   }
 
   public ngOnDestroy(): void {
