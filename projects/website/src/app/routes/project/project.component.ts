@@ -35,8 +35,6 @@ export class ProjectComponent implements OnInit {
 
     setTimeout(() => anim.create(this.main.nativeElement).play(), 200);
 
-    this.metaService.removeMeta();
-
     this.metaService.setMeta({
       description: 'We aim to build pride and appreciation for the Maya culture amongst younger generations and equip them with the necessary tools for future success.',
       image: 'https://kinam13.com/assets/socialBg.jpg',

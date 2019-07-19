@@ -21,7 +21,6 @@ export class ProductComponent extends AbstractMenu implements OnInit {
   }
 
   public ngOnInit() {
-    this.metaService.removeMeta();
 
     this.metaService.setMeta({
       description: 'Unique jackets for a good cause, using hand-woven textiles by Maya-descendant artisans from Guatemala and produced in EU with collaboration of product developer experts from Berlin.',

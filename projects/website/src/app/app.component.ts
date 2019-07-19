@@ -2,13 +2,12 @@ import { Component, OnDestroy, AfterViewInit, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 
-import { Subscription, of } from 'rxjs';
-import { delay, filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
-import { LoginDialogComponent } from './login-dialog.component';
 import { AbstractMenu } from './components/menu/abstract-menu';
 import { LandingService, MetaService } from './services';
-import { Router, NavigationEnd, NavigationStart } from '@angular/router';
+import { Router, NavigationStart } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { Meta } from '@angular/platform-browser';
 
@@ -88,8 +87,6 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
   }
 
   public ngOnInit() {
-
-    this.metaService.removeMeta();
     this.metaService.setMeta({
       description: 'To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their people',
       image: 'https://kinam13.com/assets/wall_bg.jpg',

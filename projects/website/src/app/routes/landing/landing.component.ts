@@ -23,7 +23,7 @@ export class LandingComponent implements OnInit {
 
   public ngOnInit() {
     this.titleService.setTitle({
-      description: 'A Portal to the Mayan World - Fashion. Music. Art. Technology. - Support our Crowdfunding!'
+      description: 'A Portal to the Mayan World - Fashion. Music. Art. Technology.'
     });
 
     const anim = this._builder.build([

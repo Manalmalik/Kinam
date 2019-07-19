@@ -9,13 +9,19 @@ export class MetaService {
   constructor(private meta: Meta) { }
 
   public removeMeta() {
-    this.meta.removeTag(`name='og:image'`);
-    this.meta.removeTag(`name='og:description'`);
-    this.meta.removeTag(`name='og:url'`);
-    this.meta.removeTag(`name='og:title'`);
+    const tags = [
+      ...this.meta.getTags(`property='og:image'`),
+      ...this.meta.getTags(`property='og:image'`),
+      ...this.meta.getTags(`property='og:description'`),
+      ...this.meta.getTags(`property='og:url'`),
+      ...this.meta.getTags(`property='og:title'`),
+      ...this.meta.getTags('name=image'),
+      ...this.meta.getTags('name=description'),
+    ];
 
-    this.meta.removeTag('name=image');
-    this.meta.removeTag('name=description');
+    tags.forEach(t => this.meta.removeTagElement(t));
+
+    debugger
   }
 
   public setMeta({
@@ -24,12 +30,13 @@ export class MetaService {
     title,
     url
   }) {
+    this.removeMeta();
     this.meta.addTag({ name: 'description', content: description });
     this.meta.addTag({ name: 'image', content: image });
 
-    this.meta.addTag({ name: 'og:title', content: title });
-    this.meta.addTag({ name: 'og:image', content: image });
-    this.meta.addTag({ name: 'og:description', content: description });
-    this.meta.addTag({ name: 'og:url', content: url });
+    this.meta.addTag({ property: 'og:title', content: title });
+    this.meta.addTag({ property: 'og:image', content: image });
+    this.meta.addTag({ property: 'og:description', content: description });
+    this.meta.addTag({ property: 'og:url', content: url });
   }
 }
