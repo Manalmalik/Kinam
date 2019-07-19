@@ -58,7 +58,7 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
   public state = false;
 
   public ngOnInit() {
-    this.titleService.setTitle({ description: 'Welcome to Guatemala - Fashion. Music. Technology. Support our Crowdfunding!' });
+    this.titleService.setTitle({ description: 'A Portal to the Mayan World - Fashion. Music. Technology. Support our Crowdfunding!' });
   }
 
   anim() {

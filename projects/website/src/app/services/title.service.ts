@@ -9,7 +9,7 @@ export class TitleService {
     private title: Title
   ) { }
 
-  public setTitle({ prefix = 'Kinam', description = '' }) {
+  public setTitle({ prefix = 'KINAM', description = '' }) {
     this.title.setTitle(`${prefix} - ${description};`);
   }
 }
