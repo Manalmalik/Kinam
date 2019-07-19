@@ -10,6 +10,6 @@ export class TitleService {
   ) { }
 
   public setTitle({ prefix = 'KINAM', description = '' }) {
-    this.title.setTitle(`${prefix} - ${description};`);
+    this.title.setTitle(`${prefix} - ${description}`);
   }
 }
