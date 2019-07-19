@@ -16,10 +16,13 @@ export class MayansComponent implements OnInit {
     private meta: Meta,
     private titleService: TitleService,
     private _builder: AnimationBuilder,
+    private metaService: MetaService,
   ) { }
 
   ngOnInit() {
     this._playAnimation();
+
+    this.metaService.removeMeta();
 
     this.meta.addTag({ name: 'description', content: `In the jungles of Guatemala the ancient civilization of the Mayas with its beautiful art, architecture & astrology is waiting to be shared with the world.` });
     this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/mayansBg.jpg' });

@@ -10,6 +10,7 @@ import { AbstractMenu } from './components/menu/abstract-menu';
 import { LandingService, MetaService } from './services';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
+import { Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -66,7 +67,14 @@ import { ViewportScroller } from '@angular/common';
   `]
 })
 export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy, AfterViewInit {
-  constructor(public dialog: MatDialog, landingService: LandingService, private router: Router, private viewportScroller: ViewportScroller, private metaService: MetaService) {
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    private viewportScroller: ViewportScroller,
+    private metaService: MetaService,
+    landingService: LandingService,
+    private meta: Meta
+  ) {
     super(landingService)
   }
   private subscription = new Subscription();
@@ -79,6 +87,18 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
   }
 
   public ngOnInit() {
+
+    this.metaService.removeMeta();
+
+    this.meta.addTag({ name: 'description', content: `To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their peopleTo uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their peopleTo uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their people` });
+    this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/wall_bg.jpg' });
+
+    this.meta.addTag({ name: 'og:title', content: 'A Portal to the Mayan World.' });
+    this.meta.addTag({ name: 'og:image', content: 'https://kinam13.com/assets/wall_bg.jpg' });
+    this.meta.addTag({ name: 'og:description', content: `To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their people` });
+    this.meta.addTag({ name: 'og:url', content: `https://kinam13.com/the-mayans` });
+    this.meta.addTag({ name: 'og:type', content: `website` });
+
     this.router.events.pipe(
       filter(e => e instanceof NavigationStart)
     ).subscribe(
