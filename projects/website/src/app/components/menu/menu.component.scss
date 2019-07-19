@@ -16,6 +16,18 @@
   }
 }
 
+
+a{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .side-menu {
   z-index: 51;
   width: 20rem;
@@ -41,8 +53,14 @@
     transition: 0.6s transform ease-out;
   }
 
+  ul {
+    width: 100%;
+  }
+
   li {
     padding: 2rem;
+    margin: 1rem;
+    position: relative;
     box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0);
     transition: box-shadow 0.4s;
     cursor: pointer;

@@ -1,8 +1,8 @@
+import { AnimationBuilder, style, animate } from '@angular/animations';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 
 import { TitleService } from '@website/services';
-import { AnimationBuilder, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'kinam-project',
@@ -34,9 +34,7 @@ export class ProjectComponent implements OnInit {
       )
     ]);
 
-    setTimeout(() => {
-      anim.create(this.main.nativeElement).play();
-    }, 200);
+    setTimeout(() => anim.create(this.main.nativeElement).play(), 200);
 
     this.meta.removeTag('name=description');
     this.meta.addTag({ name: 'description', content: `We aim to build pride and appreciation for the Maya culture amongst younger generations and equip them with the necessary tools for future success.` });

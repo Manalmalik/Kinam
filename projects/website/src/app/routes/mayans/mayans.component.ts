@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AnimationBuilder, style, animate } from '@angular/animations';
 import { Meta } from '@angular/platform-browser';
 
 import { TitleService } from '@website/services';
-import { AnimationBuilder, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'kinam-mayans',
@@ -34,9 +34,7 @@ export class MayansComponent implements OnInit {
       )
     ]);
 
-    setTimeout(() => {
-      anim.create(this.main.nativeElement).play();
-    }, 200);
+    setTimeout(() => anim.create(this.main.nativeElement).play(), 200);
 
     this.meta.removeTag('name=description');
     this.meta.addTag({ name: 'description', content: `In the jungles of Guatemala the ancient civilization of the Mayas with its beautiful art, architecture & astrology is waiting to be shared with the world.` });
