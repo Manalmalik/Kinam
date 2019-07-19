@@ -116,11 +116,11 @@ h1 {
     background-position: center center;
     height: 360px;
     filter: contrast(1);
-    transition: all 0.2s ease-in-out;
+    transition: filter 0.2s ease-in-out;
 
     &:hover {
       filter: contrast(1.25);
-      transition: all 0.2s ease-in-out;
+      transition: filter 0.2s ease-in-out;
     }
 
     &-1 {
@@ -279,7 +279,7 @@ h1 {
     background-position: center;
     filter: grayscale(25%);
     position: absolute;
-    transition: all 0.33s ease-in-out;
+    transition: filter 0.33s ease-in-out;
   }
 
   &__overlay {
@@ -657,7 +657,7 @@ Complex Button start
 }
 
 .section__jacket__header {
-  transform: translateY(-140px);
+  transform: translateY(-130px);
 }
 
 .interaction__jacket {
@@ -677,18 +677,6 @@ Complex Button start
   }
 }
 
-@media (min-width: 0) and (max-width: 480px) { 
-  .section-header {
-    padding-right: 0;
-  }
-
-  .watch {
-    font-size: 24px;
-    img {
-      width: 32px;
-    }
-  }
-}
 
 
 @media (min-width: 0) and (max-width: 1087px) {  
@@ -703,13 +691,13 @@ Complex Button start
       
       &__header {
         font-size: 6.2rem;
-        transform:translateY(-83px);
+        transform:translateY(-75px);
       }
     }
     
     &__hero {
       &__heading {
-        font-size: 3rem;
+        font-size: 4rem;
         line-height: 1.5;
       }
       
@@ -720,6 +708,7 @@ Complex Button start
 
       &__text {
         text-align: center;
+        font-size: 20px;
       }
     }
 
@@ -803,7 +792,8 @@ Complex Button start
   }
 
   .order-now__container {
-    margin-top: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .hover-container.large {
@@ -875,6 +865,7 @@ Complex Button start
   .content-block {
     margin-left: 2rem;
     margin-bottom: 2rem;
+    margin-top: 2rem;
   }
 
   .section {
@@ -942,6 +933,26 @@ Complex Button start
   .jacket-img-grid__img,
   .gradient--small {
     height: 600px;
+  }
+}
+
+
+
+
+@media (min-width: 0) and (max-width: 480px) { 
+  .section-header {
+    padding-right: 0;
+  }
+
+  .watch {
+    font-size: 24px;
+    img {
+      width: 32px;
+    }
+  }
+
+  .hover-container.large {
+    transform: scale(0.5);
   }
 }
 
