@@ -37,6 +37,6 @@ export class ProductComponent extends AbstractMenu implements OnInit {
 
     setTimeout(() => {
       anim.create(this.main.nativeElement).play();
-    }, 200)
+    }, 200);
   }
 }
