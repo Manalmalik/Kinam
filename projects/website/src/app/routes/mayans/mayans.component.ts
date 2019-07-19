@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AnimationBuilder, style, animate } from '@angular/animations';
 import { Meta } from '@angular/platform-browser';
 
-import { TitleService } from '@website/services';
+import { TitleService, MetaService } from '@website/services';
 
 @Component({
   selector: 'kinam-mayans',
@@ -16,10 +16,19 @@ export class MayansComponent implements OnInit {
     private meta: Meta,
     private titleService: TitleService,
     private _builder: AnimationBuilder,
-
   ) { }
 
   ngOnInit() {
+    this._playAnimation();
+
+    this.meta.addTag({ name: 'description', content: `In the jungles of Guatemala the ancient civilization of the Mayas with its beautiful art, architecture & astrology is waiting to be shared with the world.` });
+    this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/mayansBg.jpg' });
+    this.meta.addTag({ name: 'og:image', content: 'https://kinam13.com/assets/mayansBg.jpg' });
+    this.meta.addTag({ name: 'og:description', content: `In the jungles of Guatemala the ancient civilization of the Mayas with its beautiful art, architecture & astrology is waiting to be shared with the world.` });
+    this.titleService.setTitle({ description: 'An Ancient Civilization.' })
+  }
+
+  private _playAnimation() {
     const anim = this._builder.build([
       style({
         transform: `translateY(-100px)`,
@@ -35,10 +44,6 @@ export class MayansComponent implements OnInit {
     ]);
 
     setTimeout(() => anim.create(this.main.nativeElement).play(), 200);
-    this.meta.removeTag('name=image');
-    this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/mayansBg.jpg' });
-    this.meta.removeTag('name=description');
-    this.meta.addTag({ name: 'description', content: `In the jungles of Guatemala the ancient civilization of the Mayas with its beautiful art, architecture & astrology is waiting to be shared with the world.` });
-    this.titleService.setTitle({ description: 'An Ancient Civilization.' })
+
   }
 }

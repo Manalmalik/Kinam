@@ -7,7 +7,7 @@ import { delay, filter } from 'rxjs/operators';
 
 import { LoginDialogComponent } from './login-dialog.component';
 import { AbstractMenu } from './components/menu/abstract-menu';
-import { LandingService } from './services';
+import { LandingService, MetaService } from './services';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 
@@ -66,7 +66,7 @@ import { ViewportScroller } from '@angular/common';
   `]
 })
 export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy, AfterViewInit {
-  constructor(public dialog: MatDialog, landingService: LandingService, private router: Router, private viewportScroller: ViewportScroller) {
+  constructor(public dialog: MatDialog, landingService: LandingService, private router: Router, private viewportScroller: ViewportScroller, private metaService: MetaService) {
     super(landingService)
   }
   private subscription = new Subscription();
@@ -82,7 +82,10 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
     this.router.events.pipe(
       filter(e => e instanceof NavigationStart)
     ).subscribe(
-      () => this.viewportScroller.scrollToPosition([0, 0]),
+      () => {
+        this.viewportScroller.scrollToPosition([0, 0]);
+        this.metaService.removeMeta();
+      },
     )
   }
 

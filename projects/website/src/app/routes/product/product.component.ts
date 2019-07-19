@@ -12,15 +12,20 @@ import { LandingService, TitleService } from '@website/services';
 export class ProductComponent extends AbstractMenu implements OnInit {
   @ViewChild('main') main: ElementRef;
 
-  constructor(landingService: LandingService, private _builder: AnimationBuilder, private titleService: TitleService, private meta: Meta) {
+  constructor(
+    landingService: LandingService,
+    private _builder: AnimationBuilder,
+    private titleService: TitleService,
+    private meta: Meta,
+  ) {
     super(landingService);
   }
 
   public ngOnInit() {
-    this.meta.removeTag('name=description');
     this.meta.addTag({ name: 'description', content: 'Unique jackets for a good cause, using hand-woven textiles by Maya-descendant artisans from Guatemala and produced in EU with collaboration of product developer experts from Berlin.' });
-    this.meta.removeTag('name=image');   
     this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/models/kaqchikel.png' });
+    this.meta.addTag({ name: 'og:description', content: 'Unique jackets for a good cause, using hand-woven textiles by Maya-descendant artisans from Guatemala and produced in EU with collaboration of product developer experts from Berlin.' });
+    this.meta.addTag({ name: 'og:image', content: 'https://kinam13.com/assets/models/kaqchikel.png' });
     this.titleService.setTitle({ description: 'The Jacket - Garments Telling Stories' });
 
     const anim = this._builder.build([
