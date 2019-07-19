@@ -1,9 +1,19 @@
 <ng-container *ngIf="(menuHidden$ | async) as menuHidden">
-  <div class="backdrop" [class.active]="!menuHidden.hidden" (click)="toggleMenu()"></div>
+  <div
+    class="backdrop"
+    [class.active]="!menuHidden.hidden"
+    (click)="close()"
+  ></div>
 
-  <aside class="side-menu" [class.hidden]="menuHidden.hidden">
+  <aside
+    class="side-menu"
+    [class.hidden]="menuHidden.hidden"
+  >
 
-    <div class="menu-inner-close" (click)="close()">
+    <div
+      class="menu-inner-close"
+      (click)="close()"
+    >
       <i class="fal fa-times"></i>
     </div>
 
