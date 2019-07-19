@@ -8,8 +8,17 @@
 }
 
 .tabOutline {
-  padding: 20px;
   border: 1px solid white;
-  max-width: 800px;
+  max-width: 620px;
   min-height: 200px;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+
+.mat-tab-header-pagination-chevron {
+  border-color: rgba(255,255,255,.38);
+}
+
+.mat-tab-body-wrapper {
+  padding: 1rem 1.5rem; 
 }
