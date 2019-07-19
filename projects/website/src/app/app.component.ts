@@ -48,18 +48,14 @@ import { LandingService } from './services';
   }
   `]
 })
-export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy, AfterViewInit {
-  constructor(public dialog: MatDialog, private titleService: TitleService, landingService: LandingService) {
+export class WebsiteComponent extends AbstractMenu implements OnDestroy, AfterViewInit {
+  constructor(public dialog: MatDialog, landingService: LandingService) {
     super(landingService)
   }
   private subscription = new Subscription();
 
   public authenticated = false;
   public state = false;
-
-  public ngOnInit() {
-    this.titleService.setTitle({ description: 'A Portal to the Mayan World - Fashion. Music. Technology. Support our Crowdfunding!' });
-  }
 
   anim() {
     this.state = !this.state;

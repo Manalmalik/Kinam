@@ -1,8 +1,9 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { AnimationBuilder, style, animate } from '@angular/animations';
+import { Meta } from '@angular/platform-browser';
+
 import { AbstractMenu } from '@website/components/menu/abstract-menu';
 import { LandingService, TitleService } from '@website/services';
-import { AnimationBuilder, style, animate } from '@angular/animations';
-
 @Component({
   selector: 'kinam-product',
   templateUrl: './product.component.html',
@@ -11,11 +12,12 @@ import { AnimationBuilder, style, animate } from '@angular/animations';
 export class ProductComponent extends AbstractMenu implements OnInit {
   @ViewChild('main') main: ElementRef;
 
-  constructor(landingService: LandingService, private _builder: AnimationBuilder, private titleService: TitleService) {
+  constructor(landingService: LandingService, private _builder: AnimationBuilder, private titleService: TitleService, private meta: Meta) {
     super(landingService);
   }
 
   public ngOnInit() {
+    this.meta.addTag({ name: 'description', content: 'Unique jackets for a good cause, using hand-woven textiles by Maya-descendant artisans from Guatemala and produced in EU with collaboration of product developer experts from Berlin.' });
 
     this.titleService.setTitle({
       description: 'The Jacket - Fashion. Music. Art. Technology. - Support our Crowdfunding!'
