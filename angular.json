@@ -24,8 +24,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.json",
-              "src/sitemap.xml"
+              "src/manifest.json"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
@@ -179,7 +178,9 @@
             "tsConfig": "projects/website/tsconfig.app.json",
             "assets": [
               "projects/website/src/favicon.ico",
-              "projects/website/src/assets"
+              "projects/website/src/assets",
+              "projects/website/src/sitemap.xml",
+              "projects/website/src/robots.txt"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
