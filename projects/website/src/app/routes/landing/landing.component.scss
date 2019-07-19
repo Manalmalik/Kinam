@@ -105,6 +105,36 @@ h1 {
   }
 }
 
+.jacket-img-grid {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0.75rem;
+
+  &__img {
+    background-size: cover;
+    background-position: center center;
+    height: 360px;
+    filter: contrast(1);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: contrast(1.25);
+      transition: all 0.2s ease-in-out;
+    }
+
+    &-1 {
+      background-image: url(/assets/jacket1_bg.jpg);
+    }
+    &-2 {
+      background-image: url(/assets/jacket2_bg.jpg);
+    }
+    &-3 {
+      background-image: url(/assets/jacket3_bg.jpg);
+    }
+  }
+}
+
 .section {
   &__hero {
     position: relative;
@@ -152,38 +182,6 @@ h1 {
       line-height: 1.1;
       position: relative;
       padding-right: 8rem;
-    }
-
-    &__img-grid {
-      display: grid;
-      max-width: 100%;
-      grid-template-columns: auto auto auto;
-      grid-gap: 0.75rem;
-
-      &__img1,
-      &__img2,
-      &__img3 { 
-        background-size: cover;
-        background-position: center center;
-        height: 360px;
-        filter: contrast(1);
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          filter: contrast(1.25);
-          transition: all 0.2s ease-in-out;
-        }
-      }
-
-      &__img1 {
-        background-image: url(/assets/jacket1_bg.jpg);
-      }
-      &__img2 {
-        background-image: url(/assets/jacket2_bg.jpg);
-      }
-      &__img3 {
-        background-image: url(/assets/jacket3_bg.jpg);
-      }
     }
   }
 
@@ -279,6 +277,7 @@ h1 {
 
   &__image {
     background-size: cover;
+    background-position: center;
     filter: grayscale(25%);
     position: absolute;
     transition: all 0.33s ease-in-out;
@@ -452,7 +451,8 @@ Complex Button start
     a {
       font-size: 1.2rem;
       color: white;
-  
+      line-height: 1;
+      
       &:hover {
         color: #adadad;
       }
@@ -931,8 +931,9 @@ Complex Button start
 }
 
 @media (min-width: 1087px)  { 
+  .jacket-img-grid__img,
   .gradient--small {
-    max-height: 360px;
+    height: 600px;
   }
 }
 
