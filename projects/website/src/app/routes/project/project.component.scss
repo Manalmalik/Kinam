@@ -3,9 +3,8 @@
     margin-top: 4rem;
 }
 
-.section__mayans__img {
-    background-image: url(/assets/mayansBg.jpg);
-    background-position: center;
+.section__social__img {
+    background-image: url(/assets/socialBg.jpg);
     background-size: cover;
     height: 30rem;
     background-position: center center;
@@ -14,4 +13,9 @@
 h1 {
     text-align: center;
     font-size: 3rem;
+    color: white
+}
+
+p {
+    margin-bottom: 2rem
 }

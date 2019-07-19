@@ -37,8 +37,10 @@ import { ProjectComponent } from './routes/project/project.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
-  { path: 'product', component: ProductComponent },
-  { path: 'playbook', component: PlaybookComponent },
+  { path: 'the-jacket', component: ProductComponent },
+  { path: 'the-mayans', component: MayansComponent },
+  { path: 'the-mayans', component: MayansComponent },
+  { path: 'social-projects', component: ProjectComponent },
   { path: '**', redirectTo: '' },
 ];
 

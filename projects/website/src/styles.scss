@@ -17,6 +17,11 @@ html {
   font-weight: 400;
 }
 
+
+p {
+  color: white;
+}
+
 h1, h2, h3 h4 {
   color: white;
   font-weight: bold;
@@ -49,6 +54,41 @@ html {
 
 .current-color {
   stroke: currentColor;
+}
+
+
+.gradient {
+  height: 60vh;
+  min-height: 20rem;  
+  width: 100%;
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+  } 
+
+  &__image {
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(25%);
+    position: absolute;
+    transition: filter 0.33s ease-in-out;
+  }
+
+  &__overlay {
+    position: absolute;
+    cursor: pointer;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 120%);
+    transition: transform 800ms ease-out;
+    transition-delay: 200ms;
+    transform: translateY(0);
+  }
+
+  &--small {
+    height: 400px;
+    margin-bottom: 2rem;
+  }
 }
 
 .interaction {
