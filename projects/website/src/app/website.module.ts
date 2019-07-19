@@ -39,7 +39,6 @@ const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'the-jacket', component: ProductComponent },
   { path: 'the-mayans', component: MayansComponent },
-  { path: 'the-mayans', component: MayansComponent },
   { path: 'social-projects', component: ProjectComponent },
   { path: '**', redirectTo: '' },
 ];
