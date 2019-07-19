@@ -23,8 +23,13 @@ export class MayansComponent implements OnInit {
 
     this.meta.addTag({ name: 'description', content: `In the jungles of Guatemala the ancient civilization of the Mayas with its beautiful art, architecture & astrology is waiting to be shared with the world.` });
     this.meta.addTag({ name: 'image', content: 'https://kinam13.com/assets/mayansBg.jpg' });
+
+    this.meta.addTag({ name: 'og:title', content: 'An Ancient Civilization.' });
     this.meta.addTag({ name: 'og:image', content: 'https://kinam13.com/assets/mayansBg.jpg' });
     this.meta.addTag({ name: 'og:description', content: `In the jungles of Guatemala the ancient civilization of the Mayas with its beautiful art, architecture & astrology is waiting to be shared with the world.` });
+    this.meta.addTag({ name: 'og:url', content: `https://kinam13.com/the-mayans` });
+    this.meta.addTag({ name: 'og:type', content: `website` });
+
     this.titleService.setTitle({ description: 'An Ancient Civilization.' })
   }
 
