@@ -108,6 +108,8 @@ h1 {
 .section {
   &__hero {
     position: relative;
+    opacity: 0;
+
 
     &__heading {
       text-align: right;
