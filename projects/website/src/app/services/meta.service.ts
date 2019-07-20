@@ -20,8 +20,6 @@ export class MetaService {
     ];
 
     tags.forEach(t => this.meta.removeTagElement(t));
-
-    debugger
   }
 
   public setMeta({

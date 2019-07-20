@@ -3,11 +3,20 @@
     margin-top: 4rem;
 }
 
+
+.gradient {
+    height: 30rem;
+}
+
+.gradient--small {
+    margin-bottom: 0;
+}
+
 .section__social__img {
     background-image: url(/assets/socialBg.jpg);
     background-size: cover;
     height: 30rem;
-    background-position: center center;
+    background-position: center 60%;
 }
 
 h1 {

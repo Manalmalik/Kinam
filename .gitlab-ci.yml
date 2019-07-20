@@ -21,7 +21,7 @@ Deploy:
   stage: deploy
   script:
     - npm run build:website
-    - rsync -avz -e "ssh -o StrictHostKeyChecking=no" --progress ./dist/website/* root@167.86.100.47:/var/www/html
+    - rsync -avz -e "ssh -o StrictHostKeyChecking=no" --progress ./dist/browser/* root@167.86.100.47:/var/www/html
   only:
     - master
 

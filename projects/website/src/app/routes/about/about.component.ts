@@ -3,11 +3,11 @@ import { TitleService, MetaService } from '@website/services';
 import { AnimationBuilder, style, animate } from '@angular/animations';
 
 @Component({
-  selector: 'kinam-music',
-  templateUrl: './music.component.html',
-  styleUrls: ['./music.component.scss']
+  selector: 'kinam-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss']
 })
-export class MusicComponent implements OnInit {
+export class AboutComponent implements OnInit {
   @ViewChild('main') main: ElementRef;
 
   constructor(
@@ -35,12 +35,13 @@ export class MusicComponent implements OnInit {
     setTimeout(() => anim.create(this.main.nativeElement).play(), 200);
 
     this.metaService.setMeta({
-      description: 'From the beginning, KINAM’s mission was to share meaningful stories with people to form new emotional connections across the globe.',
-      image: 'https://kinam13.com/assets/wall_bg.jpg',
-      title: 'Stories told by music.',
-      url: `https://kinam13.com/music`
+      description: 'The idea for KINAM was born in 2013 in Guatemala as a way to celebrate the ancient Maya traditions.',
+      image: 'https://kinam13.com/assets/socialBg.jpg',
+      title: 'Growing stronger together.',
+      url: `https://kinam13.com/about`
     });
 
-    this.titleService.setTitle({ description: 'Stories told by music.' })
+    this.titleService.setTitle({ description: 'Growing stronger together.' })
+
   }
 }

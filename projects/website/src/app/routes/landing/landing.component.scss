@@ -27,10 +27,6 @@ a {
   color: inherit;
 }
 
-.spotify-player {
-  height: 300px;
-}
-
 
 h1 {
   pointer-events: none;
@@ -190,7 +186,7 @@ h1 {
       background-image: url(/assets/mayansBg.jpg);
       background-size: cover;
       height: 30rem;
-      background-position: 0% 0%;
+      background-position: 0% 50%
     }
   }
 
@@ -213,7 +209,7 @@ h1 {
       background-image: url(/assets/socialBg.jpg);
       background-size: cover;
       height: 30rem;
-      background-position: center center;
+      background-position: center 60%;
     }
 
     &__header {
@@ -257,13 +253,6 @@ h1 {
     margin: 0 0.5rem;
   }
 }
-
-.spotify-container {
-  position: absolute;
-  width: 100%;
-  top: 60px;
-}
-
 
 .btn {
   &--indigogo {
@@ -404,6 +393,8 @@ Complex Button start
 .order-now {
   &__container {
     margin-top: 4rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   &__links {

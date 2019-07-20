@@ -17,6 +17,21 @@ html {
   font-weight: 400;
 }
 
+.wall__bg {
+  background-image: url("/assets/wall_bg.jpg");
+  background-position-y: center;
+}
+
+.spotify-container {
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  min-height: 20rem;
+}
+
+.spotify-player {
+  height: 300px;
+}
 
 p {
   color: white;
