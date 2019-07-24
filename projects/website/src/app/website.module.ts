@@ -31,12 +31,14 @@ import { MusicComponent } from './routes/music/music.component';
 import { MayansComponent } from './routes/mayans/mayans.component';
 import { ProjectComponent } from './routes/project/project.component';
 import { AboutComponent } from './routes/about/about.component';
+import { CalendarComponent } from './routes/calendar/calendar.component';
 
 
 const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'the-jacket', component: ProductComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'calendar', component: CalendarComponent },
   { path: 'music', component: MusicComponent },
   { path: 'the-mayans', component: MayansComponent },
   { path: 'social-projects', component: ProjectComponent },
@@ -63,6 +65,7 @@ const routes: Routes = [
     MayansComponent,
     ProjectComponent,
     AboutComponent,
+    CalendarComponent,
   ],
   providers: [EntryGuard],
   entryComponents: [LoginDialogComponent, DialogComponent],

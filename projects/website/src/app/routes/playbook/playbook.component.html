@@ -1,6 +1,10 @@
 <div class="icon-header">
   <kinam-simple-logo></kinam-simple-logo>
-  <img src="/assets/menu.svg" class="menu-icon" (click)="toggleMenu()" />
+  <img
+    src="/assets/menu.svg"
+    class="menu-icon"
+    (click)="toggleMenu()"
+  />
 </div>
 
 <h1>Playbook</h1>
@@ -93,15 +97,24 @@
 
 <div class="columns">
   <div class="column">
-    <kinam-maya-number-block class="is-centered" [number]="number?.day">
+    <kinam-maya-number-block
+      class="is-centered"
+      [number]="number?.day"
+    >
     </kinam-maya-number-block>
   </div>
   <div class="column">
-    <kinam-maya-number-block class="is-centered" [number]="number?.month">
+    <kinam-maya-number-block
+      class="is-centered"
+      [number]="number?.month"
+    >
     </kinam-maya-number-block>
   </div>
   <div class="column">
-    <kinam-maya-number-block class="is-centered" [number]="number?.year">
+    <kinam-maya-number-block
+      class="is-centered"
+      [number]="number?.year"
+    >
     </kinam-maya-number-block>
   </div>
 </div>
@@ -129,7 +142,6 @@
   </div>
 </div> -->
 
-<kinam-birthday></kinam-birthday>
 
 <hr>
 <h2>Tab Container</h2>

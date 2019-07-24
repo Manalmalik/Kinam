@@ -1,35 +1,75 @@
-<ng-template #initialDay>
-  <div class="initial-day">
-    Enter your birthday <br>
-    to find out <br>
-    your Nawal
-  </div>
-</ng-template>
-
-<div style="min-height: 30rem;" *ngIf="!!loading$; else initialDay">
-  <div *ngIf="content$ | async as content" [ngSwitch]="!(loading$ | async)">
+<div
+  style="min-height: 30rem;"
+  *ngIf="!!loading$"
+>
+  <div
+    *ngIf="content$ | async as content"
+    [ngSwitch]="!(loading$ | async)"
+  >
     <div class="columns">
-      <div [formGroup]="form">
-        <div class="birthday-input">
-          <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'day'">
-            <label class="label">Day</label>
-            <input class="date-input" (focus)="focus('day')" (blur)="blur()" id="day" type="number" min="1" max="31"
-              placeholder="Day" formControlName="day" />
-          </div>
-          <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'month'">
-            <label class="label">Month</label>
-            <input class="date-input" (focus)="focus('month')" (blur)="blur()" id="month" type="number" min="1" max="12"
-              placeholder="Month" formControlName="month" />
-          </div>
-          <div class="birthday-input__number-container" [class.is-focussed]="focussed === 'year'">
-            <label class="label">Year</label>
-            <input class="date-input" (focus)="focus('year')" (blur)="blur()" id="year" type="number" min="1900"
-              max="2099" placeholder="Year" formControlName="year" />
-          </div>
+
+      <div
+        class="birthday-input column is-6"
+        [formGroup]="form"
+      >
+        <div
+          class="birthday-input__number-container"
+          [class.is-focussed]="focussed === 'day'"
+        >
+          <label class="label">Day</label>
+          <input
+            class="date-input"
+            (focus)="focus('day')"
+            (blur)="blur()"
+            id="day"
+            type="number"
+            min="1"
+            max="31"
+            placeholder="Day"
+            formControlName="day"
+          />
+        </div>
+        <div
+          class="birthday-input__number-container"
+          [class.is-focussed]="focussed === 'month'"
+        >
+          <label class="label">Month</label>
+          <input
+            class="date-input"
+            (focus)="focus('month')"
+            (blur)="blur()"
+            id="month"
+            type="number"
+            min="1"
+            max="12"
+            placeholder="Month"
+            formControlName="month"
+          />
+        </div>
+        <div
+          class="birthday-input__number-container"
+          [class.is-focussed]="focussed === 'year'"
+        >
+          <label class="label">Year</label>
+          <input
+            class="date-input"
+            (focus)="focus('year')"
+            (blur)="blur()"
+            id="year"
+            type="number"
+            min="1900"
+            max="2099"
+            placeholder="Year"
+            formControlName="year"
+          />
         </div>
       </div>
     </div>
-    <div class="reading columns" *ngSwitchCase="true" [@calc]>
+    <div
+      class="reading columns"
+      *ngSwitchCase="true"
+      [@calc]
+    >
       <div class="column is-4-desktop">
         <h2 class="title has-text-centered has-text-white">
           {{content.your_daysign}}:
@@ -38,8 +78,12 @@
         </h2>
       </div>
       <div class="column is-4-desktop">
-        <img *ngIf="kinamDate?.image" [src]="kinamDate?.image" [attr.alt]="'Nawal Sign: ' + kinamDate?.daySign"
-          class="nawal-img" />
+        <img
+          *ngIf="kinamDate?.image"
+          [src]="kinamDate?.image"
+          [attr.alt]="'Nawal Sign: ' + kinamDate?.daySign"
+          class="nawal-img"
+        />
       </div>
       <div class="column is-4">
         <h2 class="title has-text-centered has-text-white">
@@ -47,20 +91,47 @@
           <br>
           {{ kinamDate?.nahualDay  }}
         </h2>
-        <kinam-maya-number-block class="is-centered is-inverted" [number]="kinamDate?.nahualDay">
+        <kinam-maya-number-block
+          class="is-centered is-inverted"
+          [number]="kinamDate?.nahualDay"
+        >
         </kinam-maya-number-block>
       </div>
     </div>
 
     <ng-content></ng-content>
 
-    <div *ngSwitchCase="false" [@calc] class="calculating">
+    <div
+      *ngSwitchCase="false"
+      [@calc]
+      class="calculating"
+    >
       <h2 class="title has-text-white"> {{content.calculating}}</h2>
-      <svg width="100px" height="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
-        preserveAspectRatio="xMidYMid" class="lds-ball" style="background: none;">
-        <circle cx="50" cy="35.7097" r="13" fill="#fdfdfd">
-          <animate attributeName="cy" calcMode="spline" values="23;77;23" keyTimes="0;0.5;1" dur="1"
-            keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" begin="0s" repeatCount="indefinite"></animate>
+      <svg
+        width="100px"
+        height="100px"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+        class="lds-ball"
+        style="background: none;"
+      >
+        <circle
+          cx="50"
+          cy="35.7097"
+          r="13"
+          fill="#fdfdfd"
+        >
+          <animate
+            attributeName="cy"
+            calcMode="spline"
+            values="23;77;23"
+            keyTimes="0;0.5;1"
+            dur="1"
+            keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9"
+            begin="0s"
+            repeatCount="indefinite"
+          ></animate>
         </circle>
       </svg>
     </div>
