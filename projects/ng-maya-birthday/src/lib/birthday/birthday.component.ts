@@ -121,7 +121,7 @@ export class BirthdayComponent implements OnInit {
       const dayStr = day < 10 ? `0${day}` : day;
       const monthStr = month < 10 ? `0${month}` : month;
       // TODO: make this a proper ISO timestamp
-      const date = moment.utc(`${year}/${monthStr}/${dayStr}`);
+      const date = moment.utc(`${year}-${monthStr}-${dayStr}`);
 
       const offset = date.utcOffset();
       if (!date.isValid() || offset !== 0) {
