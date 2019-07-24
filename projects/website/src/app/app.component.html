@@ -1,24 +1,25 @@
 <div class="columns is-mobile header">
-    <div class="column logo">
-        <img
-            routerLink="/"
-            src="assets/kinam_logo_white_website_white.svg"
-            width="200"
-            alt="Logo"
-        >
-    </div>
-    <div class="icon-header">
-        <img
-            alt="Menu Icon"
-            src="/assets/menu.svg"
-            class="menu-icon"
-            (click)="toggleMenu()"
-        />
-    </div>
+  <div class="column logo">
+    <a routerLink="/">
+      <img
+        src="assets/kinam_logo_white_website_white.svg"
+        width="200"
+        alt="Logo"
+      >
+    </a>
+  </div>
+  <div class="icon-header">
+    <img
+      alt="Menu Icon"
+      src="/assets/menu.svg"
+      class="menu-icon"
+      (click)="toggleMenu()"
+    />
+  </div>
 </div>
 
 <ng-container *ngIf="authenticated">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </ng-container>
 
 <kinam-menu></kinam-menu>

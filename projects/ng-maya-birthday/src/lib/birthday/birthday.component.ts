@@ -69,7 +69,6 @@ export class BirthdayComponent implements OnInit {
   public get focussed() {
     return this._focussed;
   }
-  public date = new Date();
   public kinamDate: KinamNahual;
   public dateCtrl: FormControl;
   public loading$: BehaviorSubject<boolean>;
@@ -81,14 +80,14 @@ export class BirthdayComponent implements OnInit {
   public ngOnInit() {
     const lastDate = localStorage.getItem('birthday');
 
-    const today = new Date();
+    const today = moment();
     if (!lastDate) {
       this.form = new FormGroup({
-        day: new FormControl(today.getDate()),
-        month: new FormControl(today.getMonth() + 1),
-        year: new FormControl(today.getFullYear())
+        day: new FormControl(today.toDate().getDate()),
+        month: new FormControl(today.toDate().getMonth() + 1),
+        year: new FormControl(today.toDate().getFullYear())
       });
-      this.kinamDate = kinamNahual(today);
+      this.kinamDate = kinamNahual(today.toDate());
     } else {
       const timestamp = new Date(lastDate);
       this.form = new FormGroup({
@@ -121,6 +120,7 @@ export class BirthdayComponent implements OnInit {
     ).subscribe(({ day, month, year }) => {
       const dayStr = day < 10 ? `0${day}` : day;
       const monthStr = month < 10 ? `0${month}` : month;
+      // TODO: make this a proper ISO timestamp
       const date = moment.utc(`${year}/${monthStr}/${dayStr}`);
 
       const offset = date.utcOffset();
