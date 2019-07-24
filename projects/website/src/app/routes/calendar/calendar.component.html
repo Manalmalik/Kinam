@@ -1,9 +1,37 @@
-<section class="section">
-  <h1 class="title">Calendar</h1>
-  <h2 class="subtitle">Enter your birthday</h2>
-  <div class="columns">
-    <div class="column">
-      <kinam-birthday></kinam-birthday>
+<div
+  class="main"
+  #main
+>
+  <section class="section">
+    <h1 class="title">Calendar</h1>
+    <h2 class="subtitle">Enter your birthday</h2>
+    <div class="columns">
+      <div class="column">
+        <kinam-birthday (nawalSelected)="setNawal($event)"></kinam-birthday>
+      </div>
     </div>
-  </div>
-</section>
+    <div
+      *ngIf="selectedNawal"
+      class="section"
+    >
+
+      <h3 class="subtitle">Your Reading</h3>
+      <div class="columns">
+        <div class="column">
+          <h2 class="subtitle">Meaning</h2>
+
+          <hr>
+          {{ selectedNawal.Meaning }}
+        </div>
+
+        <div class="column">
+          <h2 class="subtitle">Characteristics</h2>
+          <hr>
+
+          {{ selectedNawal.Characteristics }}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>

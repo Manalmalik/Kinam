@@ -4,6 +4,11 @@
 }
 
 
+.main {
+  transform: translateY(-100px);
+  opacity: 0;
+}
+
 .gradient {
     height: 30rem;
 }
@@ -31,9 +36,4 @@ h2 {
 
 p {
     margin-bottom: 2rem
-}
-
-.main {
-    transform: translateY(-100px);
-    opacity: 0;
 }

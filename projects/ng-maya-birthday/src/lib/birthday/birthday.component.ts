@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   DateAdapter,
@@ -63,6 +63,8 @@ export class BirthdayComponent implements OnInit {
     your_daysign: 'Your Spirit Guardian',
     your_nahual_number: 'Your Energy Number',
   });
+
+  @Output() nawalSelected = new EventEmitter();
 
   public get focussed() {
     return this._focussed;
@@ -129,6 +131,7 @@ export class BirthdayComponent implements OnInit {
       this.localStorageService.set('birthday', date.toString());
       this.kinamDate.update(date.toDate());
       this.loading$.next(false);
+      this.nawalSelected.emit(this.kinamDate.nahualName);
       this.cd.detectChanges();
     });
 
