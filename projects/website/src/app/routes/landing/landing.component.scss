@@ -17,12 +17,12 @@
   font-size: 6vw;
   font-weight: bolder;
   text-align: right;
-  line-height: 1.1;
+  line-height: 1;
   position: relative;
   padding-right: 8rem;
   padding-left: 2rem;
   transform: translateY(-130px);
-  margin-top: 7.5rem;
+  margin-top: 7rem;
 }
 
 a {
@@ -448,15 +448,17 @@ Complex Button start
     justify-content: left;
     line-height: 1;
     padding: 1rem 0 1rem 0;
+    font-family: freight-sans-pro;
   }
 
   &__text{
     position: relative;
     font-size: 11px;
-    font-weight: bold;
+    //font-weight: bold;
     margin-bottom: 20px;
     line-height: 1.5;
     padding-bottom: 2rem;
+    font-family: freight-sans-pro;
   }
 }
 
@@ -548,7 +550,7 @@ Complex Button start
 
 .btn--text{
   position: relative;
-  margin: 1.0rem -10rem;
+  margin: 1.5rem -10rem;
   display: block;
   line-break: pre;
 }
@@ -618,17 +620,32 @@ Complex Button start
   margin-bottom: 2rem;
 
   &__headline {
-    font-size: 3rem;
-    font-weight: bolder;
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
     line-height: 1;
     margin-bottom: 1rem;
     font-family: freight-sans-pro;
+    //  position: relative;
+    // font-size: 36px;
+    // font-weight: bold;
+    // justify-content: left;
+    // line-height: 1;
+    // padding: 1rem 0 1rem 0;
+    // font-family: freight-sans-pro;
   }
 
   &__body {
-    font-size: 1rem;
+    font-size: 15px;
     font-family: freight-sans-pro;
-    font-weight: 100;
+    line-height: 1.5;
+
+    // position: relative;
+    // font-size: 11px;
+    // font-weight: bold;
+    // margin-bottom: 20px;
+    // line-height: 1.5;
+    // padding-bottom: 2rem;
   }
 }
 
