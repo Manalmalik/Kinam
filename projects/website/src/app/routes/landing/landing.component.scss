@@ -259,8 +259,8 @@ h1 {
   }
 
   &__footer{ 
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: black;
     min-height: 4rem;
     font-weight: bold;
   }
@@ -422,14 +422,14 @@ Complex Button start
     align-items: center;
     //padding-top: 2rem;
     justify-content: flex-start;
-    align-items: center;
+    //align-items: center;
 
 
     a {
       font-size: 0.7rem;
       color: white;
       line-height: 1;
-      text-decoration: underline;
+      //text-decoration: underline;
       
       &:hover {
         color: #adadad;
@@ -457,7 +457,7 @@ Complex Button start
     //font-weight: bold;
     margin-bottom: 20px;
     line-height: 1.5;
-    padding:1rem 0 2rem 0;
+    //padding:1rem 2rem;
     font-family: freight-sans-pro;
   }
 }
@@ -471,7 +471,7 @@ Complex Button start
 
 
 .btn--mayans {
- // width: 11rem;
+  width: 11rem;
   margin: 2.0rem 10rem auto;
 
   .hover-container {
@@ -481,12 +481,12 @@ Complex Button start
     position: relative;
   }
 
-  .behind,
-  .inner,
-  .outline {
-    width: 11rem;
-    height: 3rem;
-  }
+  // .behind,
+  // .inner,
+  // .outline {
+  //   width: 11rem;
+  //   height: 3rem;
+  // }
   
   .inner {
     border: 2px solid white;
@@ -651,7 +651,8 @@ Complex Button start
 
 .social-links {
   text-align: center;
-  
+
+
   &__link {
     cursor: pointer;
     transition: 0.2s color ease-in-out;
@@ -1061,3 +1062,8 @@ Complex Button start
     padding: 0;
   }
 }
+
+.line{
+  border-bottom: 1px solid white;
+  position: relative;
+  }
