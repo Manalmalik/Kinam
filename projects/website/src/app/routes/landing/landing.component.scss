@@ -122,13 +122,13 @@ h1 {
     }
 
     &-1 {
-      background-image: url(/assets/jacket1_bg.jpg);
+      background-image: url(/assets/jacket01_bg.png);
     }
     &-2 {
-      background-image: url(/assets/jacket2_bg.jpg);
+      background-image: url(/assets/jacket02_bg.png);
     }
     &-3 {
-      background-image: url(/assets/jacket3_bg.jpg);
+      background-image: url(/assets/jacket03_bg.png);
     }
   }
 }
@@ -1006,7 +1006,7 @@ Complex Button start
 @media (min-width: 1087px)  { 
   .jacket-img-grid__img,
   .gradient--small {
-    height: 400px;
+    height: 380px;
   }
 }
 
@@ -1066,4 +1066,18 @@ Complex Button start
 .line{
   border-bottom: 1px solid white;
   position: relative;
+  }
+
+  .participate-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4%;
+  }
+
+  .participate-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5%;
   }
