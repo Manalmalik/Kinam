@@ -133,6 +133,36 @@ h1 {
   }
 }
 
+.projects-img-grid {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0.75rem;
+
+  &__img {
+    background-size: cover;
+    background-position: center center;
+    height: 360px;
+    filter: contrast(1);
+    transition: filter 0.2s ease-in-out;
+
+    &:hover {
+      filter: contrast(1.25);
+      transition: filter 0.2s ease-in-out;
+    }
+
+    &-1 {
+      background-image: url(/assets/mayans01.jpg);
+    }
+    &-2 {
+      background-image: url(/assets/mayans02.jpg);
+    }
+    &-3 {
+      background-image: url(/assets/mayans03.jpg);
+    }
+  }
+}
+
 .section {
   &__hero {
     position: relative;
