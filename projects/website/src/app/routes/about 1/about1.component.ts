@@ -3,13 +3,13 @@ import { TitleService, MetaService } from '@website/services';
 import { AnimationBuilder, style, animate } from '@angular/animations';
 
 @Component({
-  selector: 'kinam-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: 'kinam-about-1',
+  templateUrl: './about1.component.html',
+  styleUrls: ['./about1.component.scss']
 })
 
 
-export class AboutComponent implements OnInit {
+export class About1Component implements OnInit {
   @ViewChild('main') main: ElementRef;
 
   constructor(
@@ -40,7 +40,7 @@ export class AboutComponent implements OnInit {
       description: 'The idea for KINAM was born in 2013 in Guatemala as a way to celebrate the ancient Maya traditions.',
       image: 'https://kinam13.com/assets/socialBg.jpg',
       title: 'Growing stronger together.',
-      url: `https://kinam13.com/about`
+      url: `https://kinam13.com/about-1`
     });
 
     this.titleService.setTitle({ description: 'Growing stronger together.' })

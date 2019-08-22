@@ -219,6 +219,7 @@ h1 {
       position: relative;
       padding:0rem 9.5rem 20rem 0rem;
       margin-top: -1rem;
+      margin-left: 10vw;
     }
   }
 
@@ -736,11 +737,21 @@ Complex Button start
   .hero-text {
     justify-content: flex-start;
   }
+
+  .section__jacket__header{
+    margin:0 8rem 0 5rem;
+  }
+
+  .interaction-bar{
+    transform: translateY(-420px); 
+    padding-left: 0;
+
+  }
 }
 
 
 
-@media (min-width: 0) and (max-width: 1407px) { 
+@media (min-width: 1407px) { 
 
   .section__mayans .text {
     transform: translateY(-90px);
@@ -767,6 +778,12 @@ Complex Button start
         text-align: center;
       }
     }
+
+    .interaction-bar{
+      transform: translateY(-420px); 
+      margin:0 5rem 0 10rem
+
+    }
  }
 
 @media (min-width: 0) and (max-width: 1087px) {  
@@ -776,7 +793,8 @@ Complex Button start
     
     &__jacket {
       .interaction-bar {
-        transform: translateY(-60px);
+        transform: translateY(-380px);
+        //margin:0 5rem 0 10rem
       }
       
       &__header {
@@ -909,7 +927,7 @@ Complex Button start
   }
 
   .interaction-bar__item {
-    font-size: 10px;
+    font-size: 7.2vw;
 
     .fal,
     .fas {

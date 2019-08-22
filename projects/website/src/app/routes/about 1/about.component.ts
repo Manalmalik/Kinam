@@ -8,7 +8,11 @@ import { AnimationBuilder, style, animate } from '@angular/animations';
   styleUrls: ['./about.component.scss']
 })
 
-
+@Component({
+  selector: 'kinam-about-1',
+  templateUrl: './about1.component.html',
+  styleUrls: ['./about.component.scss']
+})
 export class AboutComponent implements OnInit {
   @ViewChild('main') main: ElementRef;
 

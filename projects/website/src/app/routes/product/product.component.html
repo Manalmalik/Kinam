@@ -1,3 +1,40 @@
+<style type="text/css">
+  .fill {
+    color: white;
+    background-color: black;
+    z-index: 5;
+    font-size: 2rem;
+    font-family: century-gothic, sans-serif;
+}
+.tabOutline {
+    border: 0px solid white;
+    /* max-width: 620px; */
+    /* min-height: 200px; */
+    /* border-radius: 0.5rem; */
+    /* margin: 0 auto; */
+}
+.mat-tab-label  {
+    height: 48px;
+    /* padding: 0 24px; */
+    /* cursor: pointer; */
+    box-sizing: border-box;
+    opacity: .6;
+    min-width: 50px!important;
+    /* text-align: center; */
+    /* display: inline-flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* white-space: nowrap; */
+    /* position: relative; */
+}
+
+.mat-ink-bar {
+    position: absolute;
+    bottom: 0;
+    height: 0px!important; 
+    transition: .5s cubic-bezier(.35,0,.25,1);
+}
+</style>
 <div
   class="columns is-gapless columns--main"
   #main
@@ -6,7 +43,15 @@
 
     <kinam-product-header></kinam-product-header>
 
-    <div class="interaction-bar">
+  
+
+
+    <div style="padding-left: 40px">
+      <div style="margin-top: 1.5rem">
+       <div class="tabOutline">
+<mat-tab-group>
+  <mat-tab label="O">
+      <div class="interaction-bar">
       <div class="interaction-bar__item">
         <i class="fal fa-seedling"></i>
         <div class="icon-label">
@@ -28,14 +73,33 @@
         </div>
       </div>
     </div>
+  </mat-tab>
+  <mat-tab label="O">
+    <section class="section">
+  <div class="columns">
+    <div class="column">
+      <kinam-product-slider></kinam-product-slider>
+    </div>
+  </div>
+  <h1 style="font-size: 40px">Garments Selling Stories </h1>
+ Looking to make a fashion statement? Your unique KINAM jacket will do it for you. Comprised of high-quality,
+      organic textile, our one-of-a-kind garments are where modern street style meets the ancient Maya civilization with
+      3,000-year-old weaving prajacctices. Each jacket features a bold, unisex design, telling the story of one of six
+      represented Maya tribes. Eventually, we aim to expand our product line to include all 22 Maya communities. Our
+      goal is sustainable, transparent production, designed in Berlin and hand-woven in Guatemala by Maya-descendant
+      artisans in fair conditions. 10% of every sale will go back to Guatemala via our social projects, to support the
+      Mayas and help them build skills for a better future.
+  
+</section>
+  </mat-tab>
+  <mat-tab label="O">
+     <h1 style="font-size: 40px">Weaving ancient threads </h1>
+    The fabric of every Kinam jacket is hand-woven with love by Maya descendant artisans in Guatermala,masterfully created over 3 to 6 months per garment.The textile is composed 100% of cotton yarn using a foot loom,then dyed with the ikat technique,locally referred to as "Jaspe",in which threads are bound and knotted to achieve the desired patterns and colors.The handweaving technique is passed down through the Maya communities over generations to their children,to preserve traditions and tell the stories of their ancestors and hand via the artful textile.With our jackets,we want to give the artisans recognition and respect by bringing their beautiful guarments to the world fashion stage.
+  </mat-tab>
+ 
+</mat-tab-group>
+</div>
 
-
-    <div style="padding-left: 40px">
-      <div style="margin-top: 1.5rem">
-        <strong>Handmade jacket</strong> made by the mayan <br>
-        artisans of guatemala
-        <br>
-        <br>
       </div>
 
       <hr class="product-divider">
@@ -44,26 +108,29 @@
         <div class="outer">
           <div
             class="inner overlay"
-            id="overlay"
+            id="overlay" style="width: 18rem;
+    height: 5rem;"
           ></div>
-          <div class="inner outline"></div>
-          <div class="behind fill ">
+          <div class="inner outline" style="width: 18rem;
+    height: 5rem;" ></div>
+          <div class="behind fill " style="width: 18rem;
+    height: 5rem;">
             <div class="order-now__content">
               <div
-                class="is-pulled-left"
-                style="font-weight: 600;font-family: century-gothic;font-size: 24px;margin-top: 8px;"
+                class=""
+                style="font-weight: 600;font-family: century-gothic;font-size: 30px;margin-top: -15px;"
               >
-                &nbsp;&nbsp;&nbsp;ORDER NOW <i
+                &nbsp;ORDER NOW <i
                   class="fal fa-chevron-right"
-                  style="margin-left: 6px"
+                  style="margin-left: 6px;"
                 ></i>
-              </div>
-              <div class="is-pulled-right indiegogo__container">
-                Support our <br>
+              </div> <br>
+              <div class=" " style=" font-size: 15px; margin-left: 5px;   margin-top: -45px;">
+              <b>  Support our
                 <a
-                  class="indiegogo__link"
+                  class=""
                   href="#"
-                >INDIEGOGO</a> campaign
+                >INDIEGOGO</a> campaign</b>
               </div>
             </div>
           </div>
@@ -74,8 +141,9 @@
 
   <div class="column column__model">
     <img
-      src="assets/bottom_leaf.png"
-      style="position: absolute; z-index: -1; right: 10rem; min-height: 100vh;"
+      src="assets/jacket.png"
+      style=" position: absolute; z-index: -1; right: 0rem; min-height: 100vh;min-width: 200vh  
+" 
       alt="Bottom Leaf"
     >
     <img
@@ -87,26 +155,9 @@
 
 </div>
 
-<hr>
 
-<section class="section">
-  <div class="columns">
-    <div class="column">
-      <kinam-product-slider></kinam-product-slider>
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column is-6 is-offset-3">
-      Looking to make a fashion statement? Your unique KINAM jacket will do it for you. Comprised of high-quality,
-      organic textile, our one-of-a-kind garments are where modern street style meets the ancient Maya civilization with
-      3,000-year-old weaving prajacctices. Each jacket features a bold, unisex design, telling the story of one of six
-      represented Maya tribes. Eventually, we aim to expand our product line to include all 22 Maya communities. Our
-      goal is sustainable, transparent production, designed in Berlin and hand-woven in Guatemala by Maya-descendant
-      artisans in fair conditions. 10% of every sale will go back to Guatemala via our social projects, to support the
-      Mayas and help them build skills for a better future.
-    </div>
-  </div>
-</section>
+
+
 
 
 <kinam-menu></kinam-menu>

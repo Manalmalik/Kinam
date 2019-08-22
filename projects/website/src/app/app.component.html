@@ -1,21 +1,77 @@
+<style type="text/css" media="screen">
+  .a {
+    color: #f6f6f7;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 12px;
+    padding-right: 83px;
+}
+</style>
 <div class="columns is-mobile header">
-  <div class="column logo" style="height: 50rem">
-    <a routerLink="/">
-      <!-- <img
+  <div class="column logo">
+    <a   routerLink="/">
+      <img
         src="assets/kinam_logo_white_website_white.svg"
         width="200"
         alt="Logo"
-      > -->
-      <kinam-simple-logo style="color: white; padding: 1.5rem 0 0 8rem"></kinam-simple-logo>
+      >
     </a>
+    
+     
+      
+      
+     
+
+   
   </div>
-  <div class="icon-header">
-    <img
-      alt="Menu Icon"
-      src="/assets/menu.svg"
-      class="menu-icon"
-      (click)="toggleMenu()"
-    />
+  <div class="icon-header " style="padding-top:55px; color: white" >
+   <a class="a" 
+          routerLink="/the-jacket"
+          routerLinkActive="active"
+        >
+        THE JACKET
+        </a>
+      
+     
+        <a class="a" 
+          routerLink="/the-mayans"
+          routerLinkActive="active"
+        >
+     THE MAYANS
+        </a>
+      
+     
+        <a class="a" 
+          routerLink="/social-projects"
+          routerLinkActive="active"
+        >
+          SOCIAL PROJECTS
+        </a>
+      
+     
+        <a class="a" 
+          routerLink="/music"
+          routerLinkActive="active"
+        >
+          THE MUSIC
+        </a>
+      
+     
+      
+      
+     
+        <a class="a" 
+          routerLink="/about"
+          routerLinkActive="active"
+        >
+         OUR STORIES
+        </a>
+      <a class="a" 
+          routerLink="/about"
+          routerLinkActive="active"
+        >
+        SUPPORT US
+        </a>
   </div>
 </div>
 

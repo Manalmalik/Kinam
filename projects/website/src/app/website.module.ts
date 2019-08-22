@@ -30,7 +30,15 @@ import { ProductHeaderComponent } from './components/product-header/product-head
 import { MusicComponent } from './routes/music/music.component';
 import { MayansComponent } from './routes/mayans/mayans.component';
 import { ProjectComponent } from './routes/project/project.component';
+
+import { ProjectComponent1 } from './routes/project/1.component';
+import { ProjectComponent2 } from './routes/project/2.component';
+import { ProjectComponent3 } from './routes/project/3.component';
+
 import { AboutComponent } from './routes/about/about.component';
+import { About1Component } from './routes/about/about1.component';
+import { About2Component } from './routes/about/about2.component';
+import { About3Component } from './routes/about/about3.component';
 import { CalendarComponent } from './routes/calendar/calendar.component';
 
 
@@ -38,10 +46,17 @@ const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'the-jacket', component: ProductComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'about1', component: About1Component },
+  { path: 'about2', component: About2Component },
+  { path: 'about3', component: About3Component },
+
   { path: 'calendar', component: CalendarComponent },
   { path: 'music', component: MusicComponent },
   { path: 'the-mayans', component: MayansComponent },
   { path: 'social-projects', component: ProjectComponent },
+  { path: 'social-projects-1', component: ProjectComponent1 },
+  { path: 'social-projects-2', component: ProjectComponent2 },
+  { path: 'social-projects3', component: ProjectComponent3 },
   { path: '**', redirectTo: '' },
 ];
 
@@ -64,7 +79,13 @@ const routes: Routes = [
     MusicComponent,
     MayansComponent,
     ProjectComponent,
+    ProjectComponent1,
+    ProjectComponent2,
+    ProjectComponent3,
     AboutComponent,
+    About1Component,
+    About2Component,
+    About3Component,
     CalendarComponent,
   ],
   providers: [EntryGuard],

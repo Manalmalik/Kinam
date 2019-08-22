@@ -3,13 +3,13 @@ import { TitleService, MetaService } from '@website/services';
 import { AnimationBuilder, style, animate } from '@angular/animations';
 
 @Component({
-  selector: 'kinam-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: 'kinam-about-2',
+  templateUrl: './about2.component.html',
+  styleUrls: ['./about2.component.scss']
 })
 
 
-export class AboutComponent implements OnInit {
+export class About2Component implements OnInit {
   @ViewChild('main') main: ElementRef;
 
   constructor(
