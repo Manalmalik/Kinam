@@ -227,7 +227,7 @@ h1 {
 
       p {
         text-align: right;
-        padding: 0.5rem 2rem;
+        // padding: 0.5rem 2rem;
       }
     }
     
@@ -390,9 +390,9 @@ Complex Button start
   transition: background 0.3s ease-in-out;
 }
 
-.text {
-  margin: 1rem 2rem;
-}
+// .text {
+//   margin: 1rem 2rem;
+// }
 
 .outer {
   cursor: pointer;
@@ -472,13 +472,14 @@ Complex Button start
 
 .btn--mayans {
   width: 11rem;
-  margin: 1.5rem 9rem 0 auto;
+  margin: -8% 9rem 0 auto;
 
   .hover-container {
     background-color: black;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
+    right: 0;
   }
 
   .behind,
@@ -495,6 +496,7 @@ Complex Button start
   }
 
   .outline {
+    width: 250px;
     border: 2px solid white;
   }
 
@@ -507,6 +509,7 @@ Complex Button start
   }
 
   .fill {
+    width: 250px;
     color: white;
     z-index: 5;
     font-size: 1rem;
@@ -515,15 +518,16 @@ Complex Button start
   }
 
   .overlay {
+    width: 250px;
     background: transparent;
     position: absolute;
     z-index: 5;
     transition: background 0.3s ease-in-out;
   }
 
-  .text {
-    margin: 1rem 2rem;
-  }
+  // .text {
+  //   margin: 1rem 2rem;
+  // }
 
   .outer {
     cursor: pointer;
@@ -562,7 +566,7 @@ Complex Button start
   margin: 8px 16px;
   display: flex;
   justify-content: space-around;
-  line-height: 1.2;
+  line-height: 2.2;
 
   span {
     margin-right: 1rem;
@@ -570,7 +574,8 @@ Complex Button start
   }
 
   .fal {
-    font-size: 2rem;
+    // font-size: 2rem;
+    line-height: 2.2;
   }
 }
 
