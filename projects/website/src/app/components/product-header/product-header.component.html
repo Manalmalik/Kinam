@@ -1,23 +1,17 @@
-<div class="jacket-number">{{position + 1}}/{{tribes.length}}</div>
+<!-- <div class="jacket-number">{{position + 1}}/{{tribes.length}}</div> -->
 
 <div class="headline">
- 
+
 
   <div class="header-container">
-    <div
-      class="slider-container"
-      #slider
-    >
-      <div
-        class="header-text"
-        *ngFor="let tribe of tribes"
-      >
-     <h1 class="" style="font-size: 55px; text-align: right;padding-left: 70px;line-height: 55px;">
+    <div class="slider-container" #slider>
+      <div class="header-text" *ngFor="let tribe of tribes">
+        <h1 class="" style="font-size: 55px; text-align: right;padding-left: 70px;line-height: 55px;">
           <strong>Tribe<br> Kaqchikel
-</strong>
+          </strong>
         </h1>
 
-        <div class="color-grid" >
+        <div class="color-grid">
 
           <div class="color-grid__tile tile_1"></div>
           <div class="color-grid__tile tile_2"></div>
@@ -31,16 +25,6 @@
       </div>
     </div>
   </div>
- <img
-    src="assets/arrow.png"
-    alt="Left Arrow"
-    class="arrow arrow--left"
-    (click)="slide(slider, 'left')"
-  >
-  <img
-    src="assets/arrow.png"
-    alt="Right Arrow"
-    class="arrow arrow--right"
-    (click)="slide(slider, 'right')"
-  >
+  <img src="assets/arrow.png" alt="Left Arrow" class="arrow arrow--left" (click)="slide(slider, 'left')">
+  <img src="assets/arrow.png" alt="Right Arrow" class="arrow arrow--right" (click)="slide(slider, 'right')">
 </div>

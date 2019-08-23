@@ -2,16 +2,15 @@
   color: white;
 }
 
-/*.mat-tab-label-active::before{
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Free";
-   content: "\f111" !important;
-   color: white;
-}*/
+.mat-tab-label {
+  min-width: 25px !important;
+  padding: 0 !important;
+}
+
+.mat-tab-label-container {
+  margin-left: 3% !important;
+}
+
 /* ink bar */
 .mat-ink-bar {
   display: none;
@@ -23,7 +22,8 @@
   max-width: 620px;
   min-height: 200px;
   border-radius: 0.5rem;
-  margin: 0 auto;
+  margin-left: 4rem;
+  // padding: 1rem 1.5rem;
 }
 
 .mat-tab-header-pagination-chevron {
@@ -32,11 +32,23 @@
 
 .mat-tab-body-wrapper {
   height: 200px;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  // padding: 1rem 1.5rem;
+}
+/**  scrollbar start*/
+.mat-tab-body-content {
+  overflow: unset !important;
+}
+
+.mat-tab-body {
+  // overflow: unset !important;
+  height: 200px;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 1rem 1.5rem;
+  padding: 0 1.5rem;
 }
-/**  STYLE 3 */
+
 .mat-tab-body-wrapper::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -44,33 +56,27 @@
 }
 
 .mat-tab-body-wrapper::-webkit-scrollbar {
-	width: 6px;
-	background-color: #F5F5F5;
+	width: 6px !important;
+	background-color: #F5F5F5 !important;
 }
 
 .mat-tab-body-wrapper::-webkit-scrollbar-thumb {
-	background-color: #000000;
+	background-color: #000000 !important;
 }
 
-
-.mat-tab-body {
-  height: 200px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 1rem 1.5rem;
-}
-/**  STYLE 3 */
 .mat-tab-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+	background-color: #F5F5F5 !important;
 }
 
 .mat-tab-body::-webkit-scrollbar {
-	width: 6px;
-	background-color: #F5F5F5;
+	width: 6px !important;
+	background-color: #F5F5F5 !important;
 }
 
 .mat-tab-body::-webkit-scrollbar-thumb {
-	background-color: #000000;
+	background-color: #000000 !important;
 }
+
+/**  scrollbar end */
