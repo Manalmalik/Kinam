@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { AnimationBuilder, style, animate } from '@angular/animations';
+import { MatTabChangeEvent } from '@angular/material';
 
 import { AbstractMenu } from '@website/components/menu/abstract-menu';
 import { LandingService, TitleService, MetaService } from '@website/services';
@@ -10,6 +11,8 @@ import { LandingService, TitleService, MetaService } from '@website/services';
 })
 export class ProductComponent extends AbstractMenu implements OnInit {
   @ViewChild('main') main: ElementRef;
+
+  currentTabIndex = 0;
 
   constructor(
     landingService: LandingService,
@@ -48,5 +51,9 @@ export class ProductComponent extends AbstractMenu implements OnInit {
     setTimeout(() => {
       anim.create(this.main.nativeElement).play();
     }, 200);
+  }
+  tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+    this.currentTabIndex = tabChangeEvent.index;
+    console.log('current tab index', this.currentTabIndex);
   }
 }

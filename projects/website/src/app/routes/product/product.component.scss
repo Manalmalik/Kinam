@@ -1,17 +1,16 @@
 :host {
     color: white;
     display: block;
-    position: fixed;
+    // position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
-    overflow: auto;
+    // overflow: auto;
 }
 
 .interaction-bar {
     transform: translate(0);
-    padding-left: 2rem;
     justify-content: flex-start;
     margin-right: 0;
 }
@@ -43,7 +42,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
+        // overflow: hidden;
 
         img {
             max-height: 75vh;
@@ -233,7 +232,7 @@ height: 5rem;
 
 
 .hover-container {
-  margin-left: 0.75rem;
+  margin-left: 3.75rem;
   margin-top: 4rem;
 }
   
@@ -275,8 +274,4 @@ height: 5rem;
       }
 
   }
-}
-
-.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
-  display: none !important;
 }

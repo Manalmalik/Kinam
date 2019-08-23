@@ -31,28 +31,38 @@
   }
 
   .mat-ink-bar {
+    display: none;
     position: absolute;
     bottom: 0;
     height: 0px !important;
     transition: .5s cubic-bezier(.35, 0, .25, 1);
   }
 </style>
+<img src="assets/jacket.png" style=" position: absolute; z-index: -1; right: 0rem; min-height: 100vh;min-width: 200vh  
+" alt="Bottom Leaf">
 <div class="columns is-gapless columns--main" #main>
-  <div class="column is-5 column__description">
+  <div class="column is-6 column__description">
 
     <kinam-product-header></kinam-product-header>
 
 
 
 
-    <div style="padding-left: 40px">
-      <div style="margin-top: 1.5rem">
+    <div>
+      <div>
         <div class="tabOutline">
-          <mat-tab-group>
-              <mat-tab>
-                  <ng-template mat-tab-label>
-                      <i class="fal fa-circle"></i>
-                    </ng-template>
+
+          <div class="columns">
+            <div class="column">
+              <kinam-product-slider></kinam-product-slider>
+            </div>
+          </div>
+          <mat-tab-group (selectedTabChange)="tabChanged($event)">
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <i *ngIf="currentTabIndex===0" class="fas fa-circle"></i>
+                <i *ngIf="currentTabIndex!==0" class="fal fa-circle"></i>
+              </ng-template>
               <div class="interaction-bar">
                 <div class="interaction-bar__item">
                   <i class="fal fa-seedling"></i>
@@ -77,36 +87,30 @@
               </div>
             </mat-tab>
             <mat-tab>
-                <ng-template mat-tab-label>
-                    <i class="fal fa-circle"></i>
-                  </ng-template>
-              <section class="section">
-                <div class="columns">
-                  <div class="column">
-                    <kinam-product-slider></kinam-product-slider>
-                  </div>
-                </div>
-                <h1 style="font-size: 40px">Garments Selling Stories </h1>
-                Looking to make a fashion statement? Your unique KINAM jacket will do it for you. Comprised of
-                high-quality,
-                organic textile, our one-of-a-kind garments are where modern street style meets the ancient Maya
-                civilization with
-                3,000-year-old weaving prajacctices. Each jacket features a bold, unisex design, telling the story of
-                one of six
-                represented Maya tribes. Eventually, we aim to expand our product line to include all 22 Maya
-                communities. Our
-                goal is sustainable, transparent production, designed in Berlin and hand-woven in Guatemala by
-                Maya-descendant
-                artisans in fair conditions. 10% of every sale will go back to Guatemala via our social projects, to
-                support the
-                Mayas and help them build skills for a better future.
-
-              </section>
+              <ng-template mat-tab-label>
+                <i *ngIf="currentTabIndex===1" class="fas fa-circle"></i>
+                <i *ngIf="currentTabIndex!==1" class="fal fa-circle"></i>
+              </ng-template>
+              <h1 style="font-size: 40px">Garments Selling Stories </h1>
+              Looking to make a fashion statement? Your unique KINAM jacket will do it for you. Comprised of
+              high-quality,
+              organic textile, our one-of-a-kind garments are where modern street style meets the ancient Maya
+              civilization with
+              3,000-year-old weaving prajacctices. Each jacket features a bold, unisex design, telling the story of
+              one of six
+              represented Maya tribes. Eventually, we aim to expand our product line to include all 22 Maya
+              communities. Our
+              goal is sustainable, transparent production, designed in Berlin and hand-woven in Guatemala by
+              Maya-descendant
+              artisans in fair conditions. 10% of every sale will go back to Guatemala via our social projects, to
+              support the
+              Mayas and help them build skills for a better future.
             </mat-tab>
             <mat-tab>
-                <ng-template mat-tab-label>
-                    <i class="fal fa-circle"></i>
-                  </ng-template>
+              <ng-template mat-tab-label>
+                <i *ngIf="currentTabIndex===2" class="fas fa-circle"></i>
+                <i *ngIf="currentTabIndex!==2" class="fal fa-circle"></i>
+              </ng-template>
               <h1 style="font-size: 40px">Weaving ancient threads </h1>
               The fabric of every Kinam jacket is hand-woven with love by Maya descendant artisans in
               Guatermala,masterfully created over 3 to 6 months per garment.The textile is composed 100% of cotton yarn
@@ -118,39 +122,40 @@
             </mat-tab>
 
           </mat-tab-group>
+          <div class="hover-container">
+              <div class="outer">
+                <div class="inner overlay" id="overlay" style="width: 18rem;
+          height: 5rem;"></div>
+                <div class="inner outline" style="width: 18rem;
+          height: 5rem;"></div>
+                <div class="behind fill " style="width: 18rem;
+          height: 5rem;">
+                  <div class="order-now__content">
+                    <div class="" style="font-weight: 600;font-family: century-gothic;font-size: 30px;margin-top: -15px;">
+                      &nbsp;ORDER NOW <i class="fal fa-chevron-right" style="margin-left: 6px;"></i>
+                    </div> <br>
+                    <div class=" " style=" font-size: 15px; margin-left: 5px;   margin-top: -45px;">
+                      <b> Support our
+                        <a class="" href="#">INDIEGOGO</a> campaign</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
 
       </div>
 
       <!-- <hr class="product-divider"> -->
 
-      <div class="hover-container">
-        <div class="outer">
-          <div class="inner overlay" id="overlay" style="width: 18rem;
-    height: 5rem;"></div>
-          <div class="inner outline" style="width: 18rem;
-    height: 5rem;"></div>
-          <div class="behind fill " style="width: 18rem;
-    height: 5rem;">
-            <div class="order-now__content">
-              <div class="" style="font-weight: 600;font-family: century-gothic;font-size: 30px;margin-top: -15px;">
-                &nbsp;ORDER NOW <i class="fal fa-chevron-right" style="margin-left: 6px;"></i>
-              </div> <br>
-              <div class=" " style=" font-size: 15px; margin-left: 5px;   margin-top: -45px;">
-                <b> Support our
-                  <a class="" href="#">INDIEGOGO</a> campaign</b>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 
   <div class="column column__model">
-    <img src="assets/jacket.png" style=" position: absolute; z-index: -1; right: 0rem; min-height: 100vh;min-width: 200vh  
-" alt="Bottom Leaf">
-    <img src="assets/models/kaqchikel.png" style="max-height: 100vh; margin-top: 3rem;" alt="Kaqchikel Jacket">
+    <!-- <img src="assets/jacket.png" style=" position: absolute; z-index: -1; right: 0rem; min-height: 100vh;min-width: 200vh  
+" alt="Bottom Leaf"> -->
+    <img src="assets/models/kaqchikel.png" style="max-height: 104vh; margin-top: 10rem;" alt="Kaqchikel Jacket">
   </div>
 
 </div>
