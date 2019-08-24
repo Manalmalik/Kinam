@@ -807,6 +807,31 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 768px) {
+  .links {
+    text-align: center !important;
+    margin-top: 15rem !important;
+  }
+  .submenu {
+    padding-left: unset !important;
+  }
+  .submenu2{
+    padding-left: 3rem !important;
+  }
+
+  .pof {
+    font-size: 50px !important;
+  }
+  .poff {
+    font-size: 18px !important;
+  }
+  .pof, .poff, p {
+    text-align: center !important;
+    margin: -16rem 1rem 0 1rem !important;
+  }
+  .p2, .p3 {
+    text-align: center;
+    padding: 0 1rem;
+  }
   .section-header{
     text-align: left;
   }
