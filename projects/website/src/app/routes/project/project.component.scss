@@ -1,8 +1,7 @@
 :host {
-    display: block;
-    margin-top: 4rem;
+  display: block;
+  margin-top: 4rem;
 }
-
 
 .main {
   transform: translateY(-100px);
@@ -10,32 +9,32 @@
 }
 
 .gradient {
-    height: 30rem;
+  height: 30rem;
 }
 
 .gradient--small {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .section__social__img {
-    background-image: url(/assets/socialBg.jpg);
-    background-size: cover;
-    height: 30rem;
-    background-position: center 60%;
+  background-image: url(/assets/socialBg.jpg);
+  background-size: cover;
+  height: 30rem;
+  background-position: center 60%;
 }
 
 h1 {
-    text-align: center;
-    font-size: 3rem;
-    color: white
+  text-align: center;
+  font-size: 3rem;
+  color: white;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 p {
-    margin-bottom: 2rem
+  margin-bottom: 2rem;
 }
 :host {
   color: white;
@@ -43,7 +42,7 @@ p {
   display: block;
 }
 
-.column {   
+.column {
   position: relative;
 }
 
@@ -67,7 +66,6 @@ a {
   color: inherit;
 }
 
-
 h1 {
   pointer-events: none;
 }
@@ -83,7 +81,7 @@ h1 {
 }
 
 .discover-more {
-  transform: translateY(5rem);  
+  transform: translateY(5rem);
 }
 
 .menu {
@@ -113,9 +111,9 @@ h1 {
     transition: 0.2s all ease-out;
 
     &:hover {
-        color: black;
-        background-color: white;
-        transition: 0.2s all ease-out;
+      color: black;
+      background-color: white;
+      transition: 0.2s all ease-out;
     }
   }
 }
@@ -130,7 +128,6 @@ h1 {
     display: block;
   }
 }
-
 
 .divider {
   &__stripe {
@@ -176,7 +173,6 @@ h1 {
     position: relative;
     opacity: 0;
 
-
     &__heading {
       text-align: right;
       font-size: 120px;
@@ -200,7 +196,7 @@ h1 {
       font-size: 2rem;
       font-weight: bolder;
       padding: 1rem 0;
-      
+
       .fa-play-circle {
         font-size: 64px;
         margin-left: 1.5rem;
@@ -221,14 +217,13 @@ h1 {
     }
   }
 
-  &__mayans { 
-
+  &__mayans {
     .text,
     .section-header {
       transform: translateY(-255px);
     }
 
-    .text{
+    .text {
       display: flex;
       // position: absolute;
 
@@ -237,15 +232,14 @@ h1 {
         padding: 0.5rem 2rem;
       }
     }
-    
+
     &__img {
       background-image: url(/assets/mayansBg.jpg);
       background-size: cover;
       height: 30rem;
-      background-position: 0% 50%
+      background-position: 0% 50%;
     }
   }
-
 
   &__music {
     &__header {
@@ -259,8 +253,7 @@ h1 {
     }
   }
 
-  &__social { 
-
+  &__social {
     &__img {
       background-image: url(/assets/socialBg.jpg);
       background-size: cover;
@@ -287,7 +280,7 @@ h1 {
     margin-bottom: 3rem;
   }
 
-  &__footer{ 
+  &__footer {
     color: black;
     background-color: white;
     min-height: 4rem;
@@ -305,7 +298,7 @@ h1 {
   cursor: pointer;
 
   img {
-    width: 64px; 
+    width: 64px;
     margin: 0 0.5rem;
   }
 }
@@ -318,18 +311,18 @@ h1 {
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
     font-weight: 900;
-    cursor: pointer;    
+    cursor: pointer;
     transition: 0.2 ease-out;
     background-color: black;
     color: white;
     text-align: center;
-  
+
     &:hover {
       background-color: white;
       color: black;
       transition: 0.2 ease-out;
     }
-    
+
     &__container {
       text-align: center;
       margin-top: 3rem;
@@ -345,7 +338,6 @@ h1 {
   font-size: 1.2rem;
 }
 
-
 /**
 Complex Button start
 */
@@ -357,8 +349,7 @@ Complex Button start
   position: relative;
 }
 
-
-.inner, 
+.inner,
 .outline,
 .behind {
   width: 25.5rem;
@@ -457,11 +448,11 @@ Complex Button start
       font-size: 1.2rem;
       color: white;
       line-height: 1;
-      
+
       &:hover {
         color: #adadad;
       }
-    } 
+    }
   }
 
   &__content {
@@ -475,7 +466,6 @@ Complex Button start
 }
 
 /** Complex Button end */
-
 
 .btn--mayans {
   width: 11rem;
@@ -494,7 +484,7 @@ Complex Button start
     width: 11rem;
     height: 3rem;
   }
-  
+
   .inner {
     border: 2px solid white;
     font-size: 2rem;
@@ -557,7 +547,7 @@ Complex Button start
 
 .section__hero__text {
   p {
-    font-family: freight-sans-pro,sans-serif;
+    font-family: freight-sans-pro, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 26px;
@@ -598,11 +588,11 @@ Complex Button start
 
 .discover-more > div {
   text-align: center;
-  min-height: 0; 
-  position: absolute; 
-  width: 100%; 
-  display: flex; 
-  justify-content: center; 
+  min-height: 0;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -634,30 +624,30 @@ Complex Button start
 
 .social-links {
   text-align: center;
-  
+
   &__link {
     cursor: pointer;
     transition: 0.2s color ease-in-out;
-    
+
     &--facebook {
-        &:hover {
-            color: #4768ad;
-            transition: 0.2s color ease-in-out;
-        }
+      &:hover {
+        color: #4768ad;
+        transition: 0.2s color ease-in-out;
+      }
     }
- 
+
     &--instagram {
-        &:hover {
-            color: #ffc000;
-            transition: 0.2s color ease-in-out;
-        }
+      &:hover {
+        color: #ffc000;
+        transition: 0.2s color ease-in-out;
+      }
     }
- 
+
     &--youtube {
-        &:hover {
-            color: red;
-            transition: 0.2s color ease-in-out;
-        }
+      &:hover {
+        color: red;
+        transition: 0.2s color ease-in-out;
+      }
     }
   }
 }
@@ -677,12 +667,11 @@ Complex Button start
 
     .fal,
     .fas {
-    margin: 0 auto;
+      margin: 0 auto;
       font-size: 48px;
     }
   }
 }
-
 
 @media (min-width: 768px) {
   .hero-text {
@@ -690,10 +679,7 @@ Complex Button start
   }
 }
 
-
-
-@media (min-width: 0) and (max-width: 1407px) { 
-
+@media (min-width: 0) and (max-width: 1407px) {
   .section__mayans .text {
     transform: translateY(-90px);
   }
@@ -704,7 +690,7 @@ Complex Button start
     transform: translateY(-90px);
   }
 
-  .section__hero__heading{
+  .section__hero__heading {
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -715,36 +701,35 @@ Complex Button start
   }
 
   .section__hero__text {
-      p {
-        text-align: center;
-      }
+    p {
+      text-align: center;
     }
- }
+  }
+}
 
-@media (min-width: 0) and (max-width: 1087px) {  
-
+@media (min-width: 0) and (max-width: 1087px) {
   .section {
     padding: 3rem 0;
-    
+
     &__jacket {
       .interaction-bar {
         transform: translateY(-60px);
       }
-      
+
       &__header {
         font-size: 6.2rem;
-        transform:translateY(-75px);
+        transform: translateY(-75px);
       }
     }
-    
+
     &__hero {
       &__heading {
         font-size: 4rem;
         line-height: 1.5;
       }
-      
+
       &__interaction {
-        justify-content: center; 
+        justify-content: center;
         flex-direction: row;
       }
 
@@ -759,7 +744,7 @@ Complex Button start
     }
   }
 
-  .order-now__links  {
+  .order-now__links {
     text-align: center;
   }
 
@@ -768,10 +753,10 @@ Complex Button start
     justify-content: center;
   }
 
-  .meet-the-mayans {  
+  .meet-the-mayans {
     display: none;
   }
-  
+
   .btn {
     &--indigogo {
       font-size: 1rem;
@@ -794,8 +779,8 @@ Complex Button start
   .section__music__header,
   .section__jacket__header {
     font-size: 4rem;
-      padding-left: 2rem;
-      text-align: right;
+    padding-left: 2rem;
+    text-align: right;
   }
 
   .discover-more {
@@ -822,9 +807,38 @@ Complex Button start
   }
 }
 
-
 @media (min-width: 0) and (max-width: 768px) {
-  .section-header{
+  .links {
+    text-align: center !important;
+    margin-top: 20rem !important;
+    margin-bottom: 3rem !important;
+  }
+  .submenu2,
+  .submenu {
+    padding-left: 10px !important;
+  }
+
+  .po {
+    font-size: 75px !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+  }
+  .pof {
+    font-size: 50px !important;
+  }
+  .poff {
+    font-size: 18px !important;
+  }
+  .pof, .poff, p {
+    text-align: center !important;
+    margin: 0 1rem !important;
+  }
+  .p2, .p3 {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .section-header {
     text-align: left;
   }
 
@@ -834,7 +848,7 @@ Complex Button start
 
   .order-now {
     &__links {
-      justify-content:center;
+      justify-content: center;
       padding-top: 1rem;
     }
   }
@@ -872,7 +886,7 @@ Complex Button start
   .interaction-bar {
     margin: 0 auto;
     justify-content: center;
-    transform:none;
+    transform: none;
   }
 
   .logo {
@@ -904,11 +918,11 @@ Complex Button start
   .btn--primary {
     font-size: 1rem;
   }
-  
+
   .btn--primary {
     padding: 0.5rem 0.75rem;
   }
-  
+
   .btn--mayans {
     margin: 2rem auto;
   }
@@ -931,8 +945,8 @@ Complex Button start
 
     &__hero {
       &__heading {
-        justify-content: center; 
-        text-align: center; 
+        justify-content: center;
+        text-align: center;
       }
     }
 
@@ -951,13 +965,12 @@ Complex Button start
 
     &__social__header {
       // height: 7rem;
-    }  
+    }
 
     &-header {
       // transform: translateY(-130px);
     }
   }
-
 
   .scroll-label {
     transform: translateY(6rem);
@@ -985,18 +998,17 @@ Complex Button start
   }
 }
 
-@media (min-width: 1087px)  { 
+@media (min-width: 1087px) {
   .jacket-img-grid__img,
   .gradient--small {
     height: 600px;
   }
 }
 
-@media (min-width: 0) and (max-width: 480px) { 
-
+@media (min-width: 0) and (max-width: 480px) {
   .logo img {
-      max-width: 8rem;
-      margin-top: 1rem;
+    max-width: 8rem;
+    margin-top: 1rem;
   }
 
   .section-header {
@@ -1015,9 +1027,7 @@ Complex Button start
   }
 }
 
-@media (min-width: 0) and (max-width: 320px) { 
-
-
+@media (min-width: 0) and (max-width: 320px) {
   .section-header {
     font-size: 2.5rem;
     /* transform: translateY(-102px); */
