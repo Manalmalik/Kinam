@@ -679,6 +679,9 @@ Complex Button start
     // padding-bottom: 2rem;
   }
 }
+.story-left-column {
+  float: right;
+}
 
 .social-links {
   text-align: center;
@@ -830,7 +833,7 @@ Complex Button start
   }
 
   .hover-container {
-    display: flex;
+    // display: flex;
     justify-content: center;
   }
 
@@ -890,6 +893,28 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 768px) {
+  .birthday--text, .story--text{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .story--text {
+    text-align: center !important;
+  }
+
+  .participate-header {
+    margin-top: -10% !important;
+  }
+  .participate-btn {
+    margin-top: 10% !important;
+  }
+  .participate--btn {
+    width: 20rem !important;
+  }
+  
+.story-left-column {
+  float: none;
+}
   .section-header{
     text-align: left;
   }
@@ -902,21 +927,24 @@ Complex Button start
     &__links {
       justify-content:center;
       padding-top: 1rem;
-    }
+    } 
   }
 
   .order-now__container {
-    margin-top: 2rem;
-    margin-bottom: 5rem;
+    // margin-top: 2rem;
+    // margin-bottom: 5rem;
+    text-align: center;
+    margin: 0 0 5rem 2rem;
   }
 
   .hover-container.large {
     transform: scale(0.75);
+    margin-left: -3rem !important;
   }
 
-  .section.responsive {
-    // margin-top: -10rem;
-  }
+  // .section.responsive {
+  //   margin-top: -10rem;
+  // }
 
   .section__mayans {
     margin-top: -9rem;
@@ -976,7 +1004,7 @@ Complex Button start
   }
   
   .btn--mayans {
-    margin: 2rem auto;
+    margin: 2rem auto !important;
   }
 
   .interaction__jacket__item {

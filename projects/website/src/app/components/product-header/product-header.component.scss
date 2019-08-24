@@ -108,7 +108,15 @@
 }
 
 @media (min-width: 0) and (max-width: 768px) { 
-
+    .tribe-header {
+        font-size: 40px !important;
+        padding: 0 !important;
+        margin-left: 25% ;
+    }
+    .header-text {
+        min-width: 450px !important;
+        width: 450px !important;
+    }
     .headline {
         justify-content: center
     }
