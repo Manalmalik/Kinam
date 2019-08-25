@@ -3,7 +3,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 3rem;
 }
 
 .section-header {
@@ -106,13 +106,22 @@
         background-color: #f9f1f4;
     }
 }
-
-@media (min-width: 0) and (max-width: 768px) { 
+.jacket-arrows {
+    text-align: right;
+    margin-top: -6rem;
+    padding-right: 5rem;
+}
+@media (min-width: 0) and (max-width: 768px) {
+    .jacket-arrows {
+        text-align: center;
+        margin-top: 2rem;
+        padding-right: unset;
+    }
     .tribe-header {
         font-size: 35px !important;
         line-height: 45px !important;
         padding: 0 !important;
-        margin-left: 29% ;
+        margin-left: 25% ;
     }
     .header-text {
         min-width: 450px !important;

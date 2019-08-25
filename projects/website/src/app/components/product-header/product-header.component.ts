@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AnimationBuilder, style, animate } from '@angular/animations';
 
 @Component({
@@ -7,6 +7,8 @@ import { AnimationBuilder, style, animate } from '@angular/animations';
   styleUrls: ['./product-header.component.scss']
 })
 export class ProductHeaderComponent {
+
+  @Output() imageChange = new EventEmitter();
 
   constructor(
     private _animBuilder: AnimationBuilder,
@@ -76,6 +78,8 @@ export class ProductHeaderComponent {
     anim.play();
 
     this._previousPercent = percent;
+    
+    this.imageChange.emit((this.position + 1 ) / this.tribes.length);
 
   }
 }

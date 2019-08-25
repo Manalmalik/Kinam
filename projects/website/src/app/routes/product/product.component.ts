@@ -13,6 +13,7 @@ export class ProductComponent extends AbstractMenu implements OnInit {
   @ViewChild('main') main: ElementRef;
 
   currentTabIndex = 0;
+  currentImage = 0.5;
 
   constructor(
     landingService: LandingService,
@@ -54,6 +55,8 @@ export class ProductComponent extends AbstractMenu implements OnInit {
   }
   tabChanged(tabChangeEvent: MatTabChangeEvent): void {
     this.currentTabIndex = tabChangeEvent.index;
-    console.log('current tab index', this.currentTabIndex);
+  }
+  displayImage(currentImage) {
+    this.currentImage = currentImage;
   }
 }
