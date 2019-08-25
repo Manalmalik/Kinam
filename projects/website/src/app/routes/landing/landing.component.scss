@@ -186,7 +186,7 @@ h1 {
 
     &__content {
       transform: translateY(-300px);
-      margin-top: 10vh;
+      margin-top: 20vh;
     }
 
     //watch and stuff pull up and push down
@@ -766,21 +766,21 @@ Complex Button start
     transform: translateY(-90px);
   }
 
-  .section__hero__heading{
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
+  // .section__hero__heading{
+  //   text-align: center;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
 
-  .interaction-container {
-    justify-content: center;
-  }
+  // .interaction-container {
+  //   justify-content: center;
+  // }
 
-  .section__hero__text {
-      p {
-        text-align: center;
-      }
-    }
+  // .section__hero__text {
+  //     p {
+  //       text-align: center;
+  //     }
+  //   }
 
     .interaction-bar{
       transform: translateY(-420px); 
