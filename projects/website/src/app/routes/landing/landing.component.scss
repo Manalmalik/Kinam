@@ -893,6 +893,13 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 768px) {
+  .section__hero__heading__bold {
+    font-size: 110px;
+  }
+  .pre-heading {
+    font-size: 55px;
+  }
+  
   .birthday--text, .story--text{
     margin-left: auto;
     margin-right: auto;
@@ -916,7 +923,7 @@ Complex Button start
   float: none;
 }
   .section-header{
-    text-align: left;
+    text-align: center;
   }
 
   .interaction-container {
@@ -968,6 +975,9 @@ Complex Button start
     justify-content: center;
     transform:none;
   }
+  .social-bar {
+    margin: 8rem auto -8rem auto !important;
+  }
 
   .logo {
     img {
@@ -992,6 +1002,7 @@ Complex Button start
   .content-block__headline,
   .content-block__body {
     text-align: center;
+    margin: 1rem;
   }
 
   // .watch,
