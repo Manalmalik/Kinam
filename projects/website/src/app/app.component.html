@@ -1,77 +1,71 @@
 <style type="text/css" media="screen">
+  .icon-header {
+    padding-top: 55px;
+    color: white
+  }
+
   .a {
     color: #f6f6f7;
     cursor: pointer;
     text-decoration: none;
     font-size: 12px;
     padding-right: 83px;
-}
+  }
+
+  @media (min-width: 0) and (max-width: 760px) {
+
+    .a {
+      padding-right: 100%;
+    }
+    .icon-header {
+      padding-top: 5.5rem;
+      margin-left: -8rem;
+    }
+  }
 </style>
 <div class="columns is-mobile header">
   <div class="column logo">
-    <a   routerLink="/">
-      <img
-        src="assets/kinam_logo_white_website_white.svg"
-        width="200"
-        alt="Logo"
-      >
+    <a routerLink="/">
+      <img src="assets/kinam_logo_white_website_white.svg" width="200" alt="Logo">
     </a>
-    
-     
-      
-      
-     
 
-   
+
+
+
+
+
+
   </div>
-  <div class="icon-header " style="padding-top:55px; color: white" >
-   <a class="a" 
-          routerLink="/the-jacket"
-          routerLinkActive="active"
-        >
-        THE JACKET
-        </a>
-      
-     
-        <a class="a" 
-          routerLink="/the-mayans"
-          routerLinkActive="active"
-        >
-     THE MAYANS
-        </a>
-      
-     
-        <a class="a" 
-          routerLink="/social-projects"
-          routerLinkActive="active"
-        >
-          SOCIAL PROJECTS
-        </a>
-      
-     
-        <a class="a" 
-          routerLink="/music"
-          routerLinkActive="active"
-        >
-          THE MUSIC
-        </a>
-      
-     
-      
-      
-     
-        <a class="a" 
-          routerLink="/about"
-          routerLinkActive="active"
-        >
-         OUR STORIES
-        </a>
-      <a class="a" 
-          routerLink="/about"
-          routerLinkActive="active"
-        >
-        SUPPORT US
-        </a>
+  <div class="icon-header ">
+    <a class="a" routerLink="/the-jacket" routerLinkActive="active">
+      THE JACKET
+    </a>
+
+
+    <a class="a" routerLink="/the-mayans" routerLinkActive="active">
+      THE MAYANS
+    </a>
+
+
+    <a class="a" routerLink="/social-projects" routerLinkActive="active">
+      SOCIAL PROJECTS
+    </a>
+
+
+    <a class="a" routerLink="/music" routerLinkActive="active">
+      THE MUSIC
+    </a>
+
+
+
+
+
+    <a class="a" routerLink="/about" routerLinkActive="active">
+      OUR STORIES
+    </a>
+    <a class="a" routerLink="/about" routerLinkActive="active">
+      SUPPORT US
+    </a>
   </div>
 </div>
 
