@@ -12,12 +12,10 @@
     }
 
     .gradient {
-      height: 150%;
+      height: 100%;
     }
 
-    <div class="main"
-
-    #main><style>p {
+    p {
       font-size: 13px;
     }
 
@@ -30,7 +28,8 @@
       font-size: 110px;
       color: white;
       line-height: .8;
-      padding-left: 195px;
+      text-align: right;
+      padding-right: 50px;
     }
 
     .pof {
@@ -78,7 +77,7 @@
     }
 
     .submenu {
-      padding-left: 700px;
+      padding-left: 44%;
       color: white;
     }
 
@@ -119,25 +118,17 @@
         class="submenu2"> Team</a>
       <a routerLink="/about3" class="submenu2">Partner </a>
 
-      <div class="columns">
-        <div class="column is-5">
-          <div class="po">About kinam</div>
+
+      <div class="columns is-gapless" style="margin-top: 50px;">
+        <div class="column is-5 about-heading" style="margin-top: -50px;">
+          <h1 class="po">About Kinam</h1>
 
         </div>
         <div class="column is-2 ">
-          <br>
           <div class="pof">Our Partners</div>
           <div class="poff"> Our trusted supporters</div>
-
-
-
-
-
-
-
-
         </div>
-        <div class="column is-3 partners-content" style="margin-top: 100px">
+        <div class="column is-4 partners-content">
           <p>
             KINAM’s 4 co-founders Oshko, Nicolas, Christopher and Orhan met in the QUARTERS Co-Living Space in Berlin.
             They
@@ -193,6 +184,10 @@
 
         </div>
 
+        <!-- social icons column -->
+        <div class="column is-1 social-icons">
+          <kinam-social-icons></kinam-social-icons>
+        </div>
       </div>
 
     </section>

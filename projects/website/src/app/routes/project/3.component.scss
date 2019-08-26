@@ -679,6 +679,19 @@ Complex Button start
   }
 }
 
+@media (min-width: 769px) {
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .social-icons {
+    margin-top: -13rem !important;
+  }
+  .projects-content {
+    padding-left: 10%;
+  }
+}
+
 @media (min-width: 0) and (max-width: 1407px) {
   .section__mayans .text {
     transform: translateY(-90px);
@@ -812,6 +825,9 @@ Complex Button start
     text-align: center !important;
     margin-top: 20rem !important;
     margin-bottom: 3rem !important;
+  }
+  .project-heading {
+    margin-top: unset !important;
   }
   .submenu2,
   .submenu {

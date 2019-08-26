@@ -672,6 +672,15 @@ Complex Button start
 }
 
 
+@media (min-width: 769px) {
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .social-icons {
+    margin-top: -13rem !important;
+  }
+}
 
 @media (min-width: 0) and (max-width: 1407px) { 
 
@@ -805,6 +814,10 @@ Complex Button start
 
 
 @media (min-width: 0) and (max-width: 768px) {
+  .about-heading {
+    margin-top: unset !important;
+    margin-bottom: 3rem !important;
+  }
   .links {
     text-align: center !important;
     margin-top: 20rem !important;
@@ -819,8 +832,7 @@ Complex Button start
     font-size: 85px !important;
     margin-right: 0 !important;
     text-align: center !important;
-    padding-left: unset !important;
-    margin-top: 3rem;
+    padding-right: unset !important;
   }
   .pof {
     font-size: 60px !important;

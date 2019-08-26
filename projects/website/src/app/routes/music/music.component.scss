@@ -663,6 +663,29 @@ Complex Button start
   }
 }
 
+@media (min-width: 769px) {
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .po,
+  .poc,
+  .outer {
+    padding-right: 50px;
+  }
+
+  .spotify-container {
+    position: relative;
+    width: 100%;
+    min-height: 20rem;
+    top: 0;
+  }
+  .social-icons {
+    margin-top: -13rem !important;
+  }
+}
+
 @media (min-width: 0) and (max-width: 1407px) {
   .section__mayans .text {
     transform: translateY(-90px);
@@ -796,13 +819,17 @@ Complex Button start
     text-align: center !important;
     margin-top: 15rem !important;
   }
+  .music-heading {
+    margin-top: unset !important;
+  }
   .submenu {
     padding-left: unset !important;
   }
   .submenu2 {
     padding-left: 3rem !important;
   }
-  .po, .poc {
+  .po,
+  .poc {
     text-align: center !important;
   }
   .outer {
@@ -823,7 +850,7 @@ Complex Button start
   .poff,
   p {
     text-align: center !important;
-    margin: -16rem 1rem 0 1rem !important;
+    margin: 3rem 1rem 0 1rem !important;
   }
   .p2,
   .p3 {
@@ -973,7 +1000,9 @@ Complex Button start
     width: 100%;
     margin: 0;
   }
-
+  .spotify-container {
+    position: relative;
+  }
   .gradient {
     height: 40vh;
   }

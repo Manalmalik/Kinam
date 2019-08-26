@@ -12,7 +12,7 @@
         }
 
         .gradient {
-            height: 150%;
+            height: 100%;
         }
 
 
@@ -41,32 +41,24 @@
         }
 
         .submenu {
-            padding-left: 700px;
+            padding-left: 50%;
             color: white;
         }
 
         .submenu2 {
-            padding-left: 100px;
+            padding-left: 50px;
             color: white;
         }
 
-        .p2 {
-            font-family: Freight Sans;
-            font-size: 14px;
-            padding-left: 25px;
-        }
-
-        .p3 {
+        .p2,
+        .p3,
+        p {
             font-family: Freight Sans;
             font-size: 14px;
         }
 
         p {
-            font-family: Freight Sans;
-            font-size: 14px;
             margin-right: 40px;
-
-
         }
     </style>
     <div class="gradient " style="margin-top: -160px;">
@@ -78,18 +70,18 @@
 
         <section class="section responsive ">
             <div class="links" style="margin-top: 200px;">
-                <a routerLinkActive="active" routerLink="/social-projects" class="submenu"> Project 01</a> <a
+                <a routerLinkActive="active" routerLink="/social-projects-1" class="submenu"> Project 01</a> <a
                     routerLinkActive="active" routerLink="/social-projects-2" class="submenu2"> Project 02</a> <a
                     routerLinkActive="active" routerLink="/social-projects3" class="submenu2"> Project 03</a></div>
-            <div class="columns">
 
-                <div class="column is-6 ">
+            <div class="columns is-gapless" style="margin-top: 50px;">
+                <div class="column is-6 project-heading" style="margin-top: -50px;">
 
                     <div class="po"><b>Social Projects</b></div>
                     <br><br>
 
 
-                    <div class="columns">
+                    <div class="columns projects-content">
 
 
                         <div class="column is-5">
@@ -126,10 +118,7 @@
 
                 </div>
 
-
-
                 <div class="column is-3 ">
-                    <br><br>
                     <div class="pof"><b> Education Through Football</b></div>
                     <br>
                     <div class="poff"> <b>Situation </b></div><br>
@@ -148,6 +137,11 @@
 
                     </p>
 
+                </div>
+                <div class="column is-2"></div>
+                <!-- social icons column -->
+                <div class="column is-1 social-icons">
+                    <kinam-social-icons></kinam-social-icons>
                 </div>
 
             </div>

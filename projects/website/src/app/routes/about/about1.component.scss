@@ -672,6 +672,15 @@ Complex Button start
 }
 
 
+@media (min-width: 769px) {
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .social-icons {
+    margin-top: -13rem !important;
+  }
+}
 
 @media (min-width: 0) and (max-width: 1407px) { 
 
@@ -807,6 +816,7 @@ Complex Button start
 @media (min-width: 0) and (max-width: 768px) {
   .about-heading {
     margin-top: unset !important;
+    margin-bottom: 3rem !important;
   }
   .links {
     text-align: center !important;
@@ -836,7 +846,7 @@ Complex Button start
   }
   p {
     text-align: center;
-    margin: 3rem 1rem !important;
+    margin: 3rem 1rem 0 1rem !important;
   }
   .p2, .p3 {
     text-align: center;

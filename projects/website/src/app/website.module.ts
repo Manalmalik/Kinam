@@ -40,6 +40,7 @@ import { About1Component } from './routes/about/about1.component';
 import { About2Component } from './routes/about/about2.component';
 import { About3Component } from './routes/about/about3.component';
 import { CalendarComponent } from './routes/calendar/calendar.component';
+import { SocialIconsComponent } from './routes/social-icons/social-icons.component';
 
 
 const routes: Routes = [
@@ -87,6 +88,7 @@ const routes: Routes = [
     About2Component,
     About3Component,
     CalendarComponent,
+    SocialIconsComponent,
   ],
   providers: [EntryGuard],
   entryComponents: [LoginDialogComponent, DialogComponent],

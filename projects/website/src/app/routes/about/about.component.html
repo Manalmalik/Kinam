@@ -1,90 +1,100 @@
-<div
-  class="main"
-  #main
->
-<style>
+<div class="main" #main>
+  <style>
     .wall__bg {
-  background-image: url("/assets/about-bg.png");
-  height: 100%; 
+      background-image: url("/assets/about-bg.png");
+      height: 100%;
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
 
-}
-.gradient 
-{
-   height: 150%; 
-}
+    }
 
-<style>
-  
-p{
-  font-size: 13px;
-}
-.po{
+    .gradient {
+      height: 100%;
+    }
 
-  font-size: 110px;
-  color:white;
-  line-height: .8;
-  padding-left: 195px;
-}
-.pof{
-  font-size: 60px;
-  line-height: .9;
-  color:white;
-}
-.poff{
-    font-size: 30px;
-    line-height: .9;
-    color:white;
-}
-    .submenu
-{
-padding-left: 700px;
-color: white;
-}
-.submenu2
-{
-padding-left: 100px;
-color: white;
-}
-</style>
-<div class="gradient" style="margin-top: -160px;">
-    <div class="gradient gradient__image wall__bg" style="margin-top: 0px;" ></div>
-<br><br>
-<section class="section responsive links" style="margin-top: 200px;">
-<a routerLink="/about1" routerLinkActive="active" class="submenu"  > Purpose</a>  <a routerLinkActive="active" routerLink="/about2" class="submenu2" >The journey </a>  <a routerLinkActive="active"  routerLink="/about" class="submenu2"> Team</a>
- <a  routerLink="/about3"  class="submenu2" >Partner </a> 
+    p {
+      font-size: 13px;
+    }
 
- 
+    .po {
 
- <div class="columns" style="margin-top: 50px;">
-      <div class="column is-5">
+      font-size: 110px;
+      color: white;
+      line-height: .8;
+      text-align: right;
+      padding-right: 50px;
+    }
 
- <div class="po">About kinam</div>
+    .pof {
+      font-size: 60px;
+      line-height: .9;
+      color: white;
+    }
 
+    .poff {
+      font-size: 30px;
+      line-height: .9;
+      color: white;
+    }
+
+    .submenu {
+      padding-left: 42%;
+      color: white;
+    }
+
+    .submenu2 {
+      padding-left: 100px;
+      color: white;
+    }
+  </style>
+  <div class="gradient" style="margin-top: -160px;">
+    <div class="gradient gradient__image wall__bg" style="margin-top: 0px;"></div>
+    <br><br>
+    <section class="section responsive links" style="margin-top: 200px;">
+      <a routerLink="/about1" routerLinkActive="active" class="submenu"> Purpose</a> <a routerLinkActive="active"
+        routerLink="/about2" class="submenu2">The journey </a> <a routerLinkActive="active" routerLink="/about"
+        class="submenu2"> Team</a>
+      <a routerLink="/about3" class="submenu2">Partner </a>
+
+
+      <div class="columns is-gapless" style="margin-top: 50px;">
+        <div class="column is-5 about-heading" style="margin-top: -50px;">
+
+          <h1 class="po">About Kinam</h1>
+
+        </div>
+        <div class="column is-3 ">
+          <div class="pof">Kinam Team</div>
+          <div class="poff">The power of co-living</div><br>
+          <p>
+            KINAM’s 4 co-founders Oshko, Nicolas, Christopher and Orhan met in the QUARTERS Co-Living Space in Berlin.
+            They booked flights to Guatemala almost immediately after first discussing their idea to shoot material for
+            the crowdfunding video, record jungle sounds for songs, and establish supplier relationships overseas. Upon
+            returning to Berlin, they recruited 30 experts from their networks in Germany, Sweden, Guatemala, Israel and
+            the U.S. With a diverse set of skills and expertise, the team is comprised of a Maya archeologist, textile
+            engineers, product developers, designers, marketing specialists, music producers, and venture builders,
+            working remotely and unpaid until the end of the crowdfunding campaign.</p>
+
+        </div>
+        <div class="column is-3 ">
+
+
+        </div>
+
+        <!-- social icons column -->
+        <div class="column is-1 social-icons">
+          <kinam-social-icons></kinam-social-icons>
+        </div>
       </div>
-      <div class="column is-3 " >
-        <br>
-        <div class="pof">Kinam Team</div>
-    <div class="poff">The power of co-living</div><br>
-<p>
-       KINAM’s 4 co-founders Oshko, Nicolas, Christopher and Orhan met in the QUARTERS Co-Living Space in Berlin. They booked flights to Guatemala almost immediately after first discussing their idea to shoot material for the crowdfunding video, record jungle sounds for songs, and establish supplier relationships overseas. Upon returning to Berlin, they recruited 30 experts from their networks in Germany, Sweden, Guatemala, Israel and the U.S. With a diverse set of skills and expertise, the team is comprised of a Maya archeologist, textile engineers, product developers, designers, marketing specialists, music producers, and venture builders, working remotely and unpaid until the end of the crowdfunding campaign.</p>
-
-      </div>
-      <div class="column is-3 ">
-
-
-      </div>
-    </div>
-  </section>
+    </section>
 
 
 
 
- </div>
-  
+  </div>
+
 
 </div>
