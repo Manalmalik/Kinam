@@ -31,22 +31,29 @@
 }
 
 .mat-tab-body-wrapper {
-  height: 200px;
+  height: 300px;
   // overflow-y: auto;
   // overflow-x: hidden;
   // padding: 1rem 1.5rem;
 }
-/**  scrollbar start*/
-.mat-tab-body-content {
-  overflow: unset !important;
-}
 
 .mat-tab-body {
-  // overflow: unset !important;
-  height: 200px;
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0 1.5rem;
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+}
+
+/**  scrollbar start*/
+/*
+.mat-tab-body-content {
+  overflow: unset !important;
 }
 
 .mat-tab-body-wrapper::-webkit-scrollbar-track {
@@ -78,5 +85,5 @@
 .mat-tab-body::-webkit-scrollbar-thumb {
 	background-color: #000000 !important;
 }
-
+*/
 /**  scrollbar end */

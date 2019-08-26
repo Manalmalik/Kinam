@@ -53,9 +53,12 @@ export class ProductComponent extends AbstractMenu implements OnInit {
       anim.create(this.main.nativeElement).play();
     }, 200);
   }
+  /* get the index of selected tab */
   tabChanged(tabChangeEvent: MatTabChangeEvent): void {
     this.currentTabIndex = tabChangeEvent.index;
   }
+  
+  /* get the value of selected arrow */
   displayImage(currentImage) {
     this.currentImage = currentImage;
   }

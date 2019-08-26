@@ -18,7 +18,9 @@
 
 .jacket-number {
     font-size: 1.5rem;
-    padding-left: 6rem;
+    padding-left: 70px;
+    margin-top: 6rem;
+    margin-bottom: -6rem;
     color: #848484;
 }
 
@@ -116,6 +118,10 @@
         text-align: center;
         margin-top: 2rem;
         padding-right: unset;
+    }
+    .jacket-number {
+        margin-top: 10rem;
+        margin-bottom: -10rem;
     }
     .tribe-header {
         font-size: 35px !important;
