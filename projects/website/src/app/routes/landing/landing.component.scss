@@ -4,7 +4,7 @@
   display: block;
 }
 
-.column {   
+.column {
   position: relative;
 }
 
@@ -29,7 +29,6 @@ a {
   color: inherit;
 }
 
-
 h1 {
   pointer-events: none;
 }
@@ -45,7 +44,7 @@ h1 {
 }
 
 .discover-more {
-  transform: translateY(5rem);  
+  transform: translateY(5rem);
 }
 
 .menu {
@@ -75,9 +74,9 @@ h1 {
     transition: 0.2s all ease-out;
 
     &:hover {
-        color: black;
-        background-color: white;
-        transition: 0.2s all ease-out;
+      color: black;
+      background-color: white;
+      transition: 0.2s all ease-out;
     }
   }
 }
@@ -92,7 +91,6 @@ h1 {
     display: block;
   }
 }
-
 
 .divider {
   &__stripe {
@@ -168,7 +166,6 @@ h1 {
     position: relative;
     opacity: 0;
 
-
     &__heading {
       text-align: right;
       font-size: 85px;
@@ -177,7 +174,7 @@ h1 {
       display: flex;
       justify-content: flex-end;
 
-      &__bold{
+      &__bold {
         font-size: 140px;
         font-weight: 700;
         line-height: 0.9;
@@ -217,20 +214,19 @@ h1 {
       text-align: right;
       line-height: 1;
       position: relative;
-      padding:0rem 9.5rem 20rem 0rem;
+      padding: 0rem 9.5rem 20rem 0rem;
       margin-top: -1rem;
       margin-left: 10vw;
     }
   }
 
-  &__mayans { 
-
+  &__mayans {
     .text,
     .section-header {
       transform: translateY(-255px);
     }
 
-    .text{
+    .text {
       display: flex;
       // position: absolute;
 
@@ -239,15 +235,14 @@ h1 {
         padding: 0.5rem 2rem;
       }
     }
-    
+
     &__img {
       background-image: url(/assets/mayansBg.jpg);
       background-size: cover;
       height: 30rem;
-      background-position: 0% 50%
+      background-position: 0% 50%;
     }
   }
-
 
   &__music {
     &__header {
@@ -261,8 +256,7 @@ h1 {
     }
   }
 
-  &__social { 
-
+  &__social {
     &__img {
       background-image: url(/assets/socialBg.jpg);
       background-size: cover;
@@ -289,7 +283,7 @@ h1 {
     margin-bottom: 3rem;
   }
 
-  &__footer{ 
+  &__footer {
     color: white;
     background-color: black;
     min-height: 4rem;
@@ -307,7 +301,7 @@ h1 {
   cursor: pointer;
 
   img {
-    width: 64px; 
+    width: 64px;
     margin: 0 0.5rem;
   }
 }
@@ -320,18 +314,18 @@ h1 {
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
     font-weight: 900;
-    cursor: pointer;    
+    cursor: pointer;
     transition: 0.2 ease-out;
     background-color: black;
     color: white;
     text-align: center;
-  
+
     &:hover {
       background-color: white;
       color: black;
       transition: 0.2 ease-out;
     }
-    
+
     &__container {
       text-align: center;
       margin-top: 3rem;
@@ -347,7 +341,6 @@ h1 {
   font-size: 1.2rem;
 }
 
-
 /**
 Complex Button start
 */
@@ -359,8 +352,7 @@ Complex Button start
   position: relative;
 }
 
-
-.inner, 
+.inner,
 .outline,
 .behind {
   width: 25.5rem;
@@ -455,24 +447,23 @@ Complex Button start
     justify-content: flex-start;
     //align-items: center;
 
-
     a {
       font-size: 0.7rem;
       color: white;
       line-height: 1;
       //text-decoration: underline;
-      
+
       &:hover {
         color: #adadad;
       }
-    } 
+    }
   }
 
   &__content {
     margin-top: 16px;
   }
 
-  &__heading{
+  &__heading {
     position: relative;
     font-size: 36px;
     font-weight: bold;
@@ -482,7 +473,7 @@ Complex Button start
     font-family: freight-sans-pro;
   }
 
-  &__text{
+  &__text {
     position: relative;
     font-size: 11px;
     //font-weight: bold;
@@ -500,10 +491,9 @@ Complex Button start
 
 /** Complex Button end */
 
-
 .btn--mayans {
   width: 11rem;
-  margin: 2.0rem 10rem auto;
+  margin: 2rem 10rem auto;
 
   .hover-container {
     background-color: black;
@@ -518,7 +508,7 @@ Complex Button start
   //   width: 11rem;
   //   height: 3rem;
   // }
-  
+
   .inner {
     border: 2px solid white;
     font-size: 2rem;
@@ -579,7 +569,7 @@ Complex Button start
   }
 }
 
-.btn--text{
+.btn--text {
   position: relative;
   margin: 1.5rem -10rem;
   display: block;
@@ -588,7 +578,7 @@ Complex Button start
 
 .section__hero__text {
   p {
-    font-family: freight-sans-pro,sans-serif;
+    font-family: freight-sans-pro, sans-serif;
     font-weight: 200;
     font-style: normal;
     font-size: 18px;
@@ -631,11 +621,11 @@ Complex Button start
 
 .discover-more > div {
   text-align: center;
-  min-height: 0; 
-  position: absolute; 
-  width: 100%; 
-  display: flex; 
-  justify-content: center; 
+  min-height: 0;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -686,30 +676,29 @@ Complex Button start
 .social-links {
   text-align: center;
 
-
   &__link {
     cursor: pointer;
     transition: 0.2s color ease-in-out;
-    
+
     &--facebook {
-        &:hover {
-            color: #4768ad;
-            transition: 0.2s color ease-in-out;
-        }
+      &:hover {
+        color: #4768ad;
+        transition: 0.2s color ease-in-out;
+      }
     }
- 
+
     &--instagram {
-        &:hover {
-            color: #ffc000;
-            transition: 0.2s color ease-in-out;
-        }
+      &:hover {
+        color: #ffc000;
+        transition: 0.2s color ease-in-out;
+      }
     }
- 
+
     &--youtube {
-        &:hover {
-            color: red;
-            transition: 0.2s color ease-in-out;
-        }
+      &:hover {
+        color: red;
+        transition: 0.2s color ease-in-out;
+      }
     }
   }
 }
@@ -729,33 +718,28 @@ Complex Button start
 
     .fal,
     .fas {
-    margin: 0 auto;
+      margin: 0 auto;
       font-size: 48px;
     }
   }
 }
-
 
 @media (min-width: 768px) {
   .hero-text {
     justify-content: flex-start;
   }
 
-  .section__jacket__header{
-    margin:0 8rem 0 5rem;
+  .section__jacket__header {
+    margin: 0 8rem 0 5rem;
   }
 
-  .interaction-bar{
-    transform: translateY(-420px); 
+  .interaction-bar {
+    transform: translateY(-420px);
     padding-left: 0;
-
   }
 }
 
-
-
-@media (min-width: 1407px) { 
-
+@media (min-width: 1407px) {
   .section__mayans .text {
     transform: translateY(-90px);
   }
@@ -782,43 +766,40 @@ Complex Button start
   //     }
   //   }
 
-    .interaction-bar{
-      transform: translateY(-420px); 
-      margin:0 5rem 0 10rem
+  .interaction-bar {
+    transform: translateY(-420px);
+    margin: 0 5rem 0 10rem;
+  }
+}
 
-    }
- }
-
-@media (min-width: 0) and (max-width: 1087px) {  
-
+@media (min-width: 0) and (max-width: 1087px) {
   .section {
     padding: 3rem 0;
-    
+
     &__jacket {
       .interaction-bar {
         transform: translateY(-380px);
         //margin:0 5rem 0 10rem
       }
-      
+
       &__header {
         font-size: 6.2rem;
-        transform:translateY(-75px);
+        transform: translateY(-75px);
       }
     }
-    
+
     &__hero {
       &__heading {
         font-size: 4rem;
         line-height: 1.5;
       }
-      
+
       &__interaction {
-        justify-content: center; 
+        justify-content: center;
         flex-direction: row;
       }
 
       &__text {
-        text-align: center;
         font-size: 20px;
       }
     }
@@ -828,7 +809,7 @@ Complex Button start
     }
   }
 
-  .order-now__links  {
+  .order-now__links {
     text-align: center;
   }
 
@@ -837,10 +818,10 @@ Complex Button start
     justify-content: center;
   }
 
-  .meet-the-mayans {  
+  .meet-the-mayans {
     display: none;
   }
-  
+
   .btn {
     &--indigogo {
       font-size: 1rem;
@@ -863,8 +844,8 @@ Complex Button start
   .section__music__header,
   .section__jacket__header {
     font-size: 4rem;
-      padding-left: 2rem;
-      text-align: right;
+    padding-left: 2rem;
+    text-align: right;
   }
 
   .discover-more {
@@ -891,7 +872,6 @@ Complex Button start
   }
 }
 
-
 @media (min-width: 0) and (max-width: 768px) {
   .section__hero__heading__bold {
     font-size: 110px;
@@ -899,31 +879,32 @@ Complex Button start
   .pre-heading {
     font-size: 55px;
   }
-  
-  .birthday--text, .story--text{
+
+  /**** Jacket start ****/
+  .section__jacket__header {
+    font-size: 4rem;
+    padding: unset;
+    margin: unset;
+    text-align: center;
+  }
+  .jacket-bar {
+    margin-top: 21rem;
+  }
+  /**** Jacket end ****/
+
+  .birthday--text,
+  .story--text {
     margin-left: auto;
     margin-right: auto;
+    text-align: center !important;
   }
 
   .story--text {
     text-align: center !important;
   }
 
-  .participate-header {
-    margin-top: -10% !important;
-  }
-  .participate-btn {
-    margin-top: 10% !important;
-  }
-  .participate--btn {
-    width: 20rem !important;
-  }
-  
-.story-left-column {
-  float: none;
-}
-  .section-header{
-    text-align: center;
+  .story-left-column {
+    float: none;
   }
 
   .interaction-container {
@@ -932,9 +913,9 @@ Complex Button start
 
   .order-now {
     &__links {
-      justify-content:center;
+      justify-content: center;
       padding-top: 1rem;
-    } 
+    }
   }
 
   .order-now__container {
@@ -969,11 +950,11 @@ Complex Button start
       font-size: 24px;
     }
   }
-
   .interaction-bar {
-    margin: 0 auto;
+    margin-left: 3rem;
+    margin-right: 0;
     justify-content: center;
-    transform:none;
+    transform: none;
   }
   .social-bar {
     margin: 8rem auto -8rem auto !important;
@@ -996,24 +977,59 @@ Complex Button start
 
     p {
       font-size: 18px;
+      text-align: center;
+      br {
+        display: none;
+      }
     }
   }
+
+  /**** participate start ****/
+  .indiegogo__container {
+    margin: unset;
+    line-height: 1;
+  }
+
+  .participate-header {
+    margin-top: -10% !important;
+  }
+  .participate-btn {
+    margin-top: 4rem !important;
+  }
+  .participate--btn {
+    width: 18rem !important;
+  }
+  .outer {
+    margin-left: 0.5rem;
+  }
+  /**** participate end ****/
 
   .content-block__headline,
   .content-block__body {
     text-align: center;
     margin: 1rem;
   }
-
+  .content-block__body {
+    br {
+      display: none;
+    }
+  }
+  .order-now__text {
+    p {
+      br {
+        display: none;
+      }
+    }
+  }
   // .watch,
   .btn--primary {
     font-size: 1rem;
   }
-  
+
   .btn--primary {
     padding: 0.5rem 0.75rem;
   }
-  
+
   .btn--mayans {
     margin: 2rem auto !important;
   }
@@ -1036,8 +1052,8 @@ Complex Button start
 
     &__hero {
       &__heading {
-        justify-content: center; 
-        text-align: center; 
+        justify-content: center;
+        text-align: center;
       }
     }
 
@@ -1056,13 +1072,14 @@ Complex Button start
 
     &__social__header {
       // height: 7rem;
-    }  
+    }
 
     &-header {
+      text-align: center;
+      padding: unset !important;
       // transform: translateY(-130px);
     }
   }
-
 
   .scroll-label {
     transform: translateY(6rem);
@@ -1090,23 +1107,22 @@ Complex Button start
   }
 }
 
-@media (min-width: 1087px)  { 
+@media (min-width: 1087px) {
   .jacket-img-grid__img,
   .gradient--small {
     height: 380px;
   }
 }
 
-@media (min-width: 0) and (max-width: 480px) { 
-
+@media (min-width: 0) and (max-width: 480px) {
   .logo img {
-      max-width: 8rem;
-      margin-top: 1rem;
+    max-width: 8rem;
+    margin-top: 1rem;
   }
 
-  .section-header {
-    padding-right: 0;
-  }
+  // .section-header {
+  //   padding-right: 0;
+  // }
 
   .watch {
     font-size: 24px;
@@ -1120,20 +1136,18 @@ Complex Button start
   }
 }
 
-@media (min-width: 0) and (max-width: 320px) { 
-
-
+@media (min-width: 0) and (max-width: 320px) {
   .section-header {
     font-size: 2.5rem;
     /* transform: translateY(-102px); */
-    text-align: left;
+    // text-align: left;
     margin-left: 1rem;
     margin-top: 1.25rem;
   }
 
-  .section__jacket__header {
-    text-align: left;
-  }
+  // .section__jacket__header {
+  //   text-align: left;
+  // }
 
   .content-block__headline,
   .section__hero__heading {
@@ -1150,21 +1164,21 @@ Complex Button start
   }
 }
 
-.line{
+.line {
   border-bottom: 1px solid white;
   position: relative;
-  }
+}
 
-  .participate-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 4%;
-  }
+.participate-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4%;
+}
 
-  .participate-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -5%;
-  }
+.participate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -5%;
+}
