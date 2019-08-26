@@ -25,7 +25,18 @@ export class ProductComponent extends AbstractMenu implements OnInit {
   }
 
   public ngOnInit() {
-
+    
+    /* automate the slider */
+    setInterval(() => {
+      this.currentTabIndex++;
+      if (this.currentTabIndex > 2) {
+        this.currentTabIndex = 0;
+      } 
+      if (this.currentTabIndex < 0) {
+        this.currentTabIndex = 0;
+      }
+    }, 5000); // 1000 means 1 sec delay
+  
     this.metaService.setMeta({
       description: 'Unique jackets for a good cause, using hand-woven textiles by Maya-descendant artisans from Guatemala and produced in EU with collaboration of product developer experts from Berlin.',
       image: 'https://kinam13.com/assets/models/kaqchikel.png',
@@ -54,9 +65,9 @@ export class ProductComponent extends AbstractMenu implements OnInit {
     }, 200);
   }
   /* get the index of selected tab */
-  tabChanged(tabChangeEvent: MatTabChangeEvent): void {
-    this.currentTabIndex = tabChangeEvent.index;
-  }
+  // tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+  //   this.currentTabIndex = tabChangeEvent.index;
+  // }
   
   /* get the value of selected arrow */
   displayImage(currentImage) {

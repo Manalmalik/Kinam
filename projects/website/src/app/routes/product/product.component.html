@@ -57,11 +57,12 @@
               <kinam-product-slider></kinam-product-slider>
             </div>
           </div>
-          <mat-tab-group (selectedTabChange)="tabChanged($event)">
+          <!-- <mat-tab-group (selectedTabChange)="tabChanged($event)"> -->
+          <mat-tab-group [selectedIndex]="currentTabIndex">
             <mat-tab>
               <ng-template mat-tab-label>
-                <i *ngIf="currentTabIndex===0" class="fas fa-circle"></i>
-                <i *ngIf="currentTabIndex!==0" class="fal fa-circle"></i>
+                <i (click)="currentTabIndex = 0" *ngIf="currentTabIndex===0" class="fas fa-circle"></i>
+                <i (click)="currentTabIndex = 0" *ngIf="currentTabIndex!==0" class="fal fa-circle"></i>
               </ng-template>
               <div class="interaction-bar">
                 <div class="interaction-bar__item">
@@ -88,8 +89,8 @@
             </mat-tab>
             <mat-tab>
               <ng-template mat-tab-label>
-                <i *ngIf="currentTabIndex===1" class="fas fa-circle"></i>
-                <i *ngIf="currentTabIndex!==1" class="fal fa-circle"></i>
+                <i (click)="currentTabIndex = 1" *ngIf="currentTabIndex===1" class="fas fa-circle"></i>
+                <i (click)="currentTabIndex = 1" *ngIf="currentTabIndex!==1" class="fal fa-circle"></i>
               </ng-template>
               <h1 style="font-size: 40px">Garments Selling Stories </h1>
               Looking to make a fashion statement? Your unique KINAM jacket will do it for you. Comprised of
@@ -108,8 +109,8 @@
             </mat-tab>
             <mat-tab>
               <ng-template mat-tab-label>
-                <i *ngIf="currentTabIndex===2" class="fas fa-circle"></i>
-                <i *ngIf="currentTabIndex!==2" class="fal fa-circle"></i>
+                <i (click)="currentTabIndex = 2" *ngIf="currentTabIndex===2" class="fas fa-circle"></i>
+                <i (click)="currentTabIndex = 2" *ngIf="currentTabIndex!==2" class="fal fa-circle"></i>
               </ng-template>
               <h1 style="font-size: 40px">Weaving ancient threads </h1>
               The fabric of every Kinam jacket is hand-woven with love by Maya descendant artisans in
