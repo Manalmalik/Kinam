@@ -29,10 +29,7 @@ export class ProductComponent extends AbstractMenu implements OnInit {
     /* automate the slider */
     setInterval(() => {
       this.currentTabIndex++;
-      if (this.currentTabIndex > 2) {
-        this.currentTabIndex = 0;
-      } 
-      if (this.currentTabIndex < 0) {
+      if (this.currentTabIndex > 2 || this.currentTabIndex < 0) {
         this.currentTabIndex = 0;
       }
     }, 5000); // 1000 means 1 sec delay
