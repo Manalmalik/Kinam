@@ -1,0 +1,2 @@
+To deploy the website run the following command:
+npm deploy:website
