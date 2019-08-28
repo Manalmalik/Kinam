@@ -1,4 +1,4 @@
-import { Component, OnDestroy, AfterViewInit, OnInit } from '@angular/core';
+import { Component, OnDestroy, AfterViewInit, OnInit, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { trigger, transition, style, animate, group } from '@angular/animations';
 
@@ -35,6 +35,7 @@ import { Meta } from '@angular/platform-browser';
   ],
   styles: [`
   .logo img {
+    margin-top: 1.2rem;
     margin-left: 2rem;
     cursor: pointer;
   }
@@ -78,7 +79,7 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
 
   }
   private subscription = new Subscription();
-
+  public currentWindowWidth: number;
   public authenticated = true;
   public state = false;
 
@@ -99,6 +100,9 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
     ).subscribe(
       () => this.viewportScroller.scrollToPosition([0, 0]),
     )
+
+    this.currentWindowWidth = window.innerWidth;
+    
   }
 
   public ngAfterViewInit(): void {
@@ -127,6 +131,10 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
 
   public ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+  @HostListener('window:resize')
+  onResize() {
+    this.currentWindowWidth = window.innerWidth
   }
 }
 

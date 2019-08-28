@@ -36,7 +36,7 @@
 
 
   </div>
-  <div class="icon-header ">
+  <div *ngIf="currentWindowWidth >= 760" class="icon-header ">
     <a class="a" routerLink="/the-jacket" routerLinkActive="active">
       THE JACKET
     </a>
@@ -66,11 +66,24 @@
     <a class="a" routerLink="/about" routerLinkActive="active">
       SUPPORT US
     </a>
+
   </div>
+
+  
+    <div *ngIf="currentWindowWidth < 760" class="icon-header">
+      <img
+      alt="Menu Icon"
+      src="/assets/menu.svg"
+      class="menu-icon"
+      (click)="toggleMenu()"
+    />
+    </div>
+  
+
 </div>
 
 <ng-container *ngIf="authenticated">
   <router-outlet></router-outlet>
 </ng-container>
 
-<kinam-menu></kinam-menu>
+<kinam-menu></kinam-menu> 
