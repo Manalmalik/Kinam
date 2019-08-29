@@ -62,6 +62,7 @@ import { Meta } from '@angular/platform-browser';
 
     .menu-icon {
       width: 4rem;
+      margin-top: 1.5rem;
     }
   }
   `]

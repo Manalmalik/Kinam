@@ -96,3 +96,15 @@ a {
     }
   }
 }
+
+@media (min-width: 0) and (max-width: 760px) {
+  .side-menu {
+    background-color: black;
+    color: white;
+  }
+
+  a {
+    color:white;
+  }
+  
+}
