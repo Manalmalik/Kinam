@@ -11,6 +11,9 @@ import { TitleService, MetaService } from '@website/services';
 export class ProjectComponent implements OnInit {
   @ViewChild('main') main: ElementRef;
 
+  currentTabIndex = 0;
+  currentImage = 0.5;
+
   constructor(
     private titleService: TitleService,
     private _builder: AnimationBuilder,
@@ -18,6 +21,13 @@ export class ProjectComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    setInterval(() => {
+      this.currentTabIndex++;
+      if (this.currentTabIndex > 2 || this.currentTabIndex < 0) {
+        this.currentTabIndex = 0;
+      }
+    }, 5000); // 1000 means 1 sec delay
 
     const anim = this._builder.build([
       style({

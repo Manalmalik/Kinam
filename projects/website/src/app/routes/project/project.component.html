@@ -20,9 +20,9 @@
             font-size: 130px;
             margin-right: 40px;
             color: white;
-            line-height: .75;
+            line-height: .5;
             text-align: right;
-            letter-spacing: 3px;
+            /* letter-spacing: 3px; */
             font-family: Century Gothic;
         }
 
@@ -54,13 +54,19 @@
         .p3,
         p {
             font-family: Freight Sans;
-            font-size: 14px;
+            font-size: 15px;
+            text-align: left;
         }
 
         p {
             margin-right: 40px;
         }
+        /* .mat-tab-label .mat-tab-label-content{
+            padding-right: 10px !important;
+            padding-left: 10px !important;
+        } */
     </style>
+    
     <div class="gradient " style="margin-top: -160px;">
         <div class="gradient gradient__image wall__bg" style="margin-top: 0px;"></div>
         <br><br>
@@ -69,76 +75,132 @@
 
 
         <section class="section responsive ">
-            <div class="links" style="margin-top: 200px;">
+            <!-- <div class="links" style="margin-top: 200px;">
                 <a routerLinkActive="active" routerLink="/social-projects-1" class="submenu"> Project 01</a> <a
                     routerLinkActive="active" routerLink="/social-projects-2" class="submenu2"> Project 02</a> <a
-                    routerLinkActive="active" routerLink="/social-projects3" class="submenu2"> Project 03</a></div>
+                    routerLinkActive="active" routerLink="/social-projects3" class="submenu2"> Project 03</a>
+                </div> -->
 
-            <div class="columns is-gapless" style="margin-top: 50px;">
-                <div class="column is-6 project-heading" style="margin-top: -50px;">
+            <div class="columns is-gapless" style="margin-top: 15rem;">
+                <div class="column project-heading" style="justify-content: right; padding-bottom: 2rem;">
+                    <div class="rows">
+                    <div class="row po" style="margin-top: 2rem; line-height: 0.75; padding-bottom: 3rem">
+                       
+                                <span class="projectHeader">
+                                    Social </span><br>
+                                <span class="projectHeader">
+                                    Projects
+                                </span>
+                        
+                    </div>
+                    
 
-                    <div class="po"><b>Social Projects</b></div>
-                    <br><br>
+                    <div class="row">
+                    <div class="columns is-6 projects-content" >
 
 
-                    <div class="columns projects-content">
-
-
-                        <div class="column is-5">
+                        <div class="column is-5" style="margin-left: 2rem">
                             <div class="p2">
+                            <p>
                                 With KINAM’s social projects, we aim to build pride and appreciation for the Maya
-                                culture amongst
-                                younger
-                                generations
-                                and equip them with the necessary tools for future success. Our three first projects
-                                are: education
-                                and
-                                skill-building
-                                through football, re-introduction of Maya art by teaching descendants how to read and
-                                write in
-                                original
-                                Glyphs,
-                                and
-                                financing Maya archeological projects to uncover lost treasures.
+                                culture amongst younger generations and equip them with the necessary tools for future success. 
+                                Our three first projects are: education and skill-building through football, re-introduction of 
+                                Maya art by teaching descendants how to read and write in original Glyphs, and financing Maya
+                                archeological projects to uncover lost treasures.
+                            </p>
+                                
 
                             </div>
 
                         </div>
                         <div class="column is-5 ">
-                            <div class="p3"> Another long term goal in the pipeline is to create volunteer participation
+                            <div class="p3">
+                                <p>
+                                Another long term goal in the pipeline is to create volunteer participation
                                 projects for people from all around the world whereby we can stimulate an even greater
                                 cultural exchange.<b> There is an oppurtunity for social projects in Guatemaia to have a
-                                    true impact,to preserve and protect the rich ancient Maya culture.</b>
+                                true impact,to preserve and protect the rich ancient Maya culture.</b>
+                                </p>
                             </div>
 
 
                         </div>
                     </div>
-
-
-                </div>
-
-                <div class="column is-3 ">
-                    <div class="pof"><b> Education Through Football</b></div>
-                    <br>
-                    <div class="poff"> <b>Situation </b></div><br>
-
-                    <p>Football plays a big role in Guatemala ́s culture and represents a positive distraction from a
-                        rough
-                        everyday-life
-                        for
-                        many people, especially younger generations. However, suitable and safe spaces, appropriate
-                        equipment,
-                        and
-                        qualified
-                        coaches with pedagogical skills are rare. The social potential of football remains largely
-                        undisclosed /
-                        hidden.
-
-                    </p>
+                    </div>
+                    </div>
 
                 </div>
-                <div class="column is-2"></div>
+
+                <div class="column is-4">
+                    <div>
+                           <kinam-product-slider></kinam-product-slider>
+                    </div>
+                    <mat-tab-group>
+                        <mat-tab label="Project01">
+                                <div class="pof"><b> Education Through Football</b></div>
+                                <br>
+                                <div class="poff"> <b>Situation </b></div><br>
+            
+                                <p>Football plays a big role in Guatemala ́s culture and represents a positive distraction from a
+                                    rough
+                                    everyday-life
+                                    for
+                                    many people, especially younger generations. However, suitable and safe spaces, appropriate
+                                    equipment,
+                                    and
+                                    qualified
+                                    coaches with pedagogical skills are rare. The social potential of football remains largely
+                                    undisclosed /
+                                    hidden.
+            
+                                </p>
+                                <img src="assets/models/kaqchikel.png">
+                        </mat-tab>
+                        <mat-tab label="Project02" style="color: blanchedalmond">
+                                <div class="pof"><b> Education Through Football</b></div>
+                                <br>
+                                <div class="poff"> <b>Situation </b></div><br>
+            
+                                <p>Football plays a big role in Guatemala ́s culture and represents a positive distraction from a
+                                    rough
+                                    everyday-life
+                                    for
+                                    many people, especially younger generations. However, suitable and safe spaces, appropriate
+                                    equipment,
+                                    and
+                                    qualified
+                                    coaches with pedagogical skills are rare. The social potential of football remains largely
+                                    undisclosed /
+                                    hidden.
+            
+                                </p>
+                                <img src="assets/models/kaqchikel.png">
+                        </mat-tab>
+                        <mat-tab label="Project02" style="color: blanchedalmond">
+                                <div class="pof"><b> Education Through Football</b></div>
+                                <br>
+                                <div class="poff"> <b>Situation </b></div><br>
+            
+                                <p>Football plays a big role in Guatemala ́s culture and represents a positive distraction from a
+                                    rough
+                                    everyday-life
+                                    for
+                                    many people, especially younger generations. However, suitable and safe spaces, appropriate
+                                    equipment,
+                                    and
+                                    qualified
+                                    coaches with pedagogical skills are rare. The social potential of football remains largely
+                                    undisclosed /
+                                    hidden.
+            
+                                </p>
+                                <img src="assets/models/kaqchikel.png">
+                        </mat-tab>
+                    </mat-tab-group>
+                  
+
+                </div>
+                <!-- <div class="column is-2"></div> -->
                 <!-- social icons column -->
                 <div class="column is-1 social-icons">
                     <kinam-social-icons></kinam-social-icons>

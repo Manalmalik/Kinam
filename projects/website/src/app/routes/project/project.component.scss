@@ -685,10 +685,13 @@ Complex Button start
     padding-right: 0;
   }
   .social-icons {
-    margin-top: -13rem !important;
+    margin-top: -10rem !important;
+    padding-right: 1rem;
   }
   .projects-content {
     padding-left: 10%;
+    //padding: 0 2rem 0 2rem;
+    width: 100%;
   }
 }
 
@@ -1007,10 +1010,29 @@ Complex Button start
     margin-bottom: 0;
   }
 }
+.projectHeader{
+  font-size: 15vh;
+  font-weight: bold;
+}
+
 
 @media (min-width: 0) and (max-width: 768px) and (orientation: landscape) {
   .gradient {
     height: 80vh;
+  }
+  .projectHeader{
+    font-size: 100%;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 0) and (max-width: 1024px){
+  .gradient {
+    height: 80vh;
+  }
+  .projectHeader{
+    font-size: 8vh;
+    font-weight: bold;
   }
 }
 
@@ -1041,6 +1063,10 @@ Complex Button start
   .hover-container.large {
     transform: scale(0.5);
   }
+  .projectHeader{
+    font-size: 100%;
+    font-weight: bold;
+  }
 }
 
 @media (min-width: 0) and (max-width: 320px) {
@@ -1069,4 +1095,9 @@ Complex Button start
     font-size: 2.5rem;
     padding: 0;
   }
+  .projectHeader{
+    font-size: 100%;
+    font-weight: bold;
+  }
 }
+
