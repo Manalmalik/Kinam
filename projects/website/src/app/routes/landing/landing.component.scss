@@ -14,15 +14,24 @@
 
 .section-header {
   // font-size: 7.2rem;
-  font-size: 6vw;
+  font-size: 4rem;
   font-weight: bolder;
   text-align: right;
   line-height: 1;
   position: relative;
   padding-right: 8rem;
   padding-left: 2rem;
-  transform: translateY(-130px);
-  margin-top: 7rem;
+  //transform: translateY(-80px);
+  margin-top: 8.5rem;
+
+  &__projects{
+    transform: translateY(-90px);
+    padding-right: 6rem;
+  }
+  &__music{
+    margin-top: 2.5rem;
+    padding-right: 6rem;
+  }
 }
 
 a {
@@ -229,15 +238,17 @@ h1 {
   }
 
   &__mayans {
-    .text,
+    
     .section-header {
-      transform: translateY(-255px);
+      font-size: 6.2rem;
+      transform: translateY(-225px);
     }
 
     .text {
       display: flex;
       // position: absolute;
-
+      transform: translateY(-255px);
+      
       p {
         text-align: right;
         padding: 0.5rem 2rem;
@@ -256,7 +267,7 @@ h1 {
 
   &__music {
     &__header {
-      font-size: 7.2rem;
+      font-size: 6.2rem;
       font-weight: bolder;
       text-align: right;
       line-height: 1.1;
@@ -283,7 +294,7 @@ h1 {
     }
 
     &__header {
-      font-size: 7.2rem;
+      font-size: 6.2rem;
       font-weight: bolder;
       text-align: right;
       line-height: 1.1;
@@ -1030,7 +1041,9 @@ Complex Button start
   }
 
   .participate-header {
-    margin-top: -10% !important;
+   //margin-top: -10rem !important;
+   font-size: 6.2rem;
+   color: white
   }
   .participate-btn {
     margin-top: 4rem !important;
@@ -1212,7 +1225,8 @@ Complex Button start
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4%;
+  margin-top: -3.5rem;
+  margin-bottom: 5rem;
 }
 
 .participate-btn {
@@ -1220,4 +1234,5 @@ Complex Button start
   align-items: center;
   justify-content: center;
   margin-top: -5%;
+  margin-right: 6rem;
 }
