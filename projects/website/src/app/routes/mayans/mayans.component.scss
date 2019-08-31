@@ -680,9 +680,20 @@ Complex Button start
   margin-top: 200px;
 }
 
+.imageBg{
+  position: absolute;
+  z-index: -1;
+  right: 1rem; 
+  margin-top: 50px;
+  width: 100%; 
+  height: auto
+}
 @media (min-width: 768px) {
   .hero-text {
     justify-content: flex-start;
+  }
+  .imageBg{
+    transform: translateX(140px);
   }
 }
 
@@ -839,8 +850,7 @@ Complex Button start
     margin-top: unset !important;
   }
   .mayans-img {
-    margin-top: 66px !important;
-    min-width: 150% !important;
+    margin-top: 8rem !important;
   }
 
   .ancient-heading {
@@ -857,7 +867,7 @@ Complex Button start
   }
   .mayyan-menu {
     text-align: center !important;
-    margin-top: 30rem !important;
+    margin-top: 25rem !important;
   }
 
   .submenu {
@@ -873,7 +883,7 @@ Complex Button start
   }
 
   .section__mayans .jun {
-    text-align: center !important;
+    text-align: justify !important;
     font-size: 20px !important;
     margin: 1rem;
   }

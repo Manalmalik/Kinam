@@ -120,7 +120,7 @@ h1 {
     }
 
     &-1 {
-      background-image: url(/assets/jacket01_bg.png);
+      background-image: url(/assets/jacketFinal.png);
     }
     &-2 {
       background-image: url(/assets/jacket02_bg.png);
@@ -218,6 +218,14 @@ h1 {
       margin-top: -1rem;
       margin-left: 10vw;
     }
+
+    &__img {
+      background-image: url(/assets/jacketFinal.png);
+      background-size: cover; 
+      height: 40rem;
+      width: 100%;
+
+    }
   }
 
   &__mayans {
@@ -237,10 +245,12 @@ h1 {
     }
 
     &__img {
-      background-image: url(/assets/mayansBg.jpg);
-      background-size: cover;
-      height: 30rem;
+      background-image: url(/assets/mayansFinal.png);
+      background-size: cover; 
+      height: 40rem;
+      width: 100%;
       background-position: 0% 50%;
+
     }
   }
 
@@ -254,14 +264,22 @@ h1 {
       padding-right: 2rem;
       transform: translateY(-129px);
     }
+    &__img {
+      background-image: url(/assets/musicLanding.png);
+      background-size: cover; 
+      height: 40rem;
+      width: 100%;
+    }
   }
 
   &__social {
     &__img {
-      background-image: url(/assets/socialBg.jpg);
-      background-size: cover;
-      height: 30rem;
-      background-position: center 60%;
+      background-image: url(/assets/projects.png);
+      background-size: cover; 
+      height: 40rem;
+      width: 100%;
+      background-position: 0% 50%;
+
     }
 
     &__header {
@@ -279,8 +297,28 @@ h1 {
     }
   }
 
+  &__story {
+    &__img {
+      background-image: url(/assets/ourStory.png);
+      background-size: cover; 
+      height: 40rem;
+      width: 100%;
+      background-position: 0% 50%;
+
+    }
+  }
+
   &__participate {
     margin-bottom: 3rem;
+
+    &__img {
+      background-image: url(/assets/participate.png);
+      background-size: cover; 
+      height: 40rem;
+      width: 100%;
+      background-position: 0% 50%;
+
+    }
   }
 
   &__footer {
@@ -729,9 +767,9 @@ Complex Button start
     justify-content: flex-start;
   }
 
-  .section__jacket__header {
-    margin: 0 8rem 0 5rem;
-  }
+  // .section__jacket__header {
+  //   margin: 0 8rem 0 5rem;
+  // }
 
   .interaction-bar {
     transform: translateY(-420px);

@@ -59,12 +59,14 @@
 
 <!-- Section: The Jacket -->
 <section class="section__jacket responsive" id="jacket">
-  <div class="jacket-img-grid">
-    <!--  Model Images -->
+  <!-- <div class="jacket-img-grid">
     <div class="jacket-img-grid__img jacket-img-grid__img-1" #jacketGrid></div>
     <div class="jacket-img-grid__img jacket-img-grid__img-2" #jacketGrid></div>
     <div class="jacket-img-grid__img jacket-img-grid__img-3" #jacketGrid></div>
-  </div>
+  </div> -->
+  <div class="gradient gradient--small gradient__container">
+      <div class="gradient gradient--small gradient__image section__jacket__img" #jacketImg></div>
+    </div>
   <div class="columns">
     <div class="column is-6">
       <h1 class="section__jacket__header">
@@ -134,7 +136,9 @@
 </section>
 <!--  Section: The Mayans -->
 <div class="gradient gradient--small gradient__container">
-  <div class="gradient gradient--small gradient__image section__mayans__img" #mayansImg></div>
+  <div class="gradient gradient--small gradient__image section__mayans__img" #mayansImg>
+    <!-- <img src="/assets/testImage.png" class="responsive" style="width:100%; height:auto">  -->
+  </div>
 </div>
 <section class="section responsive">
   <section class="section__mayans" id="mayans">
@@ -197,12 +201,10 @@
  Section: Social Projects
 -->
 
-<div class="jacket-img-grid">
-  <!--  Model Images -->
-  <div class="projects-img-grid__img projects-img-grid__img-1" #jacketGrid></div>
-  <div class="projects-img-grid__img projects-img-grid__img-2" #jacketGrid></div>
-  <div class="projects-img-grid__img projects-img-grid__img-3" #jacketGrid></div>
-</div>
+
+    <div class="gradient gradient--small gradient__container">
+        <div class="gradient gradient--small gradient__image section__social__img" #projectsImg></div>
+      </div>
 
 <section class="section responsive">
   <div>
@@ -253,14 +255,13 @@
 <!--
    Section: The Music
  -->
-
+ <div class="gradient gradient--small gradient__container">
+    <div class="gradient gradient--small gradient__image section__music__img" #projectsImg></div>
+  </div>
 <section class="section responsive">
   <div>
     <section class="section__social" id="the music">
-      <div class="gradient gradient__container">
-        <div class="gradient gradient__image wall__bg"></div>
-        <div class="gradient gradient__overlay"></div>
-      </div>
+        
       <div class="columns is-gapless section__social" style="margin-bottom: 7rem">
         <div class="column section__social__header is-6">
           <h1 class="section-header" style="margin-top: -0.5rem">
@@ -309,7 +310,7 @@
 
 <!-- OUR STORY -->
 <div class="gradient gradient--small gradient__container">
-  <div class="gradient gradient--small gradient__image section__mayans__img" #mayansImg></div>
+  <div class="gradient gradient--small gradient__image section__story__img" #mayansImg></div>
 </div>
 <section class="section responsive">
   <section class="section__mayans" id="ourStory">
@@ -370,7 +371,7 @@
    Section: Participate
  -->
 <div class="gradient gradient--small gradient__container">
-  <div class="gradient gradient--small gradient__image section__mayans__img" #mayansImg></div>
+  <div class="gradient gradient--small gradient__image section__participate__img" #mayansImg></div>
 </div>
 <section class="section responsive">
   <section style="padding-bottom: 18rem ">
