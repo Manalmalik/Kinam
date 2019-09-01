@@ -41,6 +41,8 @@ import { About2Component } from './routes/about/about2.component';
 import { About3Component } from './routes/about/about3.component';
 import { CalendarComponent } from './routes/calendar/calendar.component';
 import { SocialIconsComponent } from './routes/social-icons/social-icons.component';
+import { PageFooterComponent } from './routes/page-footer/page-footer.component';
+
 
 
 const routes: Routes = [
@@ -89,6 +91,7 @@ const routes: Routes = [
     About3Component,
     CalendarComponent,
     SocialIconsComponent,
+    PageFooterComponent,
   ],
   providers: [EntryGuard],
   entryComponents: [LoginDialogComponent, DialogComponent],
