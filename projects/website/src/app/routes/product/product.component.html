@@ -59,6 +59,29 @@
               <kinam-product-slider></kinam-product-slider>
             </div>
           </div>
+          <div class="interaction-bar">
+            <div class="interaction-bar__item">
+              <i class="fal fa-seedling"></i>
+              <div class="icon-label">
+                natural <br>
+                materials
+              </div>
+            </div>
+            <div class="interaction-bar__item">
+              <i class="fal fa-flower-tulip"></i>
+              <div class="icon-label">
+                sustainable <br>
+                model
+              </div>
+            </div>
+            <div class="interaction-bar__item">
+              <i class="fal fa-hand-holding-heart"></i>
+              <div class="icon-label">
+                handmade
+              </div>
+            </div>
+          </div>
+
           <!-- <mat-tab-group (selectedTabChange)="tabChanged($event)"> -->
           <mat-tab-group [selectedIndex]="currentTabIndex">
             <mat-tab>
@@ -66,28 +89,20 @@
                 <i (click)="currentTabIndex = 0" *ngIf="currentTabIndex===0" class="fas fa-circle"></i>
                 <i (click)="currentTabIndex = 0" *ngIf="currentTabIndex!==0" class="fal fa-circle"></i>
               </ng-template>
-              <div class="interaction-bar">
-                <div class="interaction-bar__item">
-                  <i class="fal fa-seedling"></i>
-                  <div class="icon-label">
-                    natural <br>
-                    materials
-                  </div>
-                </div>
-                <div class="interaction-bar__item">
-                  <i class="fal fa-flower-tulip"></i>
-                  <div class="icon-label">
-                    sustainable <br>
-                    model
-                  </div>
-                </div>
-                <div class="interaction-bar__item">
-                  <i class="fal fa-hand-holding-heart"></i>
-                  <div class="icon-label">
-                    handmade
-                  </div>
-                </div>
-              </div>
+              <h1 style="font-size: 40px">Product features</h1>
+              Looking to make a fashion statement? Your unique KINAM jacket will do it for you. Comprised of
+              high-quality,
+              organic textile, our one-of-a-kind garments are where modern street style meets the ancient Maya
+              civilization with
+              3,000-year-old weaving prajacctices. Each jacket features a bold, unisex design, telling the story of
+              one of six
+              represented Maya tribes. Eventually, we aim to expand our product line to include all 22 Maya
+              communities. Our
+              goal is sustainable, transparent production, designed in Berlin and hand-woven in Guatemala by
+              Maya-descendant
+              artisans in fair conditions. 10% of every sale will go back to Guatemala via our social projects, to
+              support the
+              Mayas and help them build skills for a better future.
             </mat-tab>
             <mat-tab>
               <ng-template mat-tab-label>
