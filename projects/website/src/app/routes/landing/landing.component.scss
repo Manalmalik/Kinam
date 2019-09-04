@@ -795,7 +795,7 @@ Complex Button start
   .section__mayans .section-header,
   .section-header {
     font-size: 5rem;
-    transform: translateY(-90px);
+    transform: translateY(-17px);
   }
 
   // .section__hero__heading{
@@ -817,6 +817,9 @@ Complex Button start
   .interaction-bar {
     transform: translateY(-420px);
     margin: 0 5rem 0 10rem;
+  }
+  .participate-btn {
+    margin-right: 6rem;
   }
 }
 
@@ -918,6 +921,9 @@ Complex Button start
   .text {
     flex-direction: column;
   }
+}
+.participate-btn {
+  margin-right: 6rem;
 }
 
 @media (min-width: 0) and (max-width: 768px) {
@@ -1040,7 +1046,7 @@ Complex Button start
 
   .participate-header {
    //margin-top: -10rem !important;
-   font-size: 6.2rem;
+   //font-size: 6.2rem;
    color: white
   }
   .participate-btn {
@@ -1232,5 +1238,5 @@ Complex Button start
   align-items: center;
   justify-content: center;
   margin-top: -5%;
-  margin-right: 6rem;
+  // margin-right: 6rem;
 }
