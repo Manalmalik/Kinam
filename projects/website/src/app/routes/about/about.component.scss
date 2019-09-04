@@ -9,6 +9,12 @@
     opacity: 0;
 }
 
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+  font-size: 12px;
+}
+
 h1 {
     font-size: 3rem;
 }
