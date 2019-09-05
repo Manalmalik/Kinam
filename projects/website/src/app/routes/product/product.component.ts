@@ -13,7 +13,7 @@ export class ProductComponent extends AbstractMenu implements OnInit {
   @ViewChild('main') main: ElementRef;
 
   currentTabIndex = 0;
-  currentImage = 0.5;
+  currentImage = 0.3;
 
   constructor(
     landingService: LandingService,

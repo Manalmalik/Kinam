@@ -20,6 +20,7 @@ export class ProductHeaderComponent {
   public tribes = [
     `M'am`,
     'Kaqchikel',
+    'Last Tribe'
   ];
 
   public slide(el, dir: 'left' | 'right') {
