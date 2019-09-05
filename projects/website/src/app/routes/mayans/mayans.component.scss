@@ -1042,6 +1042,7 @@ Complex Button start
   }
 }
 
+
 @media (min-width: 0) and (max-width: 768px) and (orientation: landscape) {
   .gradient {
     height: 80vh;
@@ -1079,6 +1080,12 @@ Complex Button start
   .hover-container.large {
     transform: scale(0.5);
   }
+  .imageBg{
+    max-width: 150%; 
+    height: 14%;
+    width: 150%;
+    left: 1px;
+  }
 }
 
 @media (min-width: 0) and (max-width: 320px) {
@@ -1106,5 +1113,11 @@ Complex Button start
   .section__mayans .section-header {
     font-size: 2.5rem;
     padding: 0;
+  }
+  .imageBg{
+    max-width: 150%; 
+    height: 14%;
+    width: 150%;
+    left: 1px;
   }
 }
