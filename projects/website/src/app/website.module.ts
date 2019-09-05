@@ -49,17 +49,11 @@ const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'the-jacket', component: ProductComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'about1', component: About1Component },
-  { path: 'about2', component: About2Component },
-  { path: 'about3', component: About3Component },
 
   { path: 'calendar', component: CalendarComponent },
   { path: 'music', component: MusicComponent },
   { path: 'the-mayans', component: MayansComponent },
   { path: 'social-projects', component: ProjectComponent },
-  { path: 'social-projects-1', component: ProjectComponent1 },
-  { path: 'social-projects-2', component: ProjectComponent2 },
-  { path: 'social-projects3', component: ProjectComponent3 },
   { path: '**', redirectTo: '' },
 ];
 
