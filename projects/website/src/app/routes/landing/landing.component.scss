@@ -912,6 +912,7 @@ Complex Button start
     font-size: 4rem;
     transform: none;
     padding-right: 3.5rem;
+    margin-top: 4.5rem;
   }
 
   .section__mayans .text {
@@ -920,6 +921,9 @@ Complex Button start
 
   .text {
     flex-direction: column;
+  }
+  .mayan-text{
+    text-align: justify;
   }
 }
 .participate-btn {
@@ -1190,6 +1194,12 @@ Complex Button start
   .hover-container.large {
     transform: scale(0.5);
   }
+  .order-now{
+    &__text {
+      text-align: justify;
+      padding-right: 1rem;
+    }
+  }
 }
 
 @media (min-width: 0) and (max-width: 320px) {
@@ -1217,6 +1227,12 @@ Complex Button start
   .section__mayans .section-header {
     font-size: 2.5rem;
     padding: 0;
+  }
+  .order-now{
+    &__text {
+      text-align: justify;
+      padding-right: 1rem;
+    }
   }
 }
 
