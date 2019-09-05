@@ -18,9 +18,9 @@ export class ProductHeaderComponent {
   private _previousPercent = 0;
 
   public tribes = [
-    `M'am`,
-    'Kaqchikel',
-    'Last Tribe'
+    'Huracan',
+    `Ixchel`,
+    'Quetzal'
   ];
 
   public slide(el, dir: 'left' | 'right') {
