@@ -672,6 +672,11 @@ Complex Button start
   }
 }
 
+p{
+  
+  text-align: left;
+}
+
 
 @media (min-width: 768px) {
   .hero-text {
@@ -821,7 +826,7 @@ Complex Button start
     display: none;
   }
   .links {
-    text-align: center !important;
+    text-align: justify !important;
     margin-top: 20rem !important;
     margin-bottom: 3rem !important;
   }
@@ -847,8 +852,8 @@ Complex Button start
     margin: 0 1rem !important;
   }
   p {
-    text-align: center;
-    margin: 3rem 1rem 0 1rem !important;
+    text-align: justify;
+   
   }
   .p2, .p3 {
     text-align: center;

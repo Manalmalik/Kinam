@@ -849,8 +849,8 @@ Complex Button start
   .pof,
   .poff,
   p {
-    text-align: center !important;
-    margin: 3rem 1rem 0 1rem !important;
+    text-align: justify !important;
+    margin: 0 1rem 0 1rem !important;
   }
   .p2,
   .p3 {
@@ -943,7 +943,11 @@ Complex Button start
   }
 
   .btn--mayans {
-    margin: 2rem auto;
+    margin: -2rem 6rem;
+  }
+
+  .mobile{
+    padding-bottom: 2rem;
   }
 
   .interaction__jacket__item {
