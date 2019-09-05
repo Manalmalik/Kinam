@@ -31,14 +31,8 @@ import { MusicComponent } from './routes/music/music.component';
 import { MayansComponent } from './routes/mayans/mayans.component';
 import { ProjectComponent } from './routes/project/project.component';
 
-import { ProjectComponent1 } from './routes/project/1.component';
-import { ProjectComponent2 } from './routes/project/2.component';
-import { ProjectComponent3 } from './routes/project/3.component';
 
 import { AboutComponent } from './routes/about/about.component';
-import { About1Component } from './routes/about/about1.component';
-import { About2Component } from './routes/about/about2.component';
-import { About3Component } from './routes/about/about3.component';
 import { CalendarComponent } from './routes/calendar/calendar.component';
 import { SocialIconsComponent } from './routes/social-icons/social-icons.component';
 import { PageFooterComponent } from './routes/page-footer/page-footer.component';
@@ -76,13 +70,7 @@ const routes: Routes = [
     MusicComponent,
     MayansComponent,
     ProjectComponent,
-    ProjectComponent1,
-    ProjectComponent2,
-    ProjectComponent3,
     AboutComponent,
-    About1Component,
-    About2Component,
-    About3Component,
     CalendarComponent,
     SocialIconsComponent,
     PageFooterComponent,
