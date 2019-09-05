@@ -260,7 +260,6 @@ h1 {
       background-size: cover; 
       height: 40rem;
       width: 100%;
-      background-position: 0% 50%;
 
     }
   }
@@ -327,7 +326,6 @@ h1 {
       background-size: cover; 
       height: 40rem;
       width: 100%;
-      background-position: 0% 50%;
 
     }
   }
@@ -797,7 +795,16 @@ Complex Button start
   .section__mayans .section-header,
   .section-header {
     font-size: 5rem;
-    transform: translateY(-90px);
+    // transform: translateY(-17px);
+  }
+
+  .interaction-bar__item .icon-label {
+    font-size: 0.7vw;
+
+    .fal,
+    .fas {
+      font-size: 24px;
+    }
   }
 
   // .section__hero__heading{
@@ -819,6 +826,9 @@ Complex Button start
   .interaction-bar {
     transform: translateY(-420px);
     margin: 0 5rem 0 10rem;
+  }
+  .participate-btn {
+    margin-right: 6rem;
   }
 }
 
@@ -911,6 +921,7 @@ Complex Button start
     font-size: 4rem;
     transform: none;
     padding-right: 3.5rem;
+    margin-top: 4.5rem;
   }
 
   .section__mayans .text {
@@ -920,6 +931,12 @@ Complex Button start
   .text {
     flex-direction: column;
   }
+  .mayan-text{
+    text-align: justify;
+  }
+}
+.participate-btn {
+  margin-right: 6rem;
 }
 
 @media (min-width: 0) and (max-width: 768px) {
@@ -934,7 +951,7 @@ Complex Button start
   .section__jacket__header {
     font-size: 4rem;
     padding: unset;
-    margin: unset;
+    // margin: unset;
     text-align: center;
   }
   .jacket-bar {
@@ -946,7 +963,7 @@ Complex Button start
   .story--text {
     margin-left: auto;
     margin-right: auto;
-    text-align: center !important;
+    text-align: justify !important;
   }
 
   .story--text {
@@ -992,8 +1009,10 @@ Complex Button start
     margin-top: -4.5rem;
   }
 
-  .interaction-bar__item {
-    font-size: 7.2vw;
+  .interaction-bar__item .icon-label{
+    font-size: 8px;
+    padding-right: 2px; 
+    padding-left: 2px;
 
     .fal,
     .fas {
@@ -1001,7 +1020,7 @@ Complex Button start
     }
   }
   .interaction-bar {
-    margin-left: 3rem;
+    margin-left: 2rem;
     margin-right: 0;
     justify-content: center;
     transform: none;
@@ -1042,11 +1061,12 @@ Complex Button start
 
   .participate-header {
    //margin-top: -10rem !important;
-   font-size: 6.2rem;
+   //font-size: 6.2rem;
    color: white
   }
   .participate-btn {
     margin-top: 4rem !important;
+    margin-right: 2px;
   }
   .participate--btn {
     width: 18rem !important;
@@ -1062,6 +1082,7 @@ Complex Button start
     margin: 1rem;
   }
   .content-block__body {
+    text-align: justify;
     br {
       display: none;
     }
@@ -1151,6 +1172,14 @@ Complex Button start
     margin-left: 0;
     margin-bottom: 0;
   }
+  .section-header__projects{
+    transform: translateY(2px);
+    padding-right: 3rem; 
+    padding-top: 0.75rem;
+  }
+  .section-header__music{
+    padding-top: 4rem;
+  }
 }
 
 @media (min-width: 0) and (max-width: 768px) and (orientation: landscape) {
@@ -1186,6 +1215,12 @@ Complex Button start
   .hover-container.large {
     transform: scale(0.5);
   }
+  .order-now{
+    &__text {
+      text-align: justify;
+      padding-right: 1rem;
+    }
+  }
 }
 
 @media (min-width: 0) and (max-width: 320px) {
@@ -1214,6 +1249,12 @@ Complex Button start
     font-size: 2.5rem;
     padding: 0;
   }
+  .order-now{
+    &__text {
+      text-align: justify;
+      padding-right: 1rem;
+    }
+  }
 }
 
 .line {
@@ -1234,5 +1275,5 @@ Complex Button start
   align-items: center;
   justify-content: center;
   margin-top: -5%;
-  margin-right: 6rem;
+  // margin-right: 6rem;
 }
