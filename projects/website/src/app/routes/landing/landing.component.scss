@@ -795,7 +795,16 @@ Complex Button start
   .section__mayans .section-header,
   .section-header {
     font-size: 5rem;
-    transform: translateY(-17px);
+    // transform: translateY(-17px);
+  }
+
+  .interaction-bar__item .icon-label {
+    font-size: 0.7vw;
+
+    .fal,
+    .fas {
+      font-size: 24px;
+    }
   }
 
   // .section__hero__heading{
@@ -942,7 +951,7 @@ Complex Button start
   .section__jacket__header {
     font-size: 4rem;
     padding: unset;
-    margin: unset;
+    // margin: unset;
     text-align: center;
   }
   .jacket-bar {
@@ -954,7 +963,7 @@ Complex Button start
   .story--text {
     margin-left: auto;
     margin-right: auto;
-    text-align: center !important;
+    text-align: justify !important;
   }
 
   .story--text {
@@ -1000,8 +1009,10 @@ Complex Button start
     margin-top: -4.5rem;
   }
 
-  .interaction-bar__item {
-    font-size: 7.2vw;
+  .interaction-bar__item .icon-label{
+    font-size: 8px;
+    padding-right: 2px; 
+    padding-left: 2px;
 
     .fal,
     .fas {
@@ -1009,7 +1020,7 @@ Complex Button start
     }
   }
   .interaction-bar {
-    margin-left: 3rem;
+    margin-left: 2rem;
     margin-right: 0;
     justify-content: center;
     transform: none;
@@ -1055,6 +1066,7 @@ Complex Button start
   }
   .participate-btn {
     margin-top: 4rem !important;
+    margin-right: 2px;
   }
   .participate--btn {
     width: 18rem !important;
@@ -1070,6 +1082,7 @@ Complex Button start
     margin: 1rem;
   }
   .content-block__body {
+    text-align: justify;
     br {
       display: none;
     }
@@ -1158,6 +1171,14 @@ Complex Button start
   .content-block {
     margin-left: 0;
     margin-bottom: 0;
+  }
+  .section-header__projects{
+    transform: translateY(2px);
+    padding-right: 3rem; 
+    padding-top: 0.75rem;
+  }
+  .section-header__music{
+    padding-top: 4rem;
   }
 }
 
