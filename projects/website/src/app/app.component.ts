@@ -91,9 +91,9 @@ export class WebsiteComponent extends AbstractMenu implements OnInit, OnDestroy,
   public ngOnInit() {
     this.metaService.setMeta({
       description: 'To uncover and conserve all the secrets hidden in the jungle of Guatemala and to help the indegnous tribes build a better future for their people',
-      image: 'https://kinam13.com/assets/wall_bg.jpg',
+      image: 'https://kinam.io/assets/wall_bg.jpg',
       title: 'A Portal to the Mayan World.',
-      url: `https://kinam13.com`
+      url: `https://kinam.io`
     });
 
     this.router.events.pipe(
