@@ -36,9 +36,9 @@ export class MusicComponent implements OnInit {
 
     this.metaService.setMeta({
       description: 'From the beginning, KINAM’s mission was to share meaningful stories with people to form new emotional connections across the globe.',
-      image: 'https://kinam13.com/assets/wall_bg.jpg',
+      image: 'https://kinam.io/assets/wall_bg.jpg',
       title: 'Stories told by music.',
-      url: `https://kinam13.com/music`
+      url: `https://kinam.io/music`
     });
 
     this.titleService.setTitle({ description: 'Stories told by music.' })
