@@ -575,7 +575,7 @@ Complex Button start
     border: 2px solid;
     transform: translateX(-5%) translateY(-120%);
     position: absolute;
-    background-color: black;
+    background-color: #de1778;
   }
 
   .fill {
@@ -621,7 +621,7 @@ Complex Button start
 }
 
 .btn--projects{
-  margin: -6rem 10rem auto;
+  margin: 2rem 10rem 0rem 0.8rem;
 
 }
 
@@ -663,6 +663,7 @@ Complex Button start
 .scroll-label {
   font-size: 1.5rem;
   font-family: century-gothic;
+  margin-top: -6rem;
 }
 
 .ml-2 {
