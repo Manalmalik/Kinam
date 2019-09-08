@@ -12,6 +12,10 @@
   flex-wrap: wrap;
 }
 
+.p{
+  font-size: 15px;
+}
+
 .section-header {
   // font-size: 7.2rem;
   font-size: 4rem;
@@ -26,7 +30,7 @@
 
   &__projects{
     transform: translateY(-90px);
-    padding-right: 6rem;
+    padding-right: 6.2rem;
   }
   &__music{
     margin-top: 2.5rem;
@@ -710,7 +714,7 @@ Complex Button start
 
   &__body {
     font-size: 15px;
-    font-family: freight-sans-pro;
+    font-family: sans-serif;
     line-height: 1.5;
 
     // position: relative;
@@ -799,7 +803,7 @@ Complex Button start
 
   .section__mayans .section-header,
   .section-header {
-    font-size: 5rem;
+    font-size: 6.2rem;
     // transform: translateY(-17px);
   }
 
