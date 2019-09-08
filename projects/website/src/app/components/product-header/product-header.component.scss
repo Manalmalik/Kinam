@@ -49,8 +49,14 @@
     cursor: pointer;
 
     &--left {
-        margin-left: 2rem;
+        margin: 2rem 8rem 0 0;
         transform: rotate(180deg);
+    }
+    &--right{
+        margin: 1rem -1rem 0 1rem;
+    }
+    &--text{
+        margin: -4rem 0.5rem;
     }
 }
 
@@ -136,5 +142,10 @@
     .headline {
         justify-content: center;
         margin-top: 8rem;
+    }
+    .arrow {
+        &--right{
+            margin: 1rem -1rem 0 8rem;
+        }
     }
 }
