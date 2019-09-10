@@ -71,11 +71,22 @@
       [@calc]
     >
       <div class="column is-4-desktop">
-        <h2 class="title has-text-centered has-text-white">
-          {{content.your_daysign}}:
-          <br>
-          {{ kinamDate?.nahualName }}
+        <h2 class="title has-text-centered has-text-white" style="font-weight: 100; font-size: 1.5rem; font-family: freight-sans-serif">
+          {{content.your_daysign}}:        
         </h2>
+        <h1 style="font-size: 4rem; font-family: freight-sans-serif">
+          {{ kinamDate?.nahualName }}
+        </h1>
+        <!-- <h2 class="title has-text-centered has-text-white" style="font-weight: 100">
+          {{content.your_nahual_number}}:
+          <br>
+          {{ kinamDate?.nahualDay  }}
+        </h2> -->
+        <!-- <kinam-maya-number-block
+          class="is-centered is-inverted"
+          [number]="kinamDate?.nahualDay"
+        >
+        </kinam-maya-number-block> -->
       </div>
       <div class="column is-4-desktop">
         <img
@@ -85,8 +96,8 @@
           class="nawal-img"
         />
       </div>
-      <div class="column is-4">
-        <h2 class="title has-text-centered has-text-white">
+      <div class="column is-3" style="text-align: justify">
+        <!-- <h2 class="title has-text-centered has-text-white">
           {{content.your_nahual_number}}:
           <br>
           {{ kinamDate?.nahualDay  }}
@@ -95,7 +106,360 @@
           class="is-centered is-inverted"
           [number]="kinamDate?.nahualDay"
         >
-        </kinam-maya-number-block>
+        </kinam-maya-number-block> -->
+    
+        <div *ngIf="kinamDate?.nahualName === 'B\'atz\''"> 
+          <p> 
+          The glyph symbolizes a monkey in the sitting position with his arms resting on its knees.
+           Batz is the start of life, infinite time, and unity. 
+           It also represents the time it takes for a child to develop in the womb. 
+           <br>
+           This is the sign of people with comprehensive and a futuristic outlook. 
+            Although conservative deep down, people of this sign have the ability to combine the old with the new. 
+            This means they can integrate natural medicine with new technology. 
+            They are great seekers of harmony and nature lovers. 
+            They are demanding in love and have a high tendency of disappointment because they are seeking for perfection. 
+            But once they find their perfect match, they will go to every extent to save the relationship. 
+            They often attain material wealth through hard work.
+          <br>
+          <br> 
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign
+          </p>
+        </div>
+    
+        <div *ngIf="kinamDate?.nahualName === 'E'"> 
+          <p>  
+          The glyph symbolzies the path of destiny, travel, the road of life, the guide and the means.
+           It represents the stairs between the world, the underworld and the overworld. 
+           It indicates where to walk.
+          <br>
+          People born under this sign have leadership, diplomatic and political expertise.
+           They are sensitive, thus they like to be surrounded by works of art. 
+           They themselves can become great artists through focus and hard work. 
+           They master the art of conversation and appear to always know something about everything.
+           They have a restless, risk-taking and adventurous soul and feel the need to travel frequently. 
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign! 
+          </p>
+        </div>
+    
+        <div *ngIf="kinamDate?.nahualName === 'Aj'"> 
+          <p>  
+            The glyph represents a sugarcane and corn stalks symbolizing physical strength and power of unity.
+            It means abundance and the renewal of nature in order to be in harmony with others.  
+            <br>
+            People born under this sign are the masters of knowledge.
+             They can develop the ability to receive spiritual messages, through hard work.
+             They are perfectionists, which is their great asset but can also be their biggest obstacle. 
+             They suffer but in the end, they achieve the goals they set for themselves. 
+             They attain prestige and renown. They are deep thinkers by nature.
+            <br> 
+            <br>
+            More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+          </p>
+        </div>
+    
+        <div *ngIf="kinamDate?.nahualName === 'Ix'"> 
+          <p> 
+          The glyph symbolizes the face of a jaguar. 
+           It represents intelligence, the strength of Mother Earth, the power of the jungle, and the protective spirits of hills, plains and mountains. 
+          <br>
+          People born under this sign are strong and passionate. 
+           They rule in love and can easily find someone who can fulfill their desires. 
+           They are into raising animals and farming. 
+           They have an excellent imagination yet get easily distracted and hasty when it comes to decision making. 
+           They are brave, not afraid of taking risks and their destiny is unpredictable. 
+           They might be daring but they never show their anxiety and are always realistic and wise. 
+           They have a strong personality yet they have difficulty in sharing their problems because they keep it to themselves.
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+          </p>
+        </div>
+    
+        <div *ngIf="kinamDate?.nahualName === 'Tz\'ikin'"> 
+          <p>  
+        The glyph represents an eagle’s head and symbolizes the bird, the guardian of all Maya lands. It is the intermediary between God and man and represents vision, liberty and luck. 
+        <br>
+        People born under this sign are generous, friendly, intuitive and cheerful.
+         They are lucky with money and love. 
+         They are popular and have good friendships because they are social animals. 
+         They make very good strategists.
+         They give the impression that they can solve every problem. 
+         They easily get bored and can abandon everything in a blink of an eye and like to live intensely - life is like a party to them. 
+         They were born to be their own boss, therefore, they need the space and freedom.
+        <br>
+        <br>
+        More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+          </p>
+        </div>
+    
+        <div *ngIf="kinamDate?.nahualName === 'Ajmaq'"> 
+          <p> 
+          The glyph symbolizes the mind in a state of forgiveness and illumination.
+          It is a brain with rays of expansion, reaching out in all directions. 
+          <br>
+          People born under this sign are analytical, quiet and can keep secrets to themselves.
+           They take life slowly while still reaching their goals.
+           They are sweet, get along with everyone and have many long relationships. 
+           Due to their curious nature, it is not unusual for them to stretch the boundaries of rules. 
+           Although they seem to be open and straightforward, their essence is obscure. 
+           Their greatest challenge is to accept other people’s faults. 
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+          </p>
+        </div>
+    
+        <div *ngIf="kinamDate?.nahualName === 'No\'j'"> 
+          <p>  
+          The glyph symbolizes learning and the transfer from experience into wisdom.
+          It is the connection between intellect, wisdom and spiritual learning. 
+          <br>
+          People born under this sign are wise, intelligent and extremely trusting. 
+           Therefore they sometimes don’t realize when people have bad intentions.
+           They are good by nature, faithful, understanding in marriage and give room to their partners to develop.
+           They are idealists, dreamers and fight for justice. Their greatest challenge is to come down to reality.
+           Deep down they often aren’t happy with the status quo because they are visionaries born to initiate change.
+          <br> 
+          <br>     
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+          </p>
+        </div>
+        <div *ngIf="kinamDate?.nahualName === 'Tijax'"> 
+          <p> 
+            The glyph symbolizes the tip of a flint knife seen from the front, and the pyramid as seen from the sky.
+             It means separation. The cut, the knife, the pyramid, the healing and harmonizing of any of the four bodies: physical, mental, emotional, and spiritual. 
+          <br>
+          People born under this sign are the guardians of justice and healers if incurable illness. 
+          They often have suffered from illness or accidents themselves and are receptive to arguments or gossip. 
+          They are rational on one hand and intuitive on the other. They can behave in an extreme way and are easily offended. 
+          Although they are sensible and just, they can end a relationship in a flash. 
+          They find it hard to manage love relationships because they would rather not formalize them. 
+          But when they do, they look for submissive partners due to their dominant personality. 
+          They are social humanists, leaders in stressful situations. 
+          They are good at managing public relations even though they can be vengeful if wronged. 
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign! 
+         </p>
+        </div>
+        <div *ngIf="kinamDate?.nahualName === 'Kawoq'"> 
+          <p>
+          The glyph represents family, meetings, groups, society and community. 
+          It means the strength of unity. 
+          It is the energy of abundance, in both the material and spiritual sense.    
+          <br>
+          People born under this sign are kind, generous, calm, intelligent and imaginative. 
+          They guide and defend people. 
+          They have great capacity for interaction thus can fit in anywhere and get along with everyone. 
+          They are often influenced by what other people say. 
+          They like to put things into place and therefore do not hesitate to voice their opinions against something they consider to be incorrect. 
+          They are family oriented and feel the need to live other people’s lives for them. 
+          They often find it difficult to find a spouse due to their conservative nature, unless they become less dependent on their family. 
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign! 
+          </p>
+        </div>
+        <div *ngIf="kinamDate?.nahualName === 'Ajpu'"> 
+          <p> 
+          The glyph symbolizes the face of a hunter who uses a blowgun. 
+          It is the victor, the boss, the spiritual warrior, the hunter, possessors of great magic and teachers of this civilization. 
+          Protectors against the Seven Sins: pride, ambition, envy, lies, crime, ingratitude, and ignorance.
+          <br>
+          People born under this sign are romantic dreamers, have a sunny vision of life and are well liked. 
+          They follow multiple paths at once and often act impulsively. 
+          They are natural warriors and always get their way which makes them dominant personalities. 
+          Their ego is their greatest obstacle. 
+          Their mission is to guide humanity, covey wisdom and the idea of real spirituality. 
+          They are good at creating a social circle although they are very selective when it comes to companions and close friends. 
+          They need space but often fail to give that space to others. 
+          Due to their romantic yet practical nature they will have many relationships before settling down.
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign! 
+          </p>
+        </div>
+        <div *ngIf="kinamDate?.nahualName === 'Imox'"> 
+          <p>
+          The glyph represents a glass of water and the rain. 
+          It manages the energies of change. 
+          It provides the power to understand nature’s message in order to plan the next steps in one’s life. 
+          It represents the inner space of the mind and the connection between concepts.
+          <br>
+          People born under this sign are guardians of houses. 
+          They are sociable, sensitive and yet reckless, daring and might appear unusual. 
+          They have a dominant personality and there’s no middle ground for them. 
+          What’s done is done - there’s no going back. 
+          They have a need to seek attention because they often feel that no one understands them. 
+          They are warm, caring, loving and get involved in stormy relationships combining passion, dependence and sometimes madness. 
+          They love home life and are good providers. 
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign! 
+          </p>
+        </div>
+        <div *ngIf="kinamDate?.nahualName === 'Iq'"> 
+          <p>
+            The glyph symbolizes a window to let the air go through. 
+            It is the wind, the element that governs ideas and change. 
+            It is the space between the earth and sky, the invisible space between material things, the space inside us.
+          <br>
+          People born under this sign are impulsive, variable and have a strong personality. 
+          They can be gentle one minute and angry the very next for no obvious reason. 
+          They can adapt to any situation and can manage others both subtly and overtly. 
+          Their imagination is their greatest obstacle because they may confuse their suspicions with their imagination. 
+          They know how to play with words and can convince people if they are able to keep their imagination under control. 
+          Their mood is strongly influenced by the energy of the moon - taking them from moments of excitement to sadness.
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!   
+          </p>
+        </div>
+        <div *ngIf="kinamDate?.nahualName === 'Aq\'ab\'al'"> 
+          <p>
+            The glyph represents light and dark at the same time. 
+            It is polarity: dusk and dawn, cold and heat - two sides of the same coin.
+          <br>
+          People born under this sign have a strong, dynamic and creative character. 
+          When stimulated correctly, they can achieve the impossible. 
+          They are realistic about the situations they face in life. 
+          They are interested in both history and the future. 
+          They overpower darkness and negative forces through the light of hope. 
+          Once they decide to start a task, not being able to finish the work frustrates them since for them there’s no going back from something. 
+          They are passionate lovers with the tendency of going to extremes, being either sweet or radical.
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+          </p>
+        </div>
+    
+        <!-- </div> -->
+        <div *ngIf="kinamDate?.nahualName === 'K\'at'"> 
+          <p> 
+              The glyph symbolizes the energy of gravity and the magnetic poles. 
+              It is the net used to store the physical and invisible things that will feed us in the future, such as our memories, everything we learn, our experiences, and transcendent moments in life.
+            <br>
+            People born under this lucky sign are comfortable and accumulate wealth with ease. 
+            They are curious beings due to which their projects and plans are sometimes abandoned midway. 
+            Once they learn to control their emotions, they can achieve whatever they want. 
+            During times of uncertainty, they are receptive to manipulation by others. 
+            Greed and materialism are the biggest challenges they must learn to overcome. 
+            They were born to be loved and have a special physical or spiritual attraction that makes them very desirable. 
+            <br>
+            <br>
+            More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign! 
+          </p>
+        </div>
+        
+        <!-- </div> -->
+        <div *ngIf="kinamDate?.nahualName === 'Kan'"> 
+          <p> 
+            The glyph symbolizes the serpent, human evolution and spiritual development. 
+            It is the energy of the inner fire that begins at the base of the spine - the fire that activates sexual energy and the force of life.
+            <br>
+            People born under this sign are often good athletes who are physically strong or have great mental ability. 
+            Due to their ability to retrieve information and memories stored in their inner core, it is easy for them to integrate all of the knowledge they possess to reveal both new and ancient wisdom. 
+            They are not expressing but they are concerned regarding making a good impression on others. 
+            They must learn to manage their strength and energy, particularly their sexual power due to which many people will be attracted to them.
+            <br>
+            <br>
+            More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+             </p>
+        </div>
+       
+      <!-- </div> -->
+        <div *ngIf="kinamDate?.nahualName === 'Kame'"> 
+          <p> 
+            The glyph symbolizes death, harmony, and rebirth. 
+            It is the only sure thing: we are all born, and one day we will all return to the origin. 
+            In the Maya world death is a beneficial energy - a dimension where we find true peace and harmony. 
+            It is also the power or strength of our ancestors who advise and protect us throughout existence.
+            <br>
+            People born under Kame are extremely magnetic due to which they gain fame and power. 
+            They are protected from death, even though they might witness many fatalities throughout their life. 
+            They are destined to travel the world and only settle down in late life. 
+            They are marked by suffering but their magnetism will help them find good protectors. 
+            Their greatest virtue is giving to others and helping others understand their destiny.
+            <br>
+            <br>
+            More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign! 
+          </p>
+        </div>
+    
+        <!-- </div> -->
+        <div *ngIf="kinamDate?.nahualName === 'Kej'"> 
+          <p>
+            The glyph represents a closed hand creating a circuit of energy that charges the four cardinal points. 
+            The deer signifies the four pillars that hold up the earth and sky and the knowledge of power through physical existence: sunrise, The East; sunset, the West; the path of water, the South; the path of Air, the North.              
+          <br>
+          People born under this sign are great advisors who possess an analytical mindset and extraordinary strength combined with a notable gentleness. 
+          They have a strong inner personality that they’re able to hide quite well. 
+          They appear submissive but are capable of doing anything to reach their goals. 
+          They are resilient and get right back up after a fall, as many times as necessary. 
+          They are reserved and prefer not to share their problems yet they are seductive with their words. 
+          The search for truth is their greatest purpose.
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign! 
+          </p>
+        </div>
+    
+        <!-- </div> -->
+        <div *ngIf="kinamDate?.nahualName === 'Q\'anil'"> 
+          <p>
+            The glyph represents the seed of life and creation. 
+            The symbol of sharing harmony, the fruit of love and understanding. 
+            It brings wisdom about life.  It is growth in business, crops, travel or love.
+          <br>
+          People born under this sign are intuitive, possess love and knowledge. 
+          They feel the need to share love, and caring, they are good defenders of the people, they are intelligent, sensitive, and successful. 
+          They are extremely adaptive to a life full of changes. 
+          They love security and tranquility but the absence of either one of these can make them feel incomplete and suffer a great deal. 
+          They need security and will go through anything to obtain it. 
+          For them, growth is not expected immediately - it will happen slowly but surely. 
+          They need to learn to be patient with both themselves and others. 
+          They can be proud, neurotic and may believe they are superior.
+          <br>
+          <br>
+          More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+          </p>
+        </div>
+    
+        <!-- </div> -->
+        <div *ngIf="kinamDate?.nahualName === 'Toj'"> 
+          <p> 
+            The glyph represents grandfather sun and his representative on earth, Tojil - the sacred ceremonial fire. 
+            It symbolizes the law of cause and effect. It is the energy that repays us for all the good or bad we have done in our lives.
+            <br>
+            People born under this sign are respectful, magnetic, sensitive, and very energetic. 
+            Therefore they must learn to channel that energy or it will be wasted. 
+            They need to control their emotions and especially avoid imposing their will on others. 
+            They engage in passionate love affairs and can become extremely jealous or proud due to their strong personality. 
+            They are emotional, hard working and are able to make good decisions quickly.
+            <br>
+            <br>
+            More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+          </p>
+        </div>
+    
+      <!-- </div> -->
+      <div *ngIf="kinamDate?.nahualName === 'Tz\'i'"> 
+        <p>
+          The glyph symbolzies a dog, the representative of the Creator’s on Earth who is in charge of applying and enforcing justice. 
+          It represents the spiritual law and the law of man. 
+          It is justice, material, and spiritual life from beginning to end.
+        <br>
+        People born under this sign are good at bringing benefit and prosperity to the community and eliminating negative energy but they need to learn to value themselves. 
+        They cannot be bought or sold. They have an adventurous spirit. 
+        They tend to be just but serve their own kind of justice since they sometimes believe that they are here by divine order. 
+        They are very good lovers. In order to understand their current situation, they need to closely study their past.
+        <br>
+        <br>
+        More detailed information about your Nawal will be added after the successful completion of our crowdfunding campaign!
+        </p>
       </div>
     </div>
 
@@ -136,4 +500,5 @@
       </svg>
     </div>
   </div>
+</div>
 </div>
