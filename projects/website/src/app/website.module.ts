@@ -85,7 +85,7 @@ const routes: Routes = [
     NewsletterModule,
     ReadingsModule,
     ProductSliderModule,
-    RouterModule.forRoot(routes, {})
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   bootstrap: [WebsiteComponent]
 })
