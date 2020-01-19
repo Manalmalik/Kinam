@@ -1,0 +1,113 @@
+:host,
+h1,
+h2 {
+  color: white;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+
+.main {
+  transform: translateY(-100px);
+  opacity: 0;
+  margin-top: 3rem;
+}
+
+.content-block {
+  margin-bottom: 2rem;
+
+  &__headline {
+    font-size: 3rem;
+    font-weight: bolder;
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-family: freight-sans-pro;
+  }
+
+  &__body {
+    font-size: 1rem;
+    font-family: freight-sans-pro;
+    font-weight: 100;
+  }
+}
+
+.btn--mayans {
+  width: 11rem;
+  margin: 2rem 10rem auto;
+
+  .hover-container {
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  // .behind,
+  // .inner,
+  // .outline {
+  //   width: 11rem;
+  //   height: 3rem;
+  // }
+
+  .inner {
+    border: 2px solid white;
+    font-size: 2rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .outline {
+    border: 2px solid white;
+  }
+
+  .behind {
+    background: transparent;
+    border: 2px solid;
+    transform: translateX(-5%) translateY(-120%);
+    position: absolute;
+    background-color: #de1778;
+  }
+
+  .fill {
+    color: white;
+    z-index: 5;
+    font-size: 1rem;
+    font-family: century-gothic, sans-serif;
+    font-weight: bolder;
+  }
+
+  .overlay {
+    background: transparent;
+    position: absolute;
+    z-index: 5;
+    transition: background 0.3s ease-in-out;
+  }
+
+  .text {
+    margin: 1rem 2rem;
+  }
+
+  .outer {
+    cursor: pointer;
+
+    &:hover {
+      .fill {
+        color: black;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      .overlay {
+        border: 1px solid black;
+        transition: border 0.3s ease-in-out;
+      }
+
+      .inner {
+        background-color: black;
+        z-index: -1;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+    }
+  }
+}

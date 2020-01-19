@@ -391,7 +391,7 @@ Complex Button start
 
   &:hover {
     .fill {
-      background-color: white;
+     // background-color: white;
       color: black;
       transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     }
@@ -403,7 +403,7 @@ Complex Button start
 
     .inner {
       background-color: black;
-      color: white;
+      color: black;
       z-index: -1;
       transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     }
@@ -496,7 +496,7 @@ Complex Button start
     border: 2px solid;
     transform: translateX(-5%) translateY(-120%);
     position: absolute;
-    background-color: black;
+    background-color: #de1778;
   }
 
   .fill {

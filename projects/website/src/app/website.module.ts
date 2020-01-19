@@ -36,6 +36,7 @@ import { AboutComponent } from './routes/about/about.component';
 import { CalendarComponent } from './routes/calendar/calendar.component';
 import { SocialIconsComponent } from './routes/social-icons/social-icons.component';
 import { PageFooterComponent } from './routes/page-footer/page-footer.component';
+import { CalendarTextComponent } from './routes/calendarText/calendarText.component'
 
 
 
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
 
   { path: 'calendar', component: CalendarComponent },
+  { path: 'calendarText', component: CalendarTextComponent },
   { path: 'music', component: MusicComponent },
   { path: 'the-mayans', component: MayansComponent },
   { path: 'social-projects', component: ProjectComponent },
@@ -72,6 +74,7 @@ const routes: Routes = [
     ProjectComponent,
     AboutComponent,
     CalendarComponent,
+    CalendarTextComponent,
     SocialIconsComponent,
     PageFooterComponent,
   ],
